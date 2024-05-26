@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfwfamgoyay15"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
+size = Vector3(5, 5, 0.001)
+
+[node name="block" type="AnimatableBody3D" groups=["IsFloor"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+sync_to_physics = false
+
+[node name="collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_t24w4")

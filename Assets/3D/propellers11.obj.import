@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bv6ifyicu6s6q"
+path="res://.godot/imported/propellers11.obj-4cac80fd80b64cca4b07625f2774115b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/propellers11.obj-4cac80fd80b64cca4b07625f2774115b.mesh"]
+
+source_file="res://Assets/3D/propellers11.obj"
+dest_files=["res://.godot/imported/propellers11.obj-4cac80fd80b64cca4b07625f2774115b.mesh", "res://.godot/imported/propellers11.obj-4cac80fd80b64cca4b07625f2774115b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

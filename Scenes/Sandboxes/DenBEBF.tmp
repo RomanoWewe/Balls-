@@ -1,0 +1,145 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1274acyhjpof"]
+
+[ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_2dhrh"]
+[ext_resource type="PackedScene" uid="uid://dev2aik5yoynb" path="res://Scenes/Objects/BuildingBlocks/Basic/floor.tscn" id="3_3cdkx"]
+[ext_resource type="PackedScene" uid="uid://co0b13qewn02j" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterCurrent.tscn" id="5_apjfy"]
+[ext_resource type="Script" path="res://Code/scripts/WaterCurrent.gd" id="6_7sbks"]
+[ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="8_ch0bx"]
+[ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="10_fjrka"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nsy35"]
+friction = 0.5
+rough = true
+
+[node name="Den" type="Node3D"]
+script = ExtResource("1_2dhrh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.5, -0.784886, 0.365998, -70, 0, 0)
+light_color = Color(0.768627, 0.898039, 1, 1)
+light_energy = 2.61
+light_indirect_energy = 0.1
+shadow_enabled = true
+sky_mode = 1
+
+[node name="empty" parent="." instance=ExtResource("8_ch0bx")]
+
+[node name="static" type="Node" parent="."]
+
+[node name="5,10,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 20)
+
+[node name="5,15,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 20)
+
+[node name="5,20,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 20)
+
+[node name="5,25,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 20)
+
+[node name="5,30,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 20)
+
+[node name="5,35,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 20)
+
+[node name="10,10,20(0)" parent="static" instance=ExtResource("10_fjrka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 13, 20)
+physics_material_override = SubResource("PhysicsMaterial_nsy35")
+
+[node name="5,40,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 20)
+
+[node name="5,40,25(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 25)
+
+[node name="5,40,30(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 30)
+
+[node name="5,40,35(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 35)
+
+[node name="5,40,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 40)
+
+[node name="5,35,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 40)
+
+[node name="5,30,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 40)
+
+[node name="5,25,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 40)
+
+[node name="5,20,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 40)
+
+[node name="5,15,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 40)
+
+[node name="5,10,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 40)
+
+[node name="5,10,35(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 35)
+
+[node name="5,10,30(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 30)
+
+[node name="5,10,25(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 25)
+
+[node name="5,40,10(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 10)
+
+[node name="10,15,20(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("wave_instance") groups=["IsFloor"] instance=ExtResource("5_apjfy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 10, 20)
+sync_to_physics = false
+script = ExtResource("6_7sbks")
+current_direction = Vector3(1, 0, 0)
+current_power = 6.0
+wave_instance = NodePath("Wave")
+
+[node name="10,20,20(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("wave_instance") groups=["IsFloor"] instance=ExtResource("5_apjfy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 10, 20)
+sync_to_physics = false
+script = ExtResource("6_7sbks")
+current_direction = Vector3(1, 0, 0)
+current_power = 6.0
+wave_instance = NodePath("Wave")
+
+[node name="10,25,20(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("wave_instance") groups=["IsFloor"] instance=ExtResource("5_apjfy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 10, 20)
+sync_to_physics = false
+script = ExtResource("6_7sbks")
+current_direction = Vector3(1, 0, 0)
+current_power = 6.0
+wave_instance = NodePath("Wave")
+
+[node name="10,30,20(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("wave_instance") groups=["IsFloor"] instance=ExtResource("5_apjfy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 10, 20)
+sync_to_physics = false
+script = ExtResource("6_7sbks")
+current_direction = Vector3(1, 0, 0)
+current_power = 6.0
+wave_instance = NodePath("Wave")
+
+[node name="10,35,20(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("wave_instance") groups=["IsFloor"] instance=ExtResource("5_apjfy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 10, 20)
+sync_to_physics = false
+script = ExtResource("6_7sbks")
+current_direction = Vector3(1, 0, 0)
+current_power = 6.0
+wave_instance = NodePath("Wave")
+
+[node name="10,40,20(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("wave_instance") groups=["IsFloor"] instance=ExtResource("5_apjfy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 10, 20)
+sync_to_physics = false
+script = ExtResource("6_7sbks")
+current_direction = Vector3(1, 0, 0)
+current_power = 6.0
+wave_instance = NodePath("Wave")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 25, 33, 30)

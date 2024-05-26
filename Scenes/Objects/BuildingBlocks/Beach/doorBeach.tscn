@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://blyjt022mstha"]
+
+[ext_resource type="ArrayMesh" uid="uid://df5iy5t8aar5o" path="res://Assets/3D/Beach/door 1 cкин право 1.obj" id="1_u50f2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
+size = Vector3(2.51563, 5, 0.001)
+
+[node name="door" type="AnimatableBody3D" groups=["IsFloor"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+sync_to_physics = false
+
+[node name="collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24219, 2.5, 0.203052)
+shape = SubResource("BoxShape3D_t24w4")
+
+[node name="Door11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -2.5, 0, 0)
+mesh = ExtResource("1_u50f2")

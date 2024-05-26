@@ -1,0 +1,418 @@
+[gd_scene load_steps=12 format=3 uid="uid://ljw7ehdr7alt"]
+
+[ext_resource type="Script" path="res://Code/scripts/menu/SettingsMenu.gd" id="1_qayne"]
+[ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="2_pmr5i"]
+[ext_resource type="FontFile" uid="uid://cv7bmaibmi36i" path="res://Assets/OpenSans_Condensed-Light.ttf" id="3_gyqev"]
+[ext_resource type="Script" path="res://Code/scripts/menu/PauseMenu.gd" id="4_dnadc"]
+[ext_resource type="Script" path="res://Code/scripts/menu/SceneChangeButton.gd" id="5_8qlk6"]
+[ext_resource type="Script" path="res://Scenes/Menu/StaticLevelUI.gd" id="6_4heqp"]
+
+[sub_resource type="Animation" id="Animation_bumu1"]
+resource_name = "game-paused"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paused:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -720), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hmhf8"]
+resource_name = "paused-game"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paused:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -720)]
+}
+
+[sub_resource type="Animation" id="Animation_6asy3"]
+resource_name = "paused-settings"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paused:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -720)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Settings:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 720), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kmb02"]
+resource_name = "settings-paused"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paused:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -720), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Settings:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 720)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ghbw"]
+_data = {
+"game-paused": SubResource("Animation_bumu1"),
+"paused-game": SubResource("Animation_hmhf8"),
+"paused-settings": SubResource("Animation_6asy3"),
+"settings-paused": SubResource("Animation_kmb02")
+}
+
+[node name="LevelUi" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Settings" type="Control" parent="." node_paths=PackedStringArray("interface_node")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = 360.0
+offset_right = 640.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qayne")
+interface_node = NodePath("..")
+
+[node name="Panel" type="Panel" parent="Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -300.0
+offset_right = 250.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tip" type="RichTextLabel" parent="Settings"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -109.0
+offset_top = 62.0
+offset_right = 91.0
+offset_bottom = 162.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Settings"
+
+[node name="Apply" type="Button" parent="Settings"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -142.0
+offset_right = 97.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_gyqev")
+theme_override_font_sizes/font_size = 36
+text = "Save and return"
+
+[node name="Options" type="VBoxContainer" parent="Settings"]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 156.0
+offset_right = 845.0
+offset_bottom = 474.0
+theme_override_constants/separation = 15
+
+[node name="Resolution" type="HBoxContainer" parent="Settings/Options"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Options/Resolution"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_gyqev")
+theme_override_font_sizes/normal_font_size = 36
+text = "Resolution"
+
+[node name="OptionButton" type="OptionButton" parent="Settings/Options/Resolution"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gyqev")
+theme_override_font_sizes/font_size = 24
+alignment = 1
+item_count = 8
+selected = 0
+fit_to_longest_item = false
+allow_reselect = true
+popup/item_0/text = "640x360"
+popup/item_0/id = 0
+popup/item_1/text = "854x480"
+popup/item_1/id = 1
+popup/item_2/text = "960x540"
+popup/item_2/id = 2
+popup/item_3/text = "1024x576"
+popup/item_3/id = 3
+popup/item_4/text = "1280x720"
+popup/item_4/id = 4
+popup/item_5/text = "1366x768"
+popup/item_5/id = 5
+popup/item_6/text = "1600x900"
+popup/item_6/id = 6
+popup/item_7/text = "1920x1080"
+popup/item_7/id = 7
+
+[node name="Fullscreen" type="HBoxContainer" parent="Settings/Options"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Options/Fullscreen"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_gyqev")
+theme_override_font_sizes/normal_font_size = 36
+text = "Fullscreen"
+
+[node name="CenterContainer" type="Control" parent="Settings/Options/Fullscreen"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Settings/Options/Fullscreen/CenterContainer"]
+layout_mode = 1
+offset_left = 73.0
+offset_right = 97.0
+offset_bottom = 24.0
+scale = Vector2(2, 2)
+
+[node name="SoundVolume" type="HBoxContainer" parent="Settings/Options"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Options/SoundVolume"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_gyqev")
+theme_override_font_sizes/normal_font_size = 36
+text = "Mute sound
+"
+
+[node name="CenterContainer" type="Control" parent="Settings/Options/SoundVolume"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Settings/Options/SoundVolume/CenterContainer"]
+layout_mode = 1
+offset_left = 73.0
+offset_right = 97.0
+offset_bottom = 24.0
+scale = Vector2(2, 2)
+
+[node name="MusicVolume2" type="HBoxContainer" parent="Settings/Options"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Options/MusicVolume2"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_gyqev")
+theme_override_font_sizes/normal_font_size = 36
+text = "Mute music"
+
+[node name="CenterContainer" type="Control" parent="Settings/Options/MusicVolume2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="Settings/Options/MusicVolume2/CenterContainer"]
+layout_mode = 1
+offset_left = 73.0
+offset_right = 97.0
+offset_bottom = 24.0
+scale = Vector2(2, 2)
+
+[node name="Paused" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -1080.0
+offset_right = 640.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_dnadc")
+
+[node name="Panel" type="Panel" parent="Paused"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -300.0
+offset_right = 250.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tip" type="RichTextLabel" parent="Paused"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 70.0
+offset_right = 100.0
+offset_bottom = 170.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Paused"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Paused"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.5
+offset_top = -203.0
+offset_right = 152.5
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Unpause" type="Button" parent="Paused/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gyqev")
+theme_override_font_sizes/font_size = 36
+text = "Resume"
+
+[node name="Restart" type="Button" parent="Paused/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gyqev")
+theme_override_font_sizes/font_size = 36
+shortcut_in_tooltip = false
+text = "Restart level"
+script = ExtResource("5_8qlk6")
+
+[node name="Settings" type="Button" parent="Paused/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gyqev")
+theme_override_font_sizes/font_size = 36
+text = "Settings"
+
+[node name="Back to main" type="Button" parent="Paused/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gyqev")
+theme_override_font_sizes/font_size = 36
+text = "Return to menu"
+script = ExtResource("5_8qlk6")
+scene_name = "res://Scenes/MainMenu.tscn"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7ghbw")
+}
+
+[node name="Static UI" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+script = ExtResource("6_4heqp")
+
+[node name="Level number" type="RichTextLabel" parent="Static UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -620.0
+offset_top = 9.0
+offset_right = -420.0
+offset_bottom = 109.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "Level x"
+
+[connection signal="pressed" from="Settings/Apply" to="Settings" method="_on_apply_pressed"]
+[connection signal="pressed" from="Settings/Apply" to="Paused" method="back_to_pause_menu"]
+[connection signal="pressed" from="Paused/VBoxContainer/Unpause" to="Paused" method="unpause"]
+[connection signal="pressed" from="Paused/VBoxContainer/Settings" to="Paused" method="settings"]

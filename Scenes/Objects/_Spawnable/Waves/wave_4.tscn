@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtrhlslknm84q"]
+
+[ext_resource type="Script" path="res://Code/scripts/Wave.gd" id="1_rfkpg"]
+[ext_resource type="ArrayMesh" uid="uid://funvo5v13s2v" path="res://Assets/3D/beach 33/волны/волна4.obj" id="2_x1ihy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v4ueo"]
+size = Vector3(1.39929, 0.208496, 0.510254)
+
+[node name="Wave5" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0560273, 0)
+script = ExtResource("1_rfkpg")
+
+[node name="Wave" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79057, 0.0247984, 0.587062)
+mesh = ExtResource("2_x1ihy")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0106812, 0.125042, 0.244873)
+shape = SubResource("BoxShape3D_v4ueo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

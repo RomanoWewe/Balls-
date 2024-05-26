@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://pucv7j6m3047"]
+
+[ext_resource type="Texture2D" uid="uid://dqxflxe65waro" path="res://Assets/3D/Beach/landlocked.png" id="1_ip2f7"]
+[ext_resource type="ArrayMesh" uid="uid://cuyb3e34ww4e4" path="res://Assets/3D/Beach/2sidesCO.obj" id="2_fhnsy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ba0t"]
+size = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfih7"]
+albedo_texture = ExtResource("1_ip2f7")
+
+[node name="wall" type="AnimatableBody3D" groups=["IsFloor"]]
+sync_to_physics = false
+
+[node name="collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_5ba0t")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0999999, 0, 0)
+material_override = SubResource("StandardMaterial3D_jfih7")
+mesh = ExtResource("2_fhnsy")

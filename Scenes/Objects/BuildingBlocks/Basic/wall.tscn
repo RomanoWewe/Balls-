@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfpv7w2xo0i4y"]
+
+[ext_resource type="Texture2D" uid="uid://dw3itqgphha4s" path="res://Assets/3D/23.png" id="1_5yhxn"]
+[ext_resource type="Texture2D" uid="uid://1lnok2dpmv2d" path="res://Assets/Textures/HeightmapWall.png" id="2_qie3i"]
+[ext_resource type="ArrayMesh" uid="uid://bcga08gdyoo4r" path="res://Assets/3D/MainWall.obj" id="3_m20gr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ba0t"]
+size = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7jph"]
+albedo_texture = ExtResource("1_5yhxn")
+normal_enabled = true
+normal_scale = 5.23
+normal_texture = ExtResource("2_qie3i")
+
+[node name="wall" type="AnimatableBody3D"]
+sync_to_physics = false
+
+[node name="collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_5ba0t")
+
+[node name="MainWall" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 2.5, 0)
+material_override = SubResource("StandardMaterial3D_o7jph")
+mesh = ExtResource("3_m20gr")

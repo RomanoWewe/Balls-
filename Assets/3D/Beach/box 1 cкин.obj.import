@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b41x4kl55trrg"
+path="res://.godot/imported/box 1 cкин.obj-f001fdfcff044d70f86afb78d7834a97.mesh"
+
+[deps]
+
+files=["res://.godot/imported/box 1 cкин.obj-f001fdfcff044d70f86afb78d7834a97.mesh"]
+
+source_file="res://Assets/3D/Beach/box 1 cкин.obj"
+dest_files=["res://.godot/imported/box 1 cкин.obj-f001fdfcff044d70f86afb78d7834a97.mesh", "res://.godot/imported/box 1 cкин.obj-f001fdfcff044d70f86afb78d7834a97.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

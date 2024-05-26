@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://nmnkmy345sxi"
+path="res://.godot/imported/волна 2.obj-e9cbccd6ee484d89a03c13caf28a43e2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/волна 2.obj-e9cbccd6ee484d89a03c13caf28a43e2.mesh"]
+
+source_file="res://Assets/3D/beach 33/волны/волна 2.obj"
+dest_files=["res://.godot/imported/волна 2.obj-e9cbccd6ee484d89a03c13caf28a43e2.mesh", "res://.godot/imported/волна 2.obj-e9cbccd6ee484d89a03c13caf28a43e2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

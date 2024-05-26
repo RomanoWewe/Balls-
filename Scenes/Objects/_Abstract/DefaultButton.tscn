@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://dr7ppfmfeitet"]
+
+[ext_resource type="Script" path="res://Code/scripts/buttons/DefaultButton.gd" id="1_sqsmu"]
+[ext_resource type="ArrayMesh" uid="uid://n12akdy5dimd" path="res://Assets/3D/button 1.obj" id="2_o73ab"]
+[ext_resource type="Texture2D" uid="uid://ceobpn5wci5ry" path="res://Assets/3D/button 2.png" id="2_vyhyk"]
+[ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="4_smaai"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_462hh"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6p51"]
+albedo_texture = ExtResource("2_vyhyk")
+
+[node name="pressurePlate" type="Area3D" node_paths=PackedStringArray("text_timer")]
+script = ExtResource("1_sqsmu")
+text_timer = NodePath("Text")
+
+[node name="collider" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_462hh")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_i6p51")
+mesh = ExtResource("2_o73ab")
+
+[node name="Text" type="Label3D" parent="."]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0)
+billboard = 1
+render_priority = 100
+outline_render_priority = 99
+font = ExtResource("4_smaai")
+font_size = 780
+outline_size = 127
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

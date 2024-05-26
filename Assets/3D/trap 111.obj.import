@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b28cl5s1mur45"
+path="res://.godot/imported/trap 111.obj-583e92206ab7105f3ea15d500cecae48.mesh"
+
+[deps]
+
+files=["res://.godot/imported/trap 111.obj-583e92206ab7105f3ea15d500cecae48.mesh"]
+
+source_file="res://Assets/3D/trap 111.obj"
+dest_files=["res://.godot/imported/trap 111.obj-583e92206ab7105f3ea15d500cecae48.mesh", "res://.godot/imported/trap 111.obj-583e92206ab7105f3ea15d500cecae48.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

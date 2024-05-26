@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b58gaxhv423yd"
+path="res://.godot/imported/верхний осколок.obj-080b56b0278e9df6d7e4d64c0e8808ce.mesh"
+
+[deps]
+
+files=["res://.godot/imported/верхний осколок.obj-080b56b0278e9df6d7e4d64c0e8808ce.mesh"]
+
+source_file="res://Assets/3D/шар11/верхний осколок.obj"
+dest_files=["res://.godot/imported/верхний осколок.obj-080b56b0278e9df6d7e4d64c0e8808ce.mesh", "res://.godot/imported/верхний осколок.obj-080b56b0278e9df6d7e4d64c0e8808ce.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

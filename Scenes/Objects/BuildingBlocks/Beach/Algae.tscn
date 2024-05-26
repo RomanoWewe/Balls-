@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwrb0c7nknohr"]
+
+[ext_resource type="Script" path="res://Code/scripts/Water.gd" id="1_mfgyb"]
+[ext_resource type="ArrayMesh" uid="uid://cj5ks42nhmtdu" path="res://Assets/3D/beach 33/водоросли.obj" id="2_j5wgd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
+size = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3bh1"]
+transparency = 1
+albedo_color = Color(0, 0.313726, 0.603922, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_50qqx"]
+size = Vector3(5, 3.8, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehsnt"]
+transparency = 1
+albedo_color = Color(0, 0.313726, 0.603922, 0.65098)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6s6y0"]
+size = Vector2(5, 5)
+
+[node name="Algae" type="AnimatableBody3D" groups=["IsFloor"]]
+sync_to_physics = false
+script = ExtResource("1_mfgyb")
+LINEAR_DAMP = 0.85
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="collider" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_t24w4")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_j5wgd")
+
+[node name="mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0)
+material_override = SubResource("StandardMaterial3D_v3bh1")
+mesh = SubResource("BoxMesh_50qqx")
+
+[node name="mesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8, 0)
+material_override = SubResource("StandardMaterial3D_ehsnt")
+mesh = SubResource("PlaneMesh_6s6y0")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

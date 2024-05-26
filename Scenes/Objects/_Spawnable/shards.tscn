@@ -1,0 +1,137 @@
+[gd_scene load_steps=15 format=3 uid="uid://b56uhyo5x6yf8"]
+
+[ext_resource type="ArrayMesh" uid="uid://da1gntuorl0fb" path="res://Assets/3D/шар11/боковой нижний осколок.obj" id="1_gvh58"]
+[ext_resource type="Script" path="res://Code/scripts/GravitationalObject.gd" id="1_y7fra"]
+[ext_resource type="ArrayMesh" uid="uid://cija85g14m67i" path="res://Assets/3D/шар11/боковой осколок ( бок 1).obj" id="2_iu85f"]
+[ext_resource type="ArrayMesh" uid="uid://duux0aw3eo11g" path="res://Assets/3D/шар11/боковой осколок ( бок 3).obj" id="3_nhehm"]
+[ext_resource type="ArrayMesh" uid="uid://cowckb7iir8rc" path="res://Assets/3D/шар11/боковой осколок (бок 2).obj" id="4_60ugu"]
+[ext_resource type="ArrayMesh" uid="uid://76h6y6i06mx4" path="res://Assets/3D/шар11/кусманище.obj" id="5_qmill"]
+[ext_resource type="ArrayMesh" uid="uid://2oq7u6w8flcl" path="res://Assets/3D/шар11/низ.obj" id="6_8su0i"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_773cn"]
+friction = 0.4
+rough = true
+bounce = 0.25
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hal8m"]
+size = Vector3(1.39591, 1.48425, 2.80684)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uwvn1"]
+size = Vector3(2.71867, 2.04268, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1617i"]
+size = Vector3(1, 2.51293, 0.749472)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a5i4k"]
+size = Vector3(1, 1.98007, 2.40341)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tdcat"]
+size = Vector3(2.79468, 2.20695, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ad1ot"]
+size = Vector3(2.54534, 1.13585, 1)
+
+[node name="shards" type="Node3D"]
+
+[node name="shard" type="RigidBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_773cn")
+gravity_scale = 2.0
+continuous_cd = true
+linear_velocity = Vector3(10, 0, 0)
+angular_damp_mode = 1
+angular_damp = 1.0
+script = ExtResource("1_y7fra")
+buoyancy = 0.0
+
+[node name="mesh" type="MeshInstance3D" parent="shard"]
+mesh = ExtResource("1_gvh58")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3086, 1.67529, -0.308605)
+shape = SubResource("BoxShape3D_hal8m")
+
+[node name="shard2" type="RigidBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_773cn")
+gravity_scale = 2.0
+continuous_cd = true
+linear_velocity = Vector3(0, 0, -10)
+angular_damp_mode = 1
+angular_damp = 1.0
+script = ExtResource("1_y7fra")
+buoyancy = 0.0
+
+[node name="mesh" type="MeshInstance3D" parent="shard2"]
+mesh = ExtResource("2_iu85f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shard2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161651, 1.74877, -1.36668)
+shape = SubResource("BoxShape3D_uwvn1")
+
+[node name="shard3" type="RigidBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_773cn")
+gravity_scale = 2.0
+continuous_cd = true
+linear_velocity = Vector3(0, 0, 10)
+angular_damp_mode = 1
+angular_damp = 1.0
+script = ExtResource("1_y7fra")
+buoyancy = 0.0
+
+[node name="mesh" type="MeshInstance3D" parent="shard3"]
+mesh = ExtResource("3_nhehm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shard3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.176346, 2.08676, 1.6312)
+shape = SubResource("BoxShape3D_1617i")
+
+[node name="shard4" type="RigidBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_773cn")
+gravity_scale = 2.0
+continuous_cd = true
+linear_velocity = Vector3(-10, 0, 0)
+angular_damp_mode = 1
+angular_damp = 1.0
+script = ExtResource("1_y7fra")
+buoyancy = 0.0
+
+[node name="mesh" type="MeshInstance3D" parent="shard4"]
+mesh = ExtResource("4_60ugu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shard4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54702, 2.02989, 0.235128)
+shape = SubResource("BoxShape3D_a5i4k")
+
+[node name="shard7" type="RigidBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_773cn")
+gravity_scale = 2.0
+continuous_cd = true
+linear_velocity = Vector3(10, 10, -10)
+angular_damp_mode = 1
+angular_damp = 1.0
+script = ExtResource("1_y7fra")
+buoyancy = 0.0
+
+[node name="mesh" type="MeshInstance3D" parent="shard7"]
+mesh = ExtResource("5_qmill")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shard7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5562, 2.83035, -0.481689)
+shape = SubResource("BoxShape3D_tdcat")
+
+[node name="shard8" type="RigidBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_773cn")
+gravity_scale = 2.0
+continuous_cd = true
+linear_velocity = Vector3(0, 0, -3)
+linear_damp_mode = 1
+angular_damp_mode = 1
+angular_damp = 1.0
+script = ExtResource("1_y7fra")
+buoyancy = 0.0
+
+[node name="mesh" type="MeshInstance3D" parent="shard8"]
+mesh = ExtResource("6_8su0i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shard8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.217194, 0.533546, -0.372757)
+shape = SubResource("BoxShape3D_ad1ot")

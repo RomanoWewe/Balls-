@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://76qb0dildyhp"
+path="res://.godot/imported/portal skin 1.obj-702c3fd93a65e910e1e39738b1478ddd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/portal skin 1.obj-702c3fd93a65e910e1e39738b1478ddd.mesh"]
+
+source_file="res://Assets/3D/Beach/portal skin 1.obj"
+dest_files=["res://.godot/imported/portal skin 1.obj-702c3fd93a65e910e1e39738b1478ddd.mesh", "res://.godot/imported/portal skin 1.obj-702c3fd93a65e910e1e39738b1478ddd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5x3uhyfhx45s"]
+
+[ext_resource type="Script" path="res://Code/scripts/Water.gd" id="1_6o750"]
+[ext_resource type="AudioStream" uid="uid://8ykc1r773cmp" path="res://Assets/Sounds/Splash2.wav" id="2_fxq1v"]
+[ext_resource type="Script" path="res://Code/scripts/SoundRandomizer.gd" id="3_6kj5f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_86myb"]
+transparency = 1
+albedo_color = Color(0, 0.313726, 0.603922, 0.65098)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ketb2"]
+size = Vector2(5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shot6"]
+transparency = 1
+albedo_color = Color(0, 0.313726, 0.603922, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bd2pa"]
+size = Vector3(5, 3.8, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
+size = Vector3(5, 3.8, 5)
+
+[node name="Water" type="AnimatableBody3D" groups=["IsFloor"]]
+sync_to_physics = false
+script = ExtResource("1_6o750")
+LINEAR_DAMP = 0.99
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8, 0)
+material_override = SubResource("StandardMaterial3D_86myb")
+mesh = SubResource("PlaneMesh_ketb2")
+
+[node name="mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0)
+material_override = SubResource("StandardMaterial3D_shot6")
+mesh = SubResource("BoxMesh_bd2pa")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="collider" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0)
+shape = SubResource("BoxShape3D_t24w4")
+
+[node name="Splash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fxq1v")
+volume_db = -15.5688
+pitch_scale = 0.968265
+max_polyphony = 3
+bus = &"Sound"
+script = ExtResource("3_6kj5f")
+randomizing_enabled = true
+base_name = "Splash"
+sounds_amount = 2
+volume_range = Vector2(-20, -15)
+pitch_range = Vector2(0.85, 1.15)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

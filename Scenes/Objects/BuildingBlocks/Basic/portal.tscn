@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgtwahat2m8nw"]
+
+[ext_resource type="Script" path="res://Code/scripts/Portal.gd" id="1_bnjsh"]
+[ext_resource type="Texture2D" uid="uid://bfis34msryf2u" path="res://Assets/3D/portal111.png" id="2_cgyte"]
+[ext_resource type="ArrayMesh" uid="uid://bgrcde213wvg7" path="res://Assets/3D/portal111.obj" id="3_fsinn"]
+[ext_resource type="AudioStream" uid="uid://btxvky0rq7q7f" path="res://Assets/Sounds/Teleport1.wav" id="4_1ixem"]
+[ext_resource type="Script" path="res://Code/scripts/SoundRandomizer.gd" id="5_42u4s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5y42k"]
+size = Vector3(2, 6, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_113yr"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+albedo_texture = ExtResource("2_cgyte")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bwv35"]
+size = Vector3(5, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x6pbg"]
+size = Vector3(5, 1, 5)
+
+[node name="Portal" type="AnimatableBody3D"]
+script = ExtResource("1_bnjsh")
+
+[node name="area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11731, 0, -2.50001)
+shape = SubResource("BoxShape3D_5y42k")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_113yr")
+mesh = ExtResource("3_fsinn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+shape = SubResource("BoxShape3D_bwv35")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.60464, 3.02809)
+shape = SubResource("BoxShape3D_x6pbg")
+
+[node name="Teleport" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1ixem")
+volume_db = -15.0
+bus = &"Sound"
+script = ExtResource("5_42u4s")
+randomizing_enabled = true
+base_name = "Teleport"
+sounds_amount = 1
+volume_range = Vector2(-15, -15)
+
+[node name="TeleportPoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99457, 1.28231)
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

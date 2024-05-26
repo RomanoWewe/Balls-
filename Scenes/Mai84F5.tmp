@@ -1,0 +1,356 @@
+[gd_scene load_steps=14 format=3 uid="uid://lqtm7g6w8w5j"]
+
+[ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="1_moibi"]
+[ext_resource type="Script" path="res://Code/scripts/menu/MenuResizer.gd" id="1_t47u0"]
+[ext_resource type="FontFile" uid="uid://cv7bmaibmi36i" path="res://Assets/OpenSans_Condensed-Light.ttf" id="2_7dh81"]
+[ext_resource type="PackedScene" uid="uid://dyhcmvj62xbj2" path="res://Scenes/Menu/level_icon.tscn" id="3_5amjg"]
+[ext_resource type="Script" path="res://Code/scripts/menu/LevelSelectionController.gd" id="3_6pfti"]
+[ext_resource type="Script" path="res://Code/scripts/menu/AnimationButton.gd" id="3_pda4v"]
+
+[sub_resource type="Animation" id="Animation_3i3ix"]
+resource_name = "levels-main"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main2/Main:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-300, -300), Vector2(0, -300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Levels:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1180, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ucun7"]
+resource_name = "main-levels"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main2/Main:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -300), Vector2(-300, -300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Levels:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1180, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4akrh"]
+_data = {
+"levels-main": SubResource("Animation_3i3ix"),
+"main-levels": SubResource("Animation_ucun7")
+}
+
+[sub_resource type="Gradient" id="Gradient_752ay"]
+offsets = PackedFloat32Array(0, 0.665842, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s1s5h"]
+gradient = SubResource("Gradient_752ay")
+width = 2
+
+[sub_resource type="Gradient" id="Gradient_ohvh2"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5p48s"]
+gradient = SubResource("Gradient_ohvh2")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t47u0")
+
+[node name="Main2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="Main" type="Control" parent="Main2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -300.0
+offset_right = 300.0
+grow_vertical = 0
+
+[node name="Title" type="RichTextLabel" parent="Main2/Main"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+offset_left = 3.0
+offset_top = -16.0
+offset_right = 398.0
+offset_bottom = 84.0
+theme_override_fonts/normal_font = ExtResource("1_moibi")
+theme_override_font_sizes/normal_font_size = 72
+text = "  Balls"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main2/Main"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 78.0
+offset_right = 290.0
+offset_bottom = 284.0
+
+[node name="Settings" type="Button" parent="Main2/Main/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7dh81")
+theme_override_font_sizes/font_size = 42
+text = "Settings"
+alignment = 0
+
+[node name="Levels" type="Button" parent="Main2/Main/VBoxContainer" node_paths=PackedStringArray("animator")]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7dh81")
+theme_override_font_sizes/font_size = 42
+text = "Levels"
+alignment = 0
+script = ExtResource("3_pda4v")
+animator = NodePath("../../../../AnimationPlayer")
+animation_to_play = "main-levels"
+
+[node name="Quit" type="Button" parent="Main2/Main/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7dh81")
+theme_override_font_sizes/font_size = 42
+text = "Quit
+"
+alignment = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4akrh")
+}
+
+[node name="Levels" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1180.0
+offset_right = 1220.0
+offset_bottom = 40.0
+script = ExtResource("3_6pfti")
+level_icon_prefab = ExtResource("3_5amjg")
+
+[node name="Levels2" type="Panel" parent="Levels"]
+self_modulate = Color(1, 1, 1, 0.517647)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 80.0
+offset_top = 30.0
+offset_right = 1160.0
+offset_bottom = 650.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tip" type="RichTextLabel" parent="Levels"]
+layout_mode = 2
+offset_left = 200.0
+offset_top = 52.0
+offset_right = 1174.0
+offset_bottom = 1026.0
+theme_override_fonts/normal_font = ExtResource("2_7dh81")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Select level"
+
+[node name="Quit" type="Button" parent="Levels" node_paths=PackedStringArray("animator")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 116.0
+offset_top = 558.0
+offset_right = 266.0
+offset_bottom = 616.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_7dh81")
+theme_override_font_sizes/font_size = 36
+text = "Back"
+script = ExtResource("3_pda4v")
+animator = NodePath("../../AnimationPlayer")
+animation_to_play = "levels-main"
+
+[node name="Play" type="Button" parent="Levels"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 974.001
+offset_top = 556.0
+offset_right = 1124.0
+offset_bottom = 614.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_7dh81")
+theme_override_font_sizes/font_size = 36
+text = "Play"
+
+[node name="GridContainer" type="GridContainer" parent="Levels"]
+layout_mode = 2
+offset_left = 179.0
+offset_top = 135.0
+offset_right = 819.0
+offset_bottom = 597.0
+scale = Vector2(0.9, 0.9)
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 5
+
+[node name="LevelIcon" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon2" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon3" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon4" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon5" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon6" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon7" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon8" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon9" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon10" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon11" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon12" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon13" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon14" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon15" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon16" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon17" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon18" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon19" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="LevelIcon20" parent="Levels/GridContainer" instance=ExtResource("3_5amjg")]
+custom_minimum_size = Vector2(120, 75)
+layout_mode = 2
+
+[node name="Separator" type="TextureRect" parent="Levels"]
+self_modulate = Color(1, 1, 1, 0.396078)
+layout_mode = 2
+offset_left = 809.0
+offset_top = 146.0
+offset_right = 811.0
+offset_bottom = 546.0
+texture = SubResource("GradientTexture2D_s1s5h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Levels"]
+layout_mode = 0
+offset_left = 863.0
+offset_top = 134.0
+offset_right = 1139.0
+offset_bottom = 564.0
+theme_override_constants/separation = 15
+
+[node name="Name" type="RichTextLabel" parent="Levels/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_moibi")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]Name"
+
+[node name="Preview" type="TextureRect" parent="Levels/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+texture = SubResource("GradientTexture2D_5p48s")
+
+[node name="Description" type="RichTextLabel" parent="Levels/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_7dh81")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center] Description"

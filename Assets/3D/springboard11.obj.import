@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ca8u4n2nv6juq"
+path="res://.godot/imported/springboard11.obj-5b2e1457f9ddf041b6337feca0acc4eb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/springboard11.obj-5b2e1457f9ddf041b6337feca0acc4eb.mesh"]
+
+source_file="res://Assets/3D/springboard11.obj"
+dest_files=["res://.godot/imported/springboard11.obj-5b2e1457f9ddf041b6337feca0acc4eb.mesh", "res://.godot/imported/springboard11.obj-5b2e1457f9ddf041b6337feca0acc4eb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

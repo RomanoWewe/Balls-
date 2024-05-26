@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://4bxyextfnnk6"]
+
+[ext_resource type="Script" path="res://Code/scripts/AmbientSoundPlayer.gd" id="1_0ckj7"]
+[ext_resource type="AudioStream" uid="uid://dw0kvf5bhextu" path="res://Assets/Sounds/Water/FlowMedium.wav" id="2_lfak8"]
+
+[node name="FlowHeavy" type="AudioStreamPlayer"]
+volume_db = -18.0
+autoplay = true
+bus = &"Sound"
+script = ExtResource("1_0ckj7")
+sounds = Array[AudioStreamWAV]([ExtResource("2_lfak8")])

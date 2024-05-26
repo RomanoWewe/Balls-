@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://btdisvsi4q6wx"]
+
+[ext_resource type="ArrayMesh" uid="uid://ca8u4n2nv6juq" path="res://Assets/3D/springboard11.obj" id="2_mufdu"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j5n0n"]
+points = PackedVector3Array(0, 0, 2.5, 0, 0, -2.5, -2.5, 0, 2.5, -2.5, 0, -2.5, 0, 0.75, 2.5, 0, 0.75, -2.5)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_obdmp"]
+points = PackedVector3Array(0, 0.75, 2.5, 0, 0.75, -2.5, 2.5, 2, 2.5, 2.5, 2, -2.5, 2.5, 0, -2.5, 2.5, 0, 2.5, 0, 0, 2.5, 0, 0, -2.5)
+
+[node name="Ramp" type="AnimatableBody3D" groups=["IsFloor"]]
+sync_to_physics = false
+
+[node name="collider" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_j5n0n")
+
+[node name="collider2" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_obdmp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("2_mufdu")

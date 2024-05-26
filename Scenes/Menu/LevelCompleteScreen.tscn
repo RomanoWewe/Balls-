@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5mk72mibxr4v"]
+
+[ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="1_udad5"]
+[ext_resource type="FontFile" uid="uid://cv7bmaibmi36i" path="res://Assets/OpenSans_Condensed-Light.ttf" id="2_hqms3"]
+[ext_resource type="Script" path="res://Code/scripts/menu/SceneChangeButton.gd" id="3_sqaui"]
+
+[node name="LevelCompleteScreen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(350, 250)
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(350, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("1_udad5")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center] Level Complete"
+
+[node name="Quit" type="Button" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(135, 25)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -71.0
+offset_right = 113.0
+offset_bottom = -13.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_hqms3")
+theme_override_font_sizes/font_size = 24
+text = "Return to Menu"
+script = ExtResource("3_sqaui")
+scene_name = "res://Scenes/MainMenu.tscn"
+
+[node name="NextLevelButton" type="Button" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(135, 25)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -71.0
+offset_right = -13.0
+offset_bottom = -13.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_hqms3")
+theme_override_font_sizes/font_size = 24
+text = "Next Level"
+script = ExtResource("3_sqaui")

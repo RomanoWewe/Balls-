@@ -1,0 +1,161 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0ocpnsnn5vj"]
+
+[ext_resource type="Script" path="res://addons/leveleditor/LevelEditorInterface.gd" id="1_0fwty"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_les07"]
+bg_color = Color(0.588235, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpdpx"]
+bg_color = Color(0, 0.588235, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrbhf"]
+bg_color = Color(0.588235, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7xd4"]
+bg_color = Color(0, 0.588235, 0, 1)
+
+[node name="LevelEditor" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fwty")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 2
+selected = 0
+popup/item_0/text = "Edit"
+popup/item_0/id = 0
+popup/item_1/text = "Rotate"
+popup/item_1/id = 1
+
+[node name="CheckButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_les07")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tpdpx")
+toggle_mode = true
+text = "Active"
+
+[node name="FilterOption" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_jrbhf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_h7xd4")
+toggle_mode = true
+text = "Filter by folder"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Filter Objects"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="YLevel" type="SpinBox" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = -10.0
+step = 5.0
+value = 5.0
+rounded = true
+prefix = "y ="
+custom_arrow_step = 5.0
+
+[node name="Layers" type="SpinBox" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 10.0
+rounded = true
+prefix = "layer:"
+custom_arrow_step = 1.0
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+max_text_lines = 3
+text_overrun_behavior = 1
+item_count = 50
+max_columns = 0
+same_column_width = true
+icon_mode = 0
+item_0/text = "barrier"
+item_1/text = "box"
+item_2/text = "boxNeon"
+item_3/text = "cannon"
+item_4/text = "door"
+item_5/text = "doubleDoor"
+item_6/text = "floor"
+item_7/text = "hole"
+item_8/text = "holeBeach"
+item_9/text = "portal"
+item_10/text = "wall"
+item_11/text = "wall_tall"
+item_12/text = "ButtonAddSteps"
+item_13/text = "ButtonHold"
+item_14/text = "ButtonHoldNReturn"
+item_15/text = "ButtonToggle"
+item_16/text = "1corner"
+item_17/text = "1side"
+item_18/text = "1side2corners"
+item_19/text = "1sideV2"
+item_20/text = "2corners"
+item_21/text = "2sides1corner"
+item_22/text = "2sidesCO"
+item_23/text = "2sidesOP"
+item_24/text = "3sides"
+item_25/text = "4corners"
+item_26/text = "Algae"
+item_27/text = "WaterCurrent"
+item_28/text = "WaterStill"
+item_29/text = "Whirlpool"
+item_30/text = "boxBeach"
+item_31/text = "cannonBeach"
+item_32/text = "doorBeach"
+item_33/text = "doubleDoorBeach"
+item_34/text = "floorBeachCorals"
+item_35/text = "floorBeachSand"
+item_36/text = "landlocked"
+item_37/text = "portalBeach"
+item_38/text = "ButtonAddStepsBeach"
+item_39/text = "ButtonHoldBeach"
+item_40/text = "ButtonHoldNReturnBeach"
+item_41/text = "ButtonToggleBeach"
+item_42/text = "ball"
+item_43/text = "coin"
+item_44/text = "moving_platform"
+item_45/text = "AxePendullum"
+item_46/text = "flying_platform"
+item_47/text = "long_spikes"
+item_48/text = "ramp"
+item_49/text = "short_spikes"
+
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/HBoxContainer/FilterOption" to="." method="_on_filter_option_toggled"]
+[connection signal="text_changed" from="VBoxContainer/HBoxContainer2/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer3/YLevel" to="." method="_on_spin_box_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer3/Layers" to="." method="_on_layers_value_changed"]
+[connection signal="item_selected" from="VBoxContainer/ItemList" to="." method="_on_item_list_item_selected"]

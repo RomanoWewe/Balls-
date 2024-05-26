@@ -1,0 +1,132 @@
+[gd_scene load_steps=20 format=3 uid="uid://co0b13qewn02j"]
+
+[ext_resource type="Script" path="res://Code/scripts/WaterCurrent.gd" id="1_4c4jr"]
+[ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="2_g41af"]
+[ext_resource type="Texture2D" uid="uid://b6marlovk6ch8" path="res://Assets/Textures/Particles/toppng.com-smoke-particle-texture-399x385.png" id="3_04n8u"]
+[ext_resource type="Script" path="res://Code/scripts/SoundRandomizer.gd" id="4_1kju0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
+size = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8dn8"]
+transparency = 1
+albedo_color = Color(0, 0.313726, 0.603922, 0.65098)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fgxfg"]
+size = Vector2(5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vc5dd"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6oeps"]
+size = Vector3(5, 3.8, 5)
+
+[sub_resource type="Curve" id="Curve_goypd"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38b6n"]
+transparency = 1
+shading_mode = 0
+disable_ambient_light = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_04n8u")
+disable_receive_shadows = true
+billboard_mode = 1
+billboard_keep_scale = true
+proximity_fade_enabled = true
+
+[sub_resource type="Curve" id="Curve_i5m7r"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.725352, 0.823066), 0.0, 0.0, 0, 0, Vector2(1, 0.00358164), -3.47987, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_fnnbd"]
+curve = SubResource("Curve_i5m7r")
+
+[sub_resource type="Gradient" id="Gradient_y0y62"]
+offsets = PackedFloat32Array(0.0078125, 0.472656)
+colors = PackedColorArray(1, 1, 1, 1, 0.235294, 0.243137, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bnyss"]
+gradient = SubResource("Gradient_y0y62")
+
+[sub_resource type="Curve" id="Curve_tob25"]
+_data = [Vector2(0, 0.469198), 0.0, 0.0, 0, 0, Vector2(0.433099, 1), 0.0, 0.0, 0, 0, Vector2(0.84507, 0.990688), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_1d0w3"]
+curve = SubResource("Curve_tob25")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7f8bb"]
+emission_shape = 3
+emission_box_extents = Vector3(0, 0, 2.5)
+angle_min = -720.0
+angle_max = 720.0
+gravity = Vector3(0, -4, 0)
+scale_curve = SubResource("CurveTexture_1d0w3")
+color_ramp = SubResource("GradientTexture1D_bnyss")
+alpha_curve = SubResource("CurveTexture_fnnbd")
+turbulence_noise_scale = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_5m7g7"]
+
+[node name="Water" type="AnimatableBody3D" node_paths=PackedStringArray("wave_instance") groups=["IsFloor"]]
+sync_to_physics = false
+script = ExtResource("1_4c4jr")
+current_power = 6.0
+wave_instance = NodePath("Wave")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="collider" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_t24w4")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.8, 0)
+material_override = SubResource("StandardMaterial3D_x8dn8")
+mesh = SubResource("PlaneMesh_fgxfg")
+
+[node name="mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0)
+material_override = SubResource("StandardMaterial3D_vc5dd")
+mesh = SubResource("BoxMesh_6oeps")
+
+[node name="Wave" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="MovingPlatform" type="AnimatableBody3D" parent="Wave"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+script = ExtResource("2_g41af")
+speed_curve = SubResource("Curve_goypd")
+draw_path = false
+positions_count = 3
+previous_position = 1
+next_position = 2
+positions = Array[Transform3D]([Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)])
+movement_times = Array[float]([1.0, 0.0, 1.0])
+auto_cycling = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Wave/MovingPlatform"]
+material_override = SubResource("StandardMaterial3D_38b6n")
+amount = 50
+lifetime = 0.5
+fixed_fps = 0
+draw_order = 3
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_7f8bb")
+draw_pass_1 = SubResource("QuadMesh_5m7g7")
+
+[node name="Splash" type="AudioStreamPlayer" parent="."]
+max_polyphony = 3
+bus = &"Sound"
+script = ExtResource("4_1kju0")
+randomizing_enabled = true
+base_name = "Splash"
+sounds_amount = 2
+volume_range = Vector2(-20, -15)
+pitch_range = Vector2(0.85, 1.15)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

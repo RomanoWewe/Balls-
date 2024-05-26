@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctgxybnps5hnt"]
+
+[ext_resource type="Texture2D" uid="uid://ble5msb6lvie" path="res://Assets/3D/peaks 1.png" id="1_ivfcb"]
+[ext_resource type="ArrayMesh" uid="uid://b555mkw0secun" path="res://Assets/3D/peaks 1.obj" id="2_wr3nc"]
+[ext_resource type="Script" path="res://Code/scripts/KillZone.gd" id="3_4m1at"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e0tkr"]
+size = Vector3(4, 2, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jw28g"]
+albedo_texture = ExtResource("1_ivfcb")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8otpq"]
+size = Vector3(4, 3, 4)
+
+[node name="ShortSpikes" type="AnimatableBody3D"]
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_e0tkr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_jw28g")
+mesh = ExtResource("2_wr3nc")
+
+[node name="KillZone" type="Area3D" parent="."]
+script = ExtResource("3_4m1at")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_8otpq")
+
+[connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]

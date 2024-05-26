@@ -1,0 +1,101 @@
+[gd_scene load_steps=22 format=3 uid="uid://qaj55wm56675"]
+
+[ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="1_y5s4s"]
+[ext_resource type="PackedScene" uid="uid://cousk4nrygbk4" path="res://Scenes/Objects/BuildingBlocks/Basic/cannon.tscn" id="2_3jx10"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/Building Blocks/Scripted/moving_platform.tscn" id="3_t61qw"]
+[ext_resource type="PackedScene" uid="uid://dev2aik5yoynb" path="res://Scenes/Objects/BuildingBlocks/Basic/floor.tscn" id="4_g3wtu"]
+[ext_resource type="PackedScene" uid="uid://dr7ppfmfeitet" path="res://Scenes/Objects/_Abstract/DefaultButton.tscn" id="5_v0i4q"]
+[ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="6_y0fvh"]
+[ext_resource type="PackedScene" uid="uid://5xu66h20s20g" path="res://Scenes/Objects/BuildingBlocks/Basic/hole.tscn" id="7_0hm3n"]
+[ext_resource type="PackedScene" uid="uid://btdisvsi4q6wx" path="res://Scenes/Objects/BuildingBlocks/Unused/ramp.tscn" id="8_j62h3"]
+[ext_resource type="PackedScene" uid="uid://bfpv7w2xo0i4y" path="res://Scenes/Objects/BuildingBlocks/Basic/wall.tscn" id="9_7quxm"]
+[ext_resource type="PackedScene" uid="uid://by4cybkow6x3e" path="res://Scenes/Objects/BuildingBlocks/Basic/wall_tall.tscn" id="10_tefvp"]
+[ext_resource type="PackedScene" uid="uid://d2dcvy8c807yc" path="res://Scenes/Objects/_Spawnable/cannonball.tscn" id="11_lrk4r"]
+[ext_resource type="PackedScene" uid="uid://b56uhyo5x6yf8" path="res://Scenes/Objects/_Spawnable/shards.tscn" id="12_k2cbq"]
+[ext_resource type="PackedScene" uid="uid://lrpw52fbpv42" path="res://Scenes/Objects/BuildingBlocks/Unused/flying_platform.tscn" id="13_21gb2"]
+[ext_resource type="PackedScene" uid="uid://ctgxybnps5hnt" path="res://Scenes/Objects/BuildingBlocks/Unused/short_spikes.tscn" id="14_1ptc0"]
+[ext_resource type="PackedScene" uid="uid://bfwyiiatklh5d" path="res://Scenes/Objects/BuildingBlocks/Unused/long_spikes.tscn" id="15_j1dto"]
+[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="16_g4v2e"]
+[ext_resource type="PackedScene" uid="uid://bgtwahat2m8nw" path="res://Scenes/Objects/BuildingBlocks/Basic/portal.tscn" id="17_i8nfe"]
+[ext_resource type="Texture2D" uid="uid://dinhdgc2v0sct" path="res://Assets/3D/coin1.png" id="18_xrm3x"]
+[ext_resource type="ArrayMesh" uid="uid://co0nid3hub65t" path="res://Assets/3D/coin1.obj" id="19_3udu5"]
+
+[sub_resource type="Curve" id="Curve_2y4li"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3h2nr"]
+albedo_texture = ExtResource("18_xrm3x")
+metallic = 1.0
+
+[node name="DebugAllObjects" type="Node3D"]
+
+[node name="ball" parent="." instance=ExtResource("1_y5s4s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)
+gravity_force = 5000.0
+max_tilt_x = 80.0
+max_tilt_z = 80.0
+
+[node name="cannon" parent="." instance=ExtResource("2_3jx10")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 10, 0)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("3_t61qw")]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 10, 10, 0)
+speed_curve = SubResource("Curve_2y4li")
+positions_count = 3
+next_position = 1
+positions = Array[Transform3D]([Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 10, 0, 0), Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 10, 0, -12), Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -2, 0, -12)])
+movement_times = Array[float]([3.39411, 2.4, 2.4])
+
+[node name="floor" parent="MovingPlatform" instance=ExtResource("4_g3wtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+
+[node name="empty" parent="." instance=ExtResource("6_y0fvh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -3, 0)
+
+[node name="floor" parent="." instance=ExtResource("4_g3wtu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="pressurePlate" parent="." instance=ExtResource("5_v0i4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 10, 0)
+
+[node name="hole" parent="." instance=ExtResource("7_0hm3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
+
+[node name="Ramp" parent="." instance=ExtResource("8_j62h3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 10, 0)
+
+[node name="wall" parent="." instance=ExtResource("9_7quxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0)
+
+[node name="wall_tall" parent="." instance=ExtResource("10_tefvp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
+
+[node name="cannonball" parent="." instance=ExtResource("11_lrk4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 10, 5)
+
+[node name="shards" parent="." instance=ExtResource("12_k2cbq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 10, 0)
+
+[node name="Flying_Platform" parent="." instance=ExtResource("13_21gb2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 0)
+
+[node name="ShortSpikes" parent="." instance=ExtResource("14_1ptc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 10, 0)
+
+[node name="LongSpikes" parent="." instance=ExtResource("15_j1dto")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 10, 0)
+
+[node name="Box" parent="." instance=ExtResource("16_g4v2e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 12, 0)
+
+[node name="Portal" parent="." instance=ExtResource("17_i8nfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 10, 0)
+
+[node name="Coin1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 11, 3)
+material_override = SubResource("StandardMaterial3D_3h2nr")
+mesh = ExtResource("19_3udu5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.224144, 0.836516, 0.5, -0.774519, -0.158494, 0.612372, 0.591506, -0.524519, 0.612372, 0, 56, 0)

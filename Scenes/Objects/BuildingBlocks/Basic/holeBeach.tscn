@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv7h2aq0jcp6u"]
+
+[ext_resource type="Script" path="res://Code/scripts/Hole.gd" id="1_ef4yg"]
+[ext_resource type="ArrayMesh" uid="uid://bojsi24x0xlq2" path="res://Assets/3D/Beach/трубка скин 1.obj" id="2_hrfdu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yqt3i"]
+size = Vector3(4, 2.5, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gpnlx"]
+size = Vector3(5, 10, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q15y2"]
+size = Vector3(5, 1, 5)
+
+[node name="hole" type="Area3D"]
+script = ExtResource("1_ef4yg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_yqt3i")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["IsFloor"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 2.4)
+shape = SubResource("BoxShape3D_gpnlx")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -2.4)
+shape = SubResource("BoxShape3D_gpnlx")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.4, -5, 0)
+shape = SubResource("BoxShape3D_gpnlx")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.4, -5, 0)
+shape = SubResource("BoxShape3D_gpnlx")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+shape = SubResource("BoxShape3D_q15y2")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+mesh = ExtResource("2_hrfdu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bbu0fgaskxshm"
+path="res://.godot/imported/peaks 2.obj-5b78a9ed1cdf7d1e3b4bfba4fe981afe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/peaks 2.obj-5b78a9ed1cdf7d1e3b4bfba4fe981afe.mesh"]
+
+source_file="res://Assets/3D/peaks 2.obj"
+dest_files=["res://.godot/imported/peaks 2.obj-5b78a9ed1cdf7d1e3b4bfba4fe981afe.mesh", "res://.godot/imported/peaks 2.obj-5b78a9ed1cdf7d1e3b4bfba4fe981afe.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

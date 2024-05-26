@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://banwq8f0cb2lm"]
+
+[ext_resource type="Script" path="res://Code/scripts/Coin.gd" id="1_y7665"]
+[ext_resource type="ArrayMesh" uid="uid://co0nid3hub65t" path="res://Assets/3D/coin1.obj" id="2_aqnd2"]
+[ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="2_v2lv7"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3xlky"]
+height = 4.0
+radius = 1.5
+
+[sub_resource type="Curve" id="Curve_bfifl"]
+_data = [Vector2(0, 0), 0.0, 4.34526, 0, 0, Vector2(0.503876, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -4.11038, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_vx1va"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[node name="Coin" type="Area3D"]
+script = ExtResource("1_y7665")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("CylinderShape3D_3xlky")
+
+[node name="MovingPlatform2" type="AnimatableBody3D" parent="."]
+script = ExtResource("2_v2lv7")
+speed_curve = SubResource("Curve_bfifl")
+positions_count = 2
+next_position = 1
+positions = Array[Transform3D]([Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)])
+movement_times = Array[float]([0.75, 0.75])
+auto_cycling = true
+
+[node name="MovingPlatform" type="AnimatableBody3D" parent="MovingPlatform2"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
+script = ExtResource("2_v2lv7")
+speed_curve = SubResource("Curve_vx1va")
+use_relative_transformation = true
+positions_count = 1
+positions = Array[Transform3D]([Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)])
+movement_times = Array[float]([0.25])
+auto_cycling = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MovingPlatform2/MovingPlatform"]
+mesh = ExtResource("2_aqnd2")
+skeleton = NodePath("../../..")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

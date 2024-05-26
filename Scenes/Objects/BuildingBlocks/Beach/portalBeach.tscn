@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdp265llsj6t7"]
+
+[ext_resource type="Script" path="res://Code/scripts/Portal.gd" id="1_vupqy"]
+[ext_resource type="ArrayMesh" uid="uid://76qb0dildyhp" path="res://Assets/3D/Beach/portal skin 1.obj" id="4_bgeev"]
+[ext_resource type="AudioStream" uid="uid://btxvky0rq7q7f" path="res://Assets/Sounds/Teleport1.wav" id="4_lvuo0"]
+[ext_resource type="Texture2D" uid="uid://c4iy2icgokecx" path="res://Assets/3D/Beach/portal skin 1.png" id="4_tuew1"]
+[ext_resource type="Script" path="res://Code/scripts/SoundRandomizer.gd" id="5_07wqg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5y42k"]
+size = Vector3(4, 5, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bwv35"]
+size = Vector3(5, 4, 1.70605)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_im5my"]
+albedo_color = Color(0.2, 0.2, 0.2, 1)
+albedo_texture = ExtResource("4_tuew1")
+
+[node name="Portal" type="AnimatableBody3D"]
+script = ExtResource("1_vupqy")
+
+[node name="area" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02637, -0.5, -2.87109)
+shape = SubResource("BoxShape3D_5y42k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1.64697)
+shape = SubResource("BoxShape3D_bwv35")
+
+[node name="Teleport" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lvuo0")
+volume_db = -15.0
+bus = &"Sound"
+script = ExtResource("5_07wqg")
+randomizing_enabled = true
+base_name = "Teleport"
+sounds_amount = 1
+volume_range = Vector2(-15, -15)
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_im5my")
+mesh = ExtResource("4_bgeev")
+
+[connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

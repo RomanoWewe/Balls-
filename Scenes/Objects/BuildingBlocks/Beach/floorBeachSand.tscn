@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://blpll3jiurqsk"]
+
+[ext_resource type="ArrayMesh" uid="uid://bmhh5lrak3r7r" path="res://Assets/3D/beach 33/песок 6.obj" id="1_xg2w6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
+size = Vector3(5, 5, 5)
+
+[node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
+sync_to_physics = false
+
+[node name="collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_t24w4")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_xg2w6")

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b0603fk7xt8hg"
+path="res://.godot/imported/wall6 скин 1.obj-71582d0225b28fa54d806a5c990e0754.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall6 скин 1.obj-71582d0225b28fa54d806a5c990e0754.mesh"]
+
+source_file="res://Assets/3D/Beach/wall6 скин 1.obj"
+dest_files=["res://.godot/imported/wall6 скин 1.obj-71582d0225b28fa54d806a5c990e0754.mesh", "res://.godot/imported/wall6 скин 1.obj-71582d0225b28fa54d806a5c990e0754.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

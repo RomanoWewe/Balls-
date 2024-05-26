@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://iy6m6keual0r"]
+
+[ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="1_6qx5k"]
+[ext_resource type="Script" path="res://Code/scripts/Visualizer.gd" id="2_ehr43"]
+
+[sub_resource type="Curve" id="Curve_nbsil"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[node name="MovingPlatform" type="AnimatableBody3D" groups=["Nested"]]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0, 0)
+script = ExtResource("1_6qx5k")
+speed_curve = SubResource("Curve_nbsil")
+
+[node name="Visualizer" type="Node3D" parent="." groups=["DontSave"]]
+script = ExtResource("2_ehr43")

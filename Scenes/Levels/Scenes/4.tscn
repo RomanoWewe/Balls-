@@ -1,0 +1,154 @@
+[gd_scene load_steps=9 format=3 uid="uid://drli4ilgh2b2b"]
+
+[ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_ajark"]
+[ext_resource type="PackedScene" uid="uid://dev2aik5yoynb" path="res://Scenes/Objects/BuildingBlocks/Basic/floor.tscn" id="1_loc5m"]
+[ext_resource type="PackedScene" uid="uid://bfpv7w2xo0i4y" path="res://Scenes/Objects/BuildingBlocks/Basic/wall.tscn" id="3_7lsva"]
+[ext_resource type="PackedScene" uid="uid://5xu66h20s20g" path="res://Scenes/Objects/BuildingBlocks/Basic/hole.tscn" id="4_nc5bu"]
+[ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="5_m3nqy"]
+[ext_resource type="PackedScene" uid="uid://cousk4nrygbk4" path="res://Scenes/Objects/BuildingBlocks/Basic/cannon.tscn" id="7_2qfql"]
+[ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="7_7pw6j"]
+
+[sub_resource type="Environment" id="Environment_qsqhv"]
+ambient_light_source = 2
+ambient_light_color = Color(0.415686, 0.380392, 0.427451, 1)
+
+[node name="4" type="Node3D"]
+script = ExtResource("1_ajark")
+
+[node name="MainCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15, 20, 5)
+fov = 80.0
+size = 25.0
+
+[node name="floor" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+
+[node name="floor5" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+
+[node name="floor4" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -10, -5)
+
+[node name="wall" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -5, 0)
+
+[node name="wall2" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -5, -5)
+
+[node name="wall9" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -5, 15)
+
+[node name="wall10" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -5, 5)
+
+[node name="wall17" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, 10)
+
+[node name="wall18" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -5, 0)
+
+[node name="wall19" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -5, -5)
+
+[node name="wall20" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -5, 15)
+
+[node name="wall21" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -5, 5)
+
+[node name="wall22" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -5, 10)
+
+[node name="wall3" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -5)
+
+[node name="wall4" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -5, -5)
+
+[node name="wall5" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -5, -5)
+
+[node name="wall6" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -5, -5)
+
+[node name="wall7" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -5, -5)
+
+[node name="wall11" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 15)
+
+[node name="wall12" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -5, 15)
+
+[node name="wall13" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -5, 15)
+
+[node name="wall14" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -5, 15)
+
+[node name="wall15" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -5, 15)
+
+[node name="wall16" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -5, 15)
+
+[node name="wall23" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -5, 15)
+
+[node name="wall8" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -5, -5)
+
+[node name="wall24" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -5, -5)
+
+[node name="hole" parent="." instance=ExtResource("4_nc5bu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -10, 0)
+
+[node name="ball" parent="." instance=ExtResource("5_m3nqy")]
+
+[node name="floor6" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 5)
+
+[node name="floor7" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 5)
+
+[node name="floor9" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -10, 10)
+
+[node name="floor14" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -10, 10)
+
+[node name="floor19" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -10, 10)
+
+[node name="floor21" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -10, 10)
+
+[node name="floor17" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 10)
+
+[node name="floor18" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -10, 10)
+
+[node name="floor16" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -10, 10)
+
+[node name="floor20" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -10, 5)
+
+[node name="floor3" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -10, 10)
+
+[node name="empty" parent="." instance=ExtResource("7_7pw6j")]
+
+[node name="cannon" parent="." instance=ExtResource("7_2qfql")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5, -5, 10)
+rotation_edit_mode = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qsqhv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.902559, 0.166503, 0.39707, -0.30683, -0.398253, 0.864436, 0.302066, -0.902038, -0.308358, 0, 3, 0)
+light_color = Color(0.858824, 0.913725, 1, 1)
+shadow_enabled = true

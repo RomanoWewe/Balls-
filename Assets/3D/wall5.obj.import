@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d1hnxlnvax5tv"
+path="res://.godot/imported/wall5.obj-a9c872d08ea7fa4430039e3240df3269.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall5.obj-a9c872d08ea7fa4430039e3240df3269.mesh"]
+
+source_file="res://Assets/3D/wall5.obj"
+dest_files=["res://.godot/imported/wall5.obj-a9c872d08ea7fa4430039e3240df3269.mesh", "res://.godot/imported/wall5.obj-a9c872d08ea7fa4430039e3240df3269.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2dcvy8c807yc"]
+
+[ext_resource type="Script" path="res://Code/scripts/Projectile.gd" id="1_7e7mu"]
+[ext_resource type="Texture2D" uid="uid://cnf78p3i716xy" path="res://Assets/3D/core 1.png" id="1_rronc"]
+[ext_resource type="ArrayMesh" uid="uid://byaato6qptpsj" path="res://Assets/3D/core 1.obj" id="2_8nshi"]
+[ext_resource type="Script" path="res://Code/scripts/KillZone.gd" id="4_twi8s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ao7ob"]
+albedo_texture = ExtResource("1_rronc")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kd1t0"]
+
+[node name="cannonball" type="RigidBody3D"]
+gravity_scale = 0.0
+script = ExtResource("1_7e7mu")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_ao7ob")
+mesh = ExtResource("2_8nshi")
+
+[node name="KillZone" type="Area3D" parent="."]
+script = ExtResource("4_twi8s")
+destroy_parent_on_contact = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+shape = SubResource("SphereShape3D_kd1t0")
+
+[connection signal="body_entered" from="KillZone" to="." method="on_body_entered"]
+[connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]

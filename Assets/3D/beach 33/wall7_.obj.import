@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cers2nfdhmywr"
+path="res://.godot/imported/wall7_.obj-56b1998630aaed2d377cb32ff125890c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall7_.obj-56b1998630aaed2d377cb32ff125890c.mesh"]
+
+source_file="res://Assets/3D/beach 33/wall7_.obj"
+dest_files=["res://.godot/imported/wall7_.obj-56b1998630aaed2d377cb32ff125890c.mesh", "res://.godot/imported/wall7_.obj-56b1998630aaed2d377cb32ff125890c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

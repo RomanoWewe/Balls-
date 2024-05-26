@@ -1,0 +1,6 @@
+Scenes/Levels/Resources
+# Godot 4+ specific ignores
+.godot/
+project.godot
+jajka.console.exe
+jajka.exe

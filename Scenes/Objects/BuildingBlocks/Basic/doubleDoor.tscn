@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://ckwi046hiv4sa"]
+
+[ext_resource type="Script" path="res://Code/scripts/Relay.gd" id="1_lqugg"]
+[ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="2_fq6wf"]
+[ext_resource type="PackedScene" uid="uid://bx35oufa5onoe" path="res://Scenes/Objects/BuildingBlocks/Basic/door.tscn" id="3_b8uu0"]
+[ext_resource type="Script" path="res://Code/scripts/ActivatableSound.gd" id="4_4w2cq"]
+[ext_resource type="AudioStream" uid="uid://03u4k8lij46f" path="res://Assets/Sounds/doorOpen.mp3" id="5_sm7gr"]
+[ext_resource type="AudioStream" uid="uid://dow6ea54gefki" path="res://Assets/Sounds/doorClose.mp3" id="6_8hxa5"]
+
+[sub_resource type="Curve" id="Curve_pqa5x"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Curve" id="Curve_55bov"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[node name="DoubleDoor" type="AnimatableBody3D" node_paths=PackedStringArray("activatables")]
+script = ExtResource("1_lqugg")
+activatables = [NodePath("MovingPlatform"), NodePath("MovingPlatform2"), NodePath("ActivatableSound")]
+
+[node name="MovingPlatform" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.3)
+script = ExtResource("2_fq6wf")
+speed_curve = SubResource("Curve_pqa5x")
+positions_count = 2
+next_position = 1
+positions = Array[Transform3D]([Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 2.3), Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.5, 0, 2.3)])
+movement_times = Array[float]([0.314159, 0.314159])
+
+[node name="door2" parent="MovingPlatform" instance=ExtResource("3_b8uu0")]
+
+[node name="MovingPlatform2" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.3)
+script = ExtResource("2_fq6wf")
+speed_curve = SubResource("Curve_55bov")
+positions_count = 2
+next_position = 1
+positions = Array[Transform3D]([Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 2.3), Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.5, 0, 2.3)])
+movement_times = Array[float]([0.314159, 0.314159])
+
+[node name="door" parent="MovingPlatform2" instance=ExtResource("3_b8uu0")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, 0, 0)
+
+[node name="ActivatableSound" type="AnimatableBody3D" parent="."]
+script = ExtResource("4_4w2cq")
+activate_sound = ExtResource("5_sm7gr")
+deactivate_sound = ExtResource("6_8hxa5")
+bus = null

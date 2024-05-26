@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bqgjkq5m0v87p"]
+
+[ext_resource type="ArrayMesh" uid="uid://bs4jo8iix3j6d" path="res://Assets/3D/шааааарррр.obj" id="1_n84bo"]
+[ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="2_5s52f"]
+[ext_resource type="ArrayMesh" uid="uid://davdwhjg1c88" path="res://Assets/3D/axe кронка.obj" id="3_hdabd"]
+[ext_resource type="Script" path="res://Code/scripts/KillZone.gd" id="4_dyrky"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_toivu"]
+size = Vector3(4, 4, 4)
+
+[sub_resource type="Curve" id="Curve_34yqj"]
+_data = [Vector2(0, 0), 0.0, 1.11868, 0, 0, Vector2(0.503937, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.986966, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7tdks"]
+size = Vector3(3.5, 1.25, 0.75)
+
+[node name="Axe_Pendullum" type="AnimatableBody3D"]
+sync_to_physics = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 3.85, 0)
+mesh = ExtResource("1_n84bo")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 7, 0)
+shape = SubResource("BoxShape3D_toivu")
+
+[node name="MovingPlatform" type="AnimatableBody3D" parent="."]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, 0, 7.36246, 0)
+script = ExtResource("2_5s52f")
+speed_curve = SubResource("Curve_34yqj")
+positions_count = 2
+next_position = 1
+positions = Array[Transform3D]([Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, 0, 7.36246, 0), Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 0, 7.36246, 0)])
+movement_times = Array[float]([1.0, 1.0])
+auto_cycling = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MovingPlatform"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -9, 0)
+mesh = ExtResource("3_hdabd")
+skeleton = NodePath("")
+
+[node name="KillZone" type="Area3D" parent="MovingPlatform"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+script = ExtResource("4_dyrky")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MovingPlatform/KillZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.9407e-08, -4, 0)
+shape = SubResource("BoxShape3D_7tdks")
+
+[connection signal="body_entered" from="MovingPlatform/KillZone" to="MovingPlatform/KillZone" method="_on_body_entered"]

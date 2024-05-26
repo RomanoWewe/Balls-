@@ -1,0 +1,117 @@
+[gd_scene load_steps=11 format=3 uid="uid://d1274acyhjpof"]
+
+[ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_2dhrh"]
+[ext_resource type="PackedScene" uid="uid://dev2aik5yoynb" path="res://Scenes/Objects/BuildingBlocks/Basic/floor.tscn" id="3_3cdkx"]
+[ext_resource type="PackedScene" uid="uid://cr08bv5lxwxim" path="res://Scenes/Objects/BuildingBlocks/Basic/Buttons/ButtonHoldNReturn.tscn" id="6_lt5v7"]
+[ext_resource type="PackedScene" uid="uid://ckwi046hiv4sa" path="res://Scenes/Objects/BuildingBlocks/Basic/doubleDoor.tscn" id="6_t8vlt"]
+[ext_resource type="Script" path="res://Code/scripts/Relay.gd" id="7_bcve8"]
+[ext_resource type="PackedScene" uid="uid://d4mjqq2cu4ga5" path="res://Scenes/Objects/BuildingBlocks/Basic/Buttons/ButtonAddSteps.tscn" id="8_bkjj6"]
+[ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="8_ch0bx"]
+[ext_resource type="Script" path="res://Code/scripts/buttons/button_addsteps.gd" id="9_omu18"]
+[ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="10_fjrka"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nsy35"]
+friction = 0.5
+rough = true
+
+[node name="Den" type="Node3D"]
+script = ExtResource("1_2dhrh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.5, -0.784886, 0.365998, -70, 0, 0)
+light_color = Color(0.768627, 0.898039, 1, 1)
+light_energy = 2.61
+light_indirect_energy = 0.1
+shadow_enabled = true
+sky_mode = 1
+
+[node name="empty" parent="." instance=ExtResource("8_ch0bx")]
+
+[node name="static" type="Node" parent="."]
+
+[node name="5,10,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 20)
+
+[node name="5,15,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 20)
+
+[node name="5,20,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 20)
+
+[node name="5,25,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 20)
+
+[node name="5,30,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 20)
+
+[node name="5,35,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 20)
+
+[node name="10,10,20(0)" parent="static" instance=ExtResource("10_fjrka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 13, 20)
+physics_material_override = SubResource("PhysicsMaterial_nsy35")
+
+[node name="5,40,20(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 20)
+
+[node name="5,40,25(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 25)
+
+[node name="5,40,30(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 30)
+
+[node name="5,40,35(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 35)
+
+[node name="5,40,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 40)
+
+[node name="5,35,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 40)
+
+[node name="5,30,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 40)
+
+[node name="5,25,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 40)
+
+[node name="5,20,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 40)
+
+[node name="5,15,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 40)
+
+[node name="5,10,40(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 40)
+
+[node name="5,10,35(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 35)
+
+[node name="5,10,30(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 30)
+
+[node name="5,10,25(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 25)
+
+[node name="5,40,10(0)" parent="static" instance=ExtResource("3_3cdkx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 10)
+
+[node name="10,35,20(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("6_lt5v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 10, 20)
+connections = [NodePath("../10,10,25(0)")]
+
+[node name="10,10,25(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("activatables") instance=ExtResource("6_t8vlt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 10, 25)
+script = ExtResource("7_bcve8")
+activatables = [NodePath("MovingPlatform"), NodePath("MovingPlatform2"), NodePath("ActivatableSound")]
+
+[node name="10,20,20(0)" type="Area3D" parent="static" node_paths=PackedStringArray("text_timer") instance=ExtResource("8_bkjj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 10, 20)
+script = ExtResource("9_omu18")
+text_timer = NodePath("Text")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 25, 33, 30)
+
+[connection signal="body_entered" from="static/10,20,20(0)" to="static/10,20,20(0)" method="_on_body_entered"]
+[connection signal="body_exited" from="static/10,20,20(0)" to="static/10,20,20(0)" method="_on_body_exited"]

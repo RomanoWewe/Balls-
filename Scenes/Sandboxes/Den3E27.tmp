@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1274acyhjpof"]
+
+[ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_2dhrh"]
+[ext_resource type="PackedScene" uid="uid://dev2aik5yoynb" path="res://Scenes/Objects/BuildingBlocks/Basic/floor.tscn" id="4_tkpst"]
+[ext_resource type="PackedScene" uid="uid://c5x3uhyfhx45s" path="res://Scenes/Objects/BuildingBlocks/Beach/Water.tscn" id="5_i20k4"]
+[ext_resource type="Script" path="res://Code/scripts/Water.gd" id="6_f506f"]
+[ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="7_lp82e"]
+[ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="8_ch0bx"]
+
+[node name="Den" type="Node3D"]
+script = ExtResource("1_2dhrh")
+
+[node name="MainCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 15, 28, 21)
+current = true
+fov = 80.0
+size = 25.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.5, -0.784886, 0.365998, -70, 0, 0)
+light_energy = 2.0
+light_indirect_energy = 0.1
+shadow_enabled = true
+sky_mode = 1
+
+[node name="empty" parent="." instance=ExtResource("8_ch0bx")]
+
+[node name="ball" parent="." instance=ExtResource("7_lp82e")]
+collision_layer = 255
+collision_mask = 1023
+gravity_force = 5000.0
+max_tilt_x = 80.0
+max_tilt_z = 80.0
+
+[node name="static" type="Node" parent="."]
+
+[node name="-10,-0,0" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("4_tkpst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+sync_to_physics = false
+
+[node name="-10,0,0" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("4_tkpst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
+sync_to_physics = false
+
+[node name="-10,5,0" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("4_tkpst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -10, 0)
+sync_to_physics = false
+
+[node name="-10,10,0" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("4_tkpst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -10, 0)
+sync_to_physics = false
+
+[node name="0,10,0" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_i20k4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+sync_to_physics = false
+script = ExtResource("6_f506f")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfdxcv53jpn48"]
+
+[ext_resource type="Script" path="res://Code/scripts/menu/AchievementIcon.gd" id="1_h7t0l"]
+
+[sub_resource type="Gradient" id="Gradient_moiaq"]
+colors = PackedColorArray(0, 0, 0, 0.270588, 1, 1, 1, 0.129412)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sj6va"]
+gradient = SubResource("Gradient_moiaq")
+
+[node name="LevelIcon" type="TextureRect"]
+offset_right = 94.0
+offset_bottom = 94.0
+texture = SubResource("GradientTexture2D_sj6va")
+script = ExtResource("1_h7t0l")

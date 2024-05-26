@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://lrpw52fbpv42"]
+
+[ext_resource type="ArrayMesh" uid="uid://ku2od4a3rfcv" path="res://Assets/3D/platform1111.obj" id="1_g4l3p"]
+[ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="2_8uggx"]
+[ext_resource type="ArrayMesh" uid="uid://bv6ifyicu6s6q" path="res://Assets/3D/propellers11.obj" id="3_bkl6w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_toivu"]
+size = Vector3(4, 4, 4)
+
+[sub_resource type="Curve" id="Curve_34yqj"]
+_data = [Vector2(1, 1), -0.986966, 0.0, 0, 0]
+point_count = 1
+
+[node name="Flying_Platform" type="AnimatableBody3D"]
+sync_to_physics = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+mesh = ExtResource("1_g4l3p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 3, 0)
+shape = SubResource("BoxShape3D_toivu")
+
+[node name="MovingPlatform" type="AnimatableBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("2_8uggx")
+speed_curve = SubResource("Curve_34yqj")
+use_relative_transformation = true
+positions_count = 2
+previous_position = 1
+positions = Array[Transform3D]([Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0), Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)])
+movement_times = Array[float]([0.1, 0.1])
+auto_cycling = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MovingPlatform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.85, 0)
+mesh = ExtResource("3_bkl6w")
+skeleton = NodePath("../..")

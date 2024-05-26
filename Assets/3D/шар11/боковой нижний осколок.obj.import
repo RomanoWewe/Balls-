@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://da1gntuorl0fb"
+path="res://.godot/imported/боковой нижний осколок.obj-8b1ea07426fc25e46d026a637d84a2d2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/боковой нижний осколок.obj-8b1ea07426fc25e46d026a637d84a2d2.mesh"]
+
+source_file="res://Assets/3D/шар11/боковой нижний осколок.obj"
+dest_files=["res://.godot/imported/боковой нижний осколок.obj-8b1ea07426fc25e46d026a637d84a2d2.mesh", "res://.godot/imported/боковой нижний осколок.obj-8b1ea07426fc25e46d026a637d84a2d2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

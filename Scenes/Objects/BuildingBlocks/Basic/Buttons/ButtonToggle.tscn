@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://bpmm2y44a4oi6"]
+
+[ext_resource type="Script" path="res://Code/scripts/buttons/button_toggle.gd" id="1_o211k"]
+[ext_resource type="Texture2D" uid="uid://b81jteh1xrygo" path="res://Assets/3D/Button_red.png" id="3_gpuul"]
+[ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="4_1nolu"]
+[ext_resource type="ArrayMesh" uid="uid://v4e1feog04ls" path="res://Assets/3D/Button_red.obj" id="4_17fj7"]
+[ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="5_l2n5n"]
+[ext_resource type="AudioStream" path="res://Assets/Sounds/ButtonOff.mp3" id="5_w7hmx"]
+[ext_resource type="AudioStream" path="res://Assets/Sounds/ButtonOn.mp3" id="6_m8n4g"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lf31s"]
+radius = 1.99634
+
+[sub_resource type="Curve" id="Curve_w0l6l"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7jwu"]
+albedo_texture = ExtResource("3_gpuul")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lmce"]
+albedo_texture = ExtResource("3_gpuul")
+
+[node name="pressurePlate" type="Area3D" node_paths=PackedStringArray("text_timer")]
+script = ExtResource("1_o211k")
+text_timer = NodePath("Text")
+
+[node name="ButtonOffSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_w7hmx")
+volume_db = -20.0
+bus = &"Sound"
+
+[node name="ButtonOnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_m8n4g")
+volume_db = -20.0
+bus = &"Sound"
+
+[node name="collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_lf31s")
+
+[node name="Text" type="Label3D" parent="."]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0)
+billboard = 1
+text = "
+"
+font = ExtResource("4_1nolu")
+font_size = 512
+outline_size = 127
+
+[node name="MovingPlatform" type="AnimatableBody3D" parent="."]
+script = ExtResource("5_l2n5n")
+speed_curve = SubResource("Curve_w0l6l")
+use_relative_transformation = true
+positions_count = 2
+previous_position = 1
+positions = Array[Transform3D]([Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)])
+movement_times = Array[float]([0.08, 0.08])
+
+[node name="mesh" type="MeshInstance3D" parent="MovingPlatform"]
+material_override = SubResource("StandardMaterial3D_o7jwu")
+mesh = ExtResource("4_17fj7")
+skeleton = NodePath("../..")
+
+[node name="mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0.05, 0)
+material_override = SubResource("StandardMaterial3D_1lmce")
+mesh = ExtResource("4_17fj7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
