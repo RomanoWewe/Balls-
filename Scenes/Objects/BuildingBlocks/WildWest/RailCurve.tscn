@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkoppclofsmkk"]
 
 [ext_resource type="Texture2D" uid="uid://tmthywr8erhl" path="res://Assets/3D/WildWest/RailTexture.png" id="1_80nij"]
-[ext_resource type="ArrayMesh" path="res://Assets/3D/WildWest/Railcurve.obj" id="2_2jddm"]
+[ext_resource type="ArrayMesh" uid="uid://cgig81240o6kb" path="res://Assets/3D/WildWest/Railcurve.obj" id="2_2jddm"]
 [ext_resource type="PackedScene" uid="uid://cjcy5hk6ha0t" path="res://Scenes/Objects/_Abstract/TurningRail.tscn" id="3_743pp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsnhu"]

@@ -1,0 +1,108 @@
+[gd_scene load_steps=7 format=3 uid="uid://1wbm3hp7m7bp"]
+
+[ext_resource type="Script" path="res://Code/scripts/Rail.gd" id="1_xuhuv"]
+[ext_resource type="Texture2D" uid="uid://tmthywr8erhl" path="res://Assets/3D/WildWest/RailTexture.png" id="2_hbl4b"]
+[ext_resource type="ArrayMesh" uid="uid://qt1jmk5465ya" path="res://Assets/3D/WildWest/Rail.obj" id="3_ehsgs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxt5w"]
+albedo_texture = ExtResource("2_hbl4b")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2y0jv"]
+size = Vector3(0.1, 0.1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_60tvj"]
+size = Vector3(0.1, 0.1, 3)
+
+[node name="RailCurve" type="Node3D"]
+
+[node name="Rail" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_lxt5w")
+mesh = ExtResource("3_ehsgs")
+
+[node name="Rail2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_lxt5w")
+mesh = ExtResource("3_ehsgs")
+
+[node name="Rail3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+script = ExtResource("1_xuhuv")
+catch_mask = 5
+release_mask = 5
+
+[node name="Area3D" type="Area3D" parent="Rail3"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rail3/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_2y0jv")
+
+[node name="Rail7" type="Node3D" parent="."]
+script = ExtResource("1_xuhuv")
+catch_mask = 4
+release_mask = 4
+
+[node name="Area3D" type="Area3D" parent="Rail7"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rail7/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_60tvj")
+
+[node name="Rail8" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_xuhuv")
+catch_mask = 8
+release_mask = 8
+
+[node name="Area3D" type="Area3D" parent="Rail8"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rail8/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_60tvj")
+
+[node name="Rail4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+script = ExtResource("1_xuhuv")
+catch_mask = 5
+release_mask = 5
+
+[node name="Area3D" type="Area3D" parent="Rail4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rail4/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_2y0jv")
+
+[node name="Rail5" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -2)
+script = ExtResource("1_xuhuv")
+catch_mask = 9
+release_mask = 9
+
+[node name="Area3D" type="Area3D" parent="Rail5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rail5/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_2y0jv")
+
+[node name="Rail6" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 2)
+script = ExtResource("1_xuhuv")
+catch_mask = 9
+release_mask = 9
+
+[node name="Area3D" type="Area3D" parent="Rail6"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rail6/Area3D"]
+shape = SubResource("BoxShape3D_2y0jv")
+
+[connection signal="area_entered" from="Rail3/Area3D" to="Rail3" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Rail7/Area3D" to="Rail7" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Rail8/Area3D" to="Rail8" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Rail4/Area3D" to="Rail4" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Rail5/Area3D" to="Rail5" method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Rail6/Area3D" to="Rail6" method="_on_area_3d_area_entered"]

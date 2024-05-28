@@ -27,5 +27,6 @@ func _physics_process(delta):
 	var new_local_minecart_position = local_minecart_position.project(Vector3(1,0,0))
 	position = current_rail.to_global(new_local_minecart_position)
 
-func set_rail(rail:Rail):
-	current_rail=rail
+func try_set_rail(rail:Rail):
+	if current_rail == null or bool(rail.catch_mask & current_rail.release_mask):
+		current_rail=rail
