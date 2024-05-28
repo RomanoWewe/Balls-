@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="6_ey4cm"]
 
 [sub_resource type="Environment" id="Environment_oberf"]
+background_mode = 2
 ambient_light_source = 2
 ambient_light_color = Color(0.415686, 0.380392, 0.427451, 1)
 
@@ -107,12 +108,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -5, 2.5)
 
 [node name="ball" parent="." instance=ExtResource("5_sfxs6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.5)
 
 [node name="static" type="Node" parent="."]
 
 [node name="empty" parent="." instance=ExtResource("6_ey4cm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 0)
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oberf")

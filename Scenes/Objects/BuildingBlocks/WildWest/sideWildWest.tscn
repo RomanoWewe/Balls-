@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp5epcrj6wy70"]
+
+[ext_resource type="ArrayMesh" uid="uid://cd5jx7jv4yb86" path="res://Assets/3D/WildWest/Side.obj" id="1_nm0nr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vubyf"]
+size = Vector3(5, 7.5, 4.5)
+
+[node name="wall" type="AnimatableBody3D"]
+sync_to_physics = false
+
+[node name="MainWall" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.5, 0, 1.5)
+mesh = ExtResource("1_nm0nr")
+
+[node name="collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.75, -0.25)
+shape = SubResource("BoxShape3D_vubyf")

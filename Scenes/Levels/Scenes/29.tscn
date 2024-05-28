@@ -22,7 +22,7 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="ball" parent="." instance=ExtResource("2_x6quf")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.9053, 5, 9.9845)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 5, 10)
 
 [node name="empty" parent="." instance=ExtResource("3_7n7rn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95086, -5.6292, 29.0448)
@@ -711,19 +711,19 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -5, -10)
 
 [node name="5,10,25(0)" parent="static" instance=ExtResource("10_6vxvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 25)
 
 [node name="5,10,15(0)" parent="static" instance=ExtResource("10_6vxvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 15)
 
 [node name="5,10,5(0)" parent="static" instance=ExtResource("10_6vxvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 5)
 
 [node name="5,40,10(0)" parent="static" instance=ExtResource("10_6vxvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 10)
 
 [node name="5,35,25(0)" parent="static" instance=ExtResource("10_6vxvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 25)
 buoyancy = 1.1
 
 [node name="0,45,20" parent="." instance=ExtResource("21_pp23h")]

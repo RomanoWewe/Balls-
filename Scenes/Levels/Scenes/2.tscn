@@ -115,6 +115,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 10)
 [node name="empty" parent="." instance=ExtResource("5_xhpn5")]
 
 [node name="ball" parent="." instance=ExtResource("5_pmsx7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
 [node name="static" type="Node" parent="."]
 

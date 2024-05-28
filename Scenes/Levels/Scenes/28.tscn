@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://oxb1jpqjq3r"]
+[gd_scene load_steps=19 format=3 uid="uid://b2wkxgq1pb14r"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_spwtf"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="2_b77x8"]
@@ -32,7 +32,7 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="ball" parent="." instance=ExtResource("2_b77x8")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 54.9053, 5, -10.0155)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55, 0, -10)
 
 [node name="empty" parent="." instance=ExtResource("3_spsx8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95086, -5.6292, 29.0448)
@@ -523,7 +523,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
 current_direction = Vector3(1, 0, 0)
 
 [node name="5,50,0(0)" parent="static" instance=ExtResource("7_8lhql")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_p8a43")
 
 [node name="-5,35,0(0)" parent="static" instance=ExtResource("6_mjllg")]
@@ -567,4 +567,4 @@ fov = 80.0
 size = 25.0
 
 [node name="DoubleDoor" parent="." instance=ExtResource("17_214tl")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 60, 7, -10)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 60, 0, -10)

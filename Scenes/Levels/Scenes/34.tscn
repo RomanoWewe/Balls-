@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cmvnhyi6ul42l"]
+[gd_scene load_steps=24 format=3 uid="uid://cmvnhyi6ul42l"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_6rdpb"]
 [ext_resource type="PackedScene" uid="uid://blpll3jiurqsk" path="res://Scenes/Objects/BuildingBlocks/Beach/floorBeachSand.tscn" id="2_i2u44"]
@@ -8,23 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://bcra1elc6uywq" path="res://Scenes/Objects/BuildingBlocks/Beach/2sidesOP.tscn" id="6_ketib"]
 [ext_resource type="PackedScene" uid="uid://btpwguu4e7ifo" path="res://Scenes/Objects/BuildingBlocks/Beach/3sides.tscn" id="7_a6mxh"]
 [ext_resource type="PackedScene" uid="uid://pucv7j6m3047" path="res://Scenes/Objects/BuildingBlocks/Beach/2sidesCO.tscn" id="9_rnu61"]
-[ext_resource type="PackedScene" uid="uid://cv0ujlsyax1ov" path="res://Scenes/Objects/BuildingBlocks/Beach/island.tscn" id="10_wi27k"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/BuildingBlocks/Beach/island.tscn" id="10_wi27k"]
 [ext_resource type="PackedScene" uid="uid://dwgxu3t2kgb64" path="res://Scenes/Objects/BuildingBlocks/Beach/1side.tscn" id="11_cnwm2"]
 [ext_resource type="PackedScene" uid="uid://cv7h2aq0jcp6u" path="res://Scenes/Objects/BuildingBlocks/Basic/holeBeach.tscn" id="12_2ub1v"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="14_xallh"]
 [ext_resource type="PackedScene" uid="uid://drw3pieuqkmbh" path="res://Scenes/Objects/BuildingBlocks/Beach/2sides1corner.tscn" id="15_1kr2x"]
-[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="16_4ae7e"]
 [ext_resource type="PackedScene" uid="uid://c44nt21dv3k5w" path="res://Scenes/Objects/BuildingBlocks/Beach/Buttons/ButtonHoldNReturnBeach.tscn" id="18_thxgb"]
 [ext_resource type="PackedScene" uid="uid://bgtwahat2m8nw" path="res://Scenes/Objects/BuildingBlocks/Basic/portal.tscn" id="20_lib0q"]
+[ext_resource type="PackedScene" uid="uid://bk5h1yt68k5f0" path="res://Scenes/Objects/BuildingBlocks/Beach/boxBeach.tscn" id="21_c33na"]
 [ext_resource type="PackedScene" uid="uid://cjvp3dq3rh27u" path="res://Scenes/Objects/BuildingBlocks/Beach/doubleDoorBeach.tscn" id="22_8yqg7"]
 [ext_resource type="PackedScene" uid="uid://co0b13qewn02j" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterCurrent.tscn" id="24_qhmuq"]
 [ext_resource type="PackedScene" uid="uid://c5x3uhyfhx45s" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterStill.tscn" id="32_x563r"]
 [ext_resource type="PackedScene" uid="uid://bhuxrpafb33bf" path="res://Scenes/Objects/BuildingBlocks/Beach/Whirlpool.tscn" id="34_iu8kk"]
-[ext_resource type="PackedScene" uid="uid://bwrb0c7nknohr" path="res://Scenes/Objects/BuildingBlocks/Beach/Algae.tscn" id="36_hpqs5"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/BuildingBlocks/Beach/Algae.tscn" id="36_hpqs5"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="37_awn41"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8a43"]
-friction = 0.26
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nsy35"]
 friction = 0.5
@@ -367,18 +364,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -10)
 connections = [NodePath("../0,55,-15(0)"), NodePath("../0,55,-15(0)")]
 
 [node name="0,50,-5(0)" parent="static" node_paths=PackedStringArray("exit_portal") instance=ExtResource("20_lib0q")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 50, 0, -5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 52.0144, 0, -5)
 exit_portal = NodePath("../0,15,-25(0)")
+retain_speed = true
 auto_cycling = true
 
 [node name="0,45,0(0)" parent="static" node_paths=PackedStringArray("exit_portal") instance=ExtResource("20_lib0q")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 45, 0, 0)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 45, 0, 1.62117)
 exit_portal = NodePath("../0,20,0(0)")
+retain_speed = true
 auto_cycling = true
 
 [node name="0,35,0(0)" parent="static" node_paths=PackedStringArray("exit_portal") instance=ExtResource("20_lib0q")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 35, 0, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 35, 0, 1.66151)
 exit_portal = NodePath("../0,30,-30(0)")
+retain_speed = true
 auto_cycling = true
 
 [node name="0,20,0(0)" parent="static" node_paths=PackedStringArray("exit_portal") instance=ExtResource("20_lib0q")]
@@ -396,29 +396,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -30)
 exit_portal = NodePath("../0,35,0(0)")
 auto_cycling = true
 
-[node name="0,45,-25(0)" parent="static" instance=ExtResource("16_4ae7e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -25)
-physics_material_override = SubResource("PhysicsMaterial_p8a43")
-
 [node name="0,50,-30(0)" parent="static" instance=ExtResource("14_xallh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -30)
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
 
-[node name="0,15,-10(0)" parent="static" instance=ExtResource("16_4ae7e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -10)
-physics_material_override = SubResource("PhysicsMaterial_p8a43")
-
-[node name="0,30,-15(0)" parent="static" instance=ExtResource("16_4ae7e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -15)
-physics_material_override = SubResource("PhysicsMaterial_p8a43")
-
 [node name="0,35,-5(0)" parent="static" instance=ExtResource("34_iu8kk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -5)
-pull_force = 10.0
+pull_force = 20.0
 
 [node name="0,45,-5(0)" parent="static" instance=ExtResource("34_iu8kk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -5)
-pull_force = 10.0
+pull_force = 20.0
 
 [node name="0,40,-5(0)" parent="static" instance=ExtResource("32_x563r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -5)
@@ -535,6 +523,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -15)
 [node name="0,35,-10(0)" parent="static" instance=ExtResource("24_qhmuq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -10)
 current_direction = Vector3(0, 0, 1)
+current_power = 12.0
 
 [node name="-5,35,-10(0)" parent="static" instance=ExtResource("2_i2u44")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -5, -10)
@@ -551,13 +540,24 @@ current_direction = Vector3(-1, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
 current_direction = Vector3(0, 0, -1)
 
-[node name="0,5,-5(0)" parent="static" instance=ExtResource("24_qhmuq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -5)
-current_direction = Vector3(0, 0, -1)
+[node name="0,15,-10(1)" parent="static" instance=ExtResource("21_c33na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -10)
 
-[node name="0,60,-5(0)" parent="static" instance=ExtResource("24_qhmuq")]
+[node name="0,35,-20(1)" parent="static" instance=ExtResource("21_c33na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -20)
+
+[node name="0,45,-25(1)" parent="static" instance=ExtResource("21_c33na")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -25)
+
+[node name="0,45,-5(1)" parent="static" instance=ExtResource("24_qhmuq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -5)
 current_direction = Vector3(-1, 0, 0)
+show_visuals = false
+
+[node name="0,35,-5(1)" parent="static" instance=ExtResource("24_qhmuq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -5)
+current_direction = Vector3(0, 0, -1)
+show_visuals = false
 
 [node name="MainCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 33, 34, -21.5127)

@@ -5,7 +5,8 @@ class_name WaterCurrent
 static var current_audio_instance : AudioStreamPlayer
 var audio_prefab :PackedScene = preload("res://Scenes/Objects/_Spawnable/flow.tscn")
 @export var current_direction :Vector3 :set = set_current_direction
-@export var current_power := 8.0
+@export var current_power := 10.0
+@export var show_wave :=true
 @export var wave_speed := 1.0
 @export var scale_wave_speed_by_current_power :=true
 var visualizer : Visualizer 
@@ -15,7 +16,6 @@ const WAVE_SPEED_MULTIPLIER := 6.0
 
 func set_visible_visuals(new_value:bool):
 	super.set_visible_visuals(new_value)
-	wave_instance.visible=new_value
 
 func _ready():
 	rng = RandomNumberGenerator.new()
@@ -36,7 +36,7 @@ func _ready():
 			visualizer.clear_active_meshes()
 			visualizer.queue_free()
 			visualizer=null
-		if current_direction != Vector3():
+		if current_direction != Vector3() and show_wave:
 			wave_instance.global_transform=wave_instance.global_transform.looking_at((current_direction).rotated(Vector3.UP,PI/2)+global_transform.origin+Vector3.UP*5)
 			if scale_wave_speed_by_current_power:
 				wave_instance.get_child(0).scale_movement_times(wave_speed*WAVE_SPEED_MULTIPLIER/current_power)

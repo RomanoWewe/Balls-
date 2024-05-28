@@ -9,7 +9,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_5y42k"]
 size = Vector3(2, 6, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_113yr"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mb28o"]
 albedo_color = Color(0.2, 0.2, 0.2, 1)
 albedo_texture = ExtResource("2_cgyte")
 
@@ -17,7 +17,7 @@ albedo_texture = ExtResource("2_cgyte")
 size = Vector3(5, 6, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x6pbg"]
-size = Vector3(5, 1, 5)
+size = Vector3(5, 4.08875, 7.9375)
 
 [node name="Portal" type="AnimatableBody3D"]
 script = ExtResource("1_bnjsh")
@@ -30,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11731, 0, -2.50001)
 shape = SubResource("BoxShape3D_5y42k")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_113yr")
+material_override = SubResource("StandardMaterial3D_mb28o")
 mesh = ExtResource("3_fsinn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -38,7 +38,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 shape = SubResource("BoxShape3D_bwv35")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.60464, 3.02809)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.14901, 1.55934)
 shape = SubResource("BoxShape3D_x6pbg")
 
 [node name="Teleport" type="AudioStreamPlayer" parent="."]
@@ -52,6 +52,6 @@ sounds_amount = 1
 volume_range = Vector2(-15, -15)
 
 [node name="TeleportPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99457, 1.28231)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99457, 1.28615)
 
 [connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

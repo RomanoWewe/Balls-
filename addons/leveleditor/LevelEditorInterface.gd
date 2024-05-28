@@ -57,7 +57,7 @@ func _process(delta):
 		return
 	if !active or !LevelEditor.is_mouse_over_main_screen():
 		return
-	if !static_node:
+	if static_node!=get_tree().get_edited_scene_root().find_child("static"):
 		set_static_node()
 	
 	var origin = get_mouse_plane_pos().snapped(Vector3(5,5,5))

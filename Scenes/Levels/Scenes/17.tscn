@@ -26,7 +26,7 @@ size = 25.0
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 50, -5, 10)
 
 [node name="ball" parent="." instance=ExtResource("3_50afs")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.441, 5, 10.289)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, 10)
 
 [node name="empty" parent="." instance=ExtResource("4_gyiw0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057, -6, -0.115)
@@ -331,15 +331,15 @@ retain_speed = true
 auto_cycling = true
 
 [node name="Box" parent="." instance=ExtResource("8_qkoyn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1026, 2.26983, 5.23201)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 5)
 gravity_force = 9000.0
 
 [node name="Box2" parent="." instance=ExtResource("8_qkoyn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.2744, 2.26983, 9.83054)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 10)
 gravity_force = 9000.0
 
 [node name="Box3" parent="." instance=ExtResource("8_qkoyn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.0858, 2.26983, 14.8921)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 15)
 gravity_force = 9000.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

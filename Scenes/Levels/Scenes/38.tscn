@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://k3s6f10dpb4m" path="res://Scenes/Objects/BuildingBlocks/Beach/1sideV2.tscn" id="6_f1st1"]
 [ext_resource type="PackedScene" uid="uid://dwgxu3t2kgb64" path="res://Scenes/Objects/BuildingBlocks/Beach/1side.tscn" id="7_asxj7"]
 [ext_resource type="PackedScene" uid="uid://btpwguu4e7ifo" path="res://Scenes/Objects/BuildingBlocks/Beach/3sides.tscn" id="8_ky6be"]
-[ext_resource type="PackedScene" uid="uid://cv0ujlsyax1ov" path="res://Scenes/Objects/BuildingBlocks/Beach/island.tscn" id="9_84w34"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/BuildingBlocks/Beach/island.tscn" id="9_84w34"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="10_2ppkg"]
 [ext_resource type="PackedScene" uid="uid://pucv7j6m3047" path="res://Scenes/Objects/BuildingBlocks/Beach/2sidesCO.tscn" id="10_ked8j"]
 [ext_resource type="PackedScene" uid="uid://cv7h2aq0jcp6u" path="res://Scenes/Objects/BuildingBlocks/Basic/holeBeach.tscn" id="11_xqhhs"]
@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bcra1elc6uywq" path="res://Scenes/Objects/BuildingBlocks/Beach/2sidesOP.tscn" id="13_ys27f"]
 [ext_resource type="PackedScene" uid="uid://c44nt21dv3k5w" path="res://Scenes/Objects/BuildingBlocks/Beach/Buttons/ButtonHoldNReturnBeach.tscn" id="14_ontqk"]
 [ext_resource type="PackedScene" uid="uid://bgtwahat2m8nw" path="res://Scenes/Objects/BuildingBlocks/Basic/portal.tscn" id="15_fdtfq"]
-[ext_resource type="PackedScene" uid="uid://bwrb0c7nknohr" path="res://Scenes/Objects/BuildingBlocks/Beach/Algae.tscn" id="15_vbk06"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/BuildingBlocks/Beach/Algae.tscn" id="15_vbk06"]
 [ext_resource type="PackedScene" uid="uid://cjvp3dq3rh27u" path="res://Scenes/Objects/BuildingBlocks/Beach/doubleDoorBeach.tscn" id="19_3lvl0"]
 [ext_resource type="PackedScene" uid="uid://bk5h1yt68k5f0" path="res://Scenes/Objects/BuildingBlocks/Beach/boxBeach.tscn" id="26_3sneo"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="28_m3vny"]
@@ -30,7 +30,7 @@ rough = true
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8a43"]
 friction = 0.26
 
-[node name="39" type="Node3D"]
+[node name="38" type="Node3D"]
 script = ExtResource("1_gecin")
 
 [node name="static" type="Node" parent="."]
@@ -341,6 +341,7 @@ auto_cycling = true
 [node name="0,45,-30(0)" parent="static" node_paths=PackedStringArray("exit_portal") instance=ExtResource("15_fdtfq")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45, 0, -30)
 exit_portal = NodePath("../0,40,-5(0)")
+retain_speed = true
 auto_cycling = true
 
 [node name="0,50,-20(0)" parent="static" instance=ExtResource("19_3lvl0")]
@@ -364,7 +365,7 @@ delay = 3.0
 [node name="0,15,-35(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("14_ontqk")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 15, 0, -35)
 connections = [NodePath("../0,50,-20(0)")]
-delay = 2.5
+delay = 2.6
 
 [node name="0,30,-35(0)" parent="static" instance=ExtResource("10_2ppkg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -35)

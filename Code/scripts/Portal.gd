@@ -7,7 +7,7 @@ var ON_COLOR = Color(1,1,1,1)
 var since_last_step_subtract := 0.0
 var cooldown :=false
 @export var exit_portal : Portal : set = set_exit_portal
-@export var retain_speed :=false
+@export var retain_speed := false
 var visualizer : Visualizer 
 
 func set_exit_portal(new_val:Portal):

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cgig81240o6kb"
+path="res://.godot/imported/Railcurve.obj-a39f40bf402ec183074d90f0d3527bff.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Railcurve.obj-a39f40bf402ec183074d90f0d3527bff.mesh"]
+
+source_file="res://Assets/3D/WildWest/Railcurve.obj"
+dest_files=["res://.godot/imported/Railcurve.obj-a39f40bf402ec183074d90f0d3527bff.mesh", "res://.godot/imported/Railcurve.obj-a39f40bf402ec183074d90f0d3527bff.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

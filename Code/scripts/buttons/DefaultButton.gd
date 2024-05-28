@@ -7,8 +7,8 @@ class_name DefaultButton
 @export var connections : Array[Activatable] = [] ## Сonnections - список активируеммых обьектов
 @export var delay := 0.0 ##задержка в секундах перед выключением
 @export var text_timer : Label3D 
-var activators :=0
 var times_activated :=0
+var is_active :=false
 
 func _ready():
 	var press_animation = get_node_or_null("MovingPlatform")
@@ -32,41 +32,38 @@ func _on_body_entered(body):
 	if not body is GravitationalObject:
 		return
 	times_activated +=1
-	activators+=1
-	if activators>1:
+	if is_active:
 		return
-	$ButtonOffSound.playing=false
-	$ButtonOnSound.playing=true
+	if $ButtonOffSound.is_inside_tree():
+		$ButtonOffSound.playing=false
+	if $ButtonOnSound.is_inside_tree():
+		$ButtonOnSound.playing=true
 	for i in range(connections.size()):
 		activate(i)
 
 
 func _on_body_exited(body):
-	if !is_inside_tree():
-		return
 	if not body is GravitationalObject:
 		return
-	activators-=1
+	is_active = true
 	var old_times_activated = times_activated
 	var waiting_time = delay
 	var prev_number = floor(waiting_time)
 	while waiting_time>0:
 		if old_times_activated!=times_activated:
-			break
+			return
 		if (prev_number != floor(waiting_time)):
 			prev_number = floor(waiting_time)
 			popup(str(floor(waiting_time)+1))
 		await get_tree().create_timer(0.016,false).timeout
 		waiting_time-=0.016
-	if !is_inside_tree():
-		return
-	if delay>0 and waiting_time <=0:
-		popup("0")
-	if activators==0:
+	is_active = false
+	if $ButtonOffSound.is_inside_tree():
 		$ButtonOffSound.playing=true
+	if $ButtonOnSound.is_inside_tree():
 		$ButtonOnSound.playing=false
-		for i in range(connections.size()):
-			deactivate(i)
+	for i in range(connections.size()):
+		deactivate(i)
 
 func popup(text: String):
 	var new = text_timer.duplicate()

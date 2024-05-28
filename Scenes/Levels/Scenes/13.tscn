@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dev2aik5yoynb" path="res://Scenes/Objects/BuildingBlocks/Basic/floor.tscn" id="5_txn34"]
 [ext_resource type="PackedScene" uid="uid://by4cybkow6x3e" path="res://Scenes/Objects/BuildingBlocks/Basic/wall_tall.tscn" id="6_kuq8p"]
 [ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="8_27oe2"]
-[ext_resource type="PackedScene" uid="uid://ckwi046hiv4sa" path="res://Scenes/Objects/BuildingBlocks/Basic/doubleDoor.tscn" id="11_2rl2o"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/BuildingBlocks/Basic/doubleDoor.tscn" id="11_2rl2o"]
 [ext_resource type="PackedScene" uid="uid://cfwfamgoyay15" path="res://Scenes/Objects/_Abstract/block.tscn" id="12_3oyju"]
-[ext_resource type="PackedScene" uid="uid://vdyp2jciocfr" path="res://Scenes/Objects/BuildingBlocks/Basic/doubleDoorOpen.tscn" id="12_jb0bd"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/BuildingBlocks/Basic/doubleDoorOpen.tscn" id="12_jb0bd"]
 [ext_resource type="PackedScene" uid="uid://bgtwahat2m8nw" path="res://Scenes/Objects/BuildingBlocks/Basic/portal.tscn" id="12_osomh"]
 [ext_resource type="PackedScene" uid="uid://cr08bv5lxwxim" path="res://Scenes/Objects/BuildingBlocks/Basic/Buttons/ButtonHoldNReturn.tscn" id="13_t7qak"]
 
@@ -29,7 +29,7 @@ size = 25.0
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, -5, -20)
 
 [node name="ball" parent="." instance=ExtResource("3_38dfm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 5, -15)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 0, -15)
 
 [node name="empty" parent="." instance=ExtResource("4_mar0t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057, -6, -0.115)
@@ -307,7 +307,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -5, 15)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -5, 20)
 
 [node name="Box" parent="." instance=ExtResource("8_27oe2")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24.886, 2.5, -0.95969)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24.886, 0, -0.96)
 
 [node name="block" parent="." instance=ExtResource("12_3oyju")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 33, -7, -10)

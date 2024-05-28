@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Code/scripts/buttons/button_toggle.gd" id="1_o211k"]
 [ext_resource type="ArrayMesh" uid="uid://c3isicl5i1yfa" path="res://Assets/3D/Beach/button 1 скин 1.obj" id="3_wbawa"]
 [ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="4_1nolu"]
-[ext_resource type="AudioStream" path="res://Assets/Sounds/ButtonOff.mp3" id="4_y2itt"]
-[ext_resource type="AudioStream" path="res://Assets/Sounds/ButtonOn.mp3" id="5_gmpi8"]
+[ext_resource type="AudioStream" uid="uid://b4810rkqf81kw" path="res://Assets/Sounds/ButtonOff.mp3" id="4_y2itt"]
+[ext_resource type="AudioStream" uid="uid://bctijlrxgm6gm" path="res://Assets/Sounds/ButtonOn.mp3" id="5_gmpi8"]
 [ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="5_vbefy"]
 [ext_resource type="Texture2D" uid="uid://dpeskkh334272" path="res://Assets/3D/Beach/button 1 скин 1.png" id="6_qxwkk"]
 

@@ -4,7 +4,8 @@ class_name Water
 @export var show_visuals:=true : set = set_visible_visuals
 var bodies_affected := []
 var aabb : AABB
-@export var LINEAR_DAMP := 0.988
+@export var LINEAR_DAMP := 0.996
+
 
 func _ready():
 	aabb = $mesh2.get_aabb()

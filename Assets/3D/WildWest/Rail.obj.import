@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://qt1jmk5465ya"
+path="res://.godot/imported/Rail.obj-2694175fe838c7df6796ce0e3959aaca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Rail.obj-2694175fe838c7df6796ce0e3959aaca.mesh"]
+
+source_file="res://Assets/3D/WildWest/Rail.obj"
+dest_files=["res://.godot/imported/Rail.obj-2694175fe838c7df6796ce0e3959aaca.mesh", "res://.godot/imported/Rail.obj-2694175fe838c7df6796ce0e3959aaca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

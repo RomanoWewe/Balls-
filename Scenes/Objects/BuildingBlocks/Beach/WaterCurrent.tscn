@@ -76,6 +76,7 @@ sync_to_physics = false
 script = ExtResource("1_4c4jr")
 current_power = 6.0
 wave_instance = NodePath("Wave")
+LINEAR_DAMP = 0.988
 
 [node name="Area3D" type="Area3D" parent="."]
 

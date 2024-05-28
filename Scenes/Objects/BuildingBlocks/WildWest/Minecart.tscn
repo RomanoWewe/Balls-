@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dex6u2j1i8amw"]
+
+[ext_resource type="Script" path="res://Code/scripts/Minecart.gd" id="1_7own3"]
+[ext_resource type="ArrayMesh" path="res://Assets/3D/WildWest/Minecart.obj" id="2_fxg6g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wdkh4"]
+size = Vector3(4, 4, 4.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d146f"]
+albedo_color = Color(0.266667, 0.247059, 0.235294, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xc1ox"]
+size = Vector3(0.1, 4, 0.1)
+
+[node name="Minecart" type="RigidBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+custom_integrator = true
+continuous_cd = true
+script = ExtResource("1_7own3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2, 0)
+shape = SubResource("BoxShape3D_wdkh4")
+
+[node name="Minecart" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_d146f")
+mesh = ExtResource("2_fxg6g")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_xc1ox")
