@@ -1,18 +1,18 @@
 [gd_scene load_steps=5 format=3 uid="uid://bkoppclofsmkk"]
 
-[ext_resource type="Texture2D" uid="uid://tmthywr8erhl" path="res://Assets/3D/WildWest/RailTexture.png" id="1_80nij"]
-[ext_resource type="ArrayMesh" uid="uid://cgig81240o6kb" path="res://Assets/3D/WildWest/Railcurve.obj" id="2_2jddm"]
+[ext_resource type="Texture2D" uid="uid://dq4qa8b68a5y7" path="res://Assets/western2/rails3.png" id="1_eiqj5"]
+[ext_resource type="ArrayMesh" uid="uid://dgsa5b2jna725" path="res://Assets/western2/rails3.obj" id="2_hxh54"]
 [ext_resource type="PackedScene" uid="uid://cjcy5hk6ha0t" path="res://Scenes/Objects/_Abstract/TurningRail.tscn" id="3_743pp"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsnhu"]
-albedo_texture = ExtResource("1_80nij")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ayx6o"]
+albedo_texture = ExtResource("1_eiqj5")
 
 [node name="RailCurve" type="Node3D"]
 
 [node name="Railcurve" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-material_override = SubResource("StandardMaterial3D_jsnhu")
-mesh = ExtResource("2_2jddm")
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ayx6o")
+mesh = ExtResource("2_hxh54")
 
 [node name="TurningRail" parent="." node_paths=PackedStringArray("start", "finish") instance=ExtResource("3_743pp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)

@@ -4,7 +4,7 @@
 [ext_resource type="ArrayMesh" uid="uid://0hvneqdug3qf" path="res://Assets/3D/WildWest/Minecart.obj" id="2_fxg6g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wdkh4"]
-size = Vector3(4, 4, 4.5)
+size = Vector3(3.5, 4, 4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d146f"]
 albedo_color = Color(0.266667, 0.247059, 0.235294, 1)
@@ -19,6 +19,7 @@ axis_lock_angular_z = true
 custom_integrator = true
 continuous_cd = true
 script = ExtResource("1_7own3")
+max_speed = 12
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2, 0)

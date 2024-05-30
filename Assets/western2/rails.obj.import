@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d3io0r2xfxoca"
+path="res://.godot/imported/rails.obj-37c3b8e4ce81d9716f1284169f490bcc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rails.obj-37c3b8e4ce81d9716f1284169f490bcc.mesh"]
+
+source_file="res://Assets/western2/rails.obj"
+dest_files=["res://.godot/imported/rails.obj-37c3b8e4ce81d9716f1284169f490bcc.mesh", "res://.godot/imported/rails.obj-37c3b8e4ce81d9716f1284169f490bcc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

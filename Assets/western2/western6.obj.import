@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cr1mbja67yk17"
+path="res://.godot/imported/western6.obj-9864fe52c6ad9197c984c57cc75967ca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/western6.obj-9864fe52c6ad9197c984c57cc75967ca.mesh"]
+
+source_file="res://Assets/western2/western6.obj"
+dest_files=["res://.godot/imported/western6.obj-9864fe52c6ad9197c984c57cc75967ca.mesh", "res://.godot/imported/western6.obj-9864fe52c6ad9197c984c57cc75967ca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
