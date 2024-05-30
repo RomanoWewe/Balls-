@@ -313,10 +313,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.7610
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.76104, 0, -1.27886)
 
 [node name="Box" parent="." instance=ExtResource("7_itw7w")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.4743, 0, -5.95969)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 44.6637, 0, -6.25175)
 
 [node name="Box4" parent="." instance=ExtResource("7_itw7w")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.9329, 0, -11.1537)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 29.8774, 0, -11.2751)
 mass = 0.75
 
 [node name="cannon" parent="." instance=ExtResource("9_1ijj6")]

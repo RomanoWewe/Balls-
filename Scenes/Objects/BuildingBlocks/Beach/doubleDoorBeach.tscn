@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="2_h6te6"]
 [ext_resource type="PackedScene" uid="uid://blyjt022mstha" path="res://Scenes/Objects/BuildingBlocks/Beach/doorBeach.tscn" id="3_dcxct"]
 [ext_resource type="Script" path="res://Code/scripts/ActivatableSound.gd" id="4_x8hsq"]
-[ext_resource type="AudioStream" path="res://Assets/Sounds/doorOpen.mp3" id="5_oggcs"]
-[ext_resource type="AudioStream" path="res://Assets/Sounds/doorClose.mp3" id="6_11k5e"]
+[ext_resource type="AudioStream" uid="uid://03u4k8lij46f" path="res://Assets/Sounds/doorOpen.mp3" id="5_oggcs"]
+[ext_resource type="AudioStream" uid="uid://dow6ea54gefki" path="res://Assets/Sounds/doorClose.mp3" id="6_11k5e"]
 
 [sub_resource type="Curve" id="Curve_pqa5x"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0]

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Code/scripts/buttons/button_addsteps.gd" id="1_ujvqu"]
 [ext_resource type="ArrayMesh" uid="uid://c3isicl5i1yfa" path="res://Assets/3D/Beach/button 1 скин 1.obj" id="3_7qx2b"]
-[ext_resource type="AudioStream" path="res://Assets/Sounds/ButtonOff.mp3" id="4_cj7g0"]
+[ext_resource type="AudioStream" uid="uid://b4810rkqf81kw" path="res://Assets/Sounds/ButtonOff.mp3" id="4_cj7g0"]
 [ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="4_liqt2"]
-[ext_resource type="AudioStream" path="res://Assets/Sounds/ButtonOn.mp3" id="5_4yasn"]
+[ext_resource type="AudioStream" uid="uid://bctijlrxgm6gm" path="res://Assets/Sounds/ButtonOn.mp3" id="5_4yasn"]
 [ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="5_pj0e1"]
 [ext_resource type="Texture2D" uid="uid://dpeskkh334272" path="res://Assets/3D/Beach/button 1 скин 1.png" id="6_3yey1"]
 

@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c44nt21dv3k5w" path="res://Scenes/Objects/BuildingBlocks/Beach/Buttons/ButtonHoldNReturnBeach.tscn" id="13_t3mwp"]
 [ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="13_xixnv"]
 [ext_resource type="PackedScene" uid="uid://cv7h2aq0jcp6u" path="res://Scenes/Objects/BuildingBlocks/Basic/holeBeach.tscn" id="14_2y4k6"]
+[ext_resource type="PackedScene" uid="uid://bk5h1yt68k5f0" path="res://Scenes/Objects/BuildingBlocks/Beach/boxBeach.tscn" id="14_irhyk"]
 [ext_resource type="PackedScene" uid="uid://cjvp3dq3rh27u" path="res://Scenes/Objects/BuildingBlocks/Beach/doubleDoorBeach.tscn" id="15_8hcn3"]
-[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="16_axndt"]
 [ext_resource type="PackedScene" uid="uid://dwgxu3t2kgb64" path="res://Scenes/Objects/BuildingBlocks/Beach/1side.tscn" id="17_mq0vw"]
 [ext_resource type="PackedScene" uid="uid://k3s6f10dpb4m" path="res://Scenes/Objects/BuildingBlocks/Beach/1sideV2.tscn" id="18_x75fg"]
 
@@ -32,7 +32,7 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="ball" parent="." instance=ExtResource("3_cm1vp")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 45.2925, 5, -9.711)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 45, 0, -10)
 
 [node name="empty" parent="." instance=ExtResource("4_daj7d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.13998, -6, 9.74326)
@@ -483,11 +483,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -5, -15)
 [node name="-5,65,-10(0)" parent="static" instance=ExtResource("14_2y4k6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -5, -10)
 
-[node name="5,45,0(0)" parent="static" instance=ExtResource("16_axndt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 0)
+[node name="0,45,0(1)" parent="static" instance=ExtResource("14_irhyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
 
-[node name="5,45,-20(0)" parent="static" instance=ExtResource("16_axndt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, -20)
+[node name="0,45,-20(1)" parent="static" instance=ExtResource("14_irhyk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -20)
 
 [node name="0,45,20" parent="." instance=ExtResource("9_dajgh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -10)

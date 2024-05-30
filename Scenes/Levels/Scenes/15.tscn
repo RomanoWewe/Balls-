@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="4_wg54n"]
 [ext_resource type="PackedScene" uid="uid://dev2aik5yoynb" path="res://Scenes/Objects/BuildingBlocks/Basic/floor.tscn" id="5_hd6hc"]
 [ext_resource type="PackedScene" uid="uid://by4cybkow6x3e" path="res://Scenes/Objects/BuildingBlocks/Basic/wall_tall.tscn" id="6_cnk1g"]
-[ext_resource type="PackedScene" uid="uid://ckwi046hiv4sa" path="res://Scenes/Objects/BuildingBlocks/Basic/doubleDoor.tscn" id="9_gxqq5"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/BuildingBlocks/Basic/doubleDoor.tscn" id="9_gxqq5"]
 [ext_resource type="PackedScene" uid="uid://cr08bv5lxwxim" path="res://Scenes/Objects/BuildingBlocks/Basic/Buttons/ButtonHoldNReturn.tscn" id="9_x8hjj"]
 [ext_resource type="PackedScene" uid="uid://bgtwahat2m8nw" path="res://Scenes/Objects/BuildingBlocks/Basic/portal.tscn" id="10_kgosc"]
 
@@ -26,7 +26,7 @@ size = 25.0
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 50, -5, 20)
 
 [node name="ball" parent="." instance=ExtResource("3_v7opy")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24.761, 5, 4.721)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 0, 5)
 gravity_force = 2250.0
 
 [node name="empty" parent="." instance=ExtResource("4_wg54n")]
@@ -305,7 +305,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 10)
 
 [node name="pressurePlate" parent="." node_paths=PackedStringArray("connections") instance=ExtResource("9_x8hjj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0074, 0.0925744, 19.9154)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 20)
 connections = [NodePath("../DoubleDoor")]
 delay = 1.5
 

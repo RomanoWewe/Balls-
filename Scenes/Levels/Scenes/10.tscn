@@ -27,7 +27,7 @@ size = 25.0
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 18.558, -5, 0.406)
 
 [node name="ball" parent="." instance=ExtResource("3_qe0r3")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.44241, 2.5, -4.59385)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.29107, 2.5, -4.53174)
 
 [node name="empty" parent="." instance=ExtResource("4_sd8d2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.328, -6, 30.349)
@@ -443,22 +443,22 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -36.44
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -31.4424, -5, 20.4061)
 
 [node name="Box" parent="." instance=ExtResource("7_7ljy3")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -41.1557, 0, 0.486944)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -41.3328, 0, 0.425332)
 
 [node name="Box4" parent="." instance=ExtResource("7_7ljy3")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -36.6143, 0, 0.486944)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -36.4164, 0, 0.46977)
 
 [node name="barrier2" parent="." instance=ExtResource("8_gnntv")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -6.48567, 0, 10.4388)
 
 [node name="Box5" parent="." instance=ExtResource("7_7ljy3")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.61427, 0, 5.9028)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.43896, 0, 5.40238)
 
 [node name="Box2" parent="." instance=ExtResource("7_7ljy3")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -51.1557, 0, 0.486944)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -51.3333, 0, 0.464855)
 
 [node name="Box6" parent="." instance=ExtResource("7_7ljy3")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -46.6143, 0, 0.486944)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -46.4565, 0, 0.508775)
 
 [node name="block" parent="." instance=ExtResource("10_6foxm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, -7.5969, 0.393421)

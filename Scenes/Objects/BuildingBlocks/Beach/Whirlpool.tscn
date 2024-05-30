@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b6marlovk6ch8" path="res://Assets/Textures/Particles/toppng.com-smoke-particle-texture-399x385.png" id="3_1n3n6"]
 [ext_resource type="Script" path="res://Code/scripts/SoundRandomizer.gd" id="4_e83u4"]
 [ext_resource type="Material" path="res://Assets/Textures/Whirlpool.tres" id="5_qh5ov"]
-[ext_resource type="ArrayMesh" path="res://Assets/3D/whirlpool.obj" id="6_3f8t3"]
+[ext_resource type="ArrayMesh" uid="uid://cco086pncagml" path="res://Assets/3D/whirlpool.obj" id="6_3f8t3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
 size = Vector3(5, 5, 5)
@@ -72,6 +72,8 @@ turbulence_noise_scale = 1.0
 [node name="Whirlpool" type="AnimatableBody3D" groups=["IsFloor"]]
 sync_to_physics = false
 script = ExtResource("1_4y75p")
+pull_force = 1.0
+LINEAR_DAMP = 0.988
 
 [node name="Area3D" type="Area3D" parent="."]
 

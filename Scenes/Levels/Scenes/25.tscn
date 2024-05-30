@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dwgxu3t2kgb64" path="res://Scenes/Objects/BuildingBlocks/Beach/1side.tscn" id="11_bdcdr"]
 [ext_resource type="PackedScene" uid="uid://c5x3uhyfhx45s" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterStill.tscn" id="13_du27w"]
 [ext_resource type="PackedScene" uid="uid://co0b13qewn02j" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterCurrent.tscn" id="14_8ruol"]
-[ext_resource type="PackedScene" uid="uid://cv0ujlsyax1ov" path="res://Scenes/Objects/BuildingBlocks/Beach/island.tscn" id="15_arxnr"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/BuildingBlocks/Beach/island.tscn" id="15_arxnr"]
 [ext_resource type="PackedScene" uid="uid://c44nt21dv3k5w" path="res://Scenes/Objects/BuildingBlocks/Beach/Buttons/ButtonHoldNReturnBeach.tscn" id="16_4h11j"]
 [ext_resource type="PackedScene" uid="uid://cjvp3dq3rh27u" path="res://Scenes/Objects/BuildingBlocks/Beach/doubleDoorBeach.tscn" id="16_de7j2"]
 [ext_resource type="PackedScene" uid="uid://bhuxrpafb33bf" path="res://Scenes/Objects/BuildingBlocks/Beach/Whirlpool.tscn" id="19_1s0xy"]
@@ -31,7 +31,7 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="ball" parent="." instance=ExtResource("2_qh44e")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 49.9053, 5, -9.711)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 50, 0, -10)
 
 [node name="empty" parent="." instance=ExtResource("3_whn2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95086, -5.6292, 29.0448)
@@ -39,7 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95086, -5.6292, 29.0448)
 [node name="static" type="Node" parent="."]
 
 [node name="5,45,0(0)" parent="static" instance=ExtResource("4_kh35n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 5, -15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -15)
 physics_material_override = SubResource("PhysicsMaterial_p8a43")
 
 [node name="-5,55,-5(0)" parent="static" instance=ExtResource("5_v3ui8")]

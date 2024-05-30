@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkoppclofsmkk"]
+
+[ext_resource type="Texture2D" uid="uid://tmthywr8erhl" path="res://Assets/3D/WildWest/RailTexture.png" id="1_80nij"]
+[ext_resource type="ArrayMesh" path="res://Assets/3D/WildWest/Railcurve.obj" id="2_2jddm"]
+[ext_resource type="PackedScene" uid="uid://cjcy5hk6ha0t" path="res://Scenes/Objects/_Abstract/TurningRail.tscn" id="3_743pp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsnhu"]
+albedo_texture = ExtResource("1_80nij")
+
+[node name="RailCurve" type="Node3D"]
+
+[node name="Railcurve" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+material_override = SubResource("StandardMaterial3D_jsnhu")
+mesh = ExtResource("2_2jddm")
+
+[node name="TurningRail" parent="." node_paths=PackedStringArray("start", "finish") instance=ExtResource("3_743pp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+start = NodePath(".")
+finish = NodePath("../TurningRail2")
+
+[node name="TurningRail2" parent="." node_paths=PackedStringArray("start", "finish") instance=ExtResource("3_743pp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -2)
+start = NodePath("../TurningRail")
+finish = NodePath(".")
+
+[node name="TurningRail3" parent="." node_paths=PackedStringArray("start", "finish") instance=ExtResource("3_743pp")]
+transform = Transform3D(-0.526615, 0, -0.850104, 0, 1, 0, 0.850104, 0, -0.526615, -0.248118, 0, -1.00541)
+start = NodePath("../TurningRail")
+finish = NodePath("../TurningRail2")
+
+[node name="TurningRail4" parent="." node_paths=PackedStringArray("start", "finish") instance=ExtResource("3_743pp")]
+transform = Transform3D(-0.8465, 0, -0.532389, 0, 1, 0, 0.532389, 0, -0.8465, -1.04943, 0, -0.246157)
+start = NodePath("../TurningRail")
+finish = NodePath("../TurningRail2")

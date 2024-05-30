@@ -26,7 +26,7 @@ size = 25.0
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 40, -5, 15)
 
 [node name="ball" parent="." instance=ExtResource("3_haysk")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 14.761, 5, 4.721)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 15, 0, 5)
 
 [node name="empty" parent="." instance=ExtResource("4_rr65g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.126332, -6, 4.66894)

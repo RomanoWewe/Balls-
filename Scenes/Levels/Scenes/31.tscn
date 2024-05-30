@@ -9,12 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://bcra1elc6uywq" path="res://Scenes/Objects/BuildingBlocks/Beach/2sidesOP.tscn" id="8_nbvy4"]
 [ext_resource type="PackedScene" uid="uid://btpwguu4e7ifo" path="res://Scenes/Objects/BuildingBlocks/Beach/3sides.tscn" id="9_45id8"]
 [ext_resource type="PackedScene" uid="uid://cjvp3dq3rh27u" path="res://Scenes/Objects/BuildingBlocks/Beach/doubleDoorBeach.tscn" id="10_w64gt"]
-[ext_resource type="PackedScene" uid="uid://cv0ujlsyax1ov" path="res://Scenes/Objects/BuildingBlocks/Beach/island.tscn" id="10_xkilq"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/BuildingBlocks/Beach/island.tscn" id="10_xkilq"]
 [ext_resource type="PackedScene" uid="uid://k3s6f10dpb4m" path="res://Scenes/Objects/BuildingBlocks/Beach/1sideV2.tscn" id="13_56qef"]
 [ext_resource type="PackedScene" uid="uid://bhuxrpafb33bf" path="res://Scenes/Objects/BuildingBlocks/Beach/Whirlpool.tscn" id="13_coyi7"]
 [ext_resource type="PackedScene" uid="uid://pucv7j6m3047" path="res://Scenes/Objects/BuildingBlocks/Beach/2sidesCO.tscn" id="15_sowpp"]
 [ext_resource type="PackedScene" uid="uid://c5x3uhyfhx45s" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterStill.tscn" id="16_4jn5d"]
-[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="18_14y8o"]
+[ext_resource type="PackedScene" uid="uid://bk5h1yt68k5f0" path="res://Scenes/Objects/BuildingBlocks/Beach/boxBeach.tscn" id="17_ygn2v"]
 [ext_resource type="PackedScene" uid="uid://c44nt21dv3k5w" path="res://Scenes/Objects/BuildingBlocks/Beach/Buttons/ButtonHoldNReturnBeach.tscn" id="18_ecr3w"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="18_yxgqq"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="20_d6e8v"]
@@ -715,16 +715,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5, -10)
 [node name="-5,55,-5(0)" parent="static" instance=ExtResource("4_ojqm6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5, -5)
 
-[node name="5,15,-5(0)" parent="static" instance=ExtResource("18_14y8o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -0.233243, -5)
+[node name="0,15,-5(1)" parent="static" instance=ExtResource("17_ygn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -5)
 physics_material_override = SubResource("PhysicsMaterial_p8a43")
 
-[node name="5,15,-25(0)" parent="static" instance=ExtResource("18_14y8o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -0.10095, -25)
+[node name="0,15,-25(1)" parent="static" instance=ExtResource("17_ygn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -25)
 physics_material_override = SubResource("PhysicsMaterial_p8a43")
 
-[node name="5,50,-30(0)" parent="static" instance=ExtResource("18_14y8o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -0.379291, -30)
+[node name="0,50,-30(1)" parent="static" instance=ExtResource("17_ygn2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -30)
 physics_material_override = SubResource("PhysicsMaterial_p8a43")
 
 [node name="MainCamera" type="Camera3D" parent="."]

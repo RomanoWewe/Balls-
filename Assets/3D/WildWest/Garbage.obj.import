@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b4jjphhdlm2ab"
+path="res://.godot/imported/Garbage.obj-bbb2fe21e2efbcd3bb1536414b0535cd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Garbage.obj-bbb2fe21e2efbcd3bb1536414b0535cd.mesh"]
+
+source_file="res://Assets/3D/WildWest/Garbage.obj"
+dest_files=["res://.godot/imported/Garbage.obj-bbb2fe21e2efbcd3bb1536414b0535cd.mesh", "res://.godot/imported/Garbage.obj-bbb2fe21e2efbcd3bb1536414b0535cd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
