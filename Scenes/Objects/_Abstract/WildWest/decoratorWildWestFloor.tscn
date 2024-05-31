@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://da0eruvldu63u"]
+
+[ext_resource type="Script" path="res://Code/scripts/Decorator.gd" id="1_gy61n"]
+[ext_resource type="PackedScene" uid="uid://cvsbbvwmms7ps" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/Bones.tscn" id="2_gym3i"]
+[ext_resource type="PackedScene" uid="uid://dedg8q76u50bq" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/Cactus.tscn" id="3_qgybn"]
+
+[node name="Decorator" type="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.79505, 0)
+script = ExtResource("1_gy61n")
+mean = 1.0
+decorations = Array[PackedScene]([ExtResource("2_gym3i"), ExtResource("3_qgybn")])
+spawn_chances = Array[int]([3, 1])
+spawn_chances_cumulative = Array[int]([3, 4])
+position_extents = Vector3(2, 0, 2)
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

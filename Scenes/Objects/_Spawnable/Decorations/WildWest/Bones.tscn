@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvsbbvwmms7ps"]
+
+[ext_resource type="ArrayMesh" uid="uid://c1aq8sor1akh3" path="res://Assets/western2/bones 1.obj" id="1_qvcdt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7mv0"]
+albedo_color = Color(0.705882, 0.705882, 0.705882, 1)
+
+[node name="1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, -3.8, 3.5)
+material_override = SubResource("StandardMaterial3D_u7mv0")
+mesh = ExtResource("1_qvcdt")

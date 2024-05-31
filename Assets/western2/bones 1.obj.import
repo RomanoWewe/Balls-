@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c1aq8sor1akh3"
+path="res://.godot/imported/bones 1.obj-8ad0df5dd6d648bff0078d7f3e485320.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bones 1.obj-8ad0df5dd6d648bff0078d7f3e485320.mesh"]
+
+source_file="res://Assets/western2/bones 1.obj"
+dest_files=["res://.godot/imported/bones 1.obj-8ad0df5dd6d648bff0078d7f3e485320.mesh", "res://.godot/imported/bones 1.obj-8ad0df5dd6d648bff0078d7f3e485320.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
