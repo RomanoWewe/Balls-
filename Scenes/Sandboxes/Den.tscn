@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d1274acyhjpof"]
+[gd_scene load_steps=18 format=3 uid="uid://d1274acyhjpof"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_2dhrh"]
 [ext_resource type="PackedScene" uid="uid://1wbm3hp7m7bp" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailXRail.tscn" id="6_3mrh1"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bp84ca1ow38ax" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallThinStraightWildWest.tscn" id="14_2r0ih"]
 [ext_resource type="PackedScene" uid="uid://byxp7y2va51bf" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallThinDeadendWildWest.tscn" id="15_jnxlg"]
 [ext_resource type="PackedScene" uid="uid://ufx0hicv1t3m" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallOuterCornerWildWest.tscn" id="16_ms8ca"]
+[ext_resource type="PackedScene" uid="uid://c2quyiba7dng5" path="res://Scenes/Objects/_Abstract/WildWest/decoratorWildWestWalls.tscn" id="17_4gt5c"]
 
 [node name="Den" type="Node3D"]
 script = ExtResource("1_2dhrh")
@@ -316,3 +317,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 5, 25)
 
 [node name="5,30,15(0)" parent="static" instance=ExtResource("11_yfl2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 15)
+
+[node name="Decorator" parent="." instance=ExtResource("17_4gt5c")]

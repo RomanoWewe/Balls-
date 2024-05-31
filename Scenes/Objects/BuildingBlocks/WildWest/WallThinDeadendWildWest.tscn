@@ -31,3 +31,5 @@ mesh = SubResource("PlaneMesh_tleia")
 skeleton = NodePath("")
 
 [node name="Decorator" parent="." instance=ExtResource("3_x5i7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 3.795, 0)
+position_extents = Vector3(1.4, 0, 1.4)

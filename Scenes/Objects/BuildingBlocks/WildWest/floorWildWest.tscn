@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://irygqx05pqx3"]
+[gd_scene load_steps=7 format=3 uid="uid://irygqx05pqx3"]
 
 [ext_resource type="Texture2D" uid="uid://b6hfmcy6gisna" path="res://Assets/Textures/WWFloor.png" id="1_kom45"]
+[ext_resource type="Texture2D" uid="uid://hi6sjerqxc0i" path="res://Assets/Textures/NormalMap (1).png" id="2_66agl"]
 [ext_resource type="PackedScene" uid="uid://da0eruvldu63u" path="res://Scenes/Objects/_Abstract/WildWest/decoratorWildWestFloor.tscn" id="2_oicja"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e22vb"]
@@ -8,6 +9,8 @@ size = Vector3(5, 5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87mhg"]
 albedo_texture = ExtResource("1_kom45")
+normal_enabled = true
+normal_texture = ExtResource("2_66agl")
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_unfwo"]
@@ -26,3 +29,4 @@ mesh = SubResource("PlaneMesh_unfwo")
 
 [node name="Decorator" parent="." instance=ExtResource("2_oicja")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+is_enabled = false

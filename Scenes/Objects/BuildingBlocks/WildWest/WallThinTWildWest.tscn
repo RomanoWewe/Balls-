@@ -18,3 +18,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0, 0)
 mesh = ExtResource("1_pu617")
 
 [node name="Decorator" parent="." instance=ExtResource("2_3d7kk")]
+position_extents = Vector3(1.4, 0, 1.5)

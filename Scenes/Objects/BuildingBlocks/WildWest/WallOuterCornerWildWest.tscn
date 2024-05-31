@@ -30,3 +30,5 @@ mesh = SubResource("PlaneMesh_dmjcc")
 skeleton = NodePath("")
 
 [node name="Decorator" parent="." instance=ExtResource("3_7vsfb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.277731, 3.795, -0.277731)
+position_extents = Vector3(1.5, 0, 1.5)

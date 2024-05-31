@@ -31,3 +31,4 @@ mesh = SubResource("PlaneMesh_vh0mk")
 skeleton = NodePath("")
 
 [node name="Decorator" parent="." instance=ExtResource("3_sa044")]
+position_extents = Vector3(1.3, 0, 1.5)

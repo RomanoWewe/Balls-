@@ -7,8 +7,9 @@
 [node name="Decorator" type="AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.79505, 0)
 script = ExtResource("1_1jq1n")
-mean = 1.0
 decorations = Array[PackedScene]([ExtResource("2_l3dxc"), ExtResource("3_cglw4")])
-spawn_chances = Array[int]([3, 1])
-spawn_chances_cumulative = Array[int]([3, 4])
+spawn_chances = Array[int]([1, 20])
+spawn_chances_cumulative = Array[int]([1, 100])
 position_extents = Vector3(2, 0, 2)
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
