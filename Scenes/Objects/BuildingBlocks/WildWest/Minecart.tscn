@@ -10,7 +10,7 @@ size = Vector3(0.375, 3.8512, 3.8)
 size = Vector3(0.41394, 3.93732, 2.8403)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xc1ox"]
-size = Vector3(0.2, 4, 0.2)
+size = Vector3(0.1, 4, 0.1)
 
 [node name="Minecart" type="RigidBody3D"]
 axis_lock_angular_x = true

@@ -114,7 +114,7 @@ anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="Settings" type="Control" parent="." node_paths=PackedStringArray("interface_node")]
+[node name="Settings" type="Control" parent="." node_paths=PackedStringArray("interface_node", "fps_counter")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -129,6 +129,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qayne")
 interface_node = NodePath("..")
+fps_counter = NodePath("../Static UI/FPS counter")
 
 [node name="Panel" type="Panel" parent="Settings"]
 layout_mode = 1
@@ -411,6 +412,22 @@ theme_override_fonts/normal_font = ExtResource("2_pmr5i")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "Level x"
+
+[node name="FPS counter" type="RichTextLabel" parent="Static UI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 615.0
+offset_top = 1.0
+offset_right = 815.0
+offset_bottom = 101.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("3_gyqev")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "60
+"
 
 [connection signal="pressed" from="Settings/Apply" to="Settings" method="_on_apply_pressed"]
 [connection signal="pressed" from="Settings/Apply" to="Paused" method="back_to_pause_menu"]

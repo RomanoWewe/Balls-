@@ -17,3 +17,5 @@ var resolutions = [
 
 @export var is_sound_mute = false
 @export var is_music_mute = false
+
+@export var show_fps :=false
