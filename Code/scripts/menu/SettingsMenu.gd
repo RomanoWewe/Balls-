@@ -3,8 +3,9 @@ class_name SettingsMenu
 
 @export var DEFAULT_HEIGHT = 720
 
-var settings : Settings
+static var settings : Settings
 @export var interface_node := Control
+@export var fps_counter :RichTextLabel
 
 func _ready():
 	if settings:
@@ -52,3 +53,12 @@ func _on_sound_toggled(toggled_on):
 func _on_music_toggled(toggled_on):
 	settings.is_music_mute = toggled_on
 	apply_settings()
+
+func _process(_delta):
+	if Input.is_action_just_pressed("F2"):
+		settings.show_fps= !settings.show_fps
+	if fps_counter!=null:
+		if settings.show_fps:
+			fps_counter.text = "%d" % Engine.get_frames_per_second()
+		else:
+			fps_counter.text = ""

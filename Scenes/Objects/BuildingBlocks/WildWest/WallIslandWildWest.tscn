@@ -12,7 +12,7 @@ texture_filter = 0
 size = Vector2(5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
-size = Vector3(5, 5, 5)
+size = Vector3(4.22522, 5, 4.72461)
 
 [node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
 sync_to_physics = false
@@ -23,7 +23,7 @@ mesh = SubResource("PlaneMesh_unfwo")
 skeleton = NodePath("")
 
 [node name="collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00238037, 2.5, 0.046875)
 shape = SubResource("BoxShape3D_t24w4")
 
 [node name="Western2" type="MeshInstance3D" parent="."]
