@@ -52,3 +52,4 @@ func _on_sound_toggled(toggled_on):
 func _on_music_toggled(toggled_on):
 	settings.is_music_mute = toggled_on
 	apply_settings()
+

@@ -414,5 +414,9 @@ text = "Level x"
 
 [connection signal="pressed" from="Settings/Apply" to="Settings" method="_on_apply_pressed"]
 [connection signal="pressed" from="Settings/Apply" to="Paused" method="back_to_pause_menu"]
+[connection signal="item_selected" from="Settings/Options/Resolution/OptionButton" to="Settings" method="_on_resolution_set"]
+[connection signal="toggled" from="Settings/Options/Fullscreen/CenterContainer/CheckBox" to="Settings" method="_on_fullscreen_set"]
+[connection signal="toggled" from="Settings/Options/SoundVolume/CenterContainer/CheckBox" to="Settings" method="_on_sound_toggled"]
+[connection signal="toggled" from="Settings/Options/MusicVolume2/CenterContainer/CheckBox" to="Settings" method="_on_music_toggled"]
 [connection signal="pressed" from="Paused/VBoxContainer/Unpause" to="Paused" method="unpause"]
 [connection signal="pressed" from="Paused/VBoxContainer/Settings" to="Paused" method="settings"]

@@ -30,7 +30,6 @@ func recalculate_spawn_chances(new_val : Array[int]):
 func set_is_enabled(new_val : bool):
 	is_enabled = new_val
 	generate_decorations_func(true)
-	print(decorators)
 
 func generate_decorations_func(_new_val : bool):
 	for child in get_children():
