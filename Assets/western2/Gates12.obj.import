@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b202n3vt6p1wl"
+path="res://.godot/imported/Gates12.obj-b692d78ed846f6f9ae01ec757b3e5124.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Gates12.obj-b692d78ed846f6f9ae01ec757b3e5124.mesh"]
+
+source_file="res://Assets/western2/Gates12.obj"
+dest_files=["res://.godot/imported/Gates12.obj-b692d78ed846f6f9ae01ec757b3e5124.mesh", "res://.godot/imported/Gates12.obj-b692d78ed846f6f9ae01ec757b3e5124.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

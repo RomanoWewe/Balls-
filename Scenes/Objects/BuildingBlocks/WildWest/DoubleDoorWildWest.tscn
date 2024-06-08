@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://do008yawri18n"]
+
+[ext_resource type="ArrayMesh" uid="uid://boegy0gsr28kc" path="res://Assets/western2/Gates11.obj" id="1_2ylc3"]
+[ext_resource type="ArrayMesh" uid="uid://b202n3vt6p1wl" path="res://Assets/western2/Gates12.obj" id="3_fsgqn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fpsi0"]
+size = Vector3(1.9, 5, 0.5)
+
+[node name="DoubleDoorWildWest" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2.5, 0)
+
+[node name="Gates13" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2.5, 0)
+mesh = ExtResource("3_fsgqn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("BoxShape3D_fpsi0")
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.25, 2.5, 0)
+node_a = NodePath("../RigidBody3D")
+node_b = NodePath("../leftHinge")
+angular_limit/enable = true
+angular_limit/lower = 0.0
+motor/enable = true
+motor/target_velocity = -1.74533
+motor/max_impulse = 0.01
+
+[node name="leftHinge" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="Gates11" type="MeshInstance3D" parent="leftHinge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = ExtResource("1_2ylc3")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1, 2.5, -5.82818e-08)
+
+[node name="Gates13" type="MeshInstance3D" parent="RigidBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2.5, 0)
+mesh = ExtResource("3_fsgqn")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
+shape = SubResource("BoxShape3D_fpsi0")
+
+[node name="HingeJoint3D2" type="HingeJoint3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 2.25, 2.5, 0)
+node_a = NodePath("../RigidBody3D2")
+node_b = NodePath("../leftHinge2")
+angular_limit/enable = true
+angular_limit/upper = 0.0
+motor/enable = true
+motor/target_velocity = 1.74533
+motor/max_impulse = 0.01
+
+[node name="leftHinge2" type="StaticBody3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2, 0, 2.91409e-08)
+
+[node name="Gates11" type="MeshInstance3D" parent="leftHinge2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = ExtResource("1_2ylc3")
+skeleton = NodePath("../..")
