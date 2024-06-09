@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d1274acyhjpof"]
+[gd_scene load_steps=22 format=3 uid="uid://d1274acyhjpof"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_2dhrh"]
 [ext_resource type="PackedScene" uid="uid://1wbm3hp7m7bp" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailXRail.tscn" id="6_3mrh1"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://ufx0hicv1t3m" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallOuterCornerWildWest.tscn" id="16_ms8ca"]
 [ext_resource type="PackedScene" uid="uid://c2quyiba7dng5" path="res://Scenes/Objects/_Abstract/WildWest/decoratorWildWestWalls.tscn" id="17_4gt5c"]
 [ext_resource type="PackedScene" uid="uid://do008yawri18n" path="res://Scenes/Objects/BuildingBlocks/WildWest/DoubleDoorWildWest.tscn" id="17_7x8db"]
+[ext_resource type="PackedScene" uid="uid://7r4f4bpsd55u" path="res://Scenes/Objects/BuildingBlocks/WildWest/BridgeStone.tscn" id="19_8x1a1"]
+[ext_resource type="PackedScene" uid="uid://cn4cthpfbswys" path="res://Scenes/Objects/BuildingBlocks/WildWest/BridgeWooden.tscn" id="20_kqnrc"]
+[ext_resource type="PackedScene" uid="uid://bc8qsjy13ympg" path="res://Scenes/Objects/BuildingBlocks/WildWest/GoldExtractor.tscn" id="22_eiyuj"]
 
 [node name="Den" type="Node3D"]
 script = ExtResource("1_2dhrh")
@@ -39,9 +42,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 26, 29
 
 [node name="5,15,25(1)" parent="static" instance=ExtResource("10_fjrka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 25)
-
-[node name="5,25,35(1)" parent="static" instance=ExtResource("9_l8f3a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 35)
 
 [node name="5,25,30(0)" parent="static" instance=ExtResource("6_3mrh1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 30)
@@ -316,11 +316,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 5, 25)
 [node name="5,30,15(0)" parent="static" instance=ExtResource("11_yfl2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 15)
 
-[node name="5,30,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_jhvhd")]
+[node name="5,30,20(0)" parent="static" instance=ExtResource("10_jhvhd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30, 5, 20)
-sync_to_physics = false
 
-[node name="5,20,20(1)" type="Node3D" parent="static" instance=ExtResource("17_7x8db")]
+[node name="5,20,20(1)" parent="static" instance=ExtResource("17_7x8db")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 5, 20)
 
+[node name="5,45,35(0)" parent="static" instance=ExtResource("22_eiyuj")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 45, 5, 35)
+
+[node name="5,40,35(1)" parent="static" instance=ExtResource("9_l8f3a")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 40, 5, 35)
+
+[node name="0,60,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("19_8x1a1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 35)
+sync_to_physics = false
+
+[node name="0,60,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("20_kqnrc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 45)
+sync_to_physics = false
+
 [node name="Decorator" parent="." instance=ExtResource("17_4gt5c")]
+
+[node name="GoldExtractor" parent="." instance=ExtResource("22_eiyuj")]

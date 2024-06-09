@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://k50hr4io0d5d"
+path="res://.godot/imported/лента.obj-474ada82a22a05c122e3ed1b1397586a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/лента.obj-474ada82a22a05c122e3ed1b1397586a.mesh"]
+
+source_file="res://Assets/western2/лента.obj"
+dest_files=["res://.godot/imported/лента.obj-474ada82a22a05c122e3ed1b1397586a.mesh", "res://.godot/imported/лента.obj-474ada82a22a05c122e3ed1b1397586a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

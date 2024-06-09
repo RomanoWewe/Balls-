@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc2013l0px6je"]
+
+[ext_resource type="ArrayMesh" uid="uid://bf4ybf6c0elsw" path="res://Assets/western2/western13.obj" id="1_pj00q"]
+[ext_resource type="PackedScene" uid="uid://c2quyiba7dng5" path="res://Scenes/Objects/_Abstract/WildWest/decoratorWildWestWalls.tscn" id="2_djxgb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
+size = Vector3(5, 5, 5)
+
+[node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
+sync_to_physics = false
+
+[node name="collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_t24w4")
+
+[node name="Western2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
+mesh = ExtResource("1_pj00q")
+
+[node name="Decorator" parent="." instance=ExtResource("2_djxgb")]
