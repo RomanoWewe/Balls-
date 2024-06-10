@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://btridx4gtyx73"
+path="res://.godot/imported/ConveyorBelt4.obj-0095c8a5f7efa8aa46ab04811405a773.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ConveyorBelt4.obj-0095c8a5f7efa8aa46ab04811405a773.mesh"]
+
+source_file="res://Assets/western2/ConveyorBelt4.obj"
+dest_files=["res://.godot/imported/ConveyorBelt4.obj-0095c8a5f7efa8aa46ab04811405a773.mesh", "res://.godot/imported/ConveyorBelt4.obj-0095c8a5f7efa8aa46ab04811405a773.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

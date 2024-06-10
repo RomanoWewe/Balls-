@@ -1,11 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://bc8qsjy13ympg"]
+[gd_scene load_steps=17 format=3 uid="uid://bc8qsjy13ympg"]
 
 [ext_resource type="ArrayMesh" uid="uid://dejj06sf45gvs" path="res://Assets/western2/генератор без крутящего елемента.obj" id="1_fsxro"]
+[ext_resource type="Script" path="res://Code/scripts/GoldConveyor.gd" id="1_i011t"]
+[ext_resource type="PackedScene" uid="uid://cdbc8ejx8dv1r" path="res://Scenes/Objects/_Spawnable/gold_bar.tscn" id="2_anvwf"]
 [ext_resource type="ArrayMesh" uid="uid://ddkbkj4o4diai" path="res://Assets/western2/кейс с голдой.obj" id="2_lweo2"]
 [ext_resource type="ArrayMesh" uid="uid://k50hr4io0d5d" path="res://Assets/western2/лента.obj" id="3_p2av1"]
 [ext_resource type="ArrayMesh" uid="uid://na3b6tjn6ohp" path="res://Assets/western2/подпорки между которой и движеться лента.obj" id="4_8c8s8"]
 [ext_resource type="ArrayMesh" uid="uid://ejg01irciqau" path="res://Assets/western2/балка на которой крутиться лента с низу к ней так же прикреплен генератор.obj" id="5_ooay4"]
 [ext_resource type="ArrayMesh" uid="uid://caroj0ht6ouc6" path="res://Assets/western2/балка на которой крутиться лента.obj" id="6_vbghl"]
+[ext_resource type="Script" path="res://Code/scripts/WaterCurrent.gd" id="7_gvp5y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wa4fo"]
+friction = 0.01
 
 [sub_resource type="Animation" id="Animation_fmabn"]
 resource_name = "new_animation"
@@ -36,22 +42,40 @@ _data = {
 "new_animation": SubResource("Animation_fmabn")
 }
 
-[node name="GoldExtractor" type="AnimatableBody3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a27mo"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_svfa8"]
+size = Vector3(2.4, 5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2wwiq"]
+size = Vector3(2.37803, 6, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xijoy"]
+size = Vector3(1, 2, 1.8)
+
+[node name="GoldExtractor" type="StaticBody3D" node_paths=PackedStringArray("spawn_point")]
+physics_material_override = SubResource("PhysicsMaterial_wa4fo")
+script = ExtResource("1_i011t")
+gold_bar_prefab = ExtResource("2_anvwf")
+spawn_point = NodePath("SpawnPoint")
+spawn_cooldown = 3.0
 
 [node name="ГенераторБезКрутящегоЕлемента" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.789978, 0, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.119939, 0, -0.201891)
 mesh = ExtResource("1_fsxro")
 
 [node name="КейсСГолдой" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.789978, 0, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.119939, 0, -0.201891)
 mesh = ExtResource("2_lweo2")
 
 [node name="Лента" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.789978, 0, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.119939, 0, -0.201891)
 mesh = ExtResource("3_p2av1")
 
 [node name="ПодпоркиМеждуКоторойИДвижетьсяЛента" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.589978, 0, 0)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0800609, 0, -0.201891)
 mesh = ExtResource("4_8c8s8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -60,7 +84,7 @@ libraries = {
 }
 
 [node name="container1" type="Node3D" parent="."]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -2.18998, 0.5, 0)
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, -8.74228e-08, -1, 0, -8.74228e-08, 7.64274e-15, -1, 1.51994, 0.5, -0.201892)
 
 [node name="БалкаНаКоторойКрутитьсяЛентаСНизуКНейТакЖеПрикрепленГенератор" type="MeshInstance3D" parent="container1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, -0.5, 0)
@@ -68,7 +92,7 @@ mesh = ExtResource("5_ooay4")
 skeleton = NodePath("../..")
 
 [node name="container2" type="Node3D" parent="."]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0.410022, 3.2, 0)
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, -8.74228e-08, -1, 0, -8.74228e-08, 7.64274e-15, -1, -1.08006, 3.2, -0.201891)
 
 [node name="БалкаНаКоторойКрутитьсяЛента2" type="MeshInstance3D" parent="container2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -2.8, 0)
@@ -76,9 +100,63 @@ mesh = ExtResource("6_vbghl")
 skeleton = NodePath("../..")
 
 [node name="container3" type="Node3D" parent="."]
-transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 2.31002, 3.2, 0)
+transform = Transform3D(1, -8.74228e-08, -8.74228e-08, -8.74228e-08, -1, 0, -8.74228e-08, 7.64274e-15, -1, -2.98006, 3.2, -0.201891)
 
 [node name="БалкаНаКоторойКрутитьсяЛента" type="MeshInstance3D" parent="container3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -2.8, 0)
 mesh = ExtResource("6_vbghl")
 skeleton = NodePath("../..")
+
+[node name="SpawnPoint" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.83977, 1.26441, 0.209457)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.670039, 0, 0.198109)
+depth = 1.6
+polygon = PackedVector2Array(2.7, 3.6, 0.2, 3.6, -2.6, 0.8, -2.6, 0, 2, 0, 2, 2.8, 2.7, 2.8)
+
+[node name="WaterCurrent" type="AnimatableBody3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.670039, 0, -0.201891)
+script = ExtResource("7_gvp5y")
+audio_prefab = null
+current_direction = Vector3(0.890762, 0.45447, 0)
+
+[node name="mesh2" type="MeshInstance3D" parent="WaterCurrent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28917, 2.51778, -0.332245)
+material_override = SubResource("StandardMaterial3D_a27mo")
+mesh = SubResource("BoxMesh_svfa8")
+
+[node name="Area3D" type="Area3D" parent="WaterCurrent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterCurrent/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.382212, 2.66888, 0)
+shape = SubResource("BoxShape3D_2wwiq")
+
+[node name="WaterCurrent2" type="AnimatableBody3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.670039, 0, -0.201891)
+script = ExtResource("7_gvp5y")
+audio_prefab = null
+current_direction = Vector3(0.378362, -0.925657, 0)
+current_power = 5.0
+
+[node name="mesh2" type="MeshInstance3D" parent="WaterCurrent2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48486, 2.5331, -0.332245)
+material_override = SubResource("StandardMaterial3D_a27mo")
+mesh = SubResource("BoxMesh_svfa8")
+
+[node name="Area3D" type="Area3D" parent="WaterCurrent2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56292, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WaterCurrent2/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.221226, 2.66888, 0)
+shape = SubResource("BoxShape3D_2wwiq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.42996, 1, 0.198108)
+shape = SubResource("BoxShape3D_xijoy")
+
+[connection signal="body_entered" from="WaterCurrent/Area3D" to="WaterCurrent" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="WaterCurrent/Area3D" to="WaterCurrent" method="_on_area_3d_body_exited"]
+[connection signal="body_entered" from="WaterCurrent2/Area3D" to="WaterCurrent2" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="WaterCurrent2/Area3D" to="WaterCurrent2" method="_on_area_3d_body_exited"]

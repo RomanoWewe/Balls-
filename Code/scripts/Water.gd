@@ -25,7 +25,8 @@ func _on_area_3d_body_entered(body):
 	if body is GravitationalObject:
 		bodies_affected.append(body)
 		if body.waters_intersected.size()<1 and body.linear_velocity.length()>=2:
-			$Splash.start_playing()
+			if get_node_or_null("Splash") !=null:
+				$Splash.start_playing()
 		body.waters_intersected.append(self)
 		if body is Ball:
 			body.amount_of_ground_contacted+=1

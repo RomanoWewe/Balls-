@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdbc8ejx8dv1r"]
+
+[ext_resource type="Script" path="res://Code/scripts/GravitationalObject.gd" id="1_wu167"]
+[ext_resource type="ArrayMesh" uid="uid://dqoqkwhpv3eu8" path="res://Assets/western2/слиток голды.obj" id="2_801t0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_id74y"]
+size = Vector3(2, 0.4, 0.8)
+
+[node name="GoldBar" type="RigidBody3D"]
+script = ExtResource("1_wu167")
+
+[node name="mesh" type="MeshInstance3D" parent="." groups=["IsFloor"]]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.2, -6, 0.1)
+mesh = ExtResource("2_801t0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_id74y")
