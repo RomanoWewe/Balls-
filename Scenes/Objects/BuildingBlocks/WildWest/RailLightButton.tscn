@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://xuchxlo3mui8"]
+
+[ext_resource type="Script" path="res://Code/scripts/RailButton.gd" id="1_7wpdg"]
+[ext_resource type="Texture2D" uid="uid://dq4qa8b68a5y7" path="res://Assets/western2/rails3.png" id="2_e5k0j"]
+[ext_resource type="ArrayMesh" uid="uid://bjpnx1rkqns2b" path="res://Assets/western2/rails 2.obj" id="3_spadu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfk8a"]
+albedo_texture = ExtResource("2_e5k0j")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j2hf4"]
+size = Vector3(0.1, 0.1, 5)
+
+[node name="Rail" type="Node3D"]
+script = ExtResource("1_7wpdg")
+catch_mask = 31
+
+[node name="Rail" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.7, 0, 0)
+material_override = SubResource("StandardMaterial3D_hfk8a")
+mesh = ExtResource("3_spadu")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_j2hf4")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0)
+text = "Light Button"
+font_size = 125
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]

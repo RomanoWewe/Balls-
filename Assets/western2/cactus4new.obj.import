@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dwxe57p2jvpao"
+path="res://.godot/imported/cactus4new.obj-8b693a9ca15bccf55e7f0a24df35e172.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cactus4new.obj-8b693a9ca15bccf55e7f0a24df35e172.mesh"]
+
+source_file="res://Assets/western2/cactus4new.obj"
+dest_files=["res://.godot/imported/cactus4new.obj-8b693a9ca15bccf55e7f0a24df35e172.mesh", "res://.godot/imported/cactus4new.obj-8b693a9ca15bccf55e7f0a24df35e172.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

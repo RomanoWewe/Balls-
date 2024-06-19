@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bhai3umlgo748"
+path="res://.godot/imported/western15.obj-ed47d337e1b6c5d82e1f50923f9db176.mesh"
+
+[deps]
+
+files=["res://.godot/imported/western15.obj-ed47d337e1b6c5d82e1f50923f9db176.mesh"]
+
+source_file="res://Assets/western2/western15.obj"
+dest_files=["res://.godot/imported/western15.obj-ed47d337e1b6c5d82e1f50923f9db176.mesh", "res://.godot/imported/western15.obj-ed47d337e1b6c5d82e1f50923f9db176.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

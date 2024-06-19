@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1b031yv6tgqc"]
+
+[ext_resource type="ArrayMesh" uid="uid://bnrpp5my1845w" path="res://Assets/western2/western18.obj" id="1_3v62j"]
+[ext_resource type="Script" path="res://Code/scripts/KillZone.gd" id="2_bm1b7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_td1rt"]
+transparency = 1
+albedo_color = Color(0, 0.313726, 0.603922, 0.65098)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l8pj6"]
+size = Vector2(5, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_75nhv"]
+size = Vector3(5, 10, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vwk3h"]
+size = Vector3(5, 0.5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ooser"]
+size = Vector3(5, 5, 5)
+
+[node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
+sync_to_physics = false
+
+[node name="Western2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.6, -9, 0.7)
+mesh = ExtResource("1_3v62j")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.886, 1.25)
+material_override = SubResource("StandardMaterial3D_td1rt")
+mesh = SubResource("PlaneMesh_l8pj6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)
+shape = SubResource("BoxShape3D_75nhv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+shape = SubResource("BoxShape3D_vwk3h")
+
+[node name="KillZone" type="Area3D" parent="."]
+script = ExtResource("2_bm1b7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+shape = SubResource("BoxShape3D_ooser")

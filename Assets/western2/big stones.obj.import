@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cktvdrmyn0a6d"
+path="res://.godot/imported/big stones.obj-f4b6f8619a3f74798372034e9826d966.mesh"
+
+[deps]
+
+files=["res://.godot/imported/big stones.obj-f4b6f8619a3f74798372034e9826d966.mesh"]
+
+source_file="res://Assets/western2/big stones.obj"
+dest_files=["res://.godot/imported/big stones.obj-f4b6f8619a3f74798372034e9826d966.mesh", "res://.godot/imported/big stones.obj-f4b6f8619a3f74798372034e9826d966.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

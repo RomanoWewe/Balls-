@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://1qm8s5jlvwtn"]
+
+[ext_resource type="ArrayMesh" uid="uid://ckhjb3q4gcdb5" path="res://Assets/western2/western19.obj" id="1_a2v1d"]
+[ext_resource type="Script" path="res://Code/scripts/KillZone.gd" id="2_dg3qw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhefc"]
+transparency = 1
+albedo_color = Color(0, 0.313726, 0.603922, 0.65098)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1rme1"]
+size = Vector2(5, 2.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_apnae"]
+size = Vector3(5, 10, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rqtap"]
+size = Vector3(5, 0.5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1pdvh"]
+size = Vector3(5, 5, 5)
+
+[node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
+sync_to_physics = false
+
+[node name="Western2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.3, -5.3, 0.3)
+mesh = ExtResource("1_a2v1d")
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.886, 1.25)
+material_override = SubResource("StandardMaterial3D_rhefc")
+mesh = SubResource("PlaneMesh_1rme1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)
+shape = SubResource("BoxShape3D_apnae")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5, 0, 0)
+shape = SubResource("BoxShape3D_apnae")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+shape = SubResource("BoxShape3D_rqtap")
+
+[node name="KillZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
+script = ExtResource("2_dg3qw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KillZone"]
+shape = SubResource("BoxShape3D_1pdvh")

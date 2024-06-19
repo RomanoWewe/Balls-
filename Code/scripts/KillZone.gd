@@ -5,6 +5,9 @@ class_name KillZone
 @export var destroy_self_on_contact :=false
 var ignore_list :Array[Node3D] = []
 
+func _ready():
+	if body_entered.get_connections().size()<1:
+		body_entered.connect(_on_body_entered)
 
 func _on_body_entered(body):
 	if body in ignore_list:
