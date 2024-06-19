@@ -6,6 +6,8 @@ class_name GoldConveyor
 @export var spawn_cooldown : float
 var since_last_spawn :=0.0
 
+func _ready():
+	$AnimationPlayer.current_animation="new_animation"
 
 func _process(delta):
 	since_last_spawn +=delta

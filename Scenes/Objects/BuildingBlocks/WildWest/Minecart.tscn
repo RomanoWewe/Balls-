@@ -1,19 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dex6u2j1i8amw"]
+[gd_scene load_steps=6 format=3 uid="uid://dex6u2j1i8amw"]
 
 [ext_resource type="Script" path="res://Code/scripts/Minecart.gd" id="1_7own3"]
 [ext_resource type="ArrayMesh" uid="uid://fsgewjvqo6sd" path="res://Assets/western2/trolley 2.obj" id="2_x3mhb"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wdkh4"]
-size = Vector3(0.375, 2.98306, 3.8)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2yoxs"]
-size = Vector3(0.41394, 2.89368, 2.8403)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_xc1ox"]
 size = Vector3(0.1, 4, 0.1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_7t65i"]
-size = Vector3(5, 0.5, 4)
+[sub_resource type="BoxShape3D" id="BoxShape3D_yiw7j"]
+size = Vector3(5.12964, 2.98541, 4.36212)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p2pbx"]
+size = Vector3(4.82544, 0.420151, 4.12988)
 
 [node name="Minecart" type="RigidBody3D"]
 axis_lock_angular_x = true
@@ -23,22 +20,6 @@ custom_integrator = true
 continuous_cd = true
 script = ExtResource("1_7own3")
 max_speed = 12
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.0036, -2)
-shape = SubResource("BoxShape3D_wdkh4")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.00481, 2)
-shape = SubResource("BoxShape3D_wdkh4")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 2.39507, 2.04708, -0.0608029)
-shape = SubResource("BoxShape3D_2yoxs")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -2.38637, 2.04643, -0.0608029)
-shape = SubResource("BoxShape3D_2yoxs")
 
 [node name="Minecart" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
@@ -51,6 +32,16 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("BoxShape3D_xc1ox")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23188, 0)
-shape = SubResource("BoxShape3D_7t65i")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0440674, 2.00204, -0.00125122)
+shape = SubResource("BoxShape3D_yiw7j")
+
+[node name="Area3D2" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0369873, 3.57426, 0.0131836)
+shape = SubResource("BoxShape3D_p2pbx")
+
+[node name="FillMesh" type="MeshInstance3D" parent="."]
+
+[connection signal="body_entered" from="Area3D2" to="." method="_on_area_3d_2_body_entered"]

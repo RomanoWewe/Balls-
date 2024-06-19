@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d27qknco5oekm"
+path="res://.godot/imported/westernWoter.obj-20c311852719830a05b933c50bd475dd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/westernWoter.obj-20c311852719830a05b933c50bd475dd.mesh"]
+
+source_file="res://Assets/western2/westernWoter.obj"
+dest_files=["res://.godot/imported/westernWoter.obj-20c311852719830a05b933c50bd475dd.mesh", "res://.godot/imported/westernWoter.obj-20c311852719830a05b933c50bd475dd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

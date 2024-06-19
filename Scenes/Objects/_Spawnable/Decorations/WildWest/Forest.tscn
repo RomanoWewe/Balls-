@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cscbifuqras4x"]
+
+[ext_resource type="ArrayMesh" uid="uid://kqufa324uakh" path="res://Assets/western2/brush1new.obj" id="1_fmuut"]
+
+[node name="2" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_fmuut")

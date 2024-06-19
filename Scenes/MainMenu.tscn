@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://lqtm7g6w8w5j"]
+[gd_scene load_steps=31 format=3 uid="uid://lqtm7g6w8w5j"]
 
 [ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="1_moibi"]
 [ext_resource type="Texture2D" uid="uid://civl5wx7w56hc" path="res://Assets/Textures/Menu/snap2024-01-27-16-17-05.png" id="1_xjj4g"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://r7jk8y3n2wnw" path="res://Assets/Textures/Menu/snap2024-01-27-16-15-29.png" id="10_1ofm1"]
 [ext_resource type="Script" path="res://Code/scripts/menu/MainMenuAnimator.gd" id="10_bdqee"]
 [ext_resource type="PackedScene" uid="uid://dfdxcv53jpn48" path="res://Scenes/Menu/achievement_icon.tscn" id="11_bkeu7"]
+[ext_resource type="Texture2D" uid="uid://b110hbs0070sm" path="res://Assets/menu/settings menu 2.png" id="11_cp43u"]
 [ext_resource type="Texture2D" uid="uid://uvtybgkbshuw" path="res://Debug.png" id="12_2woru"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwnkv"]
@@ -34,13 +35,6 @@ bg_color = Color(0, 0.894118, 0.435294, 0.588235)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x40ki"]
 bg_color = Color(0, 0.894118, 0.435294, 0.588235)
-
-[sub_resource type="Gradient" id="Gradient_b170e"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_d1384"]
-gradient = SubResource("Gradient_b170e")
-fill_from = Vector2(1, 0)
-fill_to = Vector2(0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v51sa"]
 
@@ -1622,7 +1616,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_d1384")
+texture = ExtResource("11_cp43u")
 
 [node name="Panel" type="Panel" parent="Control/Settings"]
 layout_mode = 1

@@ -16,9 +16,9 @@ func _ready():
 		connections.erase(press_animation)
 	if Engine.is_editor_hint():
 		return
-	
 	if press_animation:
 		connections.append(press_animation)
+		print(connections)
 
 func add_connection(activatable : Activatable):
 	if (!is_inside_tree()):

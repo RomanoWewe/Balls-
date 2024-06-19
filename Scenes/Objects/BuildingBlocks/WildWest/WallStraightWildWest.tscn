@@ -1,18 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cd0h3jlrhq4rw"]
+[gd_scene load_steps=4 format=3 uid="uid://cd0h3jlrhq4rw"]
 
 [ext_resource type="ArrayMesh" uid="uid://bm02mofhb8qno" path="res://Assets/western2/western2.obj" id="1_2fw1k"]
 [ext_resource type="PackedScene" uid="uid://c2quyiba7dng5" path="res://Scenes/Objects/_Abstract/WildWest/decoratorWildWestWalls.tscn" id="3_3gxn4"]
-[ext_resource type="Texture2D" uid="uid://b6hfmcy6gisna" path="res://Assets/Textures/WWFloor.png" id="5_6v0t0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
 size = Vector3(5, 5, 4.60547)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xi4ql"]
-albedo_texture = ExtResource("5_6v0t0")
-texture_filter = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_rlkol"]
-size = Vector2(5, 5)
 
 [node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
 sync_to_physics = false
@@ -24,11 +16,6 @@ shape = SubResource("BoxShape3D_t24w4")
 [node name="Western2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 mesh = ExtResource("1_2fw1k")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_xi4ql")
-mesh = SubResource("PlaneMesh_rlkol")
-skeleton = NodePath("")
 
 [node name="Decorator" parent="." instance=ExtResource("3_3gxn4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.795, -0.2)

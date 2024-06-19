@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_id74y"]
 size = Vector3(2, 0.4, 0.8)
 
-[node name="GoldBar" type="RigidBody3D"]
+[node name="GoldBar" type="RigidBody3D" groups=["GoldBar"]]
 script = ExtResource("1_wu167")
 
 [node name="mesh" type="MeshInstance3D" parent="." groups=["IsFloor"]]
@@ -15,3 +15,5 @@ mesh = ExtResource("2_801t0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_id74y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

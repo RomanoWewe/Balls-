@@ -1,26 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dg22a4jdvy64k"]
+[gd_scene load_steps=4 format=3 uid="uid://dg22a4jdvy64k"]
 
-[ext_resource type="Texture2D" uid="uid://b6hfmcy6gisna" path="res://Assets/Textures/WWFloor.png" id="1_70bam"]
 [ext_resource type="ArrayMesh" uid="uid://3eaunui08271" path="res://Assets/western2/western8-3.obj" id="1_thoqe"]
 [ext_resource type="PackedScene" uid="uid://c2quyiba7dng5" path="res://Scenes/Objects/_Abstract/WildWest/decoratorWildWestWalls.tscn" id="3_8qfvw"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87mhg"]
-albedo_texture = ExtResource("1_70bam")
-texture_filter = 0
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_unfwo"]
-size = Vector2(5, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
 size = Vector3(4.22522, 5, 4.72461)
 
 [node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
 sync_to_physics = false
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_87mhg")
-mesh = SubResource("PlaneMesh_unfwo")
-skeleton = NodePath("")
 
 [node name="collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00238037, 2.5, 0.046875)

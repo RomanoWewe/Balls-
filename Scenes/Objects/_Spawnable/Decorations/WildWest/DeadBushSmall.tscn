@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://da8gyfygf2y2q"]
+
+[ext_resource type="ArrayMesh" uid="uid://c0wkreyqjoecv" path="res://Assets/western2/smalldeadbrush.obj" id="1_uiaeg"]
+
+[node name="2" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.03946, -3.8, -0.752535)
+mesh = ExtResource("1_uiaeg")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcyihbw01n144"]
+
+[ext_resource type="ArrayMesh" uid="uid://dwxe57p2jvpao" path="res://Assets/western2/cactus4new.obj" id="1_taukm"]
+
+[node name="2" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75636, -3.8, -0.752121)
+mesh = ExtResource("1_taukm")

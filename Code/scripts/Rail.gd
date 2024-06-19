@@ -13,4 +13,3 @@ func _on_area_3d_area_entered(area):
 func get_minecart_direction(_minecart):
 	return global_basis
 
-

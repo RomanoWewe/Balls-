@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://1wbm3hp7m7bp"]
 
+[ext_resource type="Texture2D" uid="uid://oy7n5hcyyhvs" path="res://Assets/western2/rails4.png" id="1_rhf3d"]
 [ext_resource type="Script" path="res://Code/scripts/Rail.gd" id="1_xuhuv"]
-[ext_resource type="Texture2D" uid="uid://tmthywr8erhl" path="res://Assets/3D/WildWest/RailTexture.png" id="2_hbl4b"]
-[ext_resource type="ArrayMesh" uid="uid://qt1jmk5465ya" path="res://Assets/3D/WildWest/Rail.obj" id="3_ehsgs"]
+[ext_resource type="ArrayMesh" uid="uid://uunlm3djcopo" path="res://Assets/western2/rails4.obj" id="2_y1o66"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxt5w"]
-albedo_texture = ExtResource("2_hbl4b")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lfor"]
+albedo_texture = ExtResource("1_rhf3d")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2y0jv"]
 size = Vector3(0.1, 0.1, 1)
@@ -16,13 +16,8 @@ size = Vector3(0.1, 0.1, 3)
 [node name="RailCurve" type="Node3D"]
 
 [node name="Rail" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_lxt5w")
-mesh = ExtResource("3_ehsgs")
-
-[node name="Rail2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_lxt5w")
-mesh = ExtResource("3_ehsgs")
+material_override = SubResource("StandardMaterial3D_6lfor")
+mesh = ExtResource("2_y1o66")
 
 [node name="Rail3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)

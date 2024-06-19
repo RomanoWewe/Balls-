@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dwgxu3t2kgb64" path="res://Scenes/Objects/BuildingBlocks/Beach/1side.tscn" id="7_tdvqf"]
 [ext_resource type="PackedScene" uid="uid://pucv7j6m3047" path="res://Scenes/Objects/BuildingBlocks/Beach/2sidesCO.tscn" id="8_4k62t"]
 [ext_resource type="PackedScene" uid="uid://btpwguu4e7ifo" path="res://Scenes/Objects/BuildingBlocks/Beach/3sides.tscn" id="8_it0xj"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/BuildingBlocks/Beach/island.tscn" id="9_tnqxb"]
+[ext_resource type="PackedScene" uid="uid://cv0ujlsyax1ov" path="res://Scenes/Objects/BuildingBlocks/Beach/island.tscn" id="9_tnqxb"]
 [ext_resource type="PackedScene" uid="uid://bcra1elc6uywq" path="res://Scenes/Objects/BuildingBlocks/Beach/2sidesOP.tscn" id="12_kbet0"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="12_w3rht"]
 [ext_resource type="PackedScene" uid="uid://drw3pieuqkmbh" path="res://Scenes/Objects/BuildingBlocks/Beach/2sides1corner.tscn" id="13_mqiit"]

@@ -1,15 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2quyiba7dng5"]
+[gd_scene load_steps=11 format=3 uid="uid://c2quyiba7dng5"]
 
 [ext_resource type="Script" path="res://Code/scripts/Decorator.gd" id="1_1jq1n"]
 [ext_resource type="PackedScene" uid="uid://cvsbbvwmms7ps" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/Bones.tscn" id="2_l3dxc"]
-[ext_resource type="PackedScene" uid="uid://dedg8q76u50bq" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/Cactus.tscn" id="3_cglw4"]
+[ext_resource type="PackedScene" uid="uid://dedg8q76u50bq" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/CactusForest.tscn" id="3_j16j7"]
+[ext_resource type="PackedScene" uid="uid://cepun4l2gncx4" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/BushForest.tscn" id="4_6e87f"]
+[ext_resource type="PackedScene" uid="uid://doc3eb3bpbee6" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/Cactus1.tscn" id="5_e06ro"]
+[ext_resource type="PackedScene" uid="uid://c0g4pgwcxr0w5" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/Cactus3.tscn" id="6_jarit"]
+[ext_resource type="PackedScene" uid="uid://dcyihbw01n144" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/Cactus4.tscn" id="7_xtr0r"]
+[ext_resource type="PackedScene" uid="uid://upb5jbxqyjto" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/DeadBush.tscn" id="8_007pr"]
+[ext_resource type="PackedScene" uid="uid://da8gyfygf2y2q" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/DeadBushSmall.tscn" id="9_d64me"]
+[ext_resource type="PackedScene" uid="uid://cscbifuqras4x" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/Forest.tscn" id="10_a731m"]
 
 [node name="Decorator" type="AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.79505, 0)
 script = ExtResource("1_1jq1n")
-decorations = Array[PackedScene]([ExtResource("2_l3dxc"), ExtResource("3_cglw4")])
-spawn_chances = Array[int]([1, 20])
-spawn_chances_cumulative = Array[int]([1, 100])
+mean = 3.0
+decorations = Array[PackedScene]([ExtResource("2_l3dxc"), ExtResource("3_j16j7"), ExtResource("4_6e87f"), ExtResource("5_e06ro"), ExtResource("6_jarit"), ExtResource("7_xtr0r"), ExtResource("8_007pr"), ExtResource("9_d64me"), ExtResource("10_a731m")])
+spawn_chances = Array[int]([10, 20, 20, 50, 50, 50, 50, 50, 10])
+spawn_chances_cumulative = Array[int]([10, 30, 50, 100, 150, 200, 250, 300, 310])
 position_extents = Vector3(2, 0, 2)
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
