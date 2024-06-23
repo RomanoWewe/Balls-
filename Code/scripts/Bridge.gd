@@ -1,0 +1,26 @@
+extends AnimatableBody3D
+class_name Bridge
+
+@export var debris_scene :PackedScene
+@export_range(0,4) var weight_to_break
+var weight_current := 0
+
+
+func _on_area_3d_body_entered(body):
+	if body is Minecart:
+		weight_current+=body.fill_level
+		if weight_current >=weight_to_break:
+			destroy()
+
+
+func _on_area_3d_body_exited(body):
+	if body is Minecart:
+		weight_current-=body.fill_level
+
+func destroy():
+	queue_free()
+	if debris_scene!=null:
+		var instance = debris_scene.instantiate()
+		instance.position = position
+		instance.owner = owner
+		get_tree().get_root().add_child(instance)
