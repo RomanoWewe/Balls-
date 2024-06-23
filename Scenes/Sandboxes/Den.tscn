@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d1274acyhjpof"]
+[gd_scene load_steps=27 format=3 uid="uid://d1274acyhjpof"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_2dhrh"]
 [ext_resource type="PackedScene" uid="uid://1wbm3hp7m7bp" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailXRail.tscn" id="6_3mrh1"]
@@ -24,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://bc8qsjy13ympg" path="res://Scenes/Objects/BuildingBlocks/WildWest/GoldExtractor.tscn" id="22_eiyuj"]
 [ext_resource type="Script" path="res://Code/scripts/Decorator.gd" id="23_qsoq7"]
 [ext_resource type="PackedScene" uid="uid://cjvp3dq3rh27u" path="res://Scenes/Objects/BuildingBlocks/Beach/doubleDoorBeach.tscn" id="23_y60sa"]
-[ext_resource type="Script" path="res://Code/scripts/Relay.gd" id="24_4grb1"]
 [ext_resource type="PackedScene" uid="uid://d3s6bpm0w5yjc" path="res://Scenes/Objects/BuildingBlocks/WildWest/WildWestLever.tscn" id="24_ryios"]
 [ext_resource type="PackedScene" uid="uid://co8qy2ojkjpej" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailHeavyButton.tscn" id="24_uecrv"]
 
@@ -468,10 +467,8 @@ connections = [null]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 35)
 connections = [NodePath("../5,45,30(0)")]
 
-[node name="5,45,30(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("activatables") instance=ExtResource("23_y60sa")]
+[node name="5,45,30(0)" parent="static" instance=ExtResource("23_y60sa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 30)
-script = ExtResource("24_4grb1")
-activatables = [NodePath("MovingPlatform"), NodePath("MovingPlatform2"), NodePath("ActivatableSound")]
 
 [node name="GlobalDecorator" type="Node3D" parent="."]
 visible = false

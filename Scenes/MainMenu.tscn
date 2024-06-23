@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://lqtm7g6w8w5j"]
+[gd_scene load_steps=39 format=3 uid="uid://lqtm7g6w8w5j"]
 
 [ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="1_moibi"]
 [ext_resource type="Texture2D" uid="uid://civl5wx7w56hc" path="res://Assets/Textures/Menu/snap2024-01-27-16-17-05.png" id="1_xjj4g"]
@@ -15,9 +15,11 @@
 [ext_resource type="Script" path="res://Code/scripts/ClearProgress.gd" id="9_vwb6k"]
 [ext_resource type="Texture2D" uid="uid://r7jk8y3n2wnw" path="res://Assets/Textures/Menu/snap2024-01-27-16-15-29.png" id="10_1ofm1"]
 [ext_resource type="Script" path="res://Code/scripts/menu/MainMenuAnimator.gd" id="10_bdqee"]
+[ext_resource type="Texture2D" uid="uid://csjtecau26f1o" path="res://Assets/menu/settings  menu 3.png" id="11_8swnm"]
 [ext_resource type="PackedScene" uid="uid://dfdxcv53jpn48" path="res://Scenes/Menu/achievement_icon.tscn" id="11_bkeu7"]
-[ext_resource type="Texture2D" uid="uid://b110hbs0070sm" path="res://Assets/menu/settings menu 2.png" id="11_cp43u"]
 [ext_resource type="Texture2D" uid="uid://uvtybgkbshuw" path="res://Debug.png" id="12_2woru"]
+[ext_resource type="Texture2D" uid="uid://dqrtgnqjch4tb" path="res://Assets/Textures/Menu/ButtonLevel.png" id="12_8u2kf"]
+[ext_resource type="Theme" uid="uid://vcn2812d42op" path="res://Scenes/Menu/Theme.tres" id="15_4aq8k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwnkv"]
 
@@ -35,6 +37,18 @@ bg_color = Color(0, 0.894118, 0.435294, 0.588235)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x40ki"]
 bg_color = Color(0, 0.894118, 0.435294, 0.588235)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0ixe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3m32e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_avkpb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ky5oi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4pfxx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rw2a7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v51sa"]
 
@@ -1593,7 +1607,7 @@ offset_right = 1237.51
 offset_bottom = 1245.71
 text = "128"
 
-[node name="Settings" type="Control" parent="Control" node_paths=PackedStringArray("interface_node")]
+[node name="Settings" type="Control" parent="Control" node_paths=PackedStringArray("interface_node", "resolution_menu", "fullscreen_button", "sound_mute_button", "music_mute_button")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1608,6 +1622,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_6q3uc")
 interface_node = NodePath("../..")
+resolution_menu = NodePath("Resolution/OptionButton")
+fullscreen_button = NodePath("Fullscreen/CustomTextureButton")
+sound_mute_button = NodePath("SoundMute/CustomTextureButton")
+music_mute_button = NodePath("MusicMute/CustomTextureButton")
 
 [node name="TextureRect" type="TextureRect" parent="Control/Settings"]
 layout_mode = 1
@@ -1616,65 +1634,243 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("11_cp43u")
-
-[node name="Panel" type="Panel" parent="Control/Settings"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -300.0
-offset_right = 250.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
+texture = ExtResource("11_8swnm")
 
 [node name="Tip" type="RichTextLabel" parent="Control/Settings"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -109.0
-offset_top = 344.0
-offset_right = 91.0
-offset_bottom = 444.0
+offset_left = -294.0
+offset_top = 136.0
+offset_right = 294.0
+offset_bottom = 304.0
 grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_moibi")
-theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/normal_font_size = 105
 bbcode_enabled = true
 text = "[center]Settings"
 
-[node name="Options" type="VBoxContainer" parent="Control/Settings"]
-layout_mode = 0
-offset_left = 435.0
-offset_top = 417.0
-offset_right = 845.0
-offset_bottom = 611.0
-theme_override_constants/separation = 15
-
-[node name="Resolution" type="HBoxContainer" parent="Control/Settings/Options"]
+[node name="Fullscreen" type="Control" parent="Control/Settings"]
 layout_mode = 2
-theme_override_constants/separation = 10
+anchors_preset = 0
+offset_left = 464.539
+offset_top = 517.021
+offset_right = 874.539
+offset_bottom = 567.021
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Settings/Options/Resolution"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Settings/Fullscreen"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_7dh81")
-theme_override_font_sizes/normal_font_size = 36
-text = "Resolution"
+offset_left = -135.0
+offset_top = -12.0
+offset_right = 296.0
+offset_bottom = 62.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_moibi")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Fullscreen"
 
-[node name="OptionButton" type="OptionButton" parent="Control/Settings/Options/Resolution"]
+[node name="CustomTextureButton" type="Button" parent="Control/Settings/Fullscreen"]
+layout_mode = 0
+offset_left = 406.0
+offset_top = -16.0
+offset_right = 486.0
+offset_bottom = 64.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k0ixe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+toggle_mode = true
+script = ExtResource("4_gc4lt")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Settings/Fullscreen/CustomTextureButton"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -25.0
+offset_right = 106.0
+offset_bottom = 105.0
+texture = ExtResource("12_8u2kf")
+
+[node name="SoundMute" type="Control" parent="Control/Settings"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 466.312
+offset_top = 653.546
+offset_right = 876.312
+offset_bottom = 703.546
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Settings/SoundMute"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+offset_left = -135.0
+offset_top = -12.0
+offset_right = 296.0
+offset_bottom = 62.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_moibi")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Mute sound"
+
+[node name="CustomTextureButton" type="Button" parent="Control/Settings/SoundMute"]
+layout_mode = 0
+offset_left = 406.0
+offset_top = -16.0
+offset_right = 486.0
+offset_bottom = 64.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k0ixe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+toggle_mode = true
+script = ExtResource("4_gc4lt")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Settings/SoundMute/CustomTextureButton"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -25.0
+offset_right = 106.0
+offset_bottom = 105.0
+texture = ExtResource("12_8u2kf")
+
+[node name="MusicMute" type="Control" parent="Control/Settings"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 464.539
+offset_top = 791.844
+offset_right = 874.539
+offset_bottom = 841.844
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Settings/MusicMute"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+offset_left = -135.0
+offset_top = -12.0
+offset_right = 296.0
+offset_bottom = 62.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_moibi")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Mute music"
+
+[node name="CustomTextureButton" type="Button" parent="Control/Settings/MusicMute"]
+layout_mode = 0
+offset_left = 406.0
+offset_top = -16.0
+offset_right = 486.0
+offset_bottom = 64.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k0ixe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+toggle_mode = true
+script = ExtResource("4_gc4lt")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Settings/MusicMute/CustomTextureButton"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -25.0
+offset_right = 106.0
+offset_bottom = 105.0
+texture = ExtResource("12_8u2kf")
+
+[node name="ClearProgress" type="Button" parent="Control/Settings"]
+layout_mode = 2
+offset_left = 174.0
+offset_top = 916.0
+offset_right = 1107.0
+offset_bottom = 1021.0
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_7dh81")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3m32e")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+script = ExtResource("9_vwb6k")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Settings/ClearProgress"]
+layout_mode = 0
+offset_left = -303.0
+offset_top = -34.0
+offset_right = 1236.0
+offset_bottom = 138.0
+texture = ExtResource("5_yhwie")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Settings/ClearProgress"]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 932.0
+offset_bottom = 106.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_moibi")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center]Clear all progress"
+
+[node name="Apply" type="Button" parent="Control/Settings"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -337.0
+offset_top = -201.0
+offset_right = 328.0
+offset_bottom = -121.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("2_7dh81")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_avkpb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ky5oi")
+toggle_mode = true
+button_group = ExtResource("3_04kml")
+script = ExtResource("4_gc4lt")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/Settings/Apply"]
+layout_mode = 0
+offset_left = -216.0
+offset_top = -25.0
+offset_right = 883.0
+offset_bottom = 105.0
+texture = ExtResource("5_yhwie")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Settings/Apply"]
+layout_mode = 0
+offset_top = -9.0
+offset_right = 667.0
+offset_bottom = 117.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_moibi")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center]Save and exit"
+
+[node name="Resolution" type="Control" parent="Control/Settings"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="OptionButton" type="OptionButton" parent="Control/Settings/Resolution"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_7dh81")
+offset_left = 691.0
+offset_top = 363.0
+offset_right = 943.0
+offset_bottom = 443.0
+theme = ExtResource("15_4aq8k")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4pfxx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_rw2a7")
 alignment = 1
 item_count = 8
 selected = 0
-fit_to_longest_item = false
 allow_reselect = true
 popup/item_0/text = "640x360"
 popup/item_0/id = 0
@@ -1693,103 +1889,18 @@ popup/item_6/id = 6
 popup/item_7/text = "1920x1080"
 popup/item_7/id = 7
 
-[node name="Fullscreen" type="HBoxContainer" parent="Control/Settings/Options"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Settings/Options/Fullscreen"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Settings/Resolution"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_7dh81")
-theme_override_font_sizes/normal_font_size = 36
-text = "Fullscreen"
-
-[node name="CenterContainer" type="Control" parent="Control/Settings/Options/Fullscreen"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="CheckBox" type="CheckBox" parent="Control/Settings/Options/Fullscreen/CenterContainer"]
-layout_mode = 1
-offset_left = 73.0
-offset_right = 97.0
-offset_bottom = 24.0
-scale = Vector2(2, 2)
-
-[node name="SoundVolume" type="HBoxContainer" parent="Control/Settings/Options"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Settings/Options/SoundVolume"]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_7dh81")
-theme_override_font_sizes/normal_font_size = 36
-text = "Mute sound
-"
-
-[node name="CenterContainer" type="Control" parent="Control/Settings/Options/SoundVolume"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="CheckBox" type="CheckBox" parent="Control/Settings/Options/SoundVolume/CenterContainer"]
-layout_mode = 1
-offset_left = 73.0
-offset_right = 97.0
-offset_bottom = 24.0
-scale = Vector2(2, 2)
-
-[node name="MusicVolume2" type="HBoxContainer" parent="Control/Settings/Options"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/Settings/Options/MusicVolume2"]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("2_7dh81")
-theme_override_font_sizes/normal_font_size = 36
-text = "Mute music"
-
-[node name="CenterContainer" type="Control" parent="Control/Settings/Options/MusicVolume2"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="CheckBox" type="CheckBox" parent="Control/Settings/Options/MusicVolume2/CenterContainer"]
-layout_mode = 1
-offset_left = 73.0
-offset_right = 97.0
-offset_bottom = 24.0
-scale = Vector2(2, 2)
-
-[node name="ClearProgress" type="Button" parent="Control/Settings/Options"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_7dh81")
-theme_override_font_sizes/font_size = 36
-text = "Clear all progress"
-script = ExtResource("9_vwb6k")
-
-[node name="Apply" type="Button" parent="Control/Settings"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -96.0
-offset_top = -417.0
-offset_right = 97.0
-offset_bottom = -359.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_7dh81")
-theme_override_font_sizes/font_size = 36
-toggle_mode = true
-button_group = ExtResource("3_04kml")
-text = "Save and return"
+offset_left = 330.0
+offset_top = 366.0
+offset_right = 674.0
+offset_bottom = 467.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_moibi")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Resolution"
 
 [node name="Achievements" type="Control" parent="Control"]
 layout_mode = 1
@@ -2880,10 +2991,10 @@ achievements_screen = NodePath("../Achievements")
 [connection signal="pressed" from="Control/Main/Quit" to="Control/Main/Quit" method="_on_pressed"]
 [connection signal="pressed" from="Control/Levels/Quit" to="Control/MainMenuAnimator" method="levels_main"]
 [connection signal="pressed" from="Control/Levels/Play" to="Control/Levels" method="load_selected_level"]
-[connection signal="item_selected" from="Control/Settings/Options/Resolution/OptionButton" to="Control/Settings" method="_on_resolution_set"]
-[connection signal="toggled" from="Control/Settings/Options/Fullscreen/CenterContainer/CheckBox" to="Control/Settings" method="_on_fullscreen_set"]
-[connection signal="toggled" from="Control/Settings/Options/SoundVolume/CenterContainer/CheckBox" to="Control/Settings" method="_on_sound_toggled"]
-[connection signal="toggled" from="Control/Settings/Options/MusicVolume2/CenterContainer/CheckBox" to="Control/Settings" method="_on_music_toggled"]
+[connection signal="toggled" from="Control/Settings/Fullscreen/CustomTextureButton" to="Control/Settings" method="_on_fullscreen_set"]
+[connection signal="toggled" from="Control/Settings/SoundMute/CustomTextureButton" to="Control/Settings" method="_on_sound_toggled"]
+[connection signal="toggled" from="Control/Settings/MusicMute/CustomTextureButton" to="Control/Settings" method="_on_music_toggled"]
 [connection signal="pressed" from="Control/Settings/Apply" to="Control/Settings" method="_on_apply_pressed"]
 [connection signal="pressed" from="Control/Settings/Apply" to="Control/MainMenuAnimator" method="settings_main"]
+[connection signal="item_selected" from="Control/Settings/Resolution/OptionButton" to="Control/Settings" method="_on_resolution_set"]
 [connection signal="pressed" from="Control/Achievements/Quit" to="Control/MainMenuAnimator" method="achievements_main"]

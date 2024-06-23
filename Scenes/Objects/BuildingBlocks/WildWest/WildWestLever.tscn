@@ -17,9 +17,8 @@ size = Vector3(0.3, 3, 0.3)
 
 [sub_resource type="BoxMesh" id="BoxMesh_go75e"]
 
-[node name="pressurePlate" type="Area3D" node_paths=PackedStringArray("text_timer")]
+[node name="pressurePlate" type="Area3D"]
 script = ExtResource("1_s4vj3")
-text_timer = NodePath("")
 
 [node name="collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)

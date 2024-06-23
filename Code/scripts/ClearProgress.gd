@@ -1,4 +1,4 @@
-extends Button
+extends CustomTextureButton
 class_name ClearProgress
 
 func _process(_delta): #shortcut to unlock all levels - delete in release
