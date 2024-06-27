@@ -96,8 +96,14 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, 
 shape = SubResource("BoxShape3D_2y0jv")
 
 [connection signal="area_entered" from="Rail3/Area3D" to="Rail3" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Rail3/Area3D" to="Rail3" method="_on_area_3d_area_exited"]
 [connection signal="area_entered" from="Rail7/Area3D" to="Rail7" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Rail7/Area3D" to="Rail7" method="_on_area_3d_area_exited"]
 [connection signal="area_entered" from="Rail8/Area3D" to="Rail8" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Rail8/Area3D" to="Rail8" method="_on_area_3d_area_exited"]
 [connection signal="area_entered" from="Rail4/Area3D" to="Rail4" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Rail4/Area3D" to="Rail4" method="_on_area_3d_area_exited"]
 [connection signal="area_entered" from="Rail5/Area3D" to="Rail5" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Rail5/Area3D" to="Rail5" method="_on_area_3d_area_exited"]
 [connection signal="area_entered" from="Rail6/Area3D" to="Rail6" method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Rail6/Area3D" to="Rail6" method="_on_area_3d_area_exited"]

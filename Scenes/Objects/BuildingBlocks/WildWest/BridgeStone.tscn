@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://7r4f4bpsd55u"]
+[gd_scene load_steps=5 format=3 uid="uid://7r4f4bpsd55u"]
 
+[ext_resource type="Script" path="res://Code/scripts/Bridge.gd" id="1_0clph"]
 [ext_resource type="ArrayMesh" uid="uid://dgvy5wdexafkt" path="res://Assets/western2/stone bridge.obj" id="1_fljjr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
@@ -10,6 +11,7 @@ size = Vector3(10, 4, 0.5)
 
 [node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
 sync_to_physics = false
+script = ExtResource("1_0clph")
 
 [node name="collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 4.5, 0)
