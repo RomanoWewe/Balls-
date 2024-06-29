@@ -126,7 +126,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.8397
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.693763, -0.0131644, 0.198109)
 depth = 1.6
-polygon = PackedVector2Array(3.08702, 5.01035, 1.59176, 5.01035, -2.6, 0.8, -2.6, 0, 2, 0, 3.10266, 0.0377396)
+polygon = PackedVector2Array(3.08702, 5.01035, 1.59176, 5.01035, -2.6, 0.8, -2.6, 0, 2, 0, 2.16335, 4.28861)
 
 [node name="WaterCurrent" type="AnimatableBody3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.670039, 0, -0.201891)

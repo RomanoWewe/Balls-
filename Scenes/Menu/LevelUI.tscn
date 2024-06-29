@@ -1,11 +1,44 @@
-[gd_scene load_steps=12 format=3 uid="uid://ljw7ehdr7alt"]
+[gd_scene load_steps=35 format=3 uid="uid://ljw7ehdr7alt"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/SettingsMenu.gd" id="1_qayne"]
 [ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="2_pmr5i"]
 [ext_resource type="FontFile" uid="uid://cv7bmaibmi36i" path="res://Assets/OpenSans_Condensed-Light.ttf" id="3_gyqev"]
 [ext_resource type="Script" path="res://Code/scripts/menu/PauseMenu.gd" id="4_dnadc"]
 [ext_resource type="Script" path="res://Code/scripts/menu/SceneChangeButton.gd" id="5_8qlk6"]
+[ext_resource type="Texture2D" uid="uid://dddhj2r0w65f6" path="res://Assets/Textures/Menu/Paused menu.png" id="5_jecrq"]
+[ext_resource type="Script" path="res://Code/scripts/menu/CustomTextureButton.gd" id="6_1a5vb"]
 [ext_resource type="Script" path="res://Scenes/Menu/StaticLevelUI.gd" id="6_4heqp"]
+[ext_resource type="Texture2D" uid="uid://cs5w5fjb18sb1" path="res://Assets/Textures/Menu/Buttongreen.png" id="7_qkxvv"]
+[ext_resource type="Texture2D" uid="uid://o6xoa52l7p4k" path="res://Assets/Textures/Menu/settings menu in game.png" id="10_vsem1"]
+[ext_resource type="Texture2D" uid="uid://dqrtgnqjch4tb" path="res://Assets/Textures/Menu/ButtonLevel.png" id="11_yc4n5"]
+[ext_resource type="Theme" uid="uid://vcn2812d42op" path="res://Scenes/Menu/Theme.tres" id="13_f4x43"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_avhu0"]
+allow_unpress = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qudmc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yj2j"]
+bg_color = Color(0, 0.67451, 0, 0.454902)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7stgp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ohpqt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02n20"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdrxn"]
+bg_color = Color(0, 0.67451, 0, 0.454902)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2l7i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1r507"]
+bg_color = Color(0, 0.67451, 0, 0.454902)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5smf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awrnt"]
+bg_color = Color(0, 0.67451, 0, 0.454902)
 
 [sub_resource type="Animation" id="Animation_bumu1"]
 resource_name = "game-paused"
@@ -107,6 +140,19 @@ _data = {
 "settings-paused": SubResource("Animation_kmb02")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm8s7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_faek1"]
+bg_color = Color(0, 0.67451, 0, 0.454902)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rwfcm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vu8rg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5o36"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n7o5w"]
+
 [node name="LevelUi" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -114,187 +160,7 @@ anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="Settings" type="Control" parent="." node_paths=PackedStringArray("interface_node", "fps_counter")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = 360.0
-offset_right = 640.0
-offset_bottom = 1080.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_qayne")
-interface_node = NodePath("..")
-fps_counter = NodePath("../Static UI/FPS counter")
-
-[node name="Panel" type="Panel" parent="Settings"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -300.0
-offset_right = 250.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Tip" type="RichTextLabel" parent="Settings"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -109.0
-offset_top = 62.0
-offset_right = 91.0
-offset_bottom = 162.0
-grow_horizontal = 2
-theme_override_fonts/normal_font = ExtResource("2_pmr5i")
-theme_override_font_sizes/normal_font_size = 48
-bbcode_enabled = true
-text = "[center]Settings"
-
-[node name="Apply" type="Button" parent="Settings"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -96.0
-offset_top = -142.0
-offset_right = 97.0
-offset_bottom = -84.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("3_gyqev")
-theme_override_font_sizes/font_size = 36
-text = "Save and return"
-
-[node name="Options" type="VBoxContainer" parent="Settings"]
-layout_mode = 0
-offset_left = 435.0
-offset_top = 156.0
-offset_right = 845.0
-offset_bottom = 474.0
-theme_override_constants/separation = 15
-
-[node name="Resolution" type="HBoxContainer" parent="Settings/Options"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Options/Resolution"]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_gyqev")
-theme_override_font_sizes/normal_font_size = 36
-text = "Resolution"
-
-[node name="OptionButton" type="OptionButton" parent="Settings/Options/Resolution"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_gyqev")
-theme_override_font_sizes/font_size = 24
-alignment = 1
-item_count = 8
-selected = 0
-fit_to_longest_item = false
-allow_reselect = true
-popup/item_0/text = "640x360"
-popup/item_0/id = 0
-popup/item_1/text = "854x480"
-popup/item_1/id = 1
-popup/item_2/text = "960x540"
-popup/item_2/id = 2
-popup/item_3/text = "1024x576"
-popup/item_3/id = 3
-popup/item_4/text = "1280x720"
-popup/item_4/id = 4
-popup/item_5/text = "1366x768"
-popup/item_5/id = 5
-popup/item_6/text = "1600x900"
-popup/item_6/id = 6
-popup/item_7/text = "1920x1080"
-popup/item_7/id = 7
-
-[node name="Fullscreen" type="HBoxContainer" parent="Settings/Options"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Options/Fullscreen"]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_gyqev")
-theme_override_font_sizes/normal_font_size = 36
-text = "Fullscreen"
-
-[node name="CenterContainer" type="Control" parent="Settings/Options/Fullscreen"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="CheckBox" type="CheckBox" parent="Settings/Options/Fullscreen/CenterContainer"]
-layout_mode = 1
-offset_left = 73.0
-offset_right = 97.0
-offset_bottom = 24.0
-scale = Vector2(2, 2)
-
-[node name="SoundVolume" type="HBoxContainer" parent="Settings/Options"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Options/SoundVolume"]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_gyqev")
-theme_override_font_sizes/normal_font_size = 36
-text = "Mute sound
-"
-
-[node name="CenterContainer" type="Control" parent="Settings/Options/SoundVolume"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="CheckBox" type="CheckBox" parent="Settings/Options/SoundVolume/CenterContainer"]
-layout_mode = 1
-offset_left = 73.0
-offset_right = 97.0
-offset_bottom = 24.0
-scale = Vector2(2, 2)
-
-[node name="MusicVolume2" type="HBoxContainer" parent="Settings/Options"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Options/MusicVolume2"]
-custom_minimum_size = Vector2(200, 50)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_gyqev")
-theme_override_font_sizes/normal_font_size = 36
-text = "Mute music"
-
-[node name="CenterContainer" type="Control" parent="Settings/Options/MusicVolume2"]
-custom_minimum_size = Vector2(200, 0)
-layout_mode = 2
-
-[node name="CheckBox" type="CheckBox" parent="Settings/Options/MusicVolume2/CenterContainer"]
-layout_mode = 1
-offset_left = 73.0
-offset_right = 97.0
-offset_bottom = 24.0
-scale = Vector2(2, 2)
-
-[node name="Paused" type="Control" parent="."]
+[node name="Paused" type="Control" parent="." node_paths=PackedStringArray("resume_button", "return_button")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -308,20 +174,24 @@ offset_bottom = -360.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_dnadc")
+button_group = SubResource("ButtonGroup_avhu0")
+resume_button = NodePath("Unpause")
+return_button = NodePath("../Settings/Apply")
 
-[node name="Panel" type="Panel" parent="Paused"]
+[node name="TextureRect" type="TextureRect" parent="Paused"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -300.0
-offset_right = 250.0
-offset_bottom = 300.0
+offset_left = -350.0
+offset_top = -350.0
+offset_right = 350.0
+offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("5_jecrq")
 
 [node name="Tip" type="RichTextLabel" parent="Paused"]
 layout_mode = 1
@@ -329,62 +199,162 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -100.0
-offset_top = 70.0
+offset_top = 86.0
 offset_right = 100.0
-offset_bottom = 170.0
+offset_bottom = 186.0
 grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_pmr5i")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[center]Paused"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Paused"]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.5
-offset_top = -203.0
-offset_right = 152.5
-offset_bottom = 203.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 15
-
-[node name="Unpause" type="Button" parent="Paused/VBoxContainer"]
+[node name="Unpause" type="Button" parent="Paused"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+offset_left = 414.0
+offset_top = 208.0
+offset_right = 867.0
+offset_bottom = 285.0
 theme_override_fonts/font = ExtResource("3_gyqev")
 theme_override_font_sizes/font_size = 36
-text = "Resume"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qudmc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0yj2j")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7stgp")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ohpqt")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_avhu0")
+script = ExtResource("6_1a5vb")
 
-[node name="Restart" type="Button" parent="Paused/VBoxContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Paused/Unpause"]
+layout_mode = 0
+offset_left = -149.0
+offset_top = -23.0
+offset_right = 601.0
+offset_bottom = 101.0
+texture = ExtResource("7_qkxvv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Paused/Unpause"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 453.0
+offset_bottom = 77.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Resume"
+
+[node name="Restart" type="Button" parent="Paused"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+offset_left = 413.0
+offset_top = 317.0
+offset_right = 867.0
+offset_bottom = 394.0
 theme_override_fonts/font = ExtResource("3_gyqev")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_02n20")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hdrxn")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_avhu0")
 shortcut_in_tooltip = false
-text = "Restart level"
 script = ExtResource("5_8qlk6")
 
-[node name="Settings" type="Button" parent="Paused/VBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_gyqev")
-theme_override_font_sizes/font_size = 36
-text = "Settings"
+[node name="NinePatchRect" type="NinePatchRect" parent="Paused/Restart"]
+layout_mode = 0
+offset_left = -148.0
+offset_top = -25.0
+offset_right = 602.0
+offset_bottom = 99.0
+texture = ExtResource("7_qkxvv")
 
-[node name="Back to main" type="Button" parent="Paused/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Paused/Restart"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 454.0
+offset_bottom = 75.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Restart level"
+
+[node name="Settings" type="Button" parent="Paused"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+offset_left = 413.0
+offset_top = 421.0
+offset_right = 867.0
+offset_bottom = 497.0
 theme_override_fonts/font = ExtResource("3_gyqev")
 theme_override_font_sizes/font_size = 36
-text = "Return to menu"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q2l7i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1r507")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_avhu0")
+script = ExtResource("6_1a5vb")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Paused/Settings"]
+layout_mode = 0
+offset_left = -148.0
+offset_top = -25.0
+offset_right = 602.0
+offset_bottom = 99.0
+texture = ExtResource("7_qkxvv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Paused/Settings"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 454.0
+offset_bottom = 75.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Settings"
+
+[node name="Back to main" type="Button" parent="Paused"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+offset_left = 413.0
+offset_top = 524.0
+offset_right = 867.0
+offset_bottom = 615.0
+theme_override_fonts/font = ExtResource("3_gyqev")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g5smf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_awrnt")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_avhu0")
 script = ExtResource("5_8qlk6")
 scene_name = "res://Scenes/MainMenu.tscn"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Paused/Back to main"]
+layout_mode = 0
+offset_left = -148.0
+offset_top = -28.0
+offset_right = 602.0
+offset_bottom = 121.0
+texture = ExtResource("7_qkxvv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Paused/Back to main"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 8.0
+offset_right = 454.0
+offset_bottom = 90.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]Return to menu"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -429,11 +399,283 @@ bbcode_enabled = true
 text = "60
 "
 
-[connection signal="pressed" from="Settings/Apply" to="Settings" method="_on_apply_pressed"]
+[node name="Settings" type="Control" parent="." node_paths=PackedStringArray("interface_node", "fps_counter", "resolution_menu", "fullscreen_button", "sound_mute_button", "music_mute_button")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = 360.0
+offset_right = 640.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qayne")
+interface_node = NodePath("..")
+fps_counter = NodePath("../Static UI/FPS counter")
+resolution_menu = NodePath("Resolution/OptionButton")
+fullscreen_button = NodePath("Fullscreen/CustomTextureButton")
+sound_mute_button = NodePath("SoundMute/CustomTextureButton")
+music_mute_button = NodePath("MusicMute/CustomTextureButton")
+
+[node name="TextureRect" type="TextureRect" parent="Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -350.0
+offset_right = 350.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_vsem1")
+
+[node name="Tip" type="RichTextLabel" parent="Settings"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -297.0
+offset_top = 74.0
+offset_right = 291.0
+offset_bottom = 242.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 58
+bbcode_enabled = true
+text = "[center]Settings"
+
+[node name="Fullscreen" type="Control" parent="Settings"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 500.0
+offset_top = 278.0
+offset_right = 910.0
+offset_bottom = 328.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Fullscreen"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+offset_left = -132.0
+offset_top = 1.0
+offset_right = 299.0
+offset_bottom = 75.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]Fullscreen"
+
+[node name="CustomTextureButton" type="Button" parent="Settings/Fullscreen"]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 6.0
+offset_right = 310.0
+offset_bottom = 49.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nm8s7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_faek1")
+toggle_mode = true
+script = ExtResource("6_1a5vb")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Settings/Fullscreen/CustomTextureButton"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = -14.0
+offset_right = 56.0
+offset_bottom = 57.0
+texture = ExtResource("11_yc4n5")
+
+[node name="SoundMute" type="Control" parent="Settings"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 498.0
+offset_top = 366.0
+offset_right = 908.0
+offset_bottom = 416.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/SoundMute"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+offset_left = -130.0
+offset_top = -9.0
+offset_right = 301.0
+offset_bottom = 65.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]Mute sound"
+
+[node name="CustomTextureButton" type="Button" parent="Settings/SoundMute"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = -6.0
+offset_right = 313.0
+offset_bottom = 37.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nm8s7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_faek1")
+toggle_mode = true
+script = ExtResource("6_1a5vb")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Settings/SoundMute/CustomTextureButton"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 58.0
+offset_bottom = 57.0
+texture = ExtResource("11_yc4n5")
+
+[node name="MusicMute" type="Control" parent="Settings"]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 501.0
+offset_top = 443.0
+offset_right = 911.0
+offset_bottom = 493.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/MusicMute"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+offset_left = -134.0
+offset_top = -12.0
+offset_right = 297.0
+offset_bottom = 62.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]Mute music"
+
+[node name="CustomTextureButton" type="Button" parent="Settings/MusicMute"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = -8.0
+offset_right = 309.0
+offset_bottom = 35.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nm8s7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_faek1")
+toggle_mode = true
+script = ExtResource("6_1a5vb")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Settings/MusicMute/CustomTextureButton"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -13.0
+offset_right = 57.0
+offset_bottom = 57.0
+texture = ExtResource("11_yc4n5")
+
+[node name="Apply" type="Button" parent="Settings"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -184.0
+offset_top = -119.0
+offset_right = 179.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_gyqev")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rwfcm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_faek1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vu8rg")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_avhu0")
+script = ExtResource("6_1a5vb")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Settings/Apply"]
+layout_mode = 0
+offset_left = -119.0
+offset_top = -21.0
+offset_right = 482.0
+offset_bottom = 81.0
+texture = ExtResource("7_qkxvv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Apply"]
+layout_mode = 0
+offset_left = -155.0
+offset_top = 5.0
+offset_right = 512.0
+offset_bottom = 131.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]Save and exit"
+
+[node name="Resolution" type="Control" parent="Settings"]
+anchors_preset = 0
+offset_left = 80.0
+offset_top = -162.0
+offset_right = 120.0
+offset_bottom = -122.0
+
+[node name="OptionButton" type="OptionButton" parent="Settings/Resolution"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+offset_left = 640.0
+offset_top = 371.0
+offset_right = 796.0
+offset_bottom = 414.0
+theme = ExtResource("13_f4x43")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f5o36")
+theme_override_styles/hover = SubResource("StyleBoxFlat_faek1")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n7o5w")
+alignment = 1
+item_count = 8
+selected = 0
+allow_reselect = true
+popup/item_0/text = "640x360"
+popup/item_0/id = 0
+popup/item_1/text = "854x480"
+popup/item_1/id = 1
+popup/item_2/text = "960x540"
+popup/item_2/id = 2
+popup/item_3/text = "1024x576"
+popup/item_3/id = 3
+popup/item_4/text = "1280x720"
+popup/item_4/id = 4
+popup/item_5/text = "1366x768"
+popup/item_5/id = 5
+popup/item_6/text = "1600x900"
+popup/item_6/id = 6
+popup/item_7/text = "1920x1080"
+popup/item_7/id = 7
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Settings/Resolution"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+offset_left = 335.0
+offset_top = 368.0
+offset_right = 679.0
+offset_bottom = 469.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]Resolution"
+
+[connection signal="pressed" from="Paused/Unpause" to="Paused" method="unpause"]
+[connection signal="pressed" from="Paused/Settings" to="Paused" method="settings"]
+[connection signal="toggled" from="Settings/Fullscreen/CustomTextureButton" to="Settings" method="_on_fullscreen_set"]
+[connection signal="toggled" from="Settings/SoundMute/CustomTextureButton" to="Settings" method="_on_sound_toggled"]
+[connection signal="toggled" from="Settings/MusicMute/CustomTextureButton" to="Settings" method="_on_music_toggled"]
 [connection signal="pressed" from="Settings/Apply" to="Paused" method="back_to_pause_menu"]
-[connection signal="item_selected" from="Settings/Options/Resolution/OptionButton" to="Settings" method="_on_resolution_set"]
-[connection signal="toggled" from="Settings/Options/Fullscreen/CenterContainer/CheckBox" to="Settings" method="_on_fullscreen_set"]
-[connection signal="toggled" from="Settings/Options/SoundVolume/CenterContainer/CheckBox" to="Settings" method="_on_sound_toggled"]
-[connection signal="toggled" from="Settings/Options/MusicVolume2/CenterContainer/CheckBox" to="Settings" method="_on_music_toggled"]
-[connection signal="pressed" from="Paused/VBoxContainer/Unpause" to="Paused" method="unpause"]
-[connection signal="pressed" from="Paused/VBoxContainer/Settings" to="Paused" method="settings"]
+[connection signal="pressed" from="Settings/Apply" to="Settings" method="_on_apply_pressed"]
+[connection signal="item_selected" from="Settings/Resolution/OptionButton" to="Settings" method="_on_resolution_set"]

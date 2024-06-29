@@ -1,28 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://cn4cthpfbswys"]
+[gd_scene load_steps=6 format=3 uid="uid://cn4cthpfbswys"]
 
 [ext_resource type="ArrayMesh" uid="uid://cm2juk6n8ln5o" path="res://Assets/western2/wood bridge.obj" id="1_4bie3"]
+[ext_resource type="Script" path="res://Code/scripts/Bridge.gd" id="1_uhm47"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
-size = Vector3(5, 1, 5)
+size = Vector3(10, 1, 5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0vegd"]
-size = Vector3(5, 2, 0.5)
+size = Vector3(10, 2, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4qqsf"]
+size = Vector3(5, 5, 5)
 
 [node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
 sync_to_physics = false
+script = ExtResource("1_uhm47")
+weight_to_break = 1
 
 [node name="collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 4.5, 0)
 shape = SubResource("BoxShape3D_t24w4")
 
 [node name="collider2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, -2.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 6, -2.7)
 shape = SubResource("BoxShape3D_0vegd")
 
 [node name="collider3" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 2.7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 6, 2.7)
 shape = SubResource("BoxShape3D_0vegd")
 
 [node name="Western2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.9, 3.7, 0.05)
 mesh = ExtResource("1_4bie3")
+
+[node name="Western3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.9, 3.7, 0.05)
+mesh = ExtResource("1_4bie3")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_4qqsf")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

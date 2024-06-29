@@ -6,18 +6,21 @@ class_name SettingsMenu
 static var settings : Settings
 @export var interface_node := Control
 @export var fps_counter :RichTextLabel
+@export var resolution_menu : OptionButton
+@export var fullscreen_button : Button
+@export var sound_mute_button : Button
+@export var music_mute_button : Button
 
 func _ready():
-	if settings:
-		return
-	if   FileAccess.file_exists("user://settings.tres"):
-		settings = load("user://settings.tres")
-	else:
-		settings = Settings.new()
-	$Options/Resolution/OptionButton.select(settings.resolution)
-	$Options/Fullscreen/CenterContainer/CheckBox.button_pressed = settings.fullscreen
-	$Options/MusicVolume2/CenterContainer/CheckBox.button_pressed = settings.is_music_mute
-	$Options/SoundVolume/CenterContainer/CheckBox.button_pressed = settings.is_sound_mute
+	if settings == null:
+		if   FileAccess.file_exists("user://settings.tres"):
+			settings = load("user://settings.tres")
+		else:
+			settings = Settings.new()
+	resolution_menu.select(settings.resolution)
+	fullscreen_button.button_pressed = settings.fullscreen
+	music_mute_button.button_pressed = settings.is_music_mute
+	sound_mute_button.button_pressed = settings.is_sound_mute
 	apply_settings()
 
 func _on_resolution_set(index):

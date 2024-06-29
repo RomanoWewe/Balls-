@@ -13,10 +13,6 @@ size = Vector3(5.12964, 2.98541, 4.36212)
 size = Vector3(4.82544, 0.420151, 4.12988)
 
 [node name="Minecart" type="RigidBody3D"]
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
-custom_integrator = true
 continuous_cd = true
 script = ExtResource("1_7own3")
 max_speed = 12

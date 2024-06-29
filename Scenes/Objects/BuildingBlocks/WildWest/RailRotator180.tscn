@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq4iqnxebjfmn"]
+
+[ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="1_aod87"]
+
+[sub_resource type="Curve" id="Curve_5wkj7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[node name="RailRotator90" type="AnimatableBody3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_aod87")
+speed_curve = SubResource("Curve_5wkj7")
+positions_count = 2
+previous_position = 1
+positions = Array[Transform3D]([Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0), Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)])
+movement_times = Array[float]([0.628319, 0.628319])

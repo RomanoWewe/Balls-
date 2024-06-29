@@ -18,6 +18,7 @@ var is_reversed : bool
 var prev_basis_x : Vector3
 
 func _physics_process(delta):
+	print(current_rail)
 	if current_rail == null:
 		return
 	# Calculate the direction of the rail tangent
@@ -42,6 +43,9 @@ func try_set_rail(rail:Rail):
 	if current_rail == null or bool(rail.catch_mask & current_rail.release_mask):
 		current_rail=rail
 
+func try_unset_rail(rail:Rail):
+	if current_rail == rail:
+		current_rail=null
 
 func _on_area_3d_2_body_entered(body):
 	if body.is_in_group("GoldBar") and fill_type!=FillType.TNT:
