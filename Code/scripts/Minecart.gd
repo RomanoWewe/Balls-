@@ -1,24 +1,15 @@
 extends RigidBody3D
 class_name Minecart
 
-enum FillType{
-	None,
-	Gold,
-	TNT
-}
-
 @export var visual_rotation_speed:=1.0
 @export var max_speed := 10
 @export var fill_level := 0
-@export var fill_type :=FillType.None
 @export var gold_fill_meshes :Array[ArrayMesh] = []
-@export var tnt_fill_meshes :Array[ArrayMesh] = []
 var current_rail : Rail
 var is_reversed : bool
 var prev_basis_x : Vector3
 
 func _physics_process(delta):
-	print(current_rail)
 	if current_rail == null:
 		return
 	# Calculate the direction of the rail tangent
@@ -48,15 +39,8 @@ func try_unset_rail(rail:Rail):
 		current_rail=null
 
 func _on_area_3d_2_body_entered(body):
-	if body.is_in_group("GoldBar") and fill_type!=FillType.TNT:
+	if body.is_in_group("GoldBar"):
 		body.queue_free()
-		fill_type = FillType.Gold
 		fill_level +=1
 		fill_level = clamp(fill_level,0,3)
 		#$FillMesh.mesh=gold_fill_meshes[fill_level-1]
-	if body.is_in_group("TNTStick") and fill_type!=FillType.Gold:
-		body.queue_free()
-		fill_type = FillType.TNT
-		fill_level +=1
-		fill_level = clamp(fill_level,0,3)
-		#$FillMesh.mesh=tnt_fill_meshes[fill_level-1]
