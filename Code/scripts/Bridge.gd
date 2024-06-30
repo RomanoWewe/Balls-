@@ -24,5 +24,6 @@ func destroy():
 	if debris_scene!=null:
 		var instance = debris_scene.instantiate()
 		instance.position = position
+		instance.rotation = rotation
+		get_parent().add_child(instance)
 		instance.owner = owner
-		get_tree().get_root().add_child(instance)

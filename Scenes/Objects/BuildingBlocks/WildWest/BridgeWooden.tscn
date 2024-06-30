@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cn4cthpfbswys"]
+[gd_scene load_steps=7 format=3 uid="uid://cn4cthpfbswys"]
 
 [ext_resource type="ArrayMesh" uid="uid://cm2juk6n8ln5o" path="res://Assets/western2/wood bridge.obj" id="1_4bie3"]
 [ext_resource type="Script" path="res://Code/scripts/Bridge.gd" id="1_uhm47"]
+[ext_resource type="PackedScene" uid="uid://dftlqc4t0nxa1" path="res://Scenes/Objects/_Spawnable/WoodenBridgeDebris.tscn" id="2_rjuri"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
 size = Vector3(10, 1, 5)
@@ -10,11 +11,12 @@ size = Vector3(10, 1, 5)
 size = Vector3(10, 2, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4qqsf"]
-size = Vector3(5, 5, 5)
+size = Vector3(3, 5, 5)
 
 [node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
 sync_to_physics = false
 script = ExtResource("1_uhm47")
+debris_scene = ExtResource("2_rjuri")
 weight_to_break = 1
 
 [node name="collider" type="CollisionShape3D" parent="."]

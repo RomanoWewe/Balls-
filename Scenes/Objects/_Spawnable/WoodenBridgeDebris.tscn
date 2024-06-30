@@ -1,0 +1,200 @@
+[gd_scene load_steps=15 format=3 uid="uid://dftlqc4t0nxa1"]
+
+[ext_resource type="ArrayMesh" uid="uid://dubmd8egh6hmr" path="res://Assets/western2/wood bridge ошметек 1.obj" id="1_ao4bh"]
+[ext_resource type="ArrayMesh" uid="uid://iin0ghgoatiy" path="res://Assets/western2/wood bridge ошметек 2.obj" id="2_idxka"]
+[ext_resource type="ArrayMesh" uid="uid://bf3hhipsp7hni" path="res://Assets/western2/wood bridge ошметек 5.obj" id="3_btua1"]
+[ext_resource type="ArrayMesh" uid="uid://dqw8pu3e41j20" path="res://Assets/western2/wood bridge ошметек 3.obj" id="4_swlaj"]
+[ext_resource type="ArrayMesh" uid="uid://c25nnkv6kygna" path="res://Assets/western2/wood bridge ошметек 4.obj" id="5_11ikx"]
+[ext_resource type="ArrayMesh" uid="uid://e423ej3fb0ij" path="res://Assets/western2/wood bridge ошметек 6.obj" id="6_i32kf"]
+[ext_resource type="ArrayMesh" uid="uid://bsu87cw14laub" path="res://Assets/western2/wood bridge ошметек 7.obj" id="7_eksmq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k6nxb"]
+size = Vector3(0.401611, 1.26947, 0.776611)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dcdv3"]
+size = Vector3(0.406006, 1, 0.80249)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4f6c"]
+size = Vector3(1.58936, 0.604431, 2.09912)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xe885"]
+size = Vector3(1.28955, 0.594727, 0.395386)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6rca8"]
+size = Vector3(1.2934, 0.598877, 0.59906)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7ytgn"]
+size = Vector3(2.77441, 0.597595, 2.18127)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tiywy"]
+size = Vector3(0.398987, 1.28558, 0.901489)
+
+[node name="WoodenBridgeDebris" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.69364, 5.495, -2.62322)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0063529, 0.0320451, 0.0259018)
+shape = SubResource("BoxShape3D_k6nxb")
+
+[node name="WoodBridgeОшметек1" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.69364, -2.97758, 3.03349)
+mesh = ExtResource("1_ao4bh")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.37165, 5.37324, 2.70124)
+
+[node name="WoodBridgeОшметек2" type="MeshInstance3D" parent="RigidBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.68483, -1.80655, 3.01092)
+mesh = ExtResource("2_idxka")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0133057, 0, 0.012085)
+shape = SubResource("BoxShape3D_dcdv3")
+
+[node name="RigidBody3D3" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.2445, 5.04807, -1.53916)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0109863, -0.0992126, -0.0783691)
+shape = SubResource("BoxShape3D_m4f6c")
+
+[node name="WoodBridgeОшметек5" type="MeshInstance3D" parent="RigidBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.290707, -1.29455, -0.632144)
+mesh = ExtResource("3_btua1")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D13" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.4906, 5.04807, 1.8265)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0109863, -0.0992126, -0.0783691)
+shape = SubResource("BoxShape3D_m4f6c")
+
+[node name="WoodBridgeОшметек5" type="MeshInstance3D" parent="RigidBody3D13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.290707, -1.29455, -0.632144)
+mesh = ExtResource("3_btua1")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D14" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.38686, 5.04807, 2.23982)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0109863, -0.0992126, -0.0783691)
+shape = SubResource("BoxShape3D_m4f6c")
+
+[node name="WoodBridgeОшметек5" type="MeshInstance3D" parent="RigidBody3D14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.290707, -1.29455, -0.632144)
+mesh = ExtResource("3_btua1")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D4" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.8115, 4.88985, 0.644144)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0373535, -0.105957, 0.0282593)
+shape = SubResource("BoxShape3D_xe885")
+
+[node name="WoodBridgeОшметек3" type="MeshInstance3D" parent="RigidBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.311596, -1.30525, 3.22113)
+mesh = ExtResource("4_swlaj")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D5" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.664926, 4.88985, -1.4608)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0373535, -0.105957, 0.0282593)
+shape = SubResource("BoxShape3D_xe885")
+
+[node name="WoodBridgeОшметек3" type="MeshInstance3D" parent="RigidBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.311596, -1.30525, 3.22113)
+mesh = ExtResource("4_swlaj")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D10" type="RigidBody3D" parent="."]
+transform = Transform3D(0.0158295, 0, 0.999875, 0, 1, 0, -0.999875, 0, 0.0158295, 0.629188, 4.94469, 1.31882)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0120544, -0.0802002, -0.0135193)
+shape = SubResource("BoxShape3D_6rca8")
+
+[node name="WoodBridgeОшметек4" type="MeshInstance3D" parent="RigidBody3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36701, -1.27731, 3.08581)
+mesh = ExtResource("5_11ikx")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D11" type="RigidBody3D" parent="."]
+transform = Transform3D(0.0158295, 0, 0.999875, 0, 1, 0, -0.999875, 0, 0.0158295, 4.77398, 4.94469, 1.62263)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0120544, -0.0802002, -0.0135193)
+shape = SubResource("BoxShape3D_6rca8")
+
+[node name="WoodBridgeОшметек4" type="MeshInstance3D" parent="RigidBody3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36701, -1.27731, 3.08581)
+mesh = ExtResource("5_11ikx")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D12" type="RigidBody3D" parent="."]
+transform = Transform3D(0.0158295, 0, 0.999875, 0, 1, 0, -0.999875, 0, 0.0158295, 4.57868, 4.94469, -0.938033)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0120544, -0.0802002, -0.0135193)
+shape = SubResource("BoxShape3D_6rca8")
+
+[node name="WoodBridgeОшметек4" type="MeshInstance3D" parent="RigidBody3D12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.36701, -1.27731, 3.08581)
+mesh = ExtResource("5_11ikx")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D6" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.45308, 4.90387, 1.57403)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0219727, -0.0743103, -0.0494995)
+shape = SubResource("BoxShape3D_7ytgn")
+
+[node name="WoodBridgeОшметек6" type="MeshInstance3D" parent="RigidBody3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72371, -1.27136, -0.551429)
+mesh = ExtResource("6_i32kf")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D8" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.21709, 4.90387, -0.172459)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0219727, -0.0743103, -0.0494995)
+shape = SubResource("BoxShape3D_7ytgn")
+
+[node name="WoodBridgeОшметек6" type="MeshInstance3D" parent="RigidBody3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72371, -1.27136, -0.551429)
+mesh = ExtResource("6_i32kf")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D9" type="RigidBody3D" parent="."]
+transform = Transform3D(-0.00336848, 0, 0.999994, 0, 1, 0, -0.999994, 0, -0.00336848, 6.49472, 4.90387, -1.46334)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0219727, -0.0743103, -0.0494995)
+shape = SubResource("BoxShape3D_7ytgn")
+
+[node name="WoodBridgeОшметек6" type="MeshInstance3D" parent="RigidBody3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.72371, -1.27136, -0.551429)
+mesh = ExtResource("6_i32kf")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D7" type="RigidBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 5.28302, 3.00256)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00473022, 0.109039, 0.0361938)
+shape = SubResource("BoxShape3D_tiywy")
+
+[node name="WoodBridgeОшметек7" type="MeshInstance3D" parent="RigidBody3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6973, -1.43366, 0.376593)
+mesh = ExtResource("7_eksmq")
+skeleton = NodePath("../..")

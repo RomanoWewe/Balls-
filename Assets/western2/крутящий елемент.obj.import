@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bm4mujua2bsnw"
+path="res://.godot/imported/крутящий елемент.obj-f93b02df9e8f56b61d35e0555e36f2a8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/крутящий елемент.obj-f93b02df9e8f56b61d35e0555e36f2a8.mesh"]
+
+source_file="res://Assets/western2/крутящий елемент.obj"
+dest_files=["res://.godot/imported/крутящий елемент.obj-f93b02df9e8f56b61d35e0555e36f2a8.mesh", "res://.godot/imported/крутящий елемент.obj-f93b02df9e8f56b61d35e0555e36f2a8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

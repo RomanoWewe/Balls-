@@ -1,8 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5mk72mibxr4v"]
+[gd_scene load_steps=12 format=3 uid="uid://c5mk72mibxr4v"]
 
+[ext_resource type="Texture2D" uid="uid://bnsmhyjjkwpgc" path="res://Assets/menu/Victori menu.png" id="1_5puk7"]
 [ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="1_udad5"]
 [ext_resource type="FontFile" uid="uid://cv7bmaibmi36i" path="res://Assets/OpenSans_Condensed-Light.ttf" id="2_hqms3"]
 [ext_resource type="Script" path="res://Code/scripts/menu/SceneChangeButton.gd" id="3_sqaui"]
+[ext_resource type="Texture2D" uid="uid://cs5w5fjb18sb1" path="res://Assets/Textures/Menu/Buttongreen.png" id="5_4yvwc"]
+
+[sub_resource type="Gradient" id="Gradient_uls84"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.54902, 0.317647, 0.0156863, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2w2uf"]
+gradient = SubResource("Gradient_uls84")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_elvew"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbu4g"]
+bg_color = Color(0, 0.67451, 0, 0.454902)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d1uyu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q5gbb"]
+bg_color = Color(0, 0.67451, 0, 0.454902)
 
 [node name="LevelCompleteScreen" type="Control"]
 process_mode = 3
@@ -13,52 +32,99 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -480.0
+offset_top = -20.0
+offset_right = 480.0
+offset_bottom = 780.0
 grow_horizontal = 2
-grow_vertical = 2
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("1_5puk7")
 
-[node name="Panel" type="Panel" parent="CenterContainer"]
-self_modulate = Color(0, 0, 0, 1)
-custom_minimum_size = Vector2(350, 250)
-layout_mode = 2
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 332.0
+offset_top = 221.0
+offset_right = 900.0
+offset_bottom = 309.0
+texture = SubResource("GradientTexture1D_2w2uf")
+expand_mode = 1
 
-[node name="Title" type="RichTextLabel" parent="CenterContainer/Panel"]
+[node name="Title" type="RichTextLabel" parent="."]
 custom_minimum_size = Vector2(350, 100)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -100.0
-offset_right = 100.0
-offset_bottom = 100.0
+offset_left = -189.0
+offset_top = 222.0
+offset_right = 161.0
+offset_bottom = 322.0
 grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_udad5")
-theme_override_font_sizes/normal_font_size = 36
+theme_override_font_sizes/normal_font_size = 56
 bbcode_enabled = true
 text = "[center] Level Complete"
 
-[node name="Quit" type="Button" parent="CenterContainer/Panel"]
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 308.0
+offset_top = 578.0
+offset_right = 561.0
+offset_bottom = 636.0
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_2w2uf")
+expand_mode = 1
+
+[node name="Quit" type="Button" parent="."]
 custom_minimum_size = Vector2(135, 25)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 13.0
-offset_top = -71.0
-offset_right = 113.0
-offset_bottom = -13.0
+offset_left = 308.0
+offset_top = -142.0
+offset_right = 561.0
+offset_bottom = -84.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_hqms3")
 theme_override_font_sizes/font_size = 24
-text = "Return to Menu"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_elvew")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jbu4g")
 script = ExtResource("3_sqaui")
 scene_name = "res://Scenes/MainMenu.tscn"
 
-[node name="NextLevelButton" type="Button" parent="CenterContainer/Panel"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Quit"]
+offset_left = -83.0
+offset_top = -20.0
+offset_right = 336.0
+offset_bottom = 77.0
+texture = ExtResource("5_4yvwc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Quit"]
+offset_right = 249.0
+offset_bottom = 53.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_udad5")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]Return to menu"
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 579.0
+offset_right = 923.0
+offset_bottom = 635.0
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_2w2uf")
+expand_mode = 1
+
+[node name="NextLevelButton" type="Button" parent="."]
 custom_minimum_size = Vector2(135, 25)
 layout_mode = 1
 anchors_preset = 3
@@ -66,13 +132,33 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -140.0
-offset_top = -71.0
-offset_right = -13.0
-offset_bottom = -13.0
+offset_left = -608.0
+offset_top = -141.0
+offset_right = -357.0
+offset_bottom = -84.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_hqms3")
 theme_override_font_sizes/font_size = 24
-text = "Next Level"
+theme_override_styles/normal = SubResource("StyleBoxEmpty_d1uyu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q5gbb")
 script = ExtResource("3_sqaui")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="NextLevelButton"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = -19.0
+offset_right = 333.0
+offset_bottom = 75.0
+texture = ExtResource("5_4yvwc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NextLevelButton"]
+layout_mode = 0
+offset_right = 249.0
+offset_bottom = 53.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_udad5")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]Next Level"

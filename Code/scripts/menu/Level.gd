@@ -34,10 +34,10 @@ func complete_level():
 	add_child(screen)
 	var lvl_name = str(int(str(name))+1)+".tscn"
 	if Array(DirAccess.open("res://Scenes/Levels/Scenes").get_files()).has(lvl_name):
-		screen.get_node("CenterContainer/Panel/NextLevelButton").scene_name = \
+		screen.get_node("NextLevelButton").scene_name = \
 		"res://Scenes/Levels/Scenes/"+lvl_name
 	else:
-		screen.get_node("CenterContainer/Panel/NextLevelButton").queue_free()
+		screen.get_node("NextLevelButton").queue_free()
 
 func fail_level():
 	if (level_finished):
@@ -47,8 +47,8 @@ func fail_level():
 	add_child(screen)
 	var lvl_name = name+".tscn"
 	if Array(DirAccess.open("res://Scenes/Levels/Scenes").get_files()).has(lvl_name):
-		screen.get_node("CenterContainer/Panel/NextLevelButton").scene_name = \
+		screen.get_node("NextLevelButton").scene_name = \
 		"res://Scenes/Levels/Scenes/"+lvl_name
 	else:
-		screen.get_node("CenterContainer/Panel/NextLevelButton").queue_free()
+		screen.get_node("NextLevelButton").queue_free()
 
