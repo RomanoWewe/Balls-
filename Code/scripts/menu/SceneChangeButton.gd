@@ -2,7 +2,7 @@ extends Button
 class_name SceneChangeButton
 
 @export var scene_name :String
-@onready var texture_clicked : NinePatchRect = get_node("NinePatchRect")
+@onready var texture_clicked : NinePatchRect = get_node_or_null("NinePatchRect")
 
 var clicked_color = Color(1,1,1,1)
 var blank_color = Color(0,0,0,0)

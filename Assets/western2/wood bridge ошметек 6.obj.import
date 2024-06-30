@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://e423ej3fb0ij"
+path="res://.godot/imported/wood bridge ошметек 6.obj-7fa6bab1ce655bb60f850227b90cf2a1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wood bridge ошметек 6.obj-7fa6bab1ce655bb60f850227b90cf2a1.mesh"]
+
+source_file="res://Assets/western2/wood bridge ошметек 6.obj"
+dest_files=["res://.godot/imported/wood bridge ошметек 6.obj-7fa6bab1ce655bb60f850227b90cf2a1.mesh", "res://.godot/imported/wood bridge ошметек 6.obj-7fa6bab1ce655bb60f850227b90cf2a1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
