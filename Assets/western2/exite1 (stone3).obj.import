@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ddhhtnxj0qx3v"
+path="res://.godot/imported/exite1 (stone3).obj-78f76cfaba9d845005e0755ecca661df.mesh"
+
+[deps]
+
+files=["res://.godot/imported/exite1 (stone3).obj-78f76cfaba9d845005e0755ecca661df.mesh"]
+
+source_file="res://Assets/western2/exite1 (stone3).obj"
+dest_files=["res://.godot/imported/exite1 (stone3).obj-78f76cfaba9d845005e0755ecca661df.mesh", "res://.godot/imported/exite1 (stone3).obj-78f76cfaba9d845005e0755ecca661df.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

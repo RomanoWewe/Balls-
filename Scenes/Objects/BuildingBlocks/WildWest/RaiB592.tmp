@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://n5bokfcq1bh0"]
+[gd_scene load_steps=10 format=3 uid="uid://n5bokfcq1bh0"]
 
 [ext_resource type="Script" path="res://Code/scripts/RailRotator.gd" id="1_vgwqu"]
 [ext_resource type="ArrayMesh" uid="uid://bqq16g58x6yac" path="res://Assets/western2/крутящий елемент (вал).obj" id="2_ps3w2"]
 [ext_resource type="ArrayMesh" uid="uid://dygko43w45802" path="res://Assets/western2/крутящий елемент (основа).obj" id="3_viirq"]
 [ext_resource type="ArrayMesh" uid="uid://d78l8ffymh4l" path="res://Assets/western2/крутящий елемент (платформа).obj" id="4_7ry1y"]
+[ext_resource type="PackedScene" uid="uid://dev2aik5yoynb" path="res://Scenes/Objects/BuildingBlocks/Basic/floor.tscn" id="5_17fp3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ra3ji"]
 size = Vector3(5, 5, 5)
@@ -85,6 +86,9 @@ shape = SubResource("BoxShape3D_ra3ji")
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.8, 0)
 mesh = ExtResource("4_7ry1y")
 skeleton = NodePath("../..")
+
+[node name="floor" parent="." instance=ExtResource("5_17fp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01227, 0, -7.27596e-12)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

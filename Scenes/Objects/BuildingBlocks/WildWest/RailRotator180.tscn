@@ -1,16 +1,93 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq4iqnxebjfmn"]
+[gd_scene load_steps=9 format=3 uid="uid://dq4iqnxebjfmn"]
 
-[ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="1_aod87"]
+[ext_resource type="Script" path="res://Code/scripts/RailRotator.gd" id="1_p66gs"]
+[ext_resource type="ArrayMesh" uid="uid://bqq16g58x6yac" path="res://Assets/western2/крутящий елемент (вал).obj" id="2_26oma"]
+[ext_resource type="ArrayMesh" uid="uid://dygko43w45802" path="res://Assets/western2/крутящий елемент (основа).obj" id="3_0cfv4"]
+[ext_resource type="ArrayMesh" uid="uid://d78l8ffymh4l" path="res://Assets/western2/крутящий елемент (платформа).obj" id="4_lwej8"]
 
-[sub_resource type="Curve" id="Curve_5wkj7"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
-point_count = 1
+[sub_resource type="BoxShape3D" id="BoxShape3D_sb83a"]
+size = Vector3(5, 5, 5)
+
+[sub_resource type="Animation" id="Animation_lutyo"]
+resource_name = "90Backward"
+step = 0.05
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 2.5, 0, 0.3, 1, 0, 4.7, 0, 0.7, 1, 0, 4.7, 0, 1, 1, 0, 2.5, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.3, 1, 0, 1, 0, 0, 0.7, 1, 0, 0, 0, 1)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("КрутящийЕлемент(вал)")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0.3, 1, 0, 1, 0, 0, 0.7, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_xqwk0"]
+resource_name = "90Forward"
+step = 0.05
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 2.5, 0, 0.3, 1, 0, 4.7, 0, 0.7, 1, 0, 4.7, 0, 1, 1, 0, 2.5, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.3, 1, 0, 0, 0, 1, 0.7, 1, 0, 1, 0, 0)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("КрутящийЕлемент(вал)")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0.3, 1, 0, 0, 0, 1, 0.7, 1, 0, 1, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r2hc7"]
+_data = {
+"180Backward": SubResource("Animation_lutyo"),
+"180Forward": SubResource("Animation_xqwk0")
+}
 
 [node name="RailRotator90" type="AnimatableBody3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-script = ExtResource("1_aod87")
-speed_curve = SubResource("Curve_5wkj7")
-positions_count = 2
-previous_position = 1
-positions = Array[Transform3D]([Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0), Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)])
-movement_times = Array[float]([0.628319, 0.628319])
+script = ExtResource("1_p66gs")
+forward_animation = "180Forward"
+backward_animation = "180Backward"
+
+[node name="КрутящийЕлемент(вал)" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.8, 0)
+mesh = ExtResource("2_26oma")
+
+[node name="КрутящийЕлемент(основа)" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = ExtResource("3_0cfv4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_sb83a")
+
+[node name="КрутящийЕлемент(платформа)" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.8, 0)
+mesh = ExtResource("4_lwej8")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r2hc7")
+}

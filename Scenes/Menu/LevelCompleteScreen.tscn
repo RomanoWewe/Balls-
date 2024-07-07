@@ -46,6 +46,7 @@ scale = Vector2(0.95, 0.95)
 texture = ExtResource("1_5puk7")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 332.0
 offset_top = 221.0
 offset_right = 900.0
@@ -71,6 +72,7 @@ bbcode_enabled = true
 text = "[center] Level Complete"
 
 [node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 308.0
 offset_top = 578.0
 offset_right = 561.0
@@ -98,6 +100,7 @@ script = ExtResource("3_sqaui")
 scene_name = "res://Scenes/MainMenu.tscn"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Quit"]
+layout_mode = 0
 offset_left = -83.0
 offset_top = -20.0
 offset_right = 336.0
@@ -105,6 +108,7 @@ offset_bottom = 77.0
 texture = ExtResource("5_4yvwc")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Quit"]
+layout_mode = 0
 offset_right = 249.0
 offset_bottom = 53.0
 mouse_filter = 2
