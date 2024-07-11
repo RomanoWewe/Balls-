@@ -64,7 +64,7 @@ _data = {
 "180Forward": SubResource("Animation_xqwk0")
 }
 
-[node name="RailRotator90" type="AnimatableBody3D"]
+[node name="RailRotator90" type="AnimatableBody3D" groups=["IsFloor"]]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("1_p66gs")
 forward_animation = "180Forward"

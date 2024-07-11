@@ -21,10 +21,12 @@ func _on_area_3d_area_exited(area):
 	var area_parent = area.get_parent()
 	if not area_parent is Minecart:
 		return
+	area_parent.try_unset_rail(self)
 	if is_active:
 		is_active = false
 		for i in range(connections.size()):
 			deactivate(i)
+
 
 func add_connection(activatable : Activatable):
 	if (!is_inside_tree()):

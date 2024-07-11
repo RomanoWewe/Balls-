@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3s6bpm0w5yjc"]
+[gd_scene load_steps=10 format=3 uid="uid://d3s6bpm0w5yjc"]
 
 [ext_resource type="Script" path="res://Code/scripts/buttons/button_toggle.gd" id="1_s4vj3"]
 [ext_resource type="AudioStream" uid="uid://b4810rkqf81kw" path="res://Assets/Sounds/ButtonOff.mp3" id="3_vn6rp"]
+[ext_resource type="ArrayMesh" uid="uid://bdlpje57d5475" path="res://Assets/western2/рычаг(основа).obj" id="4_8tyvr"]
 [ext_resource type="AudioStream" uid="uid://bctijlrxgm6gm" path="res://Assets/Sounds/ButtonOn.mp3" id="4_jhkgn"]
 [ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="5_d7qat"]
+[ext_resource type="ArrayMesh" uid="uid://di6wuyx14ydh3" path="res://Assets/western2/рычаг( сам рычаг).obj" id="6_jspnn"]
+[ext_resource type="ArrayMesh" uid="uid://bgwykgmbkgkhb" path="res://Assets/western2/рычаг(шестерни).obj" id="7_nimyc"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_a1mre"]
 radius = 1.9883
@@ -11,11 +14,6 @@ radius = 1.9883
 [sub_resource type="Curve" id="Curve_tcqub"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
 point_count = 1
-
-[sub_resource type="BoxMesh" id="BoxMesh_pm5d7"]
-size = Vector3(0.3, 3, 0.3)
-
-[sub_resource type="BoxMesh" id="BoxMesh_go75e"]
 
 [node name="pressurePlate" type="Area3D"]
 script = ExtResource("1_s4vj3")
@@ -34,7 +32,11 @@ stream = ExtResource("4_jhkgn")
 volume_db = -20.0
 bus = &"Sound"
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = ExtResource("4_8tyvr")
+
 [node name="MovingPlatform" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 script = ExtResource("5_d7qat")
 speed_curve = SubResource("Curve_tcqub")
 positions_count = 2
@@ -43,11 +45,13 @@ positions = Array[Transform3D]([Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0),
 movement_times = Array[float]([0.2, 0.2])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MovingPlatform"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, 1.13974, 0.664472)
-mesh = SubResource("BoxMesh_pm5d7")
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, -0.938289, -0.527447)
+mesh = ExtResource("6_jspnn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_go75e")
+[node name="Рычаг(шестерни)" type="MeshInstance3D" parent="MovingPlatform"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.8, 0)
+mesh = ExtResource("7_nimyc")
+skeleton = NodePath("../..")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

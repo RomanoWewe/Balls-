@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bu7fatn67rd2g" path="res://Assets/Textures/Menu/snap2024-01-27-16-17-38.png" id="6_fliuc"]
 [ext_resource type="Script" path="res://Code/scripts/menu/SettingsMenu.gd" id="8_6q3uc"]
 [ext_resource type="Script" path="res://Code/scripts/menu/AchievementMenu.gd" id="9_awmcp"]
-[ext_resource type="Script" path="res://Code/scripts/ClearProgress.gd" id="9_vwb6k"]
+[ext_resource type="Script" path="res://Code/scripts/menu/ClearProgress.gd" id="9_vwb6k"]
 [ext_resource type="Texture2D" uid="uid://r7jk8y3n2wnw" path="res://Assets/Textures/Menu/snap2024-01-27-16-15-29.png" id="10_1ofm1"]
 [ext_resource type="Script" path="res://Code/scripts/menu/MainMenuAnimator.gd" id="10_bdqee"]
 [ext_resource type="Texture2D" uid="uid://csjtecau26f1o" path="res://Assets/menu/settings  menu 3.png" id="11_8swnm"]

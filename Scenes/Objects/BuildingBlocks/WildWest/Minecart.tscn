@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://dex6u2j1i8amw"]
+[gd_scene load_steps=9 format=3 uid="uid://dex6u2j1i8amw"]
 
 [ext_resource type="Script" path="res://Code/scripts/Minecart.gd" id="1_7own3"]
+[ext_resource type="ArrayMesh" uid="uid://cobwmma1blglw" path="res://Assets/western2/gold level 1.obj" id="2_5enmx"]
 [ext_resource type="ArrayMesh" uid="uid://fsgewjvqo6sd" path="res://Assets/western2/trolley 2.obj" id="2_x3mhb"]
+[ext_resource type="ArrayMesh" uid="uid://d0o6padc1sls3" path="res://Assets/western2/gold level 2.obj" id="3_tm8cb"]
+[ext_resource type="ArrayMesh" uid="uid://bwgommudium2w" path="res://Assets/western2/gold level 3.obj" id="4_oes0g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xc1ox"]
-size = Vector3(0.1, 4, 0.1)
+size = Vector3(0.1, 2.93201, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yiw7j"]
-size = Vector3(5.12964, 2.98541, 4.36212)
+size = Vector3(4.5, 2.985, 4.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p2pbx"]
 size = Vector3(4.82544, 0.420151, 4.12988)
@@ -16,6 +19,7 @@ size = Vector3(4.82544, 0.420151, 4.12988)
 continuous_cd = true
 script = ExtResource("1_7own3")
 max_speed = 12
+gold_fill_meshes = Array[ArrayMesh]([ExtResource("2_5enmx"), ExtResource("3_tm8cb"), ExtResource("4_oes0g")])
 
 [node name="Minecart" type="MeshInstance3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
@@ -23,13 +27,15 @@ mesh = ExtResource("2_x3mhb")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71255, 0)
 shape = SubResource("BoxShape3D_xc1ox")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0440674, 2.00204, -0.00125122)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.002, 0)
 shape = SubResource("BoxShape3D_yiw7j")
 
 [node name="Area3D2" type="Area3D" parent="."]
@@ -39,5 +45,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0369873, 3.57426, 0.013183
 shape = SubResource("BoxShape3D_p2pbx")
 
 [node name="FillMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [connection signal="body_entered" from="Area3D2" to="." method="_on_area_3d_2_body_entered"]

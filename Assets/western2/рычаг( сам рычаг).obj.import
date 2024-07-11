@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://di6wuyx14ydh3"
+path="res://.godot/imported/рычаг( сам рычаг).obj-15058f4412d345d35560f4dff3368382.mesh"
+
+[deps]
+
+files=["res://.godot/imported/рычаг( сам рычаг).obj-15058f4412d345d35560f4dff3368382.mesh"]
+
+source_file="res://Assets/western2/рычаг( сам рычаг).obj"
+dest_files=["res://.godot/imported/рычаг( сам рычаг).obj-15058f4412d345d35560f4dff3368382.mesh", "res://.godot/imported/рычаг( сам рычаг).obj-15058f4412d345d35560f4dff3368382.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

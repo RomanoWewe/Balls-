@@ -16,7 +16,8 @@ func _ready():
 		levels_progress = ResourceLoader.load("user://saves/progress.tres")
 	else:
 		levels_progress = Progress.new()
-	add_child(pause_ui.instantiate())
+	pause_ui = pause_ui.instantiate()
+	add_child(pause_ui)
 	PhysicsServer3D.space_set_param(get_world_3d().space, PhysicsServer3D.SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION, 0.0)
 
 func _process(delta):
@@ -31,7 +32,7 @@ func complete_level():
 		levels_progress.level_in_time_data[int(str(name))] =true
 	ResourceSaver.save(levels_progress,"user://saves/progress.tres", ResourceSaver.FLAG_COMPRESS)
 	var screen = level_complete_scene.instantiate()
-	add_child(screen)
+	pause_ui.add_child(screen)
 	var lvl_name = str(int(str(name))+1)+".tscn"
 	if Array(DirAccess.open("res://Scenes/Levels/Scenes").get_files()).has(lvl_name):
 		screen.get_node("NextLevelButton").scene_name = \
@@ -44,7 +45,7 @@ func fail_level():
 		return
 	level_finished = true
 	var screen = level_fail_scene.instantiate()
-	add_child(screen)
+	pause_ui.add_child(screen)
 	var lvl_name = name+".tscn"
 	if Array(DirAccess.open("res://Scenes/Levels/Scenes").get_files()).has(lvl_name):
 		screen.get_node("NextLevelButton").scene_name = \

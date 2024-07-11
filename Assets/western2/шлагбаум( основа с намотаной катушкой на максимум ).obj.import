@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bhbbviitmxm8f"
+path="res://.godot/imported/шлагбаум( основа с намотаной катушкой на максимум ).obj-b6eefee44b9bca856cc1a8bfb76e0076.mesh"
+
+[deps]
+
+files=["res://.godot/imported/шлагбаум( основа с намотаной катушкой на максимум ).obj-b6eefee44b9bca856cc1a8bfb76e0076.mesh"]
+
+source_file="res://Assets/western2/шлагбаум( основа с намотаной катушкой на максимум ).obj"
+dest_files=["res://.godot/imported/шлагбаум( основа с намотаной катушкой на максимум ).obj-b6eefee44b9bca856cc1a8bfb76e0076.mesh", "res://.godot/imported/шлагбаум( основа с намотаной катушкой на максимум ).obj-b6eefee44b9bca856cc1a8bfb76e0076.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -8,7 +8,7 @@ var rail : Node3D
 func _ready():
 	rail= get_parent().get_node_or_null(str(int(name.split(",")[0])+5)+","+",".join(name.split(",").slice(1)))
 	if rail!=null:
-		rail.call_deferred("reparent",$CollisionShape3D)
+		rail.call_deferred("reparent",$"КрутящийЕлемент(вал)/top")
 
 func add_steps(steps : int):
 	if (flip_flop==1):

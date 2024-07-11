@@ -6,7 +6,25 @@
 [ext_resource type="ArrayMesh" uid="uid://d78l8ffymh4l" path="res://Assets/western2/крутящий елемент (платформа).obj" id="4_7ry1y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ra3ji"]
-size = Vector3(5, 5, 5)
+size = Vector3(5, 0.6, 5)
+
+[sub_resource type="Animation" id="Animation_4t8bg"]
+resource_name = "90Backward"
+step = 0.05
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("КрутящийЕлемент(вал)")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.3, 1, 0, 0.707, 0, 0.707, 0.7, 1, 0, 0, 0, 1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("КрутящийЕлемент(вал)/top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 1.7, 0, 0.3, 1, 0, 3.9, 0, 0.7, 1, 0, 3.9, 0, 1, 1, 0, 1.7, 0)
 
 [sub_resource type="Animation" id="Animation_yq7kn"]
 resource_name = "90Forward"
@@ -14,49 +32,17 @@ step = 0.05
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D")
+tracks/0/path = NodePath("КрутящийЕлемент(вал)/top")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 2.5, 0, 0.3, 1, 0, 4.7, 0, 0.7, 1, 0, 4.7, 0, 1, 1, 0, 2.5, 0)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1.7, 0, 0.3, 1, 0, 3.9, 0, 0.7, 1, 0, 3.9, 0, 1, 1, 0, 1.7, 0)
 tracks/1/type = "rotation_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape3D")
+tracks/1/path = NodePath("КрутящийЕлемент(вал)")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0.3, 1, 0, 0, 0, 1, 0.7, 1, 0, 0.707, 0, 0.707)
-tracks/2/type = "rotation_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("КрутящийЕлемент(вал)")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0.3, 1, 0, 0, 0, 1, 0.7, 1, 0, 0.707, 0, 0.707)
-
-[sub_resource type="Animation" id="Animation_4t8bg"]
-resource_name = "90Backward"
-step = 0.05
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape3D")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 2.5, 0, 0.3, 1, 0, 4.7, 0, 0.7, 1, 0, 4.7, 0, 1, 1, 0, 2.5, 0)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape3D")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0.3, 1, 0, 0.707, 0, 0.707, 0.7, 1, 0, 0, 0, 1)
-tracks/2/type = "rotation_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("КрутящийЕлемент(вал)")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat32Array(0.3, 1, 0, 0.707, 0, 0.707, 0.7, 1, 0, 0, 0, 1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xcdlg"]
 _data = {
@@ -64,29 +50,34 @@ _data = {
 "90Forward": SubResource("Animation_yq7kn")
 }
 
-[node name="RailRotator90" type="AnimatableBody3D"]
+[node name="RailRotator90" type="AnimatableBody3D" groups=["IsFloor"]]
 script = ExtResource("1_vgwqu")
 forward_animation = "90Forward"
 backward_animation = "90Backward"
 
 [node name="КрутящийЕлемент(вал)" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.8, 0)
 mesh = ExtResource("2_ps3w2")
+
+[node name="top" type="AnimatableBody3D" parent="КрутящийЕлемент(вал)" groups=["IsFloor"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.7, 0)
+
+[node name="КрутящийЕлемент(платформа)" type="MeshInstance3D" parent="КрутящийЕлемент(вал)/top"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.8, 0)
+mesh = ExtResource("4_7ry1y")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="КрутящийЕлемент(вал)/top"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)
+shape = SubResource("BoxShape3D_ra3ji")
 
 [node name="КрутящийЕлемент(основа)" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 mesh = ExtResource("3_viirq")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
-shape = SubResource("BoxShape3D_ra3ji")
-
-[node name="КрутящийЕлемент(платформа)" type="MeshInstance3D" parent="CollisionShape3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.8, 0)
-mesh = ExtResource("4_7ry1y")
-skeleton = NodePath("../..")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+callback_mode_process = 0
+callback_mode_method = 1
 libraries = {
 "": SubResource("AnimationLibrary_xcdlg")
 }

@@ -14,3 +14,4 @@ func get_turning_progress(minecart):
 		abs(minecart.global_position.y-start.global_position.y)/abs(finish.global_position.y-start.global_position.y) if (!is_equal_approx(finish.global_position.y,start.global_position.y)) else 0,
 		abs(minecart.global_position.z-start.global_position.z)/abs(finish.global_position.z-start.global_position.z) if (!is_equal_approx(finish.global_position.z,start.global_position.z)) else 0
 	).length()/sqrt(2)
+

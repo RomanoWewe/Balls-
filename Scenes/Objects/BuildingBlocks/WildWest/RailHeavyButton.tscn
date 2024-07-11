@@ -1,14 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://co8qy2ojkjpej"]
+[gd_scene load_steps=11 format=3 uid="uid://co8qy2ojkjpej"]
 
 [ext_resource type="Script" path="res://Code/scripts/RailButton.gd" id="1_wrndp"]
 [ext_resource type="Texture2D" uid="uid://dq4qa8b68a5y7" path="res://Assets/western2/rails3.png" id="2_ov827"]
 [ext_resource type="ArrayMesh" uid="uid://bjpnx1rkqns2b" path="res://Assets/western2/rails 2.obj" id="3_w8tek"]
+[ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="4_fojs0"]
+[ext_resource type="ArrayMesh" uid="uid://doq52xemkp2j4" path="res://Assets/western2/button 3 for objects.obj" id="5_62jay"]
+[ext_resource type="AudioStream" uid="uid://b4810rkqf81kw" path="res://Assets/Sounds/ButtonOff.mp3" id="6_3s74m"]
+[ext_resource type="AudioStream" uid="uid://bctijlrxgm6gm" path="res://Assets/Sounds/ButtonOn.mp3" id="7_c634a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfk8a"]
 albedo_texture = ExtResource("2_ov827")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j2hf4"]
 size = Vector3(0.1, 0.1, 5)
+
+[sub_resource type="Curve" id="Curve_hc0xn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
 
 [node name="Rail" type="Node3D"]
 script = ExtResource("1_wrndp")
@@ -22,15 +30,35 @@ mesh = ExtResource("3_w8tek")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_j2hf4")
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0)
-text = "Heavy Button"
-font_size = 125
+[node name="MovingPlatform" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+script = ExtResource("4_fojs0")
+speed_curve = SubResource("Curve_hc0xn")
+positions_count = 2
+next_position = 1
+positions = Array[Transform3D]([Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)])
+movement_times = Array[float]([0.02, 0.02])
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MovingPlatform"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.185032, 0)
+mesh = ExtResource("5_62jay")
+
+[node name="ButtonOffSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_3s74m")
+volume_db = -20.0
+bus = &"Sound"
+
+[node name="ButtonOnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_c634a")
+volume_db = -20.0
+bus = &"Sound"
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
 [connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]

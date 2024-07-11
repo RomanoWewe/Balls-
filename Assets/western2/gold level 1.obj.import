@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cobwmma1blglw"
+path="res://.godot/imported/gold level 1.obj-b205a3f9c28a433b6964cec79a7b14ef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/gold level 1.obj-b205a3f9c28a433b6964cec79a7b14ef.mesh"]
+
+source_file="res://Assets/western2/gold level 1.obj"
+dest_files=["res://.godot/imported/gold level 1.obj-b205a3f9c28a433b6964cec79a7b14ef.mesh", "res://.godot/imported/gold level 1.obj-b205a3f9c28a433b6964cec79a7b14ef.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
