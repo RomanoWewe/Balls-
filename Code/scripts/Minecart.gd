@@ -24,11 +24,11 @@ func _physics_process(delta):
 	
 	# Project the minecart's velocity onto the rail tangent
 	var vel_directional = linear_velocity.project(rail_tangent)
-	print(vel_directional.normalized())
+	#print(vel_directional.normalized())
 	linear_velocity = vel_directional.normalized() * clamp(linear_velocity.length(), 0, max_speed)
-	print(linear_velocity.length())
+	#print(linear_velocity.length())
 	
-	print("difference: ",(position-prev_position).length()/delta-linear_velocity.length())
+	#print("difference: ",(position-prev_position).length()/delta-linear_velocity.length())
 	prev_position=position
 	
 	

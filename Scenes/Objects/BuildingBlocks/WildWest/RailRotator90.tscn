@@ -50,10 +50,11 @@ _data = {
 "90Forward": SubResource("Animation_yq7kn")
 }
 
-[node name="RailRotator90" type="AnimatableBody3D" groups=["IsFloor"]]
+[node name="RailRotator90" type="AnimatableBody3D" node_paths=PackedStringArray("top") groups=["IsFloor"]]
 script = ExtResource("1_vgwqu")
 forward_animation = "90Forward"
 backward_animation = "90Backward"
+top = NodePath("КрутящийЕлемент(вал)/top")
 
 [node name="КрутящийЕлемент(вал)" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
@@ -61,11 +62,11 @@ mesh = ExtResource("2_ps3w2")
 
 [node name="top" type="AnimatableBody3D" parent="КрутящийЕлемент(вал)" groups=["IsFloor"]]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1.7, 0)
+sync_to_physics = false
 
 [node name="КрутящийЕлемент(платформа)" type="MeshInstance3D" parent="КрутящийЕлемент(вал)/top"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -1.8, 0)
 mesh = ExtResource("4_7ry1y")
-skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="КрутящийЕлемент(вал)/top"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 0)

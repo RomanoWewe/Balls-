@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://7r4f4bpsd55u" path="res://Scenes/Objects/BuildingBlocks/WildWest/BridgeStone.tscn" id="14_4w73j"]
 [ext_resource type="PackedScene" uid="uid://bkoppclofsmkk" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailCurve.tscn" id="15_poim4"]
 [ext_resource type="PackedScene" uid="uid://cwxr5dui74n3t" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailStraight.tscn" id="16_3w0f6"]
-[ext_resource type="PackedScene" uid="uid://dq4iqnxebjfmn" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailRotator180.tscn" id="18_5opdu"]
 [ext_resource type="PackedScene" uid="uid://co8qy2ojkjpej" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailHeavyButton.tscn" id="20_d0js5"]
+[ext_resource type="PackedScene" uid="uid://n5bokfcq1bh0" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailRotator90.tscn" id="21_2gsst"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="21_ikb0i"]
 [ext_resource type="PackedScene" uid="uid://dbhbnk335ny34" path="res://Scenes/Objects/BuildingBlocks/WildWest/HoleWildWest.tscn" id="22_i1wnb"]
 [ext_resource type="Script" path="res://Code/scripts/RailRotator.gd" id="22_ylm1a"]
@@ -488,14 +488,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -5, 5)
 [node name="-5,50,5(0)" parent="static" instance=ExtResource("4_qtppl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -5, 5)
 
-[node name="0,30,-10(0)" type="Node3D" parent="static" instance=ExtResource("15_poim4")]
+[node name="0,30,-10(0)" parent="static" instance=ExtResource("15_poim4")]
 transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, 30, 0, -10)
 
-[node name="-5,30,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("18_5opdu")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 30, -5, -10)
+[node name="-5,30,-10(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("top") groups=["IsFloor"] instance=ExtResource("21_2gsst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -5, -10)
 script = ExtResource("22_ylm1a")
-forward_animation = "180Forward"
-backward_animation = "180Backward"
+forward_animation = "90Forward"
+backward_animation = "90Backward"
+top = NodePath("КрутящийЕлемент(вал)/top")
 
 [node name="empty" parent="." instance=ExtResource("21_ikb0i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9121, -17.3926, 29.8806)
