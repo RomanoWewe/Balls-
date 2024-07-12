@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://t37mtxceoogx"]
+[gd_scene load_steps=25 format=3 uid="uid://t37mtxceoogx"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_0s4vf"]
 [ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="2_y3iho"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://n5bokfcq1bh0" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailRotator90.tscn" id="21_2gsst"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="21_ikb0i"]
 [ext_resource type="PackedScene" uid="uid://dbhbnk335ny34" path="res://Scenes/Objects/BuildingBlocks/WildWest/HoleWildWest.tscn" id="22_i1wnb"]
-[ext_resource type="Script" path="res://Code/scripts/RailRotator.gd" id="22_ylm1a"]
 [ext_resource type="PackedScene" uid="uid://dex6u2j1i8amw" path="res://Scenes/Objects/BuildingBlocks/WildWest/Minecart.tscn" id="26_4k6vn"]
 [ext_resource type="PackedScene" uid="uid://bc8qsjy13ympg" path="res://Scenes/Objects/BuildingBlocks/WildWest/GoldExtractor.tscn" id="31_uc734"]
 [ext_resource type="PackedScene" uid="uid://d3s6bpm0w5yjc" path="res://Scenes/Objects/BuildingBlocks/WildWest/WildWestLever.tscn" id="34_4yk15"]
@@ -491,12 +490,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -5, 5)
 [node name="0,30,-10(0)" parent="static" instance=ExtResource("15_poim4")]
 transform = Transform3D(3.0598e-07, 0, 1, 0, 1, 0, -1, 0, 3.0598e-07, 30, 0, -10)
 
-[node name="-5,30,-10(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("top") groups=["IsFloor"] instance=ExtResource("21_2gsst")]
+[node name="-5,30,-10(0)" parent="static" instance=ExtResource("21_2gsst")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -5, -10)
-script = ExtResource("22_ylm1a")
-forward_animation = "90Forward"
-backward_animation = "90Backward"
-top = NodePath("КрутящийЕлемент(вал)/top")
 
 [node name="empty" parent="." instance=ExtResource("21_ikb0i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9121, -17.3926, 29.8806)

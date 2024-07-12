@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d1274acyhjpof"]
+[gd_scene load_steps=30 format=3 uid="uid://d1274acyhjpof"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_2dhrh"]
 [ext_resource type="PackedScene" uid="uid://dc2013l0px6je" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallPlaneWildWest.tscn" id="4_1r6ee"]
@@ -12,9 +12,11 @@
 [ext_resource type="Script" path="res://Code/scripts/Rail.gd" id="14_5xotb"]
 [ext_resource type="PackedScene" uid="uid://bkoppclofsmkk" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailCurve.tscn" id="16_w40ho"]
 [ext_resource type="Script" path="res://Code/scripts/RailRotator.gd" id="19_ict86"]
+[ext_resource type="Script" path="res://Code/scripts/Bridge.gd" id="20_ckoj1"]
 [ext_resource type="PackedScene" uid="uid://cn4cthpfbswys" path="res://Scenes/Objects/BuildingBlocks/WildWest/BridgeWooden.tscn" id="20_kqnrc"]
 [ext_resource type="PackedScene" uid="uid://dbhbnk335ny34" path="res://Scenes/Objects/BuildingBlocks/WildWest/HoleWildWest.tscn" id="20_pbt2m"]
 [ext_resource type="Script" path="res://Code/scripts/Minecart.gd" id="21_0i6fl"]
+[ext_resource type="PackedScene" uid="uid://dftlqc4t0nxa1" path="res://Scenes/Objects/_Spawnable/WoodenBridgeDebris.tscn" id="21_kfe3f"]
 [ext_resource type="PackedScene" uid="uid://1qm8s5jlvwtn" path="res://Scenes/Objects/BuildingBlocks/WildWest/CanyonWildWestCorner.tscn" id="21_ooepk"]
 [ext_resource type="PackedScene" uid="uid://bc8qsjy13ympg" path="res://Scenes/Objects/BuildingBlocks/WildWest/GoldExtractor.tscn" id="22_eiyuj"]
 [ext_resource type="ArrayMesh" uid="uid://cobwmma1blglw" path="res://Assets/western2/gold level 1.obj" id="22_nlfwo"]
@@ -203,12 +205,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 40)
 [node name="5,40,40(0)" parent="static" instance=ExtResource("9_wlbsu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 40)
 
-[node name="5,35,40(0)" parent="static" instance=ExtResource("9_wlbsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 40)
-
-[node name="5,30,40(0)" parent="static" instance=ExtResource("9_wlbsu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 40)
-
 [node name="5,10,30(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("26_jwsnp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 30)
 connections = [NodePath("../0,25,40(0)")]
@@ -229,12 +225,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 30)
 [node name="0,30,35(0)" parent="static" instance=ExtResource("21_ooepk")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 30, 0, 35)
 
-[node name="0,30,40(0)" parent="static" instance=ExtResource("21_ooepk")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 0, 40)
-
-[node name="0,35,40(0)" parent="static" instance=ExtResource("21_ooepk")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 0, 40)
-
 [node name="0,35,35(0)" parent="static" instance=ExtResource("21_ooepk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 35)
 
@@ -243,10 +233,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 35)
 
 [node name="0,40,40(1)" parent="static" instance=ExtResource("9_0g333")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 40)
-
-[node name="0,35,40(1)" parent="static" node_paths=PackedStringArray("linked_objects") instance=ExtResource("20_kqnrc")]
-transform = Transform3D(-1, 0, 4.37114e-07, 0, 1, 0, -4.37114e-07, 0, -1, 35, 0, 40)
-linked_objects = [NodePath("../5,30,30(0)"), NodePath("")]
 
 [node name="5,25,40(0)" parent="static" instance=ExtResource("9_wlbsu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 40)
@@ -266,13 +252,38 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 30)
 script = ExtResource("14_5xotb")
 catch_mask = 31
 
-[node name="5,35,40(1)" type="RigidBody3D" parent="static" instance=ExtResource("9_l8f3a")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 5, 40)
+[node name="0,35,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("21_ooepk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 0, 40)
+sync_to_physics = false
+
+[node name="0,30,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("21_ooepk")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 0, 40)
+sync_to_physics = false
+
+[node name="5,35,40(0)" type="Node3D" parent="static" instance=ExtResource("9_wlbsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 40)
+script = ExtResource("14_5xotb")
+catch_mask = 31
+
+[node name="5,30,40(0)" type="Node3D" parent="static" instance=ExtResource("9_wlbsu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 40)
+script = ExtResource("14_5xotb")
+catch_mask = 31
+
+[node name="5,30,30(1)" type="RigidBody3D" parent="static" instance=ExtResource("9_l8f3a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 30)
 continuous_cd = true
 script = ExtResource("21_0i6fl")
 max_speed = 12
 fill_level = 3
 gold_fill_meshes = Array[ArrayMesh]([ExtResource("22_nlfwo"), ExtResource("23_4xnkp"), ExtResource("24_snayt")])
+
+[node name="0,35,40(1)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("20_kqnrc")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 35, 0, 40)
+sync_to_physics = false
+script = ExtResource("20_ckoj1")
+debris_scene = ExtResource("21_kfe3f")
+weight_to_break = 1
 
 [node name="GlobalDecorator" type="Node3D" parent="."]
 visible = false
