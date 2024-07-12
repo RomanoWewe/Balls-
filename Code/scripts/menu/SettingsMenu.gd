@@ -12,6 +12,11 @@ static var settings : Settings
 @export var music_mute_button : Button
 
 func _ready():
+	if !InputMap.has_action("F2"):
+		InputMap.add_action("F2")
+		var ev = InputEventKey.new()
+		ev.keycode = KEY_F2
+		InputMap.action_add_event("F2", ev)
 	if settings == null:
 		if   FileAccess.file_exists("user://settings.tres"):
 			settings = load("user://settings.tres")

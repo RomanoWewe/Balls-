@@ -11,6 +11,7 @@ var times_activated :=0
 var is_active :=false
 
 func _ready():
+	remove_nulls()
 	var press_animation = get_node_or_null("MovingPlatform")
 	while connections.has(press_animation):
 		connections.erase(press_animation)
@@ -85,3 +86,12 @@ func activate(_index:int):
 func deactivate(_index:int):
 	pass
 
+func remove_nulls():
+	var start_size := connections.size()
+	var i :=0
+	while i<start_size:
+		if connections[i] == null:
+			connections.remove_at(i)
+			start_size-=1
+		else:
+			i+=1
