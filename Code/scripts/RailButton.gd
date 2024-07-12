@@ -7,6 +7,9 @@ class_name RailButton
 @export var weight_to_activate :=0
 @export var is_active :=false
 
+func _ready():
+	remove_nulls()
+
 func _on_area_3d_area_entered(area):
 	var area_parent = area.get_parent()
 	if not area_parent is Minecart:
@@ -45,3 +48,13 @@ func deactivate(index:int):
 	if connections[index].activated_stack == 1:
 		connections[index].add_steps(1)
 	connections[index].remove_from_stack()
+
+func remove_nulls():
+	var start_size := connections.size()
+	var i :=0
+	while i<start_size:
+		if connections[i] == null:
+			connections.remove_at(i)
+			start_size-=1
+		else:
+			i+=1
