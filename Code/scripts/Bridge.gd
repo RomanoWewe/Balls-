@@ -23,7 +23,6 @@ func _ready():
 		y=-5
 	else:
 		y=5
-	print(x,",",y)
 	second_rail= get_parent().get_node_or_null(str(int(name.split(",")[0])+5)+","+
 		str(int(name.split(",")[1])+x)+","+
 		str(int(name.split(",")[2].split("(")[0])+y)+

@@ -15,7 +15,7 @@ size = Vector3(4.5, 2.985, 4.1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_p2pbx"]
 size = Vector3(4.82544, 0.420151, 4.12988)
 
-[node name="Minecart" type="RigidBody3D"]
+[node name="Minecart" type="RigidBody3D" groups=["Minecart"]]
 continuous_cd = true
 script = ExtResource("1_7own3")
 max_speed = 12

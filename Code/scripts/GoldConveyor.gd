@@ -8,10 +8,13 @@ var since_last_spawn :=0.0
 
 func _ready():
 	$AnimationPlayer.current_animation="new_animation"
+	var angle = basis.x.signed_angle_to(Vector3.RIGHT,Vector3.DOWN)
+	$WaterCurrent.current_direction = $WaterCurrent.current_direction.rotated(Vector3.UP,angle)
+	$WaterCurrent2.current_direction = $WaterCurrent2.current_direction.rotated(Vector3.UP,angle)
 
 func _process(delta):
 	since_last_spawn +=delta
-	if since_last_spawn>spawn_cooldown:
+	if since_last_spawn>spawn_cooldown and $AreaTracker.objects_in_area.size()>0:
 		spawn()
 
 func spawn():
