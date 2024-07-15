@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cn4cthpfbswys"]
+[gd_scene load_steps=8 format=3 uid="uid://cn4cthpfbswys"]
 
 [ext_resource type="ArrayMesh" uid="uid://cm2juk6n8ln5o" path="res://Assets/western2/wood bridge.obj" id="1_4bie3"]
 [ext_resource type="Script" path="res://Code/scripts/Bridge.gd" id="1_uhm47"]
 [ext_resource type="PackedScene" uid="uid://dftlqc4t0nxa1" path="res://Scenes/Objects/_Spawnable/WoodenBridgeDebris.tscn" id="2_rjuri"]
+[ext_resource type="PackedScene" uid="uid://cwxr5dui74n3t" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailStraight.tscn" id="4_hqpha"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
 size = Vector3(10, 1, 5)
@@ -13,11 +14,12 @@ size = Vector3(10, 2, 0.5)
 [sub_resource type="BoxShape3D" id="BoxShape3D_4qqsf"]
 size = Vector3(3, 5, 5)
 
-[node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
+[node name="floor" type="AnimatableBody3D" node_paths=PackedStringArray("linked_objects") groups=["IsFloor"]]
 sync_to_physics = false
 script = ExtResource("1_uhm47")
 debris_scene = ExtResource("2_rjuri")
 weight_to_break = 1
+linked_objects = [NodePath("Rail"), NodePath("Rail2")]
 
 [node name="collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 4.3, 0)
@@ -45,6 +47,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 4.8, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("BoxShape3D_4qqsf")
+
+[node name="Rail" parent="." instance=ExtResource("4_hqpha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Rail2" parent="." instance=ExtResource("4_hqpha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 0)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

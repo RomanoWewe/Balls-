@@ -381,18 +381,6 @@ transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 25, 0,
 [node name="0,30,-5(0)" parent="static" instance=ExtResource("16_3w0f6")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30, 0, -5)
 
-[node name="0,25,-20(0)" parent="static" instance=ExtResource("16_3w0f6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 0, -20)
-
-[node name="0,25,-25(0)" parent="static" instance=ExtResource("16_3w0f6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 0, -25)
-
-[node name="0,35,-25(0)" parent="static" instance=ExtResource("16_3w0f6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 0, -25)
-
-[node name="0,35,-20(0)" parent="static" instance=ExtResource("16_3w0f6")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 0, -20)
-
 [node name="0,35,-35(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("20_d0js5")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 35, 0, -35)
 connections = [NodePath("../0,50,-10(0)"), NodePath("../0,50,-10(0)")]

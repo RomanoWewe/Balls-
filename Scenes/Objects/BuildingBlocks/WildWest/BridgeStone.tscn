@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://7r4f4bpsd55u"]
+[gd_scene load_steps=5 format=3 uid="uid://7r4f4bpsd55u"]
 
 [ext_resource type="ArrayMesh" uid="uid://dgvy5wdexafkt" path="res://Assets/western2/stone bridge.obj" id="1_fljjr"]
+[ext_resource type="PackedScene" uid="uid://cwxr5dui74n3t" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailStraight.tscn" id="2_eohi8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
 size = Vector3(10, 1, 7)
@@ -26,3 +27,9 @@ shape = SubResource("BoxShape3D_0vegd")
 [node name="Western2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 3.3, 0)
 mesh = ExtResource("1_fljjr")
+
+[node name="Rail" parent="." instance=ExtResource("2_eohi8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+
+[node name="Rail2" parent="." instance=ExtResource("2_eohi8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 0)
