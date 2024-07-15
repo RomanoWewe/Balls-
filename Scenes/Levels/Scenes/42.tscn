@@ -367,30 +367,18 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 40, 0,
 [node name="-5,25,-35(1)" parent="static" instance=ExtResource("11_vgs22")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 25, -5, -35)
 
-[node name="5,25,-15(0)" parent="static" instance=ExtResource("12_7jl5s")]
+[node name="-5,25,-15(0)2" parent="static" instance=ExtResource("12_7jl5s")]
 transform = Transform3D(-1, 0, 4.37114e-07, 0, 1, 0, -4.37114e-07, 0, -1, 25, -5, -15)
 script = ExtResource("9_v1yew")
 
 [node name="0,15,-15(0)" parent="static" instance=ExtResource("14_ketej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -15)
 
-[node name="0,20,-15(0)" parent="static" instance=ExtResource("14_ketej")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -15)
-
 [node name="0,30,-15(0)" parent="static" instance=ExtResource("14_ketej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -15)
 
 [node name="0,15,-35(0)" parent="static" instance=ExtResource("14_ketej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -35)
-
-[node name="0,20,-35(0)" parent="static" instance=ExtResource("14_ketej")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -35)
-
-[node name="0,25,-35(0)" parent="static" instance=ExtResource("14_ketej")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -35)
-
-[node name="0,25,-15(0)" parent="static" instance=ExtResource("14_ketej")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -15)
 
 [node name="0,10,-35(0)" parent="static" instance=ExtResource("13_lkfr4")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10, 0, -35)
