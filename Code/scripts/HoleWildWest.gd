@@ -18,4 +18,7 @@ func add_steps(_steps):
 	add_sibling(debris)
 	debris.owner = owner
 	for child in debris.get_children():
-		child.linear_velocity = -25* transform.basis.x
+		if child is RigidBody3D:
+			child.linear_velocity = -25* transform.basis.x
+		else:
+			child.emitting = true

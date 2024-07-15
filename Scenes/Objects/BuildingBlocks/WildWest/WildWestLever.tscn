@@ -41,8 +41,8 @@ script = ExtResource("5_d7qat")
 speed_curve = SubResource("Curve_tcqub")
 positions_count = 2
 next_position = 1
-positions = Array[Transform3D]([Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0), Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0)])
-movement_times = Array[float]([0.2, 0.2])
+positions = Array[Transform3D]([Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0), Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0.8, 0)])
+movement_times = Array[float]([0.20944, 0.20944])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MovingPlatform"]
 transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 0, -0.938289, -0.527447)

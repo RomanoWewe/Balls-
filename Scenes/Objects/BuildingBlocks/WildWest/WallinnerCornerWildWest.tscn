@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://deoauopkq16sv"]
+[gd_scene load_steps=7 format=3 uid="uid://deoauopkq16sv"]
 
 [ext_resource type="ArrayMesh" uid="uid://d27i7sqwx118a" path="res://Assets/western2/western9.obj" id="1_qxmid"]
 [ext_resource type="PackedScene" uid="uid://c2quyiba7dng5" path="res://Scenes/Objects/_Abstract/WildWest/decoratorWildWestWalls.tscn" id="2_lt54d"]
+[ext_resource type="PackedScene" uid="uid://dedg8q76u50bq" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/CactusForest.tscn" id="3_475yw"]
+[ext_resource type="PackedScene" uid="uid://dcyihbw01n144" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/Cactus4.tscn" id="4_gv40w"]
+[ext_resource type="PackedScene" uid="uid://upb5jbxqyjto" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/DeadBush.tscn" id="5_loxfh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
 size = Vector3(5, 5, 5)
 
 [node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
+collision_layer = 7
+collision_mask = 7
 sync_to_physics = false
 
 [node name="collider" type="CollisionShape3D" parent="."]
@@ -18,3 +23,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.3, 0, -1.6)
 mesh = ExtResource("1_qxmid")
 
 [node name="Decorator" parent="." instance=ExtResource("2_lt54d")]
+
+[node name="2" type="Node3D" parent="Decorator" instance=ExtResource("3_475yw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.450582, 0, -1.32453)
+
+[node name="@Node3D@36364" type="Node3D" parent="Decorator" instance=ExtResource("4_gv40w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.05921, 0, -1.9616)
+
+[node name="@Node3D@36365" type="Node3D" parent="Decorator" instance=ExtResource("5_loxfh")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.13124, 0, -0.325938)
