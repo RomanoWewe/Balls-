@@ -14,8 +14,7 @@ func _on_area_3d_area_entered(area):
 	var area_parent = area.get_parent()
 	if not area_parent is Minecart:
 		return
-	area_parent.try_set_rail(self)
-	if area_parent.current_rail == self and (area_parent.fill_level>=weight_to_activate):
+	if area_parent.fill_level>=weight_to_activate:
 		is_active = true
 		for i in range(connections.size()):
 			activate(i)
@@ -24,7 +23,6 @@ func _on_area_3d_area_exited(area):
 	var area_parent = area.get_parent()
 	if not area_parent is Minecart:
 		return
-	area_parent.try_unset_rail(self)
 	if is_active:
 		is_active = false
 		for i in range(connections.size()):

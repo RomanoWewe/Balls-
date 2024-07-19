@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://co8qy2ojkjpej"]
+[gd_scene load_steps=9 format=3 uid="uid://co8qy2ojkjpej"]
 
 [ext_resource type="Script" path="res://Code/scripts/RailButton.gd" id="1_wrndp"]
 [ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="4_fojs0"]
@@ -10,6 +10,9 @@
 [sub_resource type="Curve" id="Curve_hc0xn"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
 point_count = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yptqy"]
+size = Vector3(3, 4, 3)
 
 [node name="Rail" type="Node3D"]
 script = ExtResource("1_wrndp")
@@ -40,3 +43,12 @@ volume_db = -20.0
 bus = &"Sound"
 
 [node name="Rail" parent="." instance=ExtResource("6_0labe")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_yptqy")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]

@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://irygqx05pqx3" path="res://Scenes/Objects/BuildingBlocks/WildWest/floorWildWest.tscn" id="9_0g333"]
 [ext_resource type="PackedScene" uid="uid://dex6u2j1i8amw" path="res://Scenes/Objects/BuildingBlocks/WildWest/Minecart.tscn" id="9_l8f3a"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="10_fjrka"]
-[ext_resource type="Script" path="res://Code/scripts/RailRotator.gd" id="10_xkuru"]
-[ext_resource type="Script" path="res://Code/scripts/buttons/button_toggle.gd" id="12_h8ymo"]
+[ext_resource type="PackedScene" uid="uid://xuchxlo3mui8" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailLightButton.tscn" id="12_jbgdu"]
+[ext_resource type="PackedScene" uid="uid://dbhbnk335ny34" path="res://Scenes/Objects/BuildingBlocks/WildWest/HoleWildWest.tscn" id="20_pbt2m"]
 [ext_resource type="Script" path="res://Code/scripts/Decorator.gd" id="23_qsoq7"]
 [ext_resource type="PackedScene" uid="uid://n5bokfcq1bh0" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailRotator90.tscn" id="25_ok8gw"]
 [ext_resource type="PackedScene" uid="uid://d3s6bpm0w5yjc" path="res://Scenes/Objects/BuildingBlocks/WildWest/WildWestLever.tscn" id="26_jwsnp"]
@@ -165,9 +165,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 30)
 [node name="5,35,20(0)" parent="static" instance=ExtResource("5_51kad")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 35, 5, 20)
 
-[node name="5,30,20(0)" parent="static" instance=ExtResource("4_poqdq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 20)
-
 [node name="5,25,20(0)" parent="static" instance=ExtResource("4_poqdq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 20)
 
@@ -211,21 +208,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 30)
 [node name="5,35,25(0)" parent="static" instance=ExtResource("4_poqdq")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 5, 25)
 
-[node name="0,30,30(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("top") groups=["IsFloor"] instance=ExtResource("25_ok8gw")]
+[node name="0,30,30(0)" parent="static" instance=ExtResource("25_ok8gw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 30)
-script = ExtResource("10_xkuru")
-forward_animation = "90Forward"
-backward_animation = "90Backward"
-top = NodePath("КрутящийЕлемент(вал)/top")
 
-[node name="5,45,30(0)" type="Area3D" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("26_jwsnp")]
+[node name="5,45,30(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("26_jwsnp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 30)
-script = ExtResource("12_h8ymo")
 connections = [NodePath("../0,30,30(0)")]
+
+[node name="5,40,15(0)" parent="static" instance=ExtResource("20_pbt2m")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, 5, 15)
+
+[node name="5,30,20(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("12_jbgdu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 20)
+connections = [NodePath("../5,40,15(0)")]
 
 [node name="GlobalDecorator" type="Node3D" parent="."]
 visible = false
 script = ExtResource("23_qsoq7")
-
-[connection signal="body_entered" from="static/5,45,30(0)" to="static/5,45,30(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="static/5,45,30(0)" to="static/5,45,30(0)" method="_on_body_exited"]
