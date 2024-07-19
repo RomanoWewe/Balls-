@@ -1,18 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://xuchxlo3mui8"]
+[gd_scene load_steps=8 format=3 uid="uid://xuchxlo3mui8"]
 
 [ext_resource type="Script" path="res://Code/scripts/RailButton.gd" id="1_7wpdg"]
-[ext_resource type="Texture2D" uid="uid://dq4qa8b68a5y7" path="res://Assets/western2/rails3.png" id="2_e5k0j"]
-[ext_resource type="ArrayMesh" uid="uid://bjpnx1rkqns2b" path="res://Assets/western2/rails 2.obj" id="3_spadu"]
 [ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="4_erkp4"]
 [ext_resource type="ArrayMesh" uid="uid://qrt3db80cnq2" path="res://Assets/western2/button 1 for objects.obj" id="5_ubtmc"]
 [ext_resource type="AudioStream" uid="uid://b4810rkqf81kw" path="res://Assets/Sounds/ButtonOff.mp3" id="6_w86fq"]
+[ext_resource type="PackedScene" uid="uid://cwxr5dui74n3t" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailStraight.tscn" id="6_x3t78"]
 [ext_resource type="AudioStream" uid="uid://bctijlrxgm6gm" path="res://Assets/Sounds/ButtonOn.mp3" id="7_iw486"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfk8a"]
-albedo_texture = ExtResource("2_e5k0j")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_j2hf4"]
-size = Vector3(0.1, 0.1, 5)
 
 [sub_resource type="Curve" id="Curve_pr6tl"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
@@ -21,20 +14,6 @@ point_count = 1
 [node name="Rail" type="Node3D"]
 script = ExtResource("1_7wpdg")
 catch_mask = 31
-
-[node name="Rail" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.7, 0, 0)
-material_override = SubResource("StandardMaterial3D_hfk8a")
-mesh = ExtResource("3_spadu")
-
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_j2hf4")
 
 [node name="MovingPlatform" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
@@ -59,5 +38,4 @@ stream = ExtResource("7_iw486")
 volume_db = -20.0
 bus = &"Sound"
 
-[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
-[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
+[node name="Rail" parent="." instance=ExtResource("6_x3t78")]

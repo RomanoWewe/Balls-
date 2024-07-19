@@ -8,23 +8,6 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_c5nah"]
 size = Vector3(5, 0.6, 5)
 
-[sub_resource type="Animation" id="Animation_0ved2"]
-resource_name = "180Forward"
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("КрутящийЕлемент(вал)/top")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 1.7, 0, 0.3, 1, 0, 3.9, 0, 0.7, 1, 0, 3.9, 0, 1, 1, 0, 1.7, 0)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("КрутящийЕлемент(вал)")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0.3, 1, 0, 0, 0, 1, 0.7, 1, 0, 1, 0, 0)
-
 [sub_resource type="Animation" id="Animation_r4wv6"]
 resource_name = "180Backward"
 tracks/0/type = "position_3d"
@@ -41,6 +24,23 @@ tracks/1/path = NodePath("КрутящийЕлемент(вал)")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0.3, 1, 0, 1, 0, 0, 0.7, 1, 0, -2.92584e-08, 0, 1)
+
+[sub_resource type="Animation" id="Animation_0ved2"]
+resource_name = "180Forward"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("КрутящийЕлемент(вал)/top")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1.7, 0, 0.3, 1, 0, 3.9, 0, 0.7, 1, 0, 3.9, 0, 1, 1, 0, 1.7, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("КрутящийЕлемент(вал)")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.3, 1, 0, 0, 0, 1, 0.7, 1, 0, 1, 0, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yfk04"]
 _data = {
