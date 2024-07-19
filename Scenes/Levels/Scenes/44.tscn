@@ -492,6 +492,8 @@ connections = [NodePath("../0,25,-30(0)")]
 
 [node name="0,25,-25(0)" parent="static" instance=ExtResource("35_8mg2k")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 24.5785, 0, -25.3162)
+collision_layer = 7
+collision_mask = 7
 
 [node name="-5,-5,-10(0)" parent="static" instance=ExtResource("5_75cf1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -5, -10)

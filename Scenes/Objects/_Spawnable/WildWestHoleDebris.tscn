@@ -79,6 +79,7 @@ turbulence_noise_scale = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41553, 1.87233, -1.47119)
 collision_layer = 4
 collision_mask = 4
+mass = 0.2
 linear_velocity = Vector3(-5, 0, 0)
 
 [node name="Exite1(Stone1)" type="MeshInstance3D" parent="RigidBody3D"]
@@ -93,6 +94,7 @@ shape = SubResource("BoxShape3D_abpvb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.24851, -0.80146)
 collision_layer = 4
 collision_mask = 4
+mass = 0.2
 linear_velocity = Vector3(-5, 0, 0)
 
 [node name="Exite1(Stone1)" type="MeshInstance3D" parent="RigidBody3D2"]
@@ -107,6 +109,7 @@ shape = SubResource("BoxShape3D_27j7e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5813, 2.25246, 0.596184)
 collision_layer = 4
 collision_mask = 4
+mass = 0.2
 linear_velocity = Vector3(-5, 0, 0)
 
 [node name="Exite1(Stone1)" type="MeshInstance3D" parent="RigidBody3D3"]
@@ -121,6 +124,7 @@ shape = SubResource("BoxShape3D_iitrn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14563, 0.728462, 0.431464)
 collision_layer = 4
 collision_mask = 4
+mass = 0.2
 linear_velocity = Vector3(-5, 0, 0)
 
 [node name="Exite1(Stone1)" type="MeshInstance3D" parent="RigidBody3D4"]
@@ -135,6 +139,7 @@ shape = SubResource("BoxShape3D_tpfud")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97505, -0.810654)
 collision_layer = 4
 collision_mask = 4
+mass = 0.2
 linear_velocity = Vector3(-5, 0, 0)
 
 [node name="Exite1(Stone1)" type="MeshInstance3D" parent="RigidBody3D5"]
