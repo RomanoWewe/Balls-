@@ -48,11 +48,10 @@ _data = {
 "180Forward": SubResource("Animation_0ved2")
 }
 
-[node name="RailRotator180" type="AnimatableBody3D" node_paths=PackedStringArray("top")]
+[node name="RailRotator180" type="AnimatableBody3D"]
 script = ExtResource("1_p66gs")
 forward_animation = "180Forward"
 backward_animation = "180Backward"
-top = NodePath("КрутящийЕлемент(вал)/top")
 
 [node name="КрутящийЕлемент(вал)" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, -5.85167e-08, 0, 1, 0, 5.85167e-08, 0, 1, 0, 0.8, 0)

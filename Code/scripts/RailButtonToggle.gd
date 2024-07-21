@@ -1,5 +1,5 @@
 @tool extends Rail
-class_name RailButtonToggle
+class_name RailButton
 
 @export var Add_Connection : Activatable : set = add_connection ## Add Connection - выбрать и добавить новый объект к списку активируемых
 @export var Clear_Connections : bool : set = clear_connections ## Clear Connection - очистить все списки активируемых обьектов
@@ -15,19 +15,13 @@ func _on_area_3d_area_entered(area):
 	if not area_parent is Minecart:
 		return
 	if area_parent.fill_level>=weight_to_activate:
-		is_active = true
-		for i in range(connections.size()):
-			activate(i)
-
-func _on_area_3d_area_exited(area):
-	var area_parent = area.get_parent()
-	if not area_parent is Minecart:
-		return
-	if is_active:
-		is_active = false
-		for i in range(connections.size()):
-			deactivate(i)
-
+		is_active = !is_active
+		if is_active:
+			for i in range(connections.size()):
+				activate(i)
+		else:
+			for i in range(connections.size()):
+				deactivate(i)
 
 func add_connection(activatable : Activatable):
 	if (!is_inside_tree()):
