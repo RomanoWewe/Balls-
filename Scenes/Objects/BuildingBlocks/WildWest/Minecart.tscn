@@ -18,8 +18,8 @@ height = 5.0
 size = Vector3(4.82544, 0.420151, 4.12988)
 
 [node name="Minecart" type="RigidBody3D" groups=["Minecart"]]
-collision_layer = 9
-collision_mask = 9
+collision_layer = 13
+collision_mask = 13
 axis_lock_angular_x = true
 axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_is8pb")

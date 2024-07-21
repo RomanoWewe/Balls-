@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://bn8qbmg1uamko"]
+[gd_scene load_steps=22 format=3 uid="uid://bn8qbmg1uamko"]
 
+[ext_resource type="Script" path="res://Code/scripts/GravitationalObject.gd" id="1_6q5yr"]
 [ext_resource type="ArrayMesh" uid="uid://ct13aouuyt1y5" path="res://Assets/western2/exite1 ( stone1).obj" id="1_o6yb2"]
 [ext_resource type="ArrayMesh" uid="uid://cfvx5vqxvig8r" path="res://Assets/western2/exite1 (stone2).obj" id="2_p54v2"]
 [ext_resource type="ArrayMesh" uid="uid://ddhhtnxj0qx3v" path="res://Assets/western2/exite1 (stone3).obj" id="3_xpk75"]
@@ -79,8 +80,9 @@ turbulence_noise_scale = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.41553, 1.87233, -1.47119)
 collision_layer = 4
 collision_mask = 4
-mass = 0.2
+mass = 0.1
 linear_velocity = Vector3(-5, 0, 0)
+script = ExtResource("1_6q5yr")
 
 [node name="Exite1(Stone1)" type="MeshInstance3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89855, -2.24637, -12.289)
@@ -94,8 +96,9 @@ shape = SubResource("BoxShape3D_abpvb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.24851, -0.80146)
 collision_layer = 4
 collision_mask = 4
-mass = 0.2
+mass = 0.1
 linear_velocity = Vector3(-5, 0, 0)
+script = ExtResource("1_6q5yr")
 
 [node name="Exite1(Stone1)" type="MeshInstance3D" parent="RigidBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.194366, -0.801872, -12.6031)
@@ -109,8 +112,9 @@ shape = SubResource("BoxShape3D_27j7e")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5813, 2.25246, 0.596184)
 collision_layer = 4
 collision_mask = 4
-mass = 0.2
+mass = 0.1
 linear_velocity = Vector3(-5, 0, 0)
+script = ExtResource("1_6q5yr")
 
 [node name="Exite1(Stone1)" type="MeshInstance3D" parent="RigidBody3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28578, -2.69096, -12.6786)
@@ -124,8 +128,9 @@ shape = SubResource("BoxShape3D_iitrn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14563, 0.728462, 0.431464)
 collision_layer = 4
 collision_mask = 4
-mass = 0.2
+mass = 0.1
 linear_velocity = Vector3(-5, 0, 0)
+script = ExtResource("1_6q5yr")
 
 [node name="Exite1(Stone1)" type="MeshInstance3D" parent="RigidBody3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.97132, -2.32298, -12.5618)
@@ -139,8 +144,9 @@ shape = SubResource("BoxShape3D_tpfud")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97505, -0.810654)
 collision_layer = 4
 collision_mask = 4
-mass = 0.2
+mass = 0.1
 linear_velocity = Vector3(-5, 0, 0)
+script = ExtResource("1_6q5yr")
 
 [node name="Exite1(Stone1)" type="MeshInstance3D" parent="RigidBody3D5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83069, -0.464654, -12.6912)

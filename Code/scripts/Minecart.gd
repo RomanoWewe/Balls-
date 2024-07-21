@@ -4,18 +4,20 @@ class_name Minecart
 @export var max_speed := 10
 @export var fill_level := 0
 @export var gold_fill_meshes :Array[ArrayMesh] = []
-@export var speed_damp :=0.998
-var is_in_contact_with_ball := false
-var previous_frame_horizontal_velocity := 0.0
+@export var speed_damp :=0.997
+var contacted_bodies := []
+var previous_frame_horizontal_velocity := Vector3.ZERO
 
 func _physics_process(delta):
-	if !is_in_contact_with_ball:
+	if contacted_bodies.size()==0:
 		var vertical_speed = linear_velocity.y
-		linear_velocity = Vector3(linear_velocity.x,0,linear_velocity.z).normalized() * previous_frame_horizontal_velocity * speed_damp
+		linear_velocity = Vector3(linear_velocity.x,0,linear_velocity.z).normalized() * previous_frame_horizontal_velocity.length() * speed_damp
+		if linear_velocity.angle_to(previous_frame_horizontal_velocity)>PI/3:
+			linear_velocity*=.5
 		linear_velocity.y = vertical_speed
 	else:
 		linear_velocity= Vector3(linear_velocity.x,0,linear_velocity.z)
-	previous_frame_horizontal_velocity = Vector3(linear_velocity.x,0,linear_velocity.z).length()
+	previous_frame_horizontal_velocity = Vector3(linear_velocity.x,0,linear_velocity.z)
 
 func _on_area_3d_2_body_entered(body):
 	if body.is_in_group("GoldBar"):
@@ -26,10 +28,12 @@ func _on_area_3d_2_body_entered(body):
 
 
 func _on_body_entered(body):
-	if body is Ball:
-		is_in_contact_with_ball=true
+	if body is GravitationalObject:
+		contacted_bodies.append(body)
+		print(contacted_bodies)
 
 
 func _on_body_exited(body):
-	if body is Ball:
-		is_in_contact_with_ball=false
+	if body in contacted_bodies:
+		contacted_bodies.erase(body)
+		print(contacted_bodies)

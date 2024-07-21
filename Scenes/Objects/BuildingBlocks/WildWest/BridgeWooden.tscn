@@ -22,7 +22,7 @@ weight_to_break = 1
 linked_objects = [NodePath("Rail"), NodePath("Rail2")]
 
 [node name="collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 4.3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 4.5, 0)
 shape = SubResource("BoxShape3D_t24w4")
 
 [node name="collider2" type="CollisionShape3D" parent="."]
