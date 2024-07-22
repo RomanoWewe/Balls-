@@ -555,57 +555,46 @@ transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 25, 0,
 [node name="0,35,-5(0)" parent="static" instance=ExtResource("15_b7lnj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -5)
 script = ExtResource("16_u3mu3")
-catch_mask = 31
 
 [node name="0,30,-5(0)" parent="static" instance=ExtResource("15_b7lnj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -5)
 script = ExtResource("16_u3mu3")
-catch_mask = 31
 
 [node name="0,45,-5(0)" parent="static" instance=ExtResource("15_b7lnj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -5)
 script = ExtResource("16_u3mu3")
-catch_mask = 31
 
 [node name="0,50,-5(0)" parent="static" instance=ExtResource("15_b7lnj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -5)
 script = ExtResource("16_u3mu3")
-catch_mask = 31
 
 [node name="0,55,-5(0)" parent="static" instance=ExtResource("15_b7lnj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, -5)
 script = ExtResource("16_u3mu3")
-catch_mask = 31
 
 [node name="0,55,-20(0)" parent="static" instance=ExtResource("15_b7lnj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, -20)
 script = ExtResource("16_u3mu3")
-catch_mask = 31
 
 [node name="0,35,-20(0)" parent="static" instance=ExtResource("15_b7lnj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -20)
 script = ExtResource("16_u3mu3")
-catch_mask = 31
 
 [node name="0,30,-20(0)" parent="static" instance=ExtResource("15_b7lnj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -20)
 script = ExtResource("16_u3mu3")
-catch_mask = 31
 
 [node name="0,25,-15(0)" parent="static" instance=ExtResource("15_b7lnj")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 0, -10)
 script = ExtResource("16_u3mu3")
-catch_mask = 31
 
 [node name="0,60,-10(0)" parent="static" instance=ExtResource("15_b7lnj")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 60, 0, -10)
 script = ExtResource("16_u3mu3")
-catch_mask = 31
 
 [node name="0,60,-15(0)" parent="static" instance=ExtResource("15_b7lnj")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 60, 0, -15)
 script = ExtResource("16_u3mu3")
-catch_mask = 31
 
 [node name="0,10,-10(0)" parent="static" instance=ExtResource("25_l66q2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -14.1434)
@@ -663,7 +652,6 @@ physics_material_override = SubResource("PhysicsMaterial_wa4fo")
 [node name="0,50,-20(0)" parent="static" instance=ExtResource("15_b7lnj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -20)
 script = ExtResource("16_u3mu3")
-catch_mask = 31
 
 [node name="0,60,-35(0)" parent="static" instance=ExtResource("9_vprpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -35)
