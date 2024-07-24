@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ctxwbq8er8tw0"]
+[gd_scene load_steps=31 format=3 uid="uid://ctxwbq8er8tw0"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_1n3vk"]
 [ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="2_q8xg1"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://cckwyapi61vvd" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailBarrier.tscn" id="15_5lili"]
 [ext_resource type="PackedScene" uid="uid://cousk4nrygbk4" path="res://Scenes/Objects/BuildingBlocks/Basic/cannon.tscn" id="17_bhthi"]
 [ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="19_tp3sv"]
+[ext_resource type="PackedScene" uid="uid://byxp7y2va51bf" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallThinDeadendWildWest.tscn" id="23_oauel"]
+[ext_resource type="PackedScene" uid="uid://bw7u8w32r28ek" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallThinTWildWest.tscn" id="24_6gpcn"]
 [ext_resource type="PackedScene" uid="uid://dex6u2j1i8amw" path="res://Scenes/Objects/BuildingBlocks/WildWest/Minecart.tscn" id="24_tj5fa"]
 [ext_resource type="PackedScene" uid="uid://dg22a4jdvy64k" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallIslandWildWest.tscn" id="29_7u0s7"]
 [ext_resource type="PackedScene" uid="uid://cr08bv5lxwxim" path="res://Scenes/Objects/BuildingBlocks/Basic/Buttons/ButtonHoldNReturn.tscn" id="29_nu64e"]
@@ -526,9 +528,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -35)
 [node name="0,25,-35(0)" parent="static" instance=ExtResource("6_26mp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -35)
 
-[node name="0,30,-35(0)" parent="static" instance=ExtResource("6_26mp7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -35)
-
 [node name="0,40,-35(0)" parent="static" instance=ExtResource("6_26mp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -35)
 
@@ -784,26 +783,26 @@ physics_material_override = SubResource("PhysicsMaterial_nsy35")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -10)
 physics_material_override = SubResource("PhysicsMaterial_tywty")
 
-[node name="0,35,-35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_26mp7")]
+[node name="0,35,-35(0)" parent="static" instance=ExtResource("6_26mp7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -35)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,35,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_26mp7")]
+[node name="0,35,10(0)" parent="static" instance=ExtResource("6_26mp7")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 35, 0, 10)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,35,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("29_7u0s7")]
+[node name="0,35,-5(0)" parent="static" instance=ExtResource("29_7u0s7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -5)
+
+[node name="0,40,-25(0)" parent="static" instance=ExtResource("29_7u0s7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -25)
+
+[node name="0,30,-30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("23_oauel")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30, 0, -30)
 collision_layer = 7
 collision_mask = 7
 sync_to_physics = false
 
-[node name="0,40,-25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("29_7u0s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -25)
+[node name="0,30,-35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("24_6gpcn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30, 0, -35)
 collision_layer = 7
 collision_mask = 7
 sync_to_physics = false
