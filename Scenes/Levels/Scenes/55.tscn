@@ -795,17 +795,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -5)
 [node name="0,40,-25(0)" parent="static" instance=ExtResource("29_7u0s7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -25)
 
-[node name="0,30,-30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("23_oauel")]
+[node name="0,30,-30(0)" parent="static" instance=ExtResource("23_oauel")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30, 0, -30)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,30,-35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("24_6gpcn")]
+[node name="0,30,-35(0)" parent="static" instance=ExtResource("24_6gpcn")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30, 0, -35)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
 [node name="empty" parent="." instance=ExtResource("39_btkse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4402, -17.3926, 29.0471)
