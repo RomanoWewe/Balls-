@@ -1,23 +1,15 @@
-[gd_scene load_steps=25 format=3 uid="uid://d1274acyhjpof"]
+[gd_scene load_steps=17 format=3 uid="uid://d1274acyhjpof"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_2dhrh"]
 [ext_resource type="PackedScene" uid="uid://cwxr5dui74n3t" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailStraight.tscn" id="4_poqdq"]
 [ext_resource type="PackedScene" uid="uid://4dnxssr7ujc2" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailHeavyButtonToggle.tscn" id="7_vt6o2"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="8_ch0bx"]
-[ext_resource type="Script" path="res://Code/scripts/RailButtonToggle.gd" id="8_fv8ph"]
 [ext_resource type="PackedScene" uid="uid://irygqx05pqx3" path="res://Scenes/Objects/BuildingBlocks/WildWest/floorWildWest.tscn" id="9_0g333"]
-[ext_resource type="Script" path="res://Code/scripts/RailRotator.gd" id="9_16gh2"]
 [ext_resource type="PackedScene" uid="uid://dex6u2j1i8amw" path="res://Scenes/Objects/BuildingBlocks/WildWest/Minecart.tscn" id="9_l8f3a"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="10_fjrka"]
 [ext_resource type="PackedScene" uid="uid://dg22a4jdvy64k" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallIslandWildWest.tscn" id="11_e35wv"]
-[ext_resource type="Script" path="res://Code/scripts/Minecart.gd" id="13_djbxu"]
-[ext_resource type="ArrayMesh" uid="uid://cobwmma1blglw" path="res://Assets/western2/gold level 1.obj" id="14_v1v72"]
-[ext_resource type="ArrayMesh" uid="uid://d0o6padc1sls3" path="res://Assets/western2/gold level 2.obj" id="15_wma1r"]
-[ext_resource type="ArrayMesh" uid="uid://bwgommudium2w" path="res://Assets/western2/gold level 3.obj" id="16_05ia8"]
 [ext_resource type="PackedScene" uid="uid://bc8qsjy13ympg" path="res://Scenes/Objects/BuildingBlocks/WildWest/GoldExtractor.tscn" id="16_m64ik"]
 [ext_resource type="PackedScene" uid="uid://cckwyapi61vvd" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailBarrier.tscn" id="17_gp1t8"]
-[ext_resource type="Script" path="res://Code/scripts/GoldConveyor.gd" id="17_il6wr"]
-[ext_resource type="PackedScene" uid="uid://cdbc8ejx8dv1r" path="res://Scenes/Objects/_Spawnable/gold_bar.tscn" id="18_70p6t"]
 [ext_resource type="PackedScene" uid="uid://dbhbnk335ny34" path="res://Scenes/Objects/BuildingBlocks/WildWest/HoleWildWest.tscn" id="20_pbt2m"]
 [ext_resource type="Script" path="res://Code/scripts/Decorator.gd" id="23_qsoq7"]
 [ext_resource type="PackedScene" uid="uid://d3s6bpm0w5yjc" path="res://Scenes/Objects/BuildingBlocks/WildWest/WildWestLever.tscn" id="26_jwsnp"]
@@ -172,75 +164,39 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, 5, 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 20)
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
 
-[node name="0,30,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_0g333")]
+[node name="0,30,30(0)" parent="static" instance=ExtResource("9_0g333")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 30)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,25,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_0g333")]
+[node name="0,25,30(0)" parent="static" instance=ExtResource("9_0g333")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 30)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,20,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_0g333")]
+[node name="0,20,30(0)" parent="static" instance=ExtResource("9_0g333")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 30)
-collision_layer = 7
-collision_mask = 7
 
-[node name="5,20,30(0)" type="StaticBody3D" parent="static" instance=ExtResource("4_poqdq")]
+[node name="5,20,30(0)" parent="static" instance=ExtResource("4_poqdq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 30)
-collision_layer = 8
-collision_mask = 8
 
-[node name="5,35,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_e35wv")]
+[node name="5,35,30(0)" parent="static" instance=ExtResource("11_e35wv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 30)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,20,30(1)" type="RigidBody3D" parent="static" groups=["Minecart"] instance=ExtResource("9_l8f3a")]
+[node name="5,20,30(1)" parent="static" instance=ExtResource("9_l8f3a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 30)
-collision_layer = 13
-collision_mask = 13
-axis_lock_angular_x = true
-axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_is8pb")
-gravity_scale = 10.0
-continuous_cd = true
-max_contacts_reported = 5
-contact_monitor = true
-script = ExtResource("13_djbxu")
-max_speed = 12
-gold_fill_meshes = Array[ArrayMesh]([ExtResource("14_v1v72"), ExtResource("15_wma1r"), ExtResource("16_05ia8")])
 
-[node name="5,20,20(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("17_gp1t8")]
+[node name="5,20,20(0)" parent="static" instance=ExtResource("17_gp1t8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 20)
-script = ExtResource("9_16gh2")
-forward_animation = "open"
-backward_animation = "close"
 
-[node name="5,20,35(0)" type="StaticBody3D" parent="static" node_paths=PackedStringArray("spawn_point") instance=ExtResource("16_m64ik")]
+[node name="5,20,35(0)" parent="static" instance=ExtResource("16_m64ik")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 5, 35)
 physics_material_override = SubResource("PhysicsMaterial_wa4fo")
-script = ExtResource("17_il6wr")
-gold_bar_prefab = ExtResource("18_70p6t")
-spawn_point = NodePath("SpawnPoint")
-spawn_cooldown = 3.0
 
-[node name="5,30,30(0)" type="Node3D" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("7_vt6o2")]
+[node name="5,30,30(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("7_vt6o2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 30)
-script = ExtResource("8_fv8ph")
 connections = [NodePath("../5,20,20(0)")]
-weight_to_activate = 3
 
-[node name="5,25,30(0)" type="StaticBody3D" parent="static" instance=ExtResource("4_poqdq")]
+[node name="5,25,30(0)" parent="static" instance=ExtResource("4_poqdq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 30)
-collision_layer = 8
-collision_mask = 8
 
 [node name="GlobalDecorator" type="Node3D" parent="."]
 visible = false
 script = ExtResource("23_qsoq7")
-
-[connection signal="body_entered" from="static/5,20,30(1)" to="static/5,20,30(1)" method="_on_body_entered"]
-[connection signal="body_exited" from="static/5,20,30(1)" to="static/5,20,30(1)" method="_on_body_exited"]
