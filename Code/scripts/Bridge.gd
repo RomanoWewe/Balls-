@@ -27,3 +27,4 @@ func destroy():
 		instance.rotation = rotation
 		get_parent().add_child(instance)
 		instance.owner = owner
+		instance.get_node("GPUParticles3D").emitting = true

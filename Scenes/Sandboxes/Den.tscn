@@ -1,18 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://d1274acyhjpof"]
+[gd_scene load_steps=15 format=3 uid="uid://d1274acyhjpof"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_2dhrh"]
 [ext_resource type="PackedScene" uid="uid://cwxr5dui74n3t" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailStraight.tscn" id="4_poqdq"]
-[ext_resource type="PackedScene" uid="uid://4dnxssr7ujc2" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailHeavyButtonToggle.tscn" id="7_vt6o2"]
+[ext_resource type="PackedScene" uid="uid://1qm8s5jlvwtn" path="res://Scenes/Objects/BuildingBlocks/WildWest/CanyonWildWestCorner.tscn" id="5_3r1rh"]
+[ext_resource type="PackedScene" uid="uid://cn4cthpfbswys" path="res://Scenes/Objects/BuildingBlocks/WildWest/BridgeWooden.tscn" id="6_dao5v"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="8_ch0bx"]
 [ext_resource type="PackedScene" uid="uid://irygqx05pqx3" path="res://Scenes/Objects/BuildingBlocks/WildWest/floorWildWest.tscn" id="9_0g333"]
 [ext_resource type="PackedScene" uid="uid://dex6u2j1i8amw" path="res://Scenes/Objects/BuildingBlocks/WildWest/Minecart.tscn" id="9_l8f3a"]
+[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="10_2s3ob"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="10_fjrka"]
-[ext_resource type="PackedScene" uid="uid://dg22a4jdvy64k" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallIslandWildWest.tscn" id="11_e35wv"]
-[ext_resource type="PackedScene" uid="uid://bc8qsjy13ympg" path="res://Scenes/Objects/BuildingBlocks/WildWest/GoldExtractor.tscn" id="16_m64ik"]
-[ext_resource type="PackedScene" uid="uid://cckwyapi61vvd" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailBarrier.tscn" id="17_gp1t8"]
-[ext_resource type="PackedScene" uid="uid://dbhbnk335ny34" path="res://Scenes/Objects/BuildingBlocks/WildWest/HoleWildWest.tscn" id="20_pbt2m"]
+[ext_resource type="PackedScene" uid="uid://dblni2lydhtrt" path="res://Scenes/Objects/BuildingBlocks/WildWest/InvisibleHoleWildWest.tscn" id="15_bnghk"]
 [ext_resource type="Script" path="res://Code/scripts/Decorator.gd" id="23_qsoq7"]
-[ext_resource type="PackedScene" uid="uid://d3s6bpm0w5yjc" path="res://Scenes/Objects/BuildingBlocks/WildWest/WildWestLever.tscn" id="26_jwsnp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nsy35"]
 friction = 0.5
@@ -22,8 +20,9 @@ rough = true
 friction = 0.0
 rough = true
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wa4fo"]
-friction = 0.01
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8a43"]
+friction = 0.26
+rough = true
 
 [node name="Den" type="Node3D"]
 script = ExtResource("1_2dhrh")
@@ -42,12 +41,6 @@ sky_mode = 1
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 26, 29, 28)
 
 [node name="static" type="Node" parent="."]
-
-[node name="0,25,25(0)" parent="static" instance=ExtResource("9_0g333")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 25)
-
-[node name="0,30,25(0)" parent="static" instance=ExtResource("9_0g333")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 25)
 
 [node name="0,20,25(0)" parent="static" instance=ExtResource("9_0g333")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 25)
@@ -154,48 +147,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 35)
 [node name="0,35,40(0)" parent="static" instance=ExtResource("9_0g333")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 40)
 
-[node name="5,45,30(0)" parent="static" instance=ExtResource("26_jwsnp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 30)
-
-[node name="5,40,15(0)" parent="static" instance=ExtResource("20_pbt2m")]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, 5, 15)
-
 [node name="5,10,20(0)" parent="static" instance=ExtResource("10_fjrka")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 20)
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
 
-[node name="0,30,30(0)" parent="static" instance=ExtResource("9_0g333")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 30)
-
-[node name="0,25,30(0)" parent="static" instance=ExtResource("9_0g333")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 30)
-
 [node name="0,20,30(0)" parent="static" instance=ExtResource("9_0g333")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 30)
+
+[node name="0,25,30(0)" parent="static" instance=ExtResource("5_3r1rh")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 25, 0, 30)
+
+[node name="0,30,30(0)" parent="static" instance=ExtResource("5_3r1rh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30, 0, 30)
+
+[node name="0,30,25(0)" parent="static" instance=ExtResource("5_3r1rh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 25)
+
+[node name="0,25,25(0)" parent="static" instance=ExtResource("5_3r1rh")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 25, 0, 25)
+
+[node name="0,25,30(1)" parent="static" instance=ExtResource("6_dao5v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 30)
 
 [node name="5,20,30(0)" parent="static" instance=ExtResource("4_poqdq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 30)
 
-[node name="5,35,30(0)" parent="static" instance=ExtResource("11_e35wv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 30)
+[node name="5,15,30(0)" parent="static" instance=ExtResource("4_poqdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 30)
 
 [node name="5,20,30(1)" parent="static" instance=ExtResource("9_l8f3a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 30)
 physics_material_override = SubResource("PhysicsMaterial_is8pb")
+fill_level = 3
 
-[node name="5,20,20(0)" parent="static" instance=ExtResource("17_gp1t8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 20)
+[node name="0,25,30(2)" parent="static" instance=ExtResource("15_bnghk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 30)
 
-[node name="5,20,35(0)" parent="static" instance=ExtResource("16_m64ik")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 5, 35)
-physics_material_override = SubResource("PhysicsMaterial_wa4fo")
-
-[node name="5,30,30(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("7_vt6o2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 30)
-connections = [NodePath("../5,20,20(0)")]
-
-[node name="5,25,30(0)" parent="static" instance=ExtResource("4_poqdq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 30)
+[node name="5,20,25(0)" parent="static" instance=ExtResource("10_2s3ob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 25)
+physics_material_override = SubResource("PhysicsMaterial_p8a43")
 
 [node name="GlobalDecorator" type="Node3D" parent="."]
 visible = false

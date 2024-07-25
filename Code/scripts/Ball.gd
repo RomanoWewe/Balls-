@@ -5,9 +5,19 @@ class_name Ball
 var amount_of_ground_contacted:=0
 var is_destroyed :=false
 @export var destroyed_particles = preload("res://Scenes/Objects/_Spawnable/shards.tscn")
+@export var move_particles := preload("res://Scenes/Objects/_Spawnable/BallParticles.tscn")
+var move_particles_instance : GPUParticles3D
+
+func _ready():
+	var instance = move_particles.instantiate()
+	call_deferred("add_sibling",instance)
+	instance.set_deferred("owner", owner)
+	move_particles_instance = instance
 
 func _process(delta):
 	super._process(delta)
+	move_particles_instance.position = position - Vector3.UP * 1.5
+	move_particles_instance.amount_ratio = (linear_velocity.length()/max_speed)
 	if is_destroyed:
 		return
 	if !$RollingSound.playing:

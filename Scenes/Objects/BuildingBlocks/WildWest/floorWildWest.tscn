@@ -27,3 +27,7 @@ shape = SubResource("BoxShape3D_e22vb")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 material_override = SubResource("StandardMaterial3D_87mhg")
 mesh = SubResource("PlaneMesh_unfwo")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+size = Vector3(5, 5, 5)

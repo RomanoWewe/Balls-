@@ -30,7 +30,6 @@ func _on_area_3d_2_body_entered(body):
 func _on_body_entered(body):
 	if body is GravitationalObject:
 		contacted_bodies.append(body)
-		print(contacted_bodies)
 
 
 func _on_body_exited(body):

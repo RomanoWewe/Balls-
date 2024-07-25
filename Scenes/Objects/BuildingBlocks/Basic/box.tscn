@@ -9,6 +9,7 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8a43"]
 friction = 0.26
+rough = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bj4yw"]
 size = Vector3(4, 4, 4)

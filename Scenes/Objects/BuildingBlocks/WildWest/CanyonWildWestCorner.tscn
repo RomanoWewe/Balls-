@@ -20,6 +20,8 @@ size = Vector3(5, 0.5, 5)
 size = Vector3(5, 5, 5)
 
 [node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
+collision_layer = 3
+collision_mask = 3
 sync_to_physics = false
 
 [node name="Western2" type="MeshInstance3D" parent="."]

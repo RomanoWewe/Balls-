@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bn8qbmg1uamko"]
+[gd_scene load_steps=23 format=3 uid="uid://bn8qbmg1uamko"]
 
 [ext_resource type="Script" path="res://Code/scripts/GravitationalObject.gd" id="1_6q5yr"]
 [ext_resource type="ArrayMesh" uid="uid://ct13aouuyt1y5" path="res://Assets/western2/exite1 ( stone1).obj" id="1_o6yb2"]
@@ -42,27 +42,27 @@ point_count = 3
 curve = SubResource("Curve_nx0xn")
 
 [sub_resource type="Gradient" id="Gradient_1xo07"]
-offsets = PackedFloat32Array(0.0078125, 0.078125, 0.191406)
-colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1, 0.0196078, 0.0196078, 0.0196078, 1)
+offsets = PackedFloat32Array(0.0078125, 0.078125, 0.191406, 0.859375, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1, 0.0196078, 0.0196078, 0.0196078, 1, 0.196078, 0.196078, 0.196078, 0.921569, 0.537255, 0.52549, 0.537255, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_s4a0h"]
 gradient = SubResource("Gradient_1xo07")
 
 [sub_resource type="Curve" id="Curve_3uxgm"]
-_data = [Vector2(0, 0.469198), 0.0, 0.0, 0, 0, Vector2(0.433099, 1), 0.0, 0.0, 0, 0, Vector2(0.84507, 0.990688), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.469198), 0.0, 0.0, 0, 0, Vector2(0.433099, 1), 0.0, 0.0, 0, 0, Vector2(0.84507, 0.990688), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_0kx4j"]
 curve = SubResource("Curve_3uxgm")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kffvi"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_atgap"]
 emission_shape = 3
 emission_box_extents = Vector3(0, 2, 2)
 angle_min = -720.0
 angle_max = 720.0
 direction = Vector3(-1, 0, 0)
 spread = 15.0
-initial_velocity_min = 10.0
+initial_velocity_min = 5.0
 initial_velocity_max = 15.0
 gravity = Vector3(0, 3, 0)
 scale_min = 2.0
@@ -73,6 +73,23 @@ alpha_curve = SubResource("CurveTexture_mnsks")
 turbulence_noise_scale = 1.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_0k4jv"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kffvi"]
+emission_shape = 3
+emission_box_extents = Vector3(0, 2, 2)
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(-1, 0, 0)
+spread = 15.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, 3, 0)
+scale_min = 2.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_0kx4j")
+color_ramp = SubResource("GradientTexture1D_s4a0h")
+alpha_curve = SubResource("CurveTexture_mnsks")
+turbulence_noise_scale = 1.0
 
 [node name="WildWestHoleDebris" type="Node3D"]
 
@@ -157,12 +174,24 @@ skeleton = NodePath("../..")
 shape = SubResource("BoxShape3D_cjreu")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 material_override = SubResource("StandardMaterial3D_o8vue")
 emitting = false
 amount = 100
 lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
+fixed_fps = 0
+draw_order = 3
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_atgap")
+draw_pass_1 = SubResource("QuadMesh_0k4jv")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material_override = SubResource("StandardMaterial3D_o8vue")
+amount = 25
+lifetime = 2.0
 fixed_fps = 0
 draw_order = 3
 transform_align = 1
