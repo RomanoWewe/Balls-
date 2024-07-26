@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ddt7so1ddv71p"]
+[gd_scene load_steps=34 format=3 uid="uid://ddt7so1ddv71p"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_x05vj"]
 [ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="2_t4d1h"]
@@ -24,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://bc8qsjy13ympg" path="res://Scenes/Objects/BuildingBlocks/WildWest/GoldExtractor.tscn" id="24_0tmh3"]
 [ext_resource type="PackedScene" uid="uid://co8qy2ojkjpej" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailHeavyButton.tscn" id="26_khros"]
 [ext_resource type="PackedScene" uid="uid://dblni2lydhtrt" path="res://Scenes/Objects/BuildingBlocks/WildWest/InvisibleHoleWildWest.tscn" id="26_ktid5"]
-[ext_resource type="Script" path="res://Code/scripts/GravitationalObject.gd" id="27_tdcaj"]
 [ext_resource type="PackedScene" uid="uid://byxp7y2va51bf" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallThinDeadendWildWest.tscn" id="37_f4k0k"]
 [ext_resource type="PackedScene" uid="uid://bw7u8w32r28ek" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallThinTWildWest.tscn" id="38_rv4t4"]
 [ext_resource type="PackedScene" uid="uid://bp84ca1ow38ax" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallThinStraightWildWest.tscn" id="39_rrlbu"]
@@ -842,43 +841,22 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 0,
 [node name="0,10,-30(0)" parent="static" instance=ExtResource("13_walqb")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10, 0, -30)
 
-[node name="0,30,0(0)" type="RigidBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("12_hsce0")]
+[node name="0,30,0(0)" parent="static" instance=ExtResource("12_hsce0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
-mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_1q6hv")
-gravity_scale = 10.0
-can_sleep = false
-lock_rotation = true
-continuous_cd = true
-script = ExtResource("27_tdcaj")
-gravity_force = 4500.0
 
-[node name="0,125,1385(0)" type="RigidBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("12_hsce0")]
+[node name="0,125,1385(0)" parent="static" instance=ExtResource("12_hsce0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 1385)
-mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_1q6hv")
-gravity_scale = 10.0
-can_sleep = false
-lock_rotation = true
-continuous_cd = true
-script = ExtResource("27_tdcaj")
-gravity_force = 4500.0
 
-[node name="0,125,1380(0)" type="RigidBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("12_hsce0")]
+[node name="0,125,1380(0)" parent="static" instance=ExtResource("12_hsce0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 1380)
-mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_1q6hv")
-gravity_scale = 10.0
-can_sleep = false
-lock_rotation = true
-continuous_cd = true
-script = ExtResource("27_tdcaj")
-gravity_force = 4500.0
 
-[node name="0,40,15(0)" type="Node3D" parent="static" instance=ExtResource("26_ktid5")]
+[node name="0,40,15(0)" parent="static" instance=ExtResource("26_ktid5")]
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 40, -5, -5)
 
-[node name="0,45,15(0)" type="Node3D" parent="static" instance=ExtResource("26_ktid5")]
+[node name="0,45,15(0)" parent="static" instance=ExtResource("26_ktid5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -5, -5)
 
 [node name="empty" parent="." instance=ExtResource("17_4ysnq")]
