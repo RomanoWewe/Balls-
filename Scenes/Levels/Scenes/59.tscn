@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cewreq24urvnn"]
+[gd_scene load_steps=30 format=3 uid="uid://cewreq24urvnn"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_gpo61"]
 [ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="2_846o8"]
@@ -10,35 +10,20 @@
 [ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="8_nvsd4"]
 [ext_resource type="PackedScene" uid="uid://1qm8s5jlvwtn" path="res://Scenes/Objects/BuildingBlocks/WildWest/CanyonWildWestCorner.tscn" id="9_bvpm8"]
 [ext_resource type="PackedScene" uid="uid://b1b031yv6tgqc" path="res://Scenes/Objects/BuildingBlocks/WildWest/CanyonWildWest.tscn" id="10_0dp6y"]
-[ext_resource type="Script" path="res://Code/scripts/GravitationalObject.gd" id="11_4iqkc"]
 [ext_resource type="PackedScene" uid="uid://dg22a4jdvy64k" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallIslandWildWest.tscn" id="12_daft1"]
 [ext_resource type="PackedScene" uid="uid://bp84ca1ow38ax" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallThinStraightWildWest.tscn" id="14_5ghwg"]
 [ext_resource type="PackedScene" uid="uid://byxp7y2va51bf" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallThinDeadendWildWest.tscn" id="15_8pjba"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="16_yubhs"]
-[ext_resource type="Script" path="res://Code/scripts/Ball.gd" id="17_oll5j"]
 [ext_resource type="PackedScene" uid="uid://cousk4nrygbk4" path="res://Scenes/Objects/BuildingBlocks/Basic/cannon.tscn" id="19_cnhbv"]
-[ext_resource type="Script" path="res://Code/scripts/Bridge.gd" id="19_g5n8d"]
-[ext_resource type="PackedScene" uid="uid://dftlqc4t0nxa1" path="res://Scenes/Objects/_Spawnable/WoodenBridgeDebris.tscn" id="20_hb1e2"]
 [ext_resource type="PackedScene" uid="uid://ufx0hicv1t3m" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallOuterCornerWildWest.tscn" id="20_m2r28"]
-[ext_resource type="Script" path="res://Code/scripts/Cannon.gd" id="20_mnw4x"]
 [ext_resource type="PackedScene" uid="uid://7r4f4bpsd55u" path="res://Scenes/Objects/BuildingBlocks/WildWest/BridgeStone.tscn" id="21_p6low"]
 [ext_resource type="PackedScene" uid="uid://bkoppclofsmkk" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailCurve.tscn" id="21_qt8c6"]
 [ext_resource type="PackedScene" uid="uid://cwxr5dui74n3t" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailStraight.tscn" id="22_mi84s"]
 [ext_resource type="PackedScene" uid="uid://cckwyapi61vvd" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailBarrier.tscn" id="23_msq5t"]
-[ext_resource type="Script" path="res://Code/scripts/RailRotator.gd" id="24_wd34t"]
 [ext_resource type="PackedScene" uid="uid://d3s6bpm0w5yjc" path="res://Scenes/Objects/BuildingBlocks/WildWest/WildWestLever.tscn" id="25_1c3us"]
-[ext_resource type="Script" path="res://Code/scripts/buttons/button_toggle.gd" id="26_h85yk"]
 [ext_resource type="PackedScene" uid="uid://cr08bv5lxwxim" path="res://Scenes/Objects/BuildingBlocks/Basic/Buttons/ButtonHoldNReturn.tscn" id="27_hbfo3"]
-[ext_resource type="Script" path="res://Code/scripts/buttons/button_hold_n_return.gd" id="28_8b24n"]
 [ext_resource type="PackedScene" uid="uid://dex6u2j1i8amw" path="res://Scenes/Objects/BuildingBlocks/WildWest/Minecart.tscn" id="28_en2v2"]
-[ext_resource type="Script" path="res://Code/scripts/Minecart.gd" id="29_npbap"]
-[ext_resource type="ArrayMesh" uid="uid://cobwmma1blglw" path="res://Assets/western2/gold level 1.obj" id="30_cv2sb"]
-[ext_resource type="ArrayMesh" uid="uid://d0o6padc1sls3" path="res://Assets/western2/gold level 2.obj" id="31_qja2o"]
-[ext_resource type="ArrayMesh" uid="uid://bwgommudium2w" path="res://Assets/western2/gold level 3.obj" id="32_ws311"]
 [ext_resource type="PackedScene" uid="uid://dbhbnk335ny34" path="res://Scenes/Objects/BuildingBlocks/WildWest/HoleWildWest.tscn" id="33_3ss4b"]
-[ext_resource type="Script" path="res://Code/scripts/HoleWildWest.gd" id="34_vm5us"]
-[ext_resource type="ArrayMesh" uid="uid://cocgeyp406c4g" path="res://Assets/western2/exite2.obj" id="35_lk63g"]
-[ext_resource type="PackedScene" uid="uid://bn8qbmg1uamko" path="res://Scenes/Objects/_Spawnable/WildWestHoleDebris.tscn" id="36_lu7rd"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="37_8lchp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1q6hv"]
@@ -468,866 +453,462 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 5, 0, 0)
 [node name="0,80,-15(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 80, 0, -15)
 
-[node name="0,45,-35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,45,-35(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -35)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,80,-25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,80,-25(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 80, 0, -25)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="-5,30,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,30,-10(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -5, -10)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,35,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,35,-10(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -5, -10)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,50,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,50,-10(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -5, -10)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,55,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,55,-10(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5, -10)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,60,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,60,-10(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -5, -10)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,75,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,75,-10(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, -5, -10)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,75,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,75,-15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, -5, -15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,60,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,60,-15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -5, -15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,55,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,55,-15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5, -15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,50,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,50,-15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -5, -15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,35,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,35,-15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -5, -15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,30,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,30,-15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -5, -15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,25,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,25,-15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -5, -15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,20,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,20,-15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -5, -15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,15,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,15,-15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -5, -15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,10,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,10,-15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -5, -15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,15,-25(0)" type="RigidBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("8_nvsd4")]
+[node name="0,15,-25(0)" parent="static" instance=ExtResource("8_nvsd4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -25)
-mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_p8a43")
-gravity_scale = 10.0
-can_sleep = false
-lock_rotation = true
-continuous_cd = true
-script = ExtResource("11_4iqkc")
-gravity_force = 4500.0
 
-[node name="0,30,-25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("12_daft1")]
+[node name="0,30,-25(0)" parent="static" instance=ExtResource("12_daft1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -25)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,10,-25(0)" type="RigidBody3D" parent="static" instance=ExtResource("16_yubhs")]
+[node name="0,10,-25(0)" parent="static" instance=ExtResource("16_yubhs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -25)
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
-gravity_scale = 10.0
-continuous_cd = true
-max_contacts_reported = 5
-contact_monitor = true
-linear_damp_mode = 1
-linear_damp = 1.0
-angular_damp_mode = 1
-angular_damp = 1.0
-script = ExtResource("17_oll5j")
-buoyancy = 0.4
-gravity_force = 4500.0
-max_tilt_x = 90.0
-max_tilt_z = 90.0
-max_speed = 22.5
 
-[node name="0,10,-15(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("19_cnhbv")]
+[node name="0,10,-15(0)" parent="static" instance=ExtResource("19_cnhbv")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10, 0, -15)
-script = ExtResource("20_mnw4x")
 reload_time = 2.5
-projectile_speed = 15.0
-auto_cycling = true
 
-[node name="0,15,-20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("15_8pjba")]
+[node name="0,15,-20(0)" parent="static" instance=ExtResource("15_8pjba")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15, 0, -20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,20,-20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("15_8pjba")]
+[node name="0,20,-20(0)" parent="static" instance=ExtResource("15_8pjba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="-5,40,-30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_bvpm8")]
+[node name="-5,40,-30(0)" parent="static" instance=ExtResource("9_bvpm8")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, -5, -30)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,45,-30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_bvpm8")]
+[node name="-5,45,-30(0)" parent="static" instance=ExtResource("9_bvpm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -5, -30)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,45,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,45,0(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45, -5, 0)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,45,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,45,-5(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45, -5, -5)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,45,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,45,-10(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45, -5, -10)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,45,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,45,-15(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45, -5, -15)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,45,-20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,45,-20(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45, -5, -20)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,45,-25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,45,-25(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45, -5, -25)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,40,-25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,40,-25(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, -5, -25)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,40,-20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,40,-20(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, -5, -20)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,40,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,40,-15(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, -5, -15)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,40,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,40,-10(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, -5, -10)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,40,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,40,-5(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, -5, -5)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,40,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,40,0(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, -5, 0)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="0,40,0(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("linked_objects") groups=["IsFloor"] instance=ExtResource("4_wcwxb")]
+[node name="0,40,0(0)" parent="static" instance=ExtResource("4_wcwxb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -5, 10)
-sync_to_physics = false
-script = ExtResource("19_g5n8d")
-debris_scene = ExtResource("20_hb1e2")
-weight_to_break = 1
-linked_objects = [NodePath("Rail"), NodePath("Rail2")]
 
-[node name="0,35,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("15_8pjba")]
+[node name="0,35,-5(0)" parent="static" instance=ExtResource("15_8pjba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,30,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("15_8pjba")]
+[node name="0,30,-5(0)" parent="static" instance=ExtResource("15_8pjba")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 25, 0, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,15,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("12_daft1")]
+[node name="0,15,-10(0)" parent="static" instance=ExtResource("12_daft1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -10)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="-5,10,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,10,-5(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -5, -5)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,10,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,10,-10(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -5, -10)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,15,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,15,-10(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -5, -10)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,15,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,15,-5(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -5, -5)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,20,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,20,-5(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -5, -5)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,20,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,20,-10(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -5, -10)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,25,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,25,-10(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -5, -10)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,25,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,25,-5(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -5, -5)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,15,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,15,0(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -5, 0)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,20,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,20,0(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -5, 0)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,20,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,20,5(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20, -5, 5)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,15,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,15,5(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15, -5, 5)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,25,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_bvpm8")]
+[node name="-5,25,5(0)" parent="static" instance=ExtResource("9_bvpm8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, -5, 5)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,25,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_bvpm8")]
+[node name="-5,25,0(0)" parent="static" instance=ExtResource("9_bvpm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -5, 0)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,10,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_bvpm8")]
+[node name="-5,10,0(0)" parent="static" instance=ExtResource("9_bvpm8")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 10, -5, 0)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,10,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_bvpm8")]
+[node name="-5,10,5(0)" parent="static" instance=ExtResource("9_bvpm8")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10, -5, 5)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,45,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_bvpm8")]
+[node name="-5,45,10(0)" parent="static" instance=ExtResource("9_bvpm8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45, -5, 10)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,40,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_bvpm8")]
+[node name="-5,40,10(0)" parent="static" instance=ExtResource("9_bvpm8")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 40, -5, 10)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,45,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,45,5(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45, -5, 5)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,40,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,40,5(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, -5, 5)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,5,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,5,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,10,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,10,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,15,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,15,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,20,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,20,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,25,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,25,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,30,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,30,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,35,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,35,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,40,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,40,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,45,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,45,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,50,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,50,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,55,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,55,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,60,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,60,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,65,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,65,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,70,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,70,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,75,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,75,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,80,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,80,15(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, -5, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,5,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("7_fw6dm")]
+[node name="0,5,15(0)" parent="static" instance=ExtResource("7_fw6dm")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5, 0, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,80,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("7_fw6dm")]
+[node name="0,80,15(0)" parent="static" instance=ExtResource("7_fw6dm")]
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 80, 0, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,5,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,5,10(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 5, 0, 10)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,10,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,10,15(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10, 0, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,15,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,15,15(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 15, 0, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,20,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,20,15(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 20, 0, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,30,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,30,15(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 0, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,35,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,35,15(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, 35, 0, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,40,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,40,15(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 40, 0, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,45,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,45,15(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, 45, 0, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,50,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,50,15(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 50, 0, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,60,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,60,15(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, 60, 0, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,65,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,65,15(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 65, 0, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,75,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,75,15(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 75, 0, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,80,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,80,10(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 80, 0, 10)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,25,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,25,15(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 25, 0, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,25,-30(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("19_cnhbv")]
+[node name="0,25,-30(0)" parent="static" instance=ExtResource("19_cnhbv")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 25, 0, -30)
-script = ExtResource("20_mnw4x")
 reload_time = 4.0
-projectile_speed = 15.0
-auto_cycling = true
 
-[node name="0,55,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("7_fw6dm")]
+[node name="0,55,20(0)" parent="static" instance=ExtResource("7_fw6dm")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 55, 0, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,55,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("20_m2r28")]
+[node name="0,55,15(0)" parent="static" instance=ExtResource("20_m2r28")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 55, 0, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="-5,55,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,55,20(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,60,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,60,20(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -5, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,65,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,65,20(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -5, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,70,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,70,20(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, -5, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,75,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,75,20(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, -5, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="-5,80,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_00aqs")]
+[node name="-5,80,20(0)" parent="static" instance=ExtResource("5_00aqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, -5, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,80,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("6_dia3o")]
+[node name="0,80,35(0)" parent="static" instance=ExtResource("6_dia3o")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 80, 0, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,20,10(0)" type="StaticBody3D" parent="static" instance=ExtResource("21_qt8c6")]
+[node name="0,20,10(0)" parent="static" instance=ExtResource("21_qt8c6")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, 10)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,35,10(0)" type="StaticBody3D" parent="static" instance=ExtResource("22_mi84s")]
+[node name="0,35,10(0)" parent="static" instance=ExtResource("22_mi84s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 10)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,30,10(0)" type="StaticBody3D" parent="static" instance=ExtResource("22_mi84s")]
+[node name="0,30,10(0)" parent="static" instance=ExtResource("22_mi84s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,25,10(0)" type="StaticBody3D" parent="static" instance=ExtResource("22_mi84s")]
+[node name="0,25,10(0)" parent="static" instance=ExtResource("22_mi84s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 10)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,20,-5(0)" type="StaticBody3D" parent="static" instance=ExtResource("22_mi84s")]
+[node name="0,20,-5(0)" parent="static" instance=ExtResource("22_mi84s")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, -5)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,20,-10(0)" type="StaticBody3D" parent="static" instance=ExtResource("22_mi84s")]
+[node name="0,20,-10(0)" parent="static" instance=ExtResource("22_mi84s")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, -10)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,45,10(0)" type="StaticBody3D" parent="static" instance=ExtResource("22_mi84s")]
+[node name="0,45,10(0)" parent="static" instance=ExtResource("22_mi84s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 10)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,50,10(0)" type="StaticBody3D" parent="static" instance=ExtResource("22_mi84s")]
+[node name="0,50,10(0)" parent="static" instance=ExtResource("22_mi84s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 10)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,55,10(0)" type="StaticBody3D" parent="static" instance=ExtResource("22_mi84s")]
+[node name="0,55,10(0)" parent="static" instance=ExtResource("22_mi84s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 10)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,60,10(0)" type="StaticBody3D" parent="static" instance=ExtResource("22_mi84s")]
+[node name="0,60,10(0)" parent="static" instance=ExtResource("22_mi84s")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 60, 0, 10)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,65,10(0)" type="StaticBody3D" parent="static" instance=ExtResource("22_mi84s")]
+[node name="0,65,10(0)" parent="static" instance=ExtResource("22_mi84s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 10)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,70,10(0)" type="StaticBody3D" parent="static" instance=ExtResource("22_mi84s")]
+[node name="0,70,10(0)" parent="static" instance=ExtResource("22_mi84s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 10)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,75,10(0)" type="StaticBody3D" parent="static" instance=ExtResource("22_mi84s")]
+[node name="0,75,10(0)" parent="static" instance=ExtResource("22_mi84s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 10)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,60,25(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("19_cnhbv")]
+[node name="0,60,25(0)" parent="static" instance=ExtResource("19_cnhbv")]
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 60, 0, 16)
-script = ExtResource("20_mnw4x")
 reload_time = 4.0
-projectile_speed = 15.0
-auto_cycling = true
 
-[node name="-5,70,-25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_bvpm8")]
+[node name="-5,70,-25(0)" parent="static" instance=ExtResource("9_bvpm8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, -5, -25)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,65,-25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_bvpm8")]
+[node name="-5,65,-25(0)" parent="static" instance=ExtResource("9_bvpm8")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 65, -5, -25)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,70,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_bvpm8")]
+[node name="-5,70,5(0)" parent="static" instance=ExtResource("9_bvpm8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70, -5, 5)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,65,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("9_bvpm8")]
+[node name="-5,65,5(0)" parent="static" instance=ExtResource("9_bvpm8")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 65, -5, 5)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,70,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,70,0(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70, -5, 0)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,70,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,70,-5(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70, -5, -5)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,70,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,70,-10(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 70, -5, -10)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,70,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,70,-15(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 70, -5, -15)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,70,-20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,70,-20(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70, -5, -20)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,65,-20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,65,-20(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 65, -5, -20)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,65,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,65,-15(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 65, -5, -15)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,65,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,65,-10(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 65, -5, -10)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,65,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,65,-5(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 65, -5, -5)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="-5,65,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_0dp6y")]
+[node name="-5,65,0(0)" parent="static" instance=ExtResource("10_0dp6y")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 65, -5, 0)
-collision_layer = 3
-collision_mask = 3
-sync_to_physics = false
 
-[node name="0,60,-20(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("23_msq5t")]
+[node name="0,60,-20(0)" parent="static" instance=ExtResource("23_msq5t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -20)
-script = ExtResource("24_wd34t")
-forward_animation = "open"
-backward_animation = "close"
 
-[node name="0,75,5(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("23_msq5t")]
+[node name="0,75,5(0)" parent="static" instance=ExtResource("23_msq5t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 5)
-script = ExtResource("24_wd34t")
-forward_animation = "open"
-backward_animation = "close"
 
-[node name="0,75,-10(0)" type="Area3D" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("25_1c3us")]
+[node name="0,75,-10(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("25_1c3us")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -10)
-script = ExtResource("26_h85yk")
 connections = [NodePath("../0,60,-20(0)")]
 
-[node name="0,55,-20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("15_8pjba")]
+[node name="0,55,-20(0)" parent="static" instance=ExtResource("15_8pjba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, -20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,50,-20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("15_8pjba")]
+[node name="0,50,-20(0)" parent="static" instance=ExtResource("15_8pjba")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 50, 0, -20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,60,-15(0)" type="Area3D" parent="static" node_paths=PackedStringArray("connections", "text_timer") instance=ExtResource("27_hbfo3")]
+[node name="0,60,-15(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("27_hbfo3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -15)
-script = ExtResource("28_8b24n")
 connections = [NodePath("../0,75,5(0)")]
-text_timer = NodePath("Text")
 
-[node name="0,45,520(0)" type="Area3D" parent="static" node_paths=PackedStringArray("text_timer") instance=ExtResource("27_hbfo3")]
+[node name="0,45,520(0)" parent="static" instance=ExtResource("27_hbfo3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 520)
-script = ExtResource("28_8b24n")
-text_timer = NodePath("Text")
 
-[node name="0,50,515(0)" type="Area3D" parent="static" node_paths=PackedStringArray("text_timer") instance=ExtResource("27_hbfo3")]
+[node name="0,50,515(0)" parent="static" instance=ExtResource("27_hbfo3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 515)
-script = ExtResource("28_8b24n")
-text_timer = NodePath("Text")
 
-[node name="0,40,520(0)" type="Area3D" parent="static" node_paths=PackedStringArray("text_timer") instance=ExtResource("27_hbfo3")]
+[node name="0,40,520(0)" parent="static" instance=ExtResource("27_hbfo3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 520)
-script = ExtResource("28_8b24n")
-text_timer = NodePath("Text")
 
-[node name="0,60,-30(0)" type="Area3D" parent="static" node_paths=PackedStringArray("connections", "text_timer") instance=ExtResource("27_hbfo3")]
+[node name="0,60,-30(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("27_hbfo3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -30)
-script = ExtResource("28_8b24n")
 connections = [NodePath("../0,70,25(0)")]
-text_timer = NodePath("Text")
 
-[node name="0,70,20(0)" type="RigidBody3D" parent="static" groups=["Minecart"] instance=ExtResource("28_en2v2")]
+[node name="0,70,20(0)" parent="static" instance=ExtResource("28_en2v2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 10)
-collision_layer = 13
-collision_mask = 13
-axis_lock_angular_x = true
-axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_is8pb")
-gravity_scale = 10.0
-continuous_cd = true
-max_contacts_reported = 5
-contact_monitor = true
-angular_damp_mode = 1
-angular_damp = 0.9
-script = ExtResource("29_npbap")
-max_speed = 12
-gold_fill_meshes = Array[ArrayMesh]([ExtResource("30_cv2sb"), ExtResource("31_qja2o"), ExtResource("32_ws311")])
 
-[node name="0,70,25(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("33_3ss4b")]
+[node name="0,70,25(0)" parent="static" instance=ExtResource("33_3ss4b")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70, 0, 20)
-script = ExtResource("34_vm5us")
-exploded_mesh = ExtResource("35_lk63g")
-debris_scene = ExtResource("36_lu7rd")
 
-[node name="0,20,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("21_p6low")]
+[node name="0,20,5(0)" parent="static" instance=ExtResource("21_p6low")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 20, -5, 5)
-sync_to_physics = false
 
-[node name="0,10,10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("19_cnhbv")]
+[node name="0,10,10(0)" parent="static" instance=ExtResource("19_cnhbv")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10, 0, 10)
-script = ExtResource("20_mnw4x")
 reload_time = 3.0
-projectile_speed = 15.0
-auto_cycling = true
 
-[node name="0,30,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("14_5ghwg")]
+[node name="0,30,-10(0)" parent="static" instance=ExtResource("14_5ghwg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30, 0, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,20,-15(0)" type="StaticBody3D" parent="static" instance=ExtResource("21_qt8c6")]
+[node name="0,20,-15(0)" parent="static" instance=ExtResource("21_qt8c6")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 20, 0, -15)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,15,-15(0)" type="StaticBody3D" parent="static" instance=ExtResource("22_mi84s")]
+[node name="0,15,-15(0)" parent="static" instance=ExtResource("22_mi84s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -15)
-collision_layer = 8
-collision_mask = 8
 
 [node name="empty" parent="." instance=ExtResource("37_8lchp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0714, -17.3926, 26.5887)
@@ -1343,20 +924,3 @@ sky_mode = 1
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.9975, 53, -34.4535)
 fov = 80.0
 size = 25.0
-
-[connection signal="body_entered" from="static/0,10,-25(0)" to="static/0,10,-25(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="static/0,10,-25(0)" to="static/0,10,-25(0)" method="_on_body_exited"]
-[connection signal="body_entered" from="static/0,75,-10(0)" to="static/0,75,-10(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="static/0,75,-10(0)" to="static/0,75,-10(0)" method="_on_body_exited"]
-[connection signal="body_entered" from="static/0,60,-15(0)" to="static/0,60,-15(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="static/0,60,-15(0)" to="static/0,60,-15(0)" method="_on_body_exited"]
-[connection signal="body_entered" from="static/0,45,520(0)" to="static/0,45,520(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="static/0,45,520(0)" to="static/0,45,520(0)" method="_on_body_exited"]
-[connection signal="body_entered" from="static/0,50,515(0)" to="static/0,50,515(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="static/0,50,515(0)" to="static/0,50,515(0)" method="_on_body_exited"]
-[connection signal="body_entered" from="static/0,40,520(0)" to="static/0,40,520(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="static/0,40,520(0)" to="static/0,40,520(0)" method="_on_body_exited"]
-[connection signal="body_entered" from="static/0,60,-30(0)" to="static/0,60,-30(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="static/0,60,-30(0)" to="static/0,60,-30(0)" method="_on_body_exited"]
-[connection signal="body_entered" from="static/0,70,20(0)" to="static/0,70,20(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="static/0,70,20(0)" to="static/0,70,20(0)" method="_on_body_exited"]
