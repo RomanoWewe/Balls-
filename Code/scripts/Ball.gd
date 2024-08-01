@@ -5,14 +5,10 @@ class_name Ball
 var amount_of_ground_contacted:=0
 var is_destroyed :=false
 @export var destroyed_particles = preload("res://Scenes/Objects/_Spawnable/shards.tscn")
-@export var move_particles := preload("res://Scenes/Objects/_Spawnable/BallParticles.tscn")
-var move_particles_instance : GPUParticles3D
+@export var move_particles_instance : GPUParticles3D
 
 func _ready():
-	var instance = move_particles.instantiate()
-	call_deferred("add_sibling",instance)
-	instance.set_deferred("owner", owner)
-	move_particles_instance = instance
+	move_particles_instance.call_deferred("reparent",get_parent())
 
 func _process(delta):
 	super._process(delta)

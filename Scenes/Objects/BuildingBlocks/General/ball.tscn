@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7i03vwwk8xxc"]
+[gd_scene load_steps=12 format=3 uid="uid://c7i03vwwk8xxc"]
 
 [ext_resource type="Script" path="res://Code/scripts/Ball.gd" id="1_tkg3c"]
 [ext_resource type="Texture2D" uid="uid://dxgjn0curnp8k" path="res://Assets/3D/wall5.png" id="2_qa7yk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Code/scripts/SoundRandomizer.gd" id="5_mdyxr"]
 [ext_resource type="AudioStream" uid="uid://dyj2cabo8xekl" path="res://Assets/Sounds/RollingSound1.wav" id="6_ln7sw"]
 [ext_resource type="AudioStream" uid="uid://cvl4ws5kfetw" path="res://Assets/Sounds/BallHit1.wav" id="7_o4qjx"]
+[ext_resource type="PackedScene" uid="uid://ck1ajqkiep41a" path="res://Scenes/Objects/_Spawnable/BallParticles.tscn" id="8_iudsg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nsy35"]
 friction = 0.5
@@ -18,7 +19,7 @@ radius = 1.95
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7g12f"]
 albedo_texture = ExtResource("2_qa7yk")
 
-[node name="ball" type="RigidBody3D"]
+[node name="ball" type="RigidBody3D" node_paths=PackedStringArray("move_particles_instance")]
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
 gravity_scale = 10.0
 continuous_cd = true
@@ -29,6 +30,7 @@ linear_damp = 1.0
 angular_damp_mode = 1
 angular_damp = 1.0
 script = ExtResource("1_tkg3c")
+move_particles_instance = NodePath("GPUParticles3D")
 buoyancy = 0.4
 gravity_force = 4500.0
 max_tilt_x = 90.0
@@ -72,6 +74,8 @@ randomizing_enabled = true
 base_name = "BallHit"
 sounds_amount = 2
 pitch_range = Vector2(0.75, 1.25)
+
+[node name="GPUParticles3D" parent="." instance=ExtResource("8_iudsg")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -6,7 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://d0o6padc1sls3" path="res://Assets/western2/gold level 2.obj" id="3_tm8cb"]
 [ext_resource type="ArrayMesh" uid="uid://bwgommudium2w" path="res://Assets/western2/gold level 3.obj" id="4_oes0g"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_is8pb"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_by6o8"]
 friction = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p2pbx"]
@@ -24,7 +24,7 @@ collision_layer = 13
 collision_mask = 13
 axis_lock_angular_x = true
 axis_lock_angular_z = true
-physics_material_override = SubResource("PhysicsMaterial_is8pb")
+physics_material_override = SubResource("PhysicsMaterial_by6o8")
 gravity_scale = 10.0
 continuous_cd = true
 max_contacts_reported = 5
