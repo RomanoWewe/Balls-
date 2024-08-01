@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cddfaacajapxn"]
+[gd_scene load_steps=21 format=3 uid="uid://cddfaacajapxn"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_26c7f"]
 [ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="2_vawn6"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cousk4nrygbk4" path="res://Scenes/Objects/BuildingBlocks/Basic/cannon.tscn" id="15_j7fqt"]
 [ext_resource type="PackedScene" uid="uid://dg22a4jdvy64k" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallIslandWildWest.tscn" id="16_21awi"]
 [ext_resource type="PackedScene" uid="uid://cr08bv5lxwxim" path="res://Scenes/Objects/BuildingBlocks/Basic/Buttons/ButtonHoldNReturn.tscn" id="17_3e5v4"]
+[ext_resource type="PackedScene" uid="uid://do008yawri18n" path="res://Scenes/Objects/BuildingBlocks/WildWest/DoubleDoorWildWest.tscn" id="17_aeul7"]
 [ext_resource type="PackedScene" uid="uid://cckwyapi61vvd" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailBarrier.tscn" id="20_8knqa"]
 [ext_resource type="PackedScene" uid="uid://dbhbnk335ny34" path="res://Scenes/Objects/BuildingBlocks/WildWest/HoleWildWest.tscn" id="21_pnfb0"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="22_r1rub"]
@@ -811,6 +812,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -8)
 [node name="0,10,-30(0)" parent="static" instance=ExtResource("22_r1rub")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -30)
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
+
+[node name="0,60,5(0)" type="Node3D" parent="static" instance=ExtResource("17_aeul7")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 60, 0, 5)
 
 [node name="empty" parent="." instance=ExtResource("25_62pdr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4402, -17.3926, 29.0471)
