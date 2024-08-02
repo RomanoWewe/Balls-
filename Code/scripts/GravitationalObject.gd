@@ -24,7 +24,7 @@ func _physics_process(delta):
 		var vec2 = Vector2(linear_velocity.x,linear_velocity.z).limit_length(max_speed)
 		linear_velocity = Vector3(vec2.x,linear_velocity.y,vec2.y)
 	if (linear_velocity-prev_frame_velocity).length()>10 and has_node("HitSound"):
-		$HitSound.volume_db = (linear_velocity-prev_frame_velocity).length()*2-60
+		$HitSound.volume_db = (linear_velocity-prev_frame_velocity).length()*1.75-70
 		$HitSound.play()
 	prev_frame_velocity=linear_velocity
 

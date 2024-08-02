@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bi5ucjletak3a"]
 
 [ext_resource type="Script" path="res://Code/scripts/GravitationalObject.gd" id="1_sf4fj"]
-[ext_resource type="AudioStream" uid="uid://cvl4ws5kfetw" path="res://Assets/Sounds/BallHit1.wav" id="4_jw5gv"]
+[ext_resource type="AudioStream" uid="uid://bsts7s04wrrbb" path="res://Assets/Sounds/WoodHit.mp3" id="2_bqwno"]
 [ext_resource type="Texture2D" uid="uid://bdblycb8immvf" path="res://Assets/3D/box png.png" id="4_k8kcb"]
 [ext_resource type="Texture2D" uid="uid://dq6a5xr5r5vej" path="res://Assets/3D/NormalMapBox.png" id="5_2poyv"]
 [ext_resource type="Script" path="res://Code/scripts/SoundRandomizer.gd" id="5_qjd28"]
@@ -35,12 +35,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shape = SubResource("BoxShape3D_bj4yw")
 
 [node name="HitSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_jw5gv")
+stream = ExtResource("2_bqwno")
+volume_db = -10.0
 pitch_scale = 0.98618
 max_polyphony = 4
 bus = &"Sound"
 script = ExtResource("5_qjd28")
-randomizing_enabled = true
 base_name = "BallHit"
 sounds_amount = 2
 pitch_range = Vector2(0.75, 1.25)

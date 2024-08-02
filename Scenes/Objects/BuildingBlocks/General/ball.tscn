@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Code/scripts/Ball.gd" id="1_tkg3c"]
 [ext_resource type="Texture2D" uid="uid://dxgjn0curnp8k" path="res://Assets/3D/wall5.png" id="2_qa7yk"]
 [ext_resource type="ArrayMesh" uid="uid://chr318a7ab1mi" path="res://Assets/3D/kulka.obj" id="3_xirtw"]
-[ext_resource type="AudioStream" uid="uid://bhq80vlry4tph" path="res://Assets/Sounds/DeathSound2.wav" id="4_s04p6"]
+[ext_resource type="AudioStream" uid="uid://bxyg6it8lvmts" path="res://Assets/Sounds/BallDestroy.mp3" id="4_4wlkm"]
 [ext_resource type="Script" path="res://Code/scripts/SoundRandomizer.gd" id="5_mdyxr"]
 [ext_resource type="AudioStream" uid="uid://dyj2cabo8xekl" path="res://Assets/Sounds/RollingSound1.wav" id="6_ln7sw"]
 [ext_resource type="AudioStream" uid="uid://cvl4ws5kfetw" path="res://Assets/Sounds/BallHit1.wav" id="7_o4qjx"]
@@ -46,12 +46,11 @@ material_override = SubResource("StandardMaterial3D_7g12f")
 mesh = ExtResource("3_xirtw")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_s04p6")
-volume_db = 1.00135
-pitch_scale = 0.660413
+stream = ExtResource("4_4wlkm")
+volume_db = -30.0
+pitch_scale = 0.8
 bus = &"Sound"
 script = ExtResource("5_mdyxr")
-randomizing_enabled = true
 base_name = "DeathSound"
 sounds_amount = 2
 volume_range = Vector2(-5, 5)

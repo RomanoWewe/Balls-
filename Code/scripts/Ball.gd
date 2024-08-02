@@ -18,7 +18,7 @@ func _process(delta):
 		return
 	if !$RollingSound.playing:
 		$RollingSound.play()
-	$RollingSound.volume_db = clamp(linear_velocity.length()*1.75-80,-80,0)
+	$RollingSound.volume_db = clamp(sqrt(linear_velocity.x*linear_velocity.x+linear_velocity.z*linear_velocity.z)*2-80,-80,0)
 
 
 func hit(_body : CollisionObject3D):
