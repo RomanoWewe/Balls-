@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://j43kku017wey"]
+
+[ext_resource type="AudioStream" uid="uid://d22u846uptsxc" path="res://Assets/Sounds/DesertAmbient.mp3" id="1_7jb0x"]
+
+[node name="Ambient" type="AudioStreamPlayer"]
+stream = ExtResource("1_7jb0x")
+volume_db = -25.0
+autoplay = true
+bus = &"Sound"

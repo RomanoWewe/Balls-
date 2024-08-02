@@ -1,50 +1,14 @@
-[gd_scene load_steps=14 format=3 uid="uid://cousk4nrygbk4"]
+[gd_scene load_steps=8 format=3 uid="uid://cousk4nrygbk4"]
 
 [ext_resource type="Script" path="res://Code/scripts/Cannon.gd" id="1_a2g64"]
 [ext_resource type="ArrayMesh" uid="uid://b1cxdr1odbtny" path="res://Assets/3D/cannon1.obj" id="2_m64g2"]
-[ext_resource type="AudioStream" uid="uid://dtmunileium22" path="res://Assets/Sounds/CannonShoot1.wav" id="3_vpiim"]
-[ext_resource type="Script" path="res://Code/scripts/SoundRandomizer.gd" id="3_wsi72"]
-[ext_resource type="Texture2D" uid="uid://b6marlovk6ch8" path="res://Assets/Textures/Particles/toppng.com-smoke-particle-texture-399x385.png" id="5_dye51"]
+[ext_resource type="PackedScene" uid="uid://cfja08c7ugflo" path="res://Scenes/Objects/_Spawnable/cannon_shoot.tscn" id="3_1lcdo"]
+[ext_resource type="Script" path="res://Code/scripts/ParticleQueue.gd" id="6_ddjpl"]
+[ext_resource type="PackedScene" uid="uid://cyytbb0d7dyg" path="res://Scenes/Objects/_Spawnable/cannon_particles.tscn" id="6_mvsa7"]
+[ext_resource type="Script" path="res://Code/scripts/SoundQueue.gd" id="6_sfya7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qr3at"]
 size = Vector3(5, 2.5, 2.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kc8oi"]
-transparency = 1
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("5_dye51")
-billboard_mode = 1
-billboard_keep_scale = true
-
-[sub_resource type="Gradient" id="Gradient_7wdyd"]
-offsets = PackedFloat32Array(0, 0.933594)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_flly8"]
-gradient = SubResource("Gradient_7wdyd")
-
-[sub_resource type="Curve" id="Curve_byrr2"]
-_data = [Vector2(0, 0.376074), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_0106s"]
-curve = SubResource("Curve_byrr2")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_olpoc"]
-angle_min = -720.0
-angle_max = 720.0
-direction = Vector3(-1, 0, 0)
-spread = 15.0
-initial_velocity_min = 4.0
-initial_velocity_max = 8.0
-gravity = Vector3(0, 5, 0)
-scale_min = 2.0
-scale_max = 2.0
-scale_curve = SubResource("CurveTexture_0106s")
-color = Color(2, 2, 2, 1)
-color_ramp = SubResource("GradientTexture1D_flly8")
-
-[sub_resource type="QuadMesh" id="QuadMesh_i0gvm"]
 
 [node name="cannon" type="AnimatableBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
@@ -60,24 +24,11 @@ mesh = ExtResource("2_m64g2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_qr3at")
 
-[node name="CannonShoot" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_vpiim")
-volume_db = -15.0
-pitch_scale = 1.14163
-bus = &"Sound"
-script = ExtResource("3_wsi72")
-randomizing_enabled = true
-base_name = "CannonShoot"
-sounds_amount = 1
-volume_range = Vector2(-15, -15)
-pitch_range = Vector2(0.65, 1.25)
-
-[node name="Particles" type="GPUParticles3D" parent="."]
+[node name="ParticleQueue" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23598, 1.93577, -9.77378e-08)
-material_override = SubResource("StandardMaterial3D_kc8oi")
-emitting = false
-amount = 25
-one_shot = true
-explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_olpoc")
-draw_pass_1 = SubResource("QuadMesh_i0gvm")
+script = ExtResource("6_ddjpl")
+particle = ExtResource("6_mvsa7")
+
+[node name="SoundQueue" type="Node" parent="."]
+script = ExtResource("6_sfya7")
+sound = ExtResource("3_1lcdo")

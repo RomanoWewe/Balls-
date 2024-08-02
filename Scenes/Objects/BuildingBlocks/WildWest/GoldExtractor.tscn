@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bc8qsjy13ympg"]
+[gd_scene load_steps=24 format=3 uid="uid://bc8qsjy13ympg"]
 
 [ext_resource type="ArrayMesh" uid="uid://dejj06sf45gvs" path="res://Assets/western2/генератор без крутящего елемента.obj" id="1_fsxro"]
 [ext_resource type="Script" path="res://Code/scripts/GoldConveyor.gd" id="1_i011t"]
@@ -13,6 +13,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bhjsnxfuj6mst" path="res://Assets/western2/конвеер новый3.obj" id="8_uicmf"]
 [ext_resource type="ArrayMesh" uid="uid://7nkxmy0y85qg" path="res://Assets/western2/столбы новые.obj" id="9_tty7g"]
 [ext_resource type="Script" path="res://Code/scripts/AreaTracker.gd" id="13_1ghkc"]
+[ext_resource type="AudioStream" uid="uid://cb1vrfjipc8qi" path="res://Assets/Sounds/Conveyor.mp3" id="14_747oa"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wa4fo"]
 friction = 0.01
@@ -101,7 +102,7 @@ libraries = {
 speed_scale = 2.0
 
 [node name="container1" type="Node3D" parent="."]
-transform = Transform3D(0.204654, -0.978834, 0, 0.978834, 0.204654, 0, 0, 0, 1, 1.51994, 0.5, -0.201892)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51994, 0.5, -0.201892)
 
 [node name="БалкаНаКоторойКрутитьсяЛентаСНизуКНейТакЖеПрикрепленГенератор" type="MeshInstance3D" parent="container1"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.4, -0.5, 0)
@@ -109,7 +110,7 @@ mesh = ExtResource("5_ooay4")
 skeleton = NodePath("../..")
 
 [node name="container2" type="Node3D" parent="."]
-transform = Transform3D(0.204654, -0.978834, 0, 0.978834, 0.204654, 0, 0, 0, 1, -2.48, 4.6, -0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48, 4.6, -0.2)
 
 [node name="БалкаНаКоторойКрутитьсяЛента2" type="MeshInstance3D" parent="container2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -2.8, 0.8)
@@ -117,7 +118,7 @@ mesh = ExtResource("6_vbghl")
 skeleton = NodePath("../..")
 
 [node name="container3" type="Node3D" parent="."]
-transform = Transform3D(0.204654, -0.978834, 0, 0.978834, 0.204654, 0, 0, 0, 1, -3.38, 4.6, -0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38, 4.6, -0.2)
 
 [node name="БалкаНаКоторойКрутитьсяЛента" type="MeshInstance3D" parent="container3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -2.8, 0.8)
@@ -175,19 +176,25 @@ shape = SubResource("BoxShape3D_xijoy")
 
 [node name="КонвеерНовый" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.28, 0, -0.2)
-mesh = ExtResource("8_uicmf")
+mesh = ExtResource("8_icela")
 
 [node name="СтолбыНовые" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.38, 0, -0.2)
 mesh = ExtResource("9_tty7g")
 
 [node name="AreaTracker" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 2.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, 0)
 script = ExtResource("13_1ghkc")
 tracked_groups = Array[String](["Minecart"])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AreaTracker"]
 shape = SubResource("BoxShape3D_insim")
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_747oa")
+volume_db = -25.0
+autoplay = true
+bus = &"Sound"
 
 [connection signal="body_entered" from="WaterCurrent/Area3D" to="WaterCurrent" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="WaterCurrent/Area3D" to="WaterCurrent" method="_on_area_3d_body_exited"]

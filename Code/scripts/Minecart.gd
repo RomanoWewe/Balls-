@@ -9,6 +9,10 @@ class_name Minecart
 var contacted_bodies := []
 var previous_frame_horizontal_velocity := Vector3.ZERO
 
+func _ready():
+	if fill_level>0:
+		$FillMesh.mesh=gold_fill_meshes[fill_level-1]
+
 func _physics_process(delta):
 	if contacted_bodies.size()==0:
 		var vertical_speed = linear_velocity.y
@@ -19,6 +23,9 @@ func _physics_process(delta):
 	else:
 		linear_velocity= Vector3(linear_velocity.x,0,linear_velocity.z)
 	previous_frame_horizontal_velocity = Vector3(linear_velocity.x,0,linear_velocity.z)
+	if !$RollingSound.playing:
+		$RollingSound.play()
+	$RollingSound.volume_db = clamp(linear_velocity.length()*2-75,-80,0)
 
 func _on_area_3d_2_body_entered(body):
 	if body.is_in_group("GoldBar"):

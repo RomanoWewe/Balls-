@@ -14,8 +14,18 @@ func _ready():
 
 func _process(delta):
 	since_last_spawn +=delta
-	if since_last_spawn>spawn_cooldown and $AreaTracker.objects_in_area.size()>0:
-		spawn()
+	if $AreaTracker.objects_in_area.size()>0:
+		if since_last_spawn>spawn_cooldown:
+			spawn()
+		$Sound.stream_paused = false
+		$AnimationPlayer.active=true
+		$WaterCurrent.process_mode=Node.PROCESS_MODE_INHERIT
+		$WaterCurrent2.process_mode=Node.PROCESS_MODE_INHERIT
+	else:
+		$WaterCurrent.process_mode=Node.PROCESS_MODE_DISABLED
+		$WaterCurrent2.process_mode=Node.PROCESS_MODE_DISABLED
+		$AnimationPlayer.active=false
+		$Sound.stream_paused = true
 
 func spawn():
 	since_last_spawn = 0

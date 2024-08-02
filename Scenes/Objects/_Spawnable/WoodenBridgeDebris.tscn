@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dftlqc4t0nxa1"]
+[gd_scene load_steps=24 format=3 uid="uid://dftlqc4t0nxa1"]
 
 [ext_resource type="ArrayMesh" uid="uid://dubmd8egh6hmr" path="res://Assets/western2/wood bridge ошметек 1.obj" id="1_ao4bh"]
 [ext_resource type="ArrayMesh" uid="uid://iin0ghgoatiy" path="res://Assets/western2/wood bridge ошметек 2.obj" id="2_idxka"]
@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://e423ej3fb0ij" path="res://Assets/western2/wood bridge ошметек 6.obj" id="6_i32kf"]
 [ext_resource type="ArrayMesh" uid="uid://bsu87cw14laub" path="res://Assets/western2/wood bridge ошметек 7.obj" id="7_eksmq"]
 [ext_resource type="Texture2D" uid="uid://b6marlovk6ch8" path="res://Assets/Textures/Particles/toppng.com-smoke-particle-texture-399x385.png" id="8_m06hd"]
+[ext_resource type="AudioStream" uid="uid://3yknhgs47esk" path="res://Assets/Sounds/WoodBridgeDestroy.mp3" id="9_c12vw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k6nxb"]
 size = Vector3(0.401611, 1.26947, 0.776611)
@@ -294,3 +295,9 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_siq2f")
 draw_pass_1 = SubResource("QuadMesh_4gdd7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_c12vw")
+volume_db = -15.0
+autoplay = true
+bus = &"Sound"

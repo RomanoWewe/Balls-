@@ -1,6 +1,10 @@
 extends Node3D
 class_name Level
 
+var wind_ambient :=load("res://Scenes/Objects/_Abstract/ambientWind.tscn")
+var desert_ambient :=load("res://Scenes/Objects/_Abstract/ambientDesert.tscn")
+var mine_ambient :=load("res://Scenes/Objects/_Abstract/ambientMine.tscn")
+
 @export var time_limit := 0.0
 
 var levels_progress : Progress
@@ -19,6 +23,12 @@ func _ready():
 	pause_ui = pause_ui.instantiate()
 	add_child(pause_ui)
 	PhysicsServer3D.space_set_param(get_world_3d().space, PhysicsServer3D.SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION, 0.0)
+	if int(str(name)) <21:
+		add_child(wind_ambient.instantiate())
+	elif int(str(name)) >40 and int(str(name))<61:
+		add_child(desert_ambient.instantiate())
+	elif int(str(name)) >60 and int(str(name))<81:
+		add_child(mine_ambient.instantiate())
 
 func _process(delta):
 	time_since_start+=delta

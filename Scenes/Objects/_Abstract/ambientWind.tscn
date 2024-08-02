@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmii1bfvn75xw"]
+
+[ext_resource type="AudioStream" uid="uid://060bfcf8ig4p" path="res://Assets/Sounds/WindAmbient.mp3" id="1_s5mkw"]
+
+[node name="Ambient" type="AudioStreamPlayer"]
+stream = ExtResource("1_s5mkw")
+volume_db = -22.0
+autoplay = true
+bus = &"Sound"

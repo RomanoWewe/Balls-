@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfja08c7ugflo"]
+
+[ext_resource type="AudioStream" uid="uid://hbw7dqa3jw1g" path="res://Assets/Sounds/CannonShot1.mp3" id="1_h1mb3"]
+[ext_resource type="Script" path="res://Code/scripts/SoundRandomizer.gd" id="2_wj8b7"]
+
+[node name="CannonShoot" type="AudioStreamPlayer"]
+stream = ExtResource("1_h1mb3")
+volume_db = -40.0
+pitch_scale = 1.14163
+bus = &"Sound"
+script = ExtResource("2_wj8b7")
+base_name = "CannonShot1"
+sounds_amount = 1
+pitch_range = Vector2(0.65, 1.25)

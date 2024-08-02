@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dex6u2j1i8amw"]
+[gd_scene load_steps=11 format=3 uid="uid://dex6u2j1i8amw"]
 
 [ext_resource type="Script" path="res://Code/scripts/Minecart.gd" id="1_7own3"]
 [ext_resource type="ArrayMesh" uid="uid://cobwmma1blglw" path="res://Assets/western2/gold level 1.obj" id="2_5enmx"]
 [ext_resource type="ArrayMesh" uid="uid://fsgewjvqo6sd" path="res://Assets/western2/trolley 2.obj" id="2_x3mhb"]
 [ext_resource type="ArrayMesh" uid="uid://d0o6padc1sls3" path="res://Assets/western2/gold level 2.obj" id="3_tm8cb"]
 [ext_resource type="ArrayMesh" uid="uid://bwgommudium2w" path="res://Assets/western2/gold level 3.obj" id="4_oes0g"]
+[ext_resource type="AudioStream" uid="uid://celtshfqnrhmk" path="res://Assets/Sounds/minecart.mp3" id="6_k456m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_by6o8"]
 friction = 0.1
@@ -59,6 +60,11 @@ shape = SubResource("CylinderShape3D_2ktwb")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_hndlp")
+
+[node name="RollingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_k456m")
+volume_db = -80.0
+bus = &"Sound"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

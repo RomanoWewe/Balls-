@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbhbnk335ny34"]
+[gd_scene load_steps=10 format=3 uid="uid://dbhbnk335ny34"]
 
 [ext_resource type="Script" path="res://Code/scripts/Hole.gd" id="1_kedic"]
 [ext_resource type="Script" path="res://Code/scripts/HoleWildWest.gd" id="1_ooont"]
 [ext_resource type="ArrayMesh" uid="uid://cocgeyp406c4g" path="res://Assets/western2/exite2.obj" id="2_35d52"]
 [ext_resource type="ArrayMesh" uid="uid://dafg5w3khy4qc" path="res://Assets/western2/exite1.obj" id="2_c56ch"]
 [ext_resource type="PackedScene" uid="uid://bn8qbmg1uamko" path="res://Scenes/Objects/_Spawnable/WildWestHoleDebris.tscn" id="3_qbeb2"]
+[ext_resource type="AudioStream" uid="uid://djobed2ten1ga" path="res://Assets/Sounds/Explosion.mp3" id="6_q3aer"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kdgsg"]
 size = Vector3(3, 4, 4)
@@ -50,5 +51,10 @@ shape = SubResource("BoxShape3D_8oywb")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3)
 mesh = ExtResource("2_c56ch")
+
+[node name="Explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_q3aer")
+volume_db = -40.0
+bus = &"Sound"
 
 [connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]

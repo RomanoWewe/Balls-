@@ -11,6 +11,7 @@ func add_steps(_steps):
 		return
 	is_exploded = true
 	$Block.queue_free()
+	$Explosion.play()
 	$MeshInstance3D.mesh = exploded_mesh
 	var debris = debris_scene.instantiate() as Node3D
 	debris.position = position
