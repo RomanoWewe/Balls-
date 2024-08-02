@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bk5h1yt68k5f0"]
 
 [ext_resource type="Script" path="res://Code/scripts/GravitationalObject.gd" id="1_opahq"]
+[ext_resource type="AudioStream" uid="uid://bsts7s04wrrbb" path="res://Assets/Sounds/WoodHit.mp3" id="3_750ps"]
 [ext_resource type="ArrayMesh" uid="uid://b41x4kl55trrg" path="res://Assets/3D/Beach/box 1 cкин.obj" id="4_fkeof"]
-[ext_resource type="AudioStream" uid="uid://cvl4ws5kfetw" path="res://Assets/Sounds/BallHit1.wav" id="4_uty0x"]
 [ext_resource type="Script" path="res://Code/scripts/SoundRandomizer.gd" id="5_pn5f7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xrp17"]
@@ -20,17 +20,6 @@ continuous_cd = true
 script = ExtResource("1_opahq")
 buoyancy = 1.2
 gravity_force = 4500.0
-
-[node name="HitSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_uty0x")
-pitch_scale = 0.98618
-max_polyphony = 4
-bus = &"Sound"
-script = ExtResource("5_pn5f7")
-randomizing_enabled = true
-base_name = "BallHit"
-sounds_amount = 2
-pitch_range = Vector2(0.75, 1.25)
 
 [node name="mesh" type="MeshInstance3D" parent="."]
 mesh = ExtResource("4_fkeof")
@@ -66,3 +55,14 @@ shape = SubResource("BoxShape3D_cbw1c")
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="."]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 1.06066, 2, 1.06066)
 shape = SubResource("BoxShape3D_cbw1c")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_750ps")
+volume_db = -10.0
+pitch_scale = 0.98618
+max_polyphony = 4
+bus = &"Sound"
+script = ExtResource("5_pn5f7")
+base_name = "BallHit"
+sounds_amount = 2
+pitch_range = Vector2(0.75, 1.25)
