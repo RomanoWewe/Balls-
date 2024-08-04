@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds211atognp7v"]
+
+[ext_resource type="Texture2D" uid="uid://dwltp3au2af27" path="res://Assets/3D/Skins/Volleyball_ball.Skin.png" id="1_ijjdu"]
+[ext_resource type="ArrayMesh" uid="uid://dg7x13nqhkjlb" path="res://Assets/3D/Skins/Volleyball_ball.Skin.obj" id="2_7x0xs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2opy"]
+albedo_texture = ExtResource("1_ijjdu")
+
+[node name="Skin" type="Node3D"]
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+material_override = SubResource("StandardMaterial3D_y2opy")
+mesh = ExtResource("2_7x0xs")
+skeleton = NodePath("../..")

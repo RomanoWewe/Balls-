@@ -9,6 +9,8 @@ var is_destroyed :=false
 
 func _ready():
 	move_particles_instance.call_deferred("reparent",get_parent())
+	$Skin.queue_free()
+	add_child(load("res://skindata.tres").scenes[load("user://settings.tres").selected_skin].instantiate())
 
 func _process(delta):
 	super._process(delta)
@@ -25,7 +27,16 @@ func hit(_body : CollisionObject3D):
 	if (invincible):
 		return
 	var rng = RandomNumberGenerator.new()
-	
+	var level = get_tree().root.get_child(0) as Level
+
+	level.stats.deaths_total+=1
+	if _body.is_in_group("Spikes"):
+		level.stats.deaths_by_spikes+=1
+	if _body.is_in_group("Cannonball"):
+		level.stats.deaths_by_cannon+=1
+	if _body.is_in_group("Fall"):
+		level.stats.deaths_by_fall+=1
+	level.fail_level()
 	var shards = destroyed_particles.instantiate()
 	get_parent().add_child(shards)
 	shards.position = position-Vector3.UP*1.5
@@ -38,7 +49,6 @@ func hit(_body : CollisionObject3D):
 	$collider.queue_free()
 	$RollingSound.queue_free()
 	is_destroyed=true
-	get_tree().root.get_child(0).fail_level()
 	await get_tree().create_timer(3).timeout
 	queue_free()
 

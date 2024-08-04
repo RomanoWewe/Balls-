@@ -1,18 +1,21 @@
 extends Resource
 class_name Stats
 
-@export var stats := {
+@export var journey_started := 1
 
-"deaths_by_cannon" : 0.0,
-"deaths_by_spikes" : 0.0,
-"deaths_by_fall" : 0.0,
+@export var deaths_total := 0
+@export var deaths_by_cannon := 0
+@export var deaths_by_spikes := 0
+@export var deaths_by_fall:= 0
 
-"coins_collected" : 0.0,
-"levels_completed" : 0.0,
-"levels_completed_in_time" : 0.0,
-"skins_unlocked" : 0.0,
-"skins_changed" : 0.0,
-"teleports_used" : 0.0,
-"all_levels_complete_and_all_skins_unlocked" : 0.0,
-"all_other_achievements_unlocked" : 0.0
-}
+@export var levels_completed:= 0
+@export var unlocked_skins_count:= 0
+@export var skins_changed:= 0
+@export var teleports_used:= 0
+@export var secrets_unlocked:= 0
+
+@export var unlocked_skins : Array[bool] = []
+
+func _init():
+	for skin in load("res://skindata.tres").names:
+		unlocked_skins.append(false)

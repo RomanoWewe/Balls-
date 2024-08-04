@@ -24,7 +24,7 @@ shape = SubResource("BoxShape3D_1n2yv")
 material_override = SubResource("StandardMaterial3D_kcvty")
 mesh = SubResource("BoxMesh_6qi1i")
 
-[node name="KillZone" type="Area3D" parent="."]
+[node name="KillZone" type="Area3D" parent="." groups=["Fall"]]
 collision_layer = 15
 collision_mask = 15
 script = ExtResource("2_7i3n8")
