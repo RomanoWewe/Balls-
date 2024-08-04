@@ -37,7 +37,7 @@ func _on_fullscreen_set(toggled_on):
 	apply_settings()
 
 func _on_apply_pressed():
-	ResourceSaver.save(settings,"user://settings.tres")
+	save()
 	apply_settings()
 
 func apply_settings():
@@ -70,3 +70,6 @@ func _process(_delta):
 			fps_counter.text = "%d" % Engine.get_frames_per_second()
 		else:
 			fps_counter.text = ""
+
+func save():
+	ResourceSaver.save(settings,"user://settings.tres")

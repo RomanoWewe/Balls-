@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjbjb3olpm1y1"]
+
+[ext_resource type="Texture2D" uid="uid://cqc6fu4ka2jgo" path="res://Assets/3D/Skins/ничто и сразу все 1.png" id="1_i12yd"]
+[ext_resource type="ArrayMesh" uid="uid://bbtjpnhvht33l" path="res://Assets/3D/Skins/ничто и сразу все 1.obj" id="2_ar3yw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1dg0j"]
+albedo_texture = ExtResource("1_i12yd")
+
+[node name="Skin" type="Node3D"]
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+material_override = SubResource("StandardMaterial3D_1dg0j")
+mesh = ExtResource("2_ar3yw")
+skeleton = NodePath("../..")

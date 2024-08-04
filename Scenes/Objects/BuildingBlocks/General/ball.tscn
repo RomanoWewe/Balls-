@@ -1,11 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://c7i03vwwk8xxc"]
 
 [ext_resource type="Script" path="res://Code/scripts/Ball.gd" id="1_tkg3c"]
-[ext_resource type="Texture2D" uid="uid://dxgjn0curnp8k" path="res://Assets/3D/wall5.png" id="2_qa7yk"]
-[ext_resource type="ArrayMesh" uid="uid://chr318a7ab1mi" path="res://Assets/3D/kulka.obj" id="3_xirtw"]
 [ext_resource type="AudioStream" uid="uid://bxyg6it8lvmts" path="res://Assets/Sounds/BallDestroy.mp3" id="4_4wlkm"]
 [ext_resource type="Script" path="res://Code/scripts/SoundRandomizer.gd" id="5_mdyxr"]
 [ext_resource type="AudioStream" uid="uid://dyj2cabo8xekl" path="res://Assets/Sounds/RollingSound1.wav" id="6_ln7sw"]
+[ext_resource type="PackedScene" uid="uid://ccuair27bjkhj" path="res://Scenes/Objects/_Skins/DefaultSkin.tscn" id="7_1tsxk"]
 [ext_resource type="AudioStream" uid="uid://cvl4ws5kfetw" path="res://Assets/Sounds/BallHit1.wav" id="7_o4qjx"]
 [ext_resource type="PackedScene" uid="uid://ck1ajqkiep41a" path="res://Scenes/Objects/_Spawnable/BallParticles.tscn" id="8_iudsg"]
 
@@ -16,8 +15,13 @@ rough = true
 [sub_resource type="SphereShape3D" id="SphereShape3D_k67ky"]
 radius = 1.95
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7g12f"]
-albedo_texture = ExtResource("2_qa7yk")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgepc"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="SphereMesh" id="SphereMesh_3push"]
+radius = 2.0
+height = 4.0
 
 [node name="ball" type="RigidBody3D" node_paths=PackedStringArray("move_particles_instance")]
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
@@ -39,11 +43,6 @@ max_speed = 22.5
 
 [node name="collider" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_k67ky")
-
-[node name="mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
-material_override = SubResource("StandardMaterial3D_7g12f")
-mesh = ExtResource("3_xirtw")
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_4wlkm")
@@ -75,6 +74,12 @@ sounds_amount = 2
 pitch_range = Vector2(0.75, 1.25)
 
 [node name="GPUParticles3D" parent="." instance=ExtResource("8_iudsg")]
+
+[node name="Skin" parent="." instance=ExtResource("7_1tsxk")]
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_bgepc")
+mesh = SubResource("SphereMesh_3push")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

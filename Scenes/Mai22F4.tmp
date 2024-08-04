@@ -2023,7 +2023,6 @@ offset_bottom = 640.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("17_7ifg4")
-is_menu = true
 
 [node name="TextureRect" type="TextureRect" parent="Control/Skins"]
 layout_mode = 1
@@ -2107,6 +2106,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_v51sa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_4w2ms")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_tc25f")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_n0egg")
+button_group = ExtResource("3_04kml")
 script = ExtResource("4_gc4lt")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/Skins/Select"]
@@ -2201,6 +2201,7 @@ theme_override_fonts/font = ExtResource("1_moibi")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+toggle_mode = true
 button_group = ExtResource("3_04kml")
 script = ExtResource("4_gc4lt")
 
@@ -2247,6 +2248,7 @@ theme_override_fonts/font = ExtResource("1_moibi")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+toggle_mode = true
 button_group = ExtResource("3_04kml")
 script = ExtResource("4_gc4lt")
 

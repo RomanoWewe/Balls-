@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SkinData" load_steps=4 format=3 uid="uid://dau7og1jigqni"]
+
+[ext_resource type="PackedScene" uid="uid://ccuair27bjkhj" path="res://Scenes/Objects/_Skins/DefaultSkin.tscn" id="1_7u1v2"]
+[ext_resource type="Script" path="res://Code/scripts/SkinsData.gd" id="1_tvfc3"]
+[ext_resource type="PackedScene" uid="uid://b18vj3n6b46rb" path="res://Scenes/Objects/_Skins/WatermelonSkin.tscn" id="2_ssy8d"]
+
+[resource]
+script = ExtResource("1_tvfc3")
+scenes = Array[PackedScene]([ExtResource("1_7u1v2"), ExtResource("2_ssy8d")])
+names = Array[String](["Default", "Watermelon"])
+descriptions = Array[String](["This is your first skin.", "Break like a watermelon once"])
+requirement_types = Array[String](["journey_started", "deaths_total"])
+requirement_values = Array[float]([1.0, 1.0])

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccuair27bjkhj"]
+
+[ext_resource type="Texture2D" uid="uid://dxgjn0curnp8k" path="res://Assets/3D/wall5.png" id="1_6wtbp"]
+[ext_resource type="ArrayMesh" uid="uid://chr318a7ab1mi" path="res://Assets/3D/Skins/kulka.obj" id="2_l3jdv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7g12f"]
+albedo_texture = ExtResource("1_6wtbp")
+
+[node name="Skin" type="Node3D"]
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+material_override = SubResource("StandardMaterial3D_7g12f")
+mesh = ExtResource("2_l3jdv")
+skeleton = NodePath("../..")

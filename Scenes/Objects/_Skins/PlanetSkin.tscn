@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0i25lnrbi5w"]
+
+[ext_resource type="Texture2D" uid="uid://kf55kvlsy4h1" path="res://Assets/3D/Skins/типо земли.png" id="1_yckkm"]
+[ext_resource type="ArrayMesh" uid="uid://bh84cre75ng0s" path="res://Assets/3D/Skins/типо земли.obj" id="2_ybrw4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_blwa7"]
+albedo_texture = ExtResource("1_yckkm")
+
+[node name="Skin" type="Node3D"]
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+material_override = SubResource("StandardMaterial3D_blwa7")
+mesh = ExtResource("2_ybrw4")
+skeleton = NodePath("../..")

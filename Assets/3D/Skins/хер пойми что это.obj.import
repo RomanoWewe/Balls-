@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ogs8l61lqxgl"
+path="res://.godot/imported/хер пойми что это.obj-41ff77629bda39f5cc636ebb52e19d69.mesh"
+
+[deps]
+
+files=["res://.godot/imported/хер пойми что это.obj-41ff77629bda39f5cc636ebb52e19d69.mesh"]
+
+source_file="res://Assets/3D/Skins/хер пойми что это.obj"
+dest_files=["res://.godot/imported/хер пойми что это.obj-41ff77629bda39f5cc636ebb52e19d69.mesh", "res://.godot/imported/хер пойми что это.obj-41ff77629bda39f5cc636ebb52e19d69.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -19,7 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 material_override = SubResource("StandardMaterial3D_ao7ob")
 mesh = ExtResource("2_8nshi")
 
-[node name="KillZone" type="Area3D" parent="."]
+[node name="KillZone" type="Area3D" parent="." groups=["Cannonball"]]
 script = ExtResource("4_twi8s")
 destroy_parent_on_contact = true
 

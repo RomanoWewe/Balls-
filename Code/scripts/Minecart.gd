@@ -43,4 +43,3 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body in contacted_bodies:
 		contacted_bodies.erase(body)
-		print(contacted_bodies)

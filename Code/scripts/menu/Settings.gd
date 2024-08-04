@@ -19,3 +19,4 @@ var resolutions = [
 @export var is_music_mute = false
 
 @export var show_fps :=false
+@export var selected_skin :=0
