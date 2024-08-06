@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://lqtm7g6w8w5j"]
+[gd_scene load_steps=50 format=3 uid="uid://lqtm7g6w8w5j"]
 
 [ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="1_moibi"]
 [ext_resource type="Texture2D" uid="uid://civl5wx7w56hc" path="res://Assets/Textures/Menu/snap2024-01-27-16-17-05.png" id="1_xjj4g"]
@@ -19,7 +19,10 @@
 [ext_resource type="Texture2D" uid="uid://d8bq0333cpsu" path="res://Assets/menu/SurePopup.png" id="16_rit32"]
 [ext_resource type="Script" path="res://Code/scripts/menu/SkinsMenu.gd" id="17_7ifg4"]
 [ext_resource type="Texture2D" uid="uid://curnxivnrgcrv" path="res://Assets/menu/SkinsMenu.png" id="17_txhdg"]
+[ext_resource type="Texture2D" uid="uid://cyfoy6vhvp6f2" path="res://Assets/menu/SkinsIcons/locked-removebg-preview.png" id="18_gy3u5"]
+[ext_resource type="Texture2D" uid="uid://de3grep3aspgx" path="res://Assets/menu/SkinsIcons/default-removebg-preview (1).png" id="19_pt1fc"]
 [ext_resource type="Texture2D" uid="uid://bic2v4m2f0063" path="res://Assets/menu/empty.png" id="20_nsn0c"]
+[ext_resource type="Texture2D" uid="uid://bvdvxst0rlusf" path="res://Assets/menu/меню скинов (которые выпали).png" id="21_74ahc"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwnkv"]
 
@@ -68,6 +71,52 @@ bg_color = Color(0, 0.894118, 0.435294, 0.588235)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc25f"]
 bg_color = Color(0, 0, 0, 0.364706)
+
+[sub_resource type="Gradient" id="Gradient_d2bwp"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_24iay"]
+gradient = SubResource("Gradient_d2bwp")
+
+[sub_resource type="Animation" id="Animation_6f5a4"]
+resource_name = "Up"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AchievementNotification:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 210), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hamf8"]
+resource_name = "Down"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AchievementNotification:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 210)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8rhyl"]
+_data = {
+"Down": SubResource("Animation_hamf8"),
+"Up": SubResource("Animation_6f5a4")
+}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -2024,6 +2073,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("17_7ifg4")
 is_menu = true
+icon_locked = ExtResource("18_gy3u5")
+background_colors = Array[Color]([Color(0.392157, 0.392157, 0.392157, 0.392157), Color(0.603922, 0, 0, 0.392157), Color(0.192157, 0, 1, 0.392157)])
 
 [node name="TextureRect" type="TextureRect" parent="Control/Skins"]
 layout_mode = 1
@@ -2280,6 +2331,154 @@ theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]<"
 
+[node name="Skin1" type="Control" parent="Control/Skins"]
+anchors_preset = 0
+offset_left = 232.0
+offset_top = 562.0
+offset_right = 487.0
+offset_bottom = 890.0
+
+[node name="Background" type="TextureRect" parent="Control/Skins/Skin1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.499878
+offset_right = 0.500122
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_24iay")
+
+[node name="Icon" type="Control" parent="Control/Skins/Skin1"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -127.5
+offset_right = 255.0
+offset_bottom = 127.5
+grow_vertical = 2
+
+[node name="Texture" type="TextureRect" parent="Control/Skins/Skin1/Icon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_pt1fc")
+expand_mode = 1
+
+[node name="index" type="RichTextLabel" parent="Control/Skins/Skin1"]
+offset_right = 40.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_moibi")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]1
+"
+
+[node name="Skin3" type="Control" parent="Control/Skins"]
+anchors_preset = 0
+offset_left = 791.844
+offset_top = 562.057
+offset_right = 1046.84
+offset_bottom = 890.057
+
+[node name="Background" type="TextureRect" parent="Control/Skins/Skin3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.499878
+offset_right = 0.500122
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_24iay")
+
+[node name="Icon" type="Control" parent="Control/Skins/Skin3"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -127.5
+offset_right = 255.0
+offset_bottom = 127.5
+grow_vertical = 2
+
+[node name="Texture" type="TextureRect" parent="Control/Skins/Skin3/Icon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_pt1fc")
+expand_mode = 1
+
+[node name="index" type="RichTextLabel" parent="Control/Skins/Skin3"]
+offset_right = 40.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_moibi")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]1
+"
+
+[node name="Skin2" type="Control" parent="Control/Skins"]
+anchors_preset = 0
+offset_left = 505.0
+offset_top = 562.0
+offset_right = 776.0
+offset_bottom = 890.0
+
+[node name="Background" type="TextureRect" parent="Control/Skins/Skin2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.499878
+offset_right = 0.500122
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_24iay")
+
+[node name="Icon" type="Control" parent="Control/Skins/Skin2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = -127.5
+offset_right = 127.5
+offset_bottom = 127.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Texture" type="TextureRect" parent="Control/Skins/Skin2/Icon"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_pt1fc")
+expand_mode = 1
+
+[node name="index" type="RichTextLabel" parent="Control/Skins/Skin2"]
+offset_right = 40.0
+offset_bottom = 48.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_moibi")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]1
+"
+
 [node name="Empty" type="Control" parent="Control"]
 anchors_preset = 0
 offset_top = 1900.0
@@ -2305,6 +2504,39 @@ settings_screen = NodePath("../Settings")
 empty_screen = NodePath("../Empty")
 levels_screen = NodePath("../Levels")
 achievements_screen = NodePath("../Skins")
+
+[node name="AchievementNotification" type="Control" parent="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 210.0
+offset_right = 40.0
+offset_bottom = 250.0
+
+[node name="МенюСкинов(которыеВыпали)" type="Sprite2D" parent="Control/AchievementNotification"]
+position = Vector2(1590.43, 1171.99)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("21_74ahc")
+
+[node name="Level number" type="RichTextLabel" parent="Control/AchievementNotification"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1448.0
+offset_top = 1113.0
+offset_right = 1693.0
+offset_bottom = 1227.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_moibi")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]New skin unlocked!"
+
+[node name="AchievemtPopupAnimator" type="AnimationPlayer" parent="Control"]
+libraries = {
+"": SubResource("AnimationLibrary_8rhyl")
+}
 
 [connection signal="pressed" from="Control/Main/Settings" to="Control/MainMenuAnimator" method="main_settings"]
 [connection signal="pressed" from="Control/Main/Levels" to="Control/MainMenuAnimator" method="main_levels"]

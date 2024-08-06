@@ -1,13 +1,19 @@
-[gd_resource type="Resource" script_class="SkinData" load_steps=4 format=3 uid="uid://dau7og1jigqni"]
+[gd_resource type="Resource" script_class="SkinData" load_steps=8 format=3 uid="uid://dau7og1jigqni"]
 
 [ext_resource type="PackedScene" uid="uid://ccuair27bjkhj" path="res://Scenes/Objects/_Skins/DefaultSkin.tscn" id="1_7u1v2"]
+[ext_resource type="Texture2D" uid="uid://de3grep3aspgx" path="res://Assets/menu/SkinsIcons/default-removebg-preview (1).png" id="1_8aa5y"]
 [ext_resource type="Script" path="res://Code/scripts/SkinsData.gd" id="1_tvfc3"]
+[ext_resource type="Texture2D" uid="uid://b7nbwff4ascfn" path="res://Assets/menu/SkinsIcons/watermelon-removebg-preview.png" id="2_j7xn7"]
 [ext_resource type="PackedScene" uid="uid://b18vj3n6b46rb" path="res://Scenes/Objects/_Skins/WatermelonSkin.tscn" id="2_ssy8d"]
+[ext_resource type="Texture2D" uid="uid://dbbnd6hi52nr7" path="res://Assets/menu/SkinsIcons/Voleyball-removebg-preview.png" id="3_i8gby"]
+[ext_resource type="PackedScene" uid="uid://ds211atognp7v" path="res://Scenes/Objects/_Skins/VoleyballSkin.tscn" id="6_ejsus"]
 
 [resource]
 script = ExtResource("1_tvfc3")
-scenes = Array[PackedScene]([ExtResource("1_7u1v2"), ExtResource("2_ssy8d")])
-names = Array[String](["Default", "Watermelon"])
-descriptions = Array[String](["This is your first skin.", "Break like a watermelon once"])
-requirement_types = Array[String](["journey_started", "deaths_total"])
-requirement_values = Array[float]([1.0, 1.0])
+scenes = Array[PackedScene]([ExtResource("1_7u1v2"), ExtResource("2_ssy8d"), ExtResource("6_ejsus")])
+names = Array[String](["Default", "Watermelon", "Voleyball"])
+descriptions = Array[String](["This is your first skin.", "Break like a watermelon once", "Find this Voleyball on the last sea level"])
+requirement_types = Array[String](["journey_started", "deaths_total", "levels_completed"])
+requirement_values = Array[float]([1.0, 1.0, 40.0])
+rarities = Array[int]([0, 1, 2])
+icons = Array[Texture2D]([ExtResource("1_8aa5y"), ExtResource("2_j7xn7"), ExtResource("3_i8gby")])

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://114a2ftlm3wn"
+path="res://.godot/imported/огненый осколок 6.obj-bec842bd3c210f4a1ea9ef88abe34c06.mesh"
+
+[deps]
+
+files=["res://.godot/imported/огненый осколок 6.obj-bec842bd3c210f4a1ea9ef88abe34c06.mesh"]
+
+source_file="res://Assets/western2/огненый осколок 6.obj"
+dest_files=["res://.godot/imported/огненый осколок 6.obj-bec842bd3c210f4a1ea9ef88abe34c06.mesh", "res://.godot/imported/огненый осколок 6.obj-bec842bd3c210f4a1ea9ef88abe34c06.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

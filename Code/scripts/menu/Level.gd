@@ -13,10 +13,10 @@ var pause_ui = preload("res://Scenes/Menu/LevelUI.tscn")
 var level_finished := false
 
 func _ready():
-	pause_ui = pause_ui.instantiate()
-	add_child(pause_ui)
 	skins=SkinsMenu.new()
 	add_child(skins)
+	pause_ui = pause_ui.instantiate()
+	add_child(pause_ui)
 	PhysicsServer3D.space_set_param(get_world_3d().space, PhysicsServer3D.SPACE_PARAM_CONTACT_MAX_ALLOWED_PENETRATION, 0.0)
 	if int(str(name)) <21:
 		add_child(wind_ambient.instantiate())

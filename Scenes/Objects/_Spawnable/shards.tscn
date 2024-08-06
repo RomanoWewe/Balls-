@@ -1,137 +1,243 @@
-[gd_scene load_steps=15 format=3 uid="uid://b56uhyo5x6yf8"]
+[gd_scene load_steps=29 format=3 uid="uid://b56uhyo5x6yf8"]
 
-[ext_resource type="ArrayMesh" uid="uid://da1gntuorl0fb" path="res://Assets/3D/шар11/боковой нижний осколок.obj" id="1_gvh58"]
 [ext_resource type="Script" path="res://Code/scripts/GravitationalObject.gd" id="1_y7fra"]
-[ext_resource type="ArrayMesh" uid="uid://cija85g14m67i" path="res://Assets/3D/шар11/боковой осколок ( бок 1).obj" id="2_iu85f"]
-[ext_resource type="ArrayMesh" uid="uid://duux0aw3eo11g" path="res://Assets/3D/шар11/боковой осколок ( бок 3).obj" id="3_nhehm"]
-[ext_resource type="ArrayMesh" uid="uid://cowckb7iir8rc" path="res://Assets/3D/шар11/боковой осколок (бок 2).obj" id="4_60ugu"]
-[ext_resource type="ArrayMesh" uid="uid://76h6y6i06mx4" path="res://Assets/3D/шар11/кусманище.obj" id="5_qmill"]
-[ext_resource type="ArrayMesh" uid="uid://2oq7u6w8flcl" path="res://Assets/3D/шар11/низ.obj" id="6_8su0i"]
+[ext_resource type="ArrayMesh" uid="uid://d0271x6oil7b3" path="res://Assets/western2/огненый осколок 1.obj" id="2_82wh7"]
+[ext_resource type="ArrayMesh" uid="uid://dlrucys0f0jvd" path="res://Assets/western2/огненый осколок 2.obj" id="3_y636a"]
+[ext_resource type="ArrayMesh" uid="uid://cy7sqlf46cnjm" path="res://Assets/western2/огненый осколок 3.obj" id="4_fu0gc"]
+[ext_resource type="ArrayMesh" uid="uid://cud8r7yw454d5" path="res://Assets/western2/огненый осколок 4.obj" id="5_wyh2c"]
+[ext_resource type="ArrayMesh" uid="uid://6uxjtt4dwm06" path="res://Assets/western2/огненый осколок 5.obj" id="6_4co4q"]
+[ext_resource type="ArrayMesh" uid="uid://114a2ftlm3wn" path="res://Assets/western2/огненый осколок 6.obj" id="7_uugld"]
+[ext_resource type="ArrayMesh" uid="uid://cl7wv2f0o1756" path="res://Assets/western2/огненый осколок 7.obj" id="8_vr1o7"]
+[ext_resource type="Texture2D" uid="uid://b6marlovk6ch8" path="res://Assets/Textures/Particles/toppng.com-smoke-particle-texture-399x385.png" id="9_f4cn2"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_773cn"]
-friction = 0.4
-rough = true
-bounce = 0.25
+[sub_resource type="BoxShape3D" id="BoxShape3D_jggub"]
+size = Vector3(3, 0.5, 1.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hal8m"]
-size = Vector3(1.39591, 1.48425, 2.80684)
+[sub_resource type="BoxShape3D" id="BoxShape3D_7kdyw"]
+size = Vector3(0.5, 3, 2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_uwvn1"]
-size = Vector3(2.71867, 2.04268, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_5bcps"]
+size = Vector3(2.5, 1.6, 0.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_1617i"]
-size = Vector3(1, 2.51293, 0.749472)
+[sub_resource type="BoxShape3D" id="BoxShape3D_3vshw"]
+size = Vector3(2, 1, 0.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_a5i4k"]
-size = Vector3(1, 1.98007, 2.40341)
+[sub_resource type="BoxShape3D" id="BoxShape3D_axah7"]
+size = Vector3(2, 1, 0.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tdcat"]
-size = Vector3(2.79468, 2.20695, 3)
+[sub_resource type="BoxShape3D" id="BoxShape3D_iatem"]
+size = Vector3(2, 0.7, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ad1ot"]
-size = Vector3(2.54534, 1.13585, 1)
+[sub_resource type="BoxShape3D" id="BoxShape3D_1yfq1"]
+size = Vector3(1.4, 1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3wle2"]
+size = Vector3(3, 1.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7is1o"]
+size = Vector3(0.7, 1.5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q4yxk"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvk2v"]
+transparency = 1
+shading_mode = 0
+disable_ambient_light = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("9_f4cn2")
+disable_receive_shadows = true
+billboard_mode = 1
+billboard_keep_scale = true
+proximity_fade_enabled = true
+
+[sub_resource type="Curve" id="Curve_0d8cw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.725352, 0.823066), 0.0, 0.0, 0, 0, Vector2(1, 0.00358164), -3.47987, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_mnsks"]
+curve = SubResource("Curve_0d8cw")
+
+[sub_resource type="Gradient" id="Gradient_hpl1o"]
+offsets = PackedFloat32Array(0.0078125, 0.078125, 0.191406, 0.613281, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 0, 0, 1, 0.0196078, 0.0196078, 0.0196078, 1, 0.196078, 0.196078, 0.196078, 0.921569, 0.537255, 0.52549, 0.537255, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5keqp"]
+gradient = SubResource("Gradient_hpl1o")
+
+[sub_resource type="Curve" id="Curve_f5cuu"]
+_data = [Vector2(0, 0.469198), 0.0, 0.0, 0, 0, Vector2(0.433099, 1), 0.0, 0.0, 0, 0, Vector2(0.84507, 0.990688), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_0kx4j"]
+curve = SubResource("Curve_f5cuu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_drbxd"]
+emission_shape = 2
+emission_sphere_radius = 2.0
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 5.0
+initial_velocity_max = 15.0
+gravity = Vector3(0, 3, 0)
+scale_min = 2.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_0kx4j")
+color_ramp = SubResource("GradientTexture1D_5keqp")
+alpha_curve = SubResource("CurveTexture_mnsks")
+turbulence_noise_scale = 1.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_vuw6a"]
 
 [node name="shards" type="Node3D"]
 
 [node name="shard" type="RigidBody3D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_773cn")
-gravity_scale = 2.0
-continuous_cd = true
-linear_velocity = Vector3(10, 0, 0)
-angular_damp_mode = 1
-angular_damp = 1.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 3, -0.7)
+linear_velocity = Vector3(10, 10, -10)
 script = ExtResource("1_y7fra")
-buoyancy = 0.0
 
-[node name="mesh" type="MeshInstance3D" parent="shard"]
-mesh = ExtResource("1_gvh58")
+[node name="ОгненыйОсколок1" type="MeshInstance3D" parent="shard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.898283, -3.0274, 0.710435)
+mesh = ExtResource("2_82wh7")
+skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="shard"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3086, 1.67529, -0.308605)
-shape = SubResource("BoxShape3D_hal8m")
+transform = Transform3D(0.772445, 0.509834, 0.378678, -0.635081, 0.620109, 0.460584, 0, -0.596267, 0.802786, 0, 0, 0)
+shape = SubResource("BoxShape3D_jggub")
 
 [node name="shard2" type="RigidBody3D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_773cn")
-gravity_scale = 2.0
-continuous_cd = true
-linear_velocity = Vector3(0, 0, -10)
-angular_damp_mode = 1
-angular_damp = 1.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -1)
+linear_velocity = Vector3(-5, 0, -10)
 script = ExtResource("1_y7fra")
-buoyancy = 0.0
 
-[node name="mesh" type="MeshInstance3D" parent="shard2"]
-mesh = ExtResource("2_iu85f")
+[node name="ОгненыйОсколок2" type="MeshInstance3D" parent="shard2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06991, -1.93463, 1.08457)
+mesh = ExtResource("3_y636a")
+skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="shard2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.161651, 1.74877, -1.36668)
-shape = SubResource("BoxShape3D_uwvn1")
+transform = Transform3D(0.82763, 0, -0.561275, 0, 1, 0, 0.561275, 0, 0.82763, 0, 0, 0)
+shape = SubResource("BoxShape3D_7kdyw")
 
 [node name="shard3" type="RigidBody3D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_773cn")
-gravity_scale = 2.0
-continuous_cd = true
-linear_velocity = Vector3(0, 0, 10)
-angular_damp_mode = 1
-angular_damp = 1.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77, 1, -1)
+linear_velocity = Vector3(0, 0, -10)
 script = ExtResource("1_y7fra")
-buoyancy = 0.0
 
-[node name="mesh" type="MeshInstance3D" parent="shard3"]
-mesh = ExtResource("3_nhehm")
+[node name="ОгненыйОсколок3" type="MeshInstance3D" parent="shard3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.771969, -1.08063, 1.03037)
+mesh = ExtResource("4_fu0gc")
+skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="shard3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.176346, 2.08676, 1.6312)
-shape = SubResource("BoxShape3D_1617i")
+transform = Transform3D(0.850499, 0, -0.525976, 0, 1, 0, 0.525976, 0, 0.850499, 0, 0, 0)
+shape = SubResource("BoxShape3D_5bcps")
 
 [node name="shard4" type="RigidBody3D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_773cn")
-gravity_scale = 2.0
-continuous_cd = true
-linear_velocity = Vector3(-10, 0, 0)
-angular_damp_mode = 1
-angular_damp = 1.0
+transform = Transform3D(1, 0, 0, 0, 0.00366516, -0.999993, 0, 0.999993, 0.00366516, 0, 0.293639, 0.849149)
+linear_velocity = Vector3(0, 0, 10)
 script = ExtResource("1_y7fra")
-buoyancy = 0.0
 
-[node name="mesh" type="MeshInstance3D" parent="shard4"]
-mesh = ExtResource("4_60ugu")
+[node name="ОгненыйОсколок4" type="MeshInstance3D" parent="shard4"]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 1.36126, -1.57068)
+mesh = ExtResource("5_wyh2c")
+skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="shard4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54702, 2.02989, 0.235128)
-shape = SubResource("BoxShape3D_a5i4k")
+shape = SubResource("BoxShape3D_3vshw")
+
+[node name="shard5" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 8.74228e-08, -8.74228e-08, 8.74228e-08, -1, 0, -8.74228e-08, -7.64274e-15, -1, 0, 2.63265, 1.72029)
+linear_velocity = Vector3(0, 5, 10)
+script = ExtResource("1_y7fra")
+
+[node name="ОгненыйОсколок5" type="MeshInstance3D" parent="shard5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.337096, -1.47018, 1.48728)
+mesh = ExtResource("6_4co4q")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shard5"]
+shape = SubResource("BoxShape3D_axah7")
+
+[node name="shard6" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.202152, -0.757645)
+linear_velocity = Vector3(0, 0, -10)
+script = ExtResource("1_y7fra")
+
+[node name="ОгненыйОсколок6" type="MeshInstance3D" parent="shard6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.410377, 0.718161)
+mesh = ExtResource("7_uugld")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shard6"]
+transform = Transform3D(0.924006, 0, 0.382377, 0, 1, 0, -0.382377, 0, 0.924006, -0.0312498, 0, -0.0728893)
+shape = SubResource("BoxShape3D_iatem")
 
 [node name="shard7" type="RigidBody3D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_773cn")
-gravity_scale = 2.0
-continuous_cd = true
-linear_velocity = Vector3(10, 10, -10)
-angular_damp_mode = 1
-angular_damp = 1.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.43244, 0.519118)
+linear_velocity = Vector3(0, 0, 10)
 script = ExtResource("1_y7fra")
-buoyancy = 0.0
 
-[node name="mesh" type="MeshInstance3D" parent="shard7"]
-mesh = ExtResource("5_qmill")
+[node name="ОгненыйОсколок7" type="MeshInstance3D" parent="shard7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.4932, -0.389528)
+mesh = ExtResource("8_vr1o7")
+skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="shard7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5562, 2.83035, -0.481689)
-shape = SubResource("BoxShape3D_tdcat")
+shape = SubResource("BoxShape3D_1yfq1")
 
 [node name="shard8" type="RigidBody3D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_773cn")
-gravity_scale = 2.0
-continuous_cd = true
-linear_velocity = Vector3(0, 0, -3)
-linear_damp_mode = 1
-angular_damp_mode = 1
-angular_damp = 1.0
+transform = Transform3D(1, 0, 0, 0, 0.999931, -0.0117807, 0, 0.0117807, 0.999931, -1.05734, 1.19087, 1.17333)
+linear_velocity = Vector3(-10, 0, 10)
 script = ExtResource("1_y7fra")
-buoyancy = 0.0
 
-[node name="mesh" type="MeshInstance3D" parent="shard8"]
-mesh = ExtResource("6_8su0i")
+[node name="ОгненыйОсколок8" type="MeshInstance3D" parent="shard8"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.717682, -1.02571, -0.923138)
+mesh = ExtResource("4_fu0gc")
+skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="shard8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.217194, 0.533546, -0.372757)
-shape = SubResource("BoxShape3D_ad1ot")
+transform = Transform3D(0.807938, 0, -0.589267, 0, 1, 0, 0.589267, 0, 0.807938, 0, 0, 0)
+shape = SubResource("BoxShape3D_3wle2")
+
+[node name="shard9" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.57927, 1.70005, 0.975825)
+linear_velocity = Vector3(10, 0, 5)
+script = ExtResource("1_y7fra")
+
+[node name="ОгненыйОсколок9" type="MeshInstance3D" parent="shard9"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -3.59867, 0.00923634, -0.61427)
+mesh = ExtResource("8_vr1o7")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shard9"]
+shape = SubResource("BoxShape3D_7is1o")
+
+[node name="shard10" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42553, 2.86392, 0.665213)
+linear_velocity = Vector3(-10, 0, 5)
+script = ExtResource("1_y7fra")
+
+[node name="ОгненыйОсколок10" type="MeshInstance3D" parent="shard10"]
+transform = Transform3D(-4.37114e-08, -1, 0, -4.37114e-08, 1.91069e-15, -1, 1, -4.37114e-08, -4.37114e-08, 3.48686, 0.534676, -0.0396814)
+mesh = ExtResource("8_vr1o7")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shard10"]
+shape = SubResource("BoxShape3D_q4yxk")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material_override = SubResource("StandardMaterial3D_hvk2v")
+emitting = false
+amount = 100
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 0
+draw_order = 3
+transform_align = 1
+process_material = SubResource("ParticleProcessMaterial_drbxd")
+draw_pass_1 = SubResource("QuadMesh_vuw6a")

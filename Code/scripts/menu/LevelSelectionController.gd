@@ -14,8 +14,8 @@ func _ready():
 	singleton = self
 	if !DirAccess.dir_exists_absolute("user://saves"):
 		DirAccess.make_dir_absolute("user://saves")
-	if ResourceLoader.exists("user://saves/stats.tres"):
-		stats = ResourceLoader.load("user://saves/stats.tres")
+	if ResourceLoader.exists("user://stats.tres"):
+		stats = ResourceLoader.load("user://stats.tres")
 	else:
 		stats = Stats.new()
 	open_page()
@@ -24,13 +24,12 @@ func open_page():
 	
 	var levels = Array(DirAccess.open(SCENES_PATH).get_files())
 	levels.sort_custom(custom_string_sort)
-	var levels_completed = stats.levels_completed
 	var level_icons = grid_node.get_children()
 	for level in level_icons:
 		if levels.find(level.name+".tscn") == -1:
 			level.queue_free()
 		else:
-			level.disabled =int(str(level.name))>levels_completed+1
+			level.disabled =int(str(level.name))>stats.levels_completed+1
 
 func custom_string_sort(a, b):
 	return int(a)<int(b)

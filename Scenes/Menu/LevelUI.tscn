@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ljw7ehdr7alt"]
+[gd_scene load_steps=40 format=3 uid="uid://ljw7ehdr7alt"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/SettingsMenu.gd" id="1_qayne"]
 [ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="2_pmr5i"]
@@ -9,9 +9,11 @@
 [ext_resource type="Script" path="res://Code/scripts/menu/CustomTextureButton.gd" id="6_1a5vb"]
 [ext_resource type="Script" path="res://Scenes/Menu/StaticLevelUI.gd" id="6_4heqp"]
 [ext_resource type="Texture2D" uid="uid://cs5w5fjb18sb1" path="res://Assets/Textures/Menu/Buttongreen.png" id="7_qkxvv"]
+[ext_resource type="Texture2D" uid="uid://ctbyrd1jlkyyu" path="res://Assets/menu/levelbackground.png" id="9_xsoqc"]
 [ext_resource type="Texture2D" uid="uid://o6xoa52l7p4k" path="res://Assets/Textures/Menu/settings menu in game.png" id="10_vsem1"]
 [ext_resource type="Texture2D" uid="uid://dqrtgnqjch4tb" path="res://Assets/Textures/Menu/ButtonLevel.png" id="11_yc4n5"]
 [ext_resource type="Theme" uid="uid://vcn2812d42op" path="res://Scenes/Menu/Theme.tres" id="13_f4x43"]
+[ext_resource type="Texture2D" uid="uid://bvdvxst0rlusf" path="res://Assets/menu/меню скинов (которые выпали).png" id="14_e6x3s"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_avhu0"]
 allow_unpress = true
@@ -152,6 +154,46 @@ bg_color = Color(0, 0.67451, 0, 0.454902)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5o36"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n7o5w"]
+
+[sub_resource type="Animation" id="Animation_t4cxp"]
+resource_name = "Up"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AchievementNotification:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 160), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cefdj"]
+resource_name = "Down"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AchievementNotification:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 160)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rs0xw"]
+_data = {
+"Down": SubResource("Animation_cefdj"),
+"Up": SubResource("Animation_t4cxp")
+}
 
 [node name="LevelUi" type="Control"]
 process_mode = 3
@@ -368,20 +410,26 @@ offset_bottom = 720.0
 mouse_filter = 2
 script = ExtResource("6_4heqp")
 
+[node name="Levelbackground" type="Sprite2D" parent="Static UI"]
+position = Vector2(90, 45)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_xsoqc")
+
 [node name="Level number" type="RichTextLabel" parent="Static UI"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -620.0
-offset_top = 9.0
-offset_right = -420.0
-offset_bottom = 109.0
+offset_left = -610.0
+offset_top = 21.0
+offset_right = -489.0
+offset_bottom = 100.0
 grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_pmr5i")
-theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "Level x"
+text = "[center]Level x"
 
 [node name="FPS counter" type="RichTextLabel" parent="Static UI"]
 layout_mode = 1
@@ -670,6 +718,38 @@ theme_override_fonts/normal_font = ExtResource("2_pmr5i")
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[center]Resolution"
+
+[node name="AchievementNotification" type="Control" parent="."]
+anchors_preset = 0
+offset_top = 160.0
+offset_right = 40.0
+offset_bottom = 200.0
+
+[node name="МенюСкинов(которыеВыпали)" type="Sprite2D" parent="AchievementNotification"]
+position = Vector2(1143, 642)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("14_e6x3s")
+
+[node name="Level number" type="RichTextLabel" parent="AchievementNotification"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 1031.0
+offset_top = 590.0
+offset_right = 1215.0
+offset_bottom = 694.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_pmr5i")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]New skin unlocked!"
+
+[node name="AchievemtPopupAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rs0xw")
+}
 
 [connection signal="pressed" from="Paused/Unpause" to="Paused" method="unpause"]
 [connection signal="pressed" from="Paused/Settings" to="Paused" method="settings"]

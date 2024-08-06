@@ -10,6 +10,7 @@ func _process(_delta): #shortcut to unlock all levels - delete in release
 		stats.levels_completed=128
 		for i in stats.unlocked_skins.size():
 			stats.unlocked_skins[i] = true
+		stats.unlocked_skins_count = stats.unlocked_skins.size()
 		ResourceSaver.save(stats,"user://stats.tres")
 		LevelSelectionController.singleton.stats = stats
 		LevelSelectionController.singleton.open_page()
