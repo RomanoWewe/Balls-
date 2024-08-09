@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://15k5dmhnetma"
-path="res://.godot/imported/Watermelon-removebg-preview.png-377a15b4c8e9dcff6042b889f6d90204.ctex"
+uid="uid://cyfoy6vhvp6f2"
+path="res://.godot/imported/Locked.png-a110249007fc5797578d4c1d345f2ef2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/menu/SkinsIcons/Watermelon-removebg-preview.png"
-dest_files=["res://.godot/imported/Watermelon-removebg-preview.png-377a15b4c8e9dcff6042b889f6d90204.ctex"]
+source_file="res://Assets/menu/SkinsIcons/Locked.png"
+dest_files=["res://.godot/imported/Locked.png-a110249007fc5797578d4c1d345f2ef2.ctex"]
 
 [params]
 

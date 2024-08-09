@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://15k5dmhnetma"
-path="res://.godot/imported/Watermelon-removebg-preview.png-377a15b4c8e9dcff6042b889f6d90204.ctex"
+uid="uid://j77ot3hfcjoa"
+path="res://.godot/imported/OrabgeMarble-removebg-preview.png-1409a501180cec72fd2a61c8bc33f009.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/menu/SkinsIcons/Watermelon-removebg-preview.png"
-dest_files=["res://.godot/imported/Watermelon-removebg-preview.png-377a15b4c8e9dcff6042b889f6d90204.ctex"]
+source_file="res://Assets/menu/SkinsIcons/OrabgeMarble-removebg-preview.png"
+dest_files=["res://.godot/imported/OrabgeMarble-removebg-preview.png-1409a501180cec72fd2a61c8bc33f009.ctex"]
 
 [params]
 

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dhuivswnflxlo"
+path="res://.godot/imported/калапс.obj-950e8b6f7a1f4aca350b679e824d737e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/калапс.obj-950e8b6f7a1f4aca350b679e824d737e.mesh"]
+
+source_file="res://Assets/3D/Skins/калапс.obj"
+dest_files=["res://.godot/imported/калапс.obj-950e8b6f7a1f4aca350b679e824d737e.mesh", "res://.godot/imported/калапс.obj-950e8b6f7a1f4aca350b679e824d737e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

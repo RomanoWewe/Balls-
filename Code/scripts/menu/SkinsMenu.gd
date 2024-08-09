@@ -10,6 +10,7 @@ var current_skin :=0
 static var singleton : SkinsMenu
 
 @export var icon_locked : Texture2D
+@export var locked_background_color : Color
 @export var background_colors : Array[Color]
 
 func _ready():
@@ -43,46 +44,56 @@ func refresh():
 	
 	if !is_menu:
 		return
-	$Name.text = skin_data.names[current_skin]
+	if stats.unlocked_skins[current_skin]:
+		$Name.text = skin_data.names[current_skin]
+	else:
+		$Name.text = "Locked"
 	$Description.text = skin_data.descriptions[current_skin]
-	$SkinCounter.text = str(stats.unlocked_skins_count)+"/"+str(stats.unlocked_skins.size())
+	$SkinCounter.text = "[center]"+str(stats.unlocked_skins_count)+"/"+str(stats.unlocked_skins.size())
 	$Select.disabled = !stats.unlocked_skins[current_skin]
 	
 	if current_skin !=0:
 		if stats.unlocked_skins[current_skin-1]:
 			$Skin1/Icon/Texture.texture = skin_data.icons[current_skin-1]
+			$Skin1/Background.self_modulate = background_colors[skin_data.rarities[current_skin-1]]
+			$Skin1/index.text = str(current_skin-1)
 		else:
 			$Skin1/Icon/Texture.texture = icon_locked
-		$Skin1/Background.self_modulate = background_colors[skin_data.rarities[current_skin-1]]
-		$Skin1/index.text = str(current_skin-1)
+			$Skin1/Background.self_modulate = locked_background_color
+			$Skin1/index.text = str(current_skin-1)
 	else:
 		if stats.unlocked_skins[current_skin-1]:
 			$Skin1/Icon/Texture.texture = skin_data.icons[skin_data.icons.size()-1]
+			$Skin1/Background.self_modulate = background_colors[skin_data.rarities[skin_data.icons.size()-1]]
+			$Skin1/index.text = str(skin_data.icons.size()-1)
 		else:
 			$Skin1/Icon/Texture.texture = icon_locked
-		$Skin1/Background.self_modulate = background_colors[skin_data.rarities[skin_data.icons.size()-1]]
-		$Skin1/index.text = str(skin_data.icons.size()-1)
-	
+			$Skin1/Background.self_modulate = locked_background_color
+			$Skin1/index.text = str(skin_data.icons.size()-1)
 	if stats.unlocked_skins[current_skin]:
 		$Skin2/Icon/Texture.texture = skin_data.icons[current_skin]
+		$Skin2/Background.self_modulate = background_colors[skin_data.rarities[current_skin]]
+		$Skin2/index.text = str(current_skin)
 	else:
 		$Skin2/Icon/Texture.texture = icon_locked
-	$Skin2/Background.self_modulate = background_colors[skin_data.rarities[current_skin]]
-	
-	$Skin2/index.text = str(current_skin)
+		$Skin2/Background.self_modulate = locked_background_color
+		$Skin2/index.text = str(current_skin)
 	if current_skin !=skin_data.icons.size()-1:
 		if stats.unlocked_skins[current_skin+1]:
 			$Skin3/Icon/Texture.texture = skin_data.icons[current_skin+1]
+			$Skin3/Background.self_modulate = background_colors[skin_data.rarities[current_skin+1]]
+			$Skin3/index.text = str(current_skin+1)
 		else:
 			$Skin3/Icon/Texture.texture = icon_locked
-		$Skin3/Background.self_modulate = background_colors[skin_data.rarities[current_skin+1]]
-		$Skin3/index.text = str(current_skin+1)
+			$Skin3/Background.self_modulate = locked_background_color
+			$Skin3/index.text = str(current_skin+1)
 	else:
 		if stats.unlocked_skins[0]:
 			$Skin3/Icon/Texture.texture = skin_data.icons[0]
+			$Skin3/Background.self_modulate = background_colors[skin_data.rarities[0]]
 		else:
 			$Skin3/Icon/Texture.texture = icon_locked
-		$Skin3/Background.self_modulate = background_colors[skin_data.rarities[0]]
+			$Skin3/Background.self_modulate = locked_background_color
 		$Skin3/index.text = "0"
 
 func _on_select_pressed():

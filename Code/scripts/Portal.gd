@@ -86,7 +86,7 @@ func _on_area_body_entered(body):
 			body.angular_velocity = Vector3()
 		$Teleport.start_playing()
 		if body is Ball:
-			get_tree().root.get_child(0).stats.teleports_used+=1
+			get_tree().root.get_child(0).skins.stats.teleports_used+=1
 			get_tree().root.get_child(0).skins.refresh()
 
 func _exit_tree():

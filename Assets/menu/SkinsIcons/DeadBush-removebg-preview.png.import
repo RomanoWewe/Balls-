@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://15k5dmhnetma"
-path="res://.godot/imported/Watermelon-removebg-preview.png-377a15b4c8e9dcff6042b889f6d90204.ctex"
+uid="uid://dmni7jc4l0muw"
+path="res://.godot/imported/DeadBush-removebg-preview.png-2529073b9d7b628ecd558258299f8890.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/menu/SkinsIcons/Watermelon-removebg-preview.png"
-dest_files=["res://.godot/imported/Watermelon-removebg-preview.png-377a15b4c8e9dcff6042b889f6d90204.ctex"]
+source_file="res://Assets/menu/SkinsIcons/DeadBush-removebg-preview.png"
+dest_files=["res://.godot/imported/DeadBush-removebg-preview.png-2529073b9d7b628ecd558258299f8890.ctex"]
 
 [params]
 

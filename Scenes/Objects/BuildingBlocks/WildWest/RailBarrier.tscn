@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cckwyapi61vvd"]
+[gd_scene load_steps=12 format=3 uid="uid://cckwyapi61vvd"]
 
 [ext_resource type="Script" path="res://Code/scripts/RailRotator.gd" id="1_u0x4f"]
 [ext_resource type="ArrayMesh" uid="uid://cxsd7bbas6gur" path="res://Assets/western2/шлагбаум( основа ).obj" id="2_eg7tf"]
@@ -85,6 +85,9 @@ _data = {
 "open": SubResource("Animation_m5c04")
 }
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_t6rak"]
+bounce = 0.3
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_2tghx"]
 size = Vector3(5, 0.5, 0.5)
 
@@ -104,6 +107,7 @@ libraries = {
 
 [node name="wrapper" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.725, 2.8409, 0)
+physics_material_override = SubResource("PhysicsMaterial_t6rak")
 
 [node name="Шлагбаум(Палка)" type="MeshInstance3D" parent="wrapper"]
 transform = Transform3D(1.3, 0, 0, 0, 1, 0, 0, 0, 1, -2.72142, -3, 0)

@@ -155,23 +155,6 @@ bg_color = Color(0, 0.67451, 0, 0.454902)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n7o5w"]
 
-[sub_resource type="Animation" id="Animation_t4cxp"]
-resource_name = "Up"
-length = 0.15
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AchievementNotification:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 160), Vector2(0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_cefdj"]
 resource_name = "Down"
 length = 0.15
@@ -187,6 +170,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_t4cxp"]
+resource_name = "Up"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AchievementNotification:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 160), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rs0xw"]

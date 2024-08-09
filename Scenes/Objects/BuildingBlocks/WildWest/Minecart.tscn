@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://celtshfqnrhmk" path="res://Assets/Sounds/minecart.mp3" id="6_k456m"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_by6o8"]
-friction = 0.1
+friction = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p2pbx"]
 size = Vector3(4.82544, 0.420151, 4.12988)
@@ -27,7 +27,6 @@ axis_lock_angular_x = true
 axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_by6o8")
 gravity_scale = 10.0
-continuous_cd = true
 max_contacts_reported = 5
 contact_monitor = true
 angular_damp_mode = 1

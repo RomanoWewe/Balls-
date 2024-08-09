@@ -1,19 +1,33 @@
-[gd_resource type="Resource" script_class="SkinData" load_steps=8 format=3 uid="uid://dau7og1jigqni"]
+[gd_resource type="Resource" script_class="SkinData" load_steps=22 format=3 uid="uid://dau7og1jigqni"]
 
 [ext_resource type="PackedScene" uid="uid://ccuair27bjkhj" path="res://Scenes/Objects/_Skins/DefaultSkin.tscn" id="1_7u1v2"]
-[ext_resource type="Texture2D" uid="uid://de3grep3aspgx" path="res://Assets/menu/SkinsIcons/default-removebg-preview (1).png" id="1_8aa5y"]
+[ext_resource type="Texture2D" uid="uid://dc4fuofedyjis" path="res://Assets/menu/SkinsIcons/Default.png" id="1_8ck4y"]
 [ext_resource type="Script" path="res://Code/scripts/SkinsData.gd" id="1_tvfc3"]
-[ext_resource type="Texture2D" uid="uid://b7nbwff4ascfn" path="res://Assets/menu/SkinsIcons/watermelon-removebg-preview.png" id="2_j7xn7"]
+[ext_resource type="Texture2D" uid="uid://15k5dmhnetma" path="res://Assets/menu/SkinsIcons/Watermelon-removebg-preview.png" id="2_ftdr4"]
 [ext_resource type="PackedScene" uid="uid://b18vj3n6b46rb" path="res://Scenes/Objects/_Skins/WatermelonSkin.tscn" id="2_ssy8d"]
-[ext_resource type="Texture2D" uid="uid://dbbnd6hi52nr7" path="res://Assets/menu/SkinsIcons/Voleyball-removebg-preview.png" id="3_i8gby"]
+[ext_resource type="Texture2D" uid="uid://codj1u4h3mkv8" path="res://Assets/menu/SkinsIcons/Volleyball-removebg-preview.png" id="3_p6kjq"]
+[ext_resource type="Texture2D" uid="uid://dmni7jc4l0muw" path="res://Assets/menu/SkinsIcons/DeadBush-removebg-preview.png" id="4_d1tem"]
+[ext_resource type="Texture2D" uid="uid://b6rcfbd0r8tx5" path="res://Assets/menu/SkinsIcons/Stone-removebg-preview.png" id="5_w74bf"]
+[ext_resource type="Texture2D" uid="uid://c2c545cmmv3il" path="res://Assets/menu/SkinsIcons/Planet-removebg-preview.png" id="6_843pv"]
 [ext_resource type="PackedScene" uid="uid://ds211atognp7v" path="res://Scenes/Objects/_Skins/VoleyballSkin.tscn" id="6_ejsus"]
+[ext_resource type="PackedScene" uid="uid://7wk1ov82ujf0" path="res://Scenes/Objects/_Skins/DeadBush.tscn" id="7_6s1m4"]
+[ext_resource type="Texture2D" uid="uid://moooes8aj8ka" path="res://Assets/menu/SkinsIcons/RedMarble-removebg-preview.png" id="7_h55gq"]
+[ext_resource type="PackedScene" uid="uid://q2dmroissj77" path="res://Scenes/Objects/_Skins/Stone.tscn" id="8_05hcd"]
+[ext_resource type="Texture2D" uid="uid://bfjy4233jrlxw" path="res://Assets/menu/SkinsIcons/BlueMarble-removebg-preview.png" id="8_fpx10"]
+[ext_resource type="PackedScene" uid="uid://c0i25lnrbi5w" path="res://Scenes/Objects/_Skins/PlanetSkin.tscn" id="9_is6mm"]
+[ext_resource type="Texture2D" uid="uid://j77ot3hfcjoa" path="res://Assets/menu/SkinsIcons/OrabgeMarble-removebg-preview.png" id="9_vxqt3"]
+[ext_resource type="Texture2D" uid="uid://cedb86q8y3eaa" path="res://Assets/menu/SkinsIcons/Cataclysm-removebg-preview.png" id="10_h5dcw"]
+[ext_resource type="PackedScene" uid="uid://cve47nkacbcpa" path="res://Scenes/Objects/_Skins/MarbleRedSkin.tscn" id="10_kqxme"]
+[ext_resource type="PackedScene" uid="uid://bvr46022ska3m" path="res://Scenes/Objects/_Skins/MarbleBlueSkin.tscn" id="11_ctu7m"]
+[ext_resource type="PackedScene" uid="uid://cjbjb3olpm1y1" path="res://Scenes/Objects/_Skins/MarbleOrangeSkin.tscn" id="12_6q8kx"]
+[ext_resource type="PackedScene" uid="uid://b20mr38jj2ytp" path="res://Scenes/Objects/_Skins/Cataclysm.tscn" id="13_hgikh"]
 
 [resource]
 script = ExtResource("1_tvfc3")
-scenes = Array[PackedScene]([ExtResource("1_7u1v2"), ExtResource("2_ssy8d"), ExtResource("6_ejsus")])
-names = Array[String](["Default", "Watermelon", "Voleyball"])
-descriptions = Array[String](["This is your first skin.", "Break like a watermelon once", "Find this Voleyball on the last sea level"])
-requirement_types = Array[String](["journey_started", "deaths_total", "levels_completed"])
-requirement_values = Array[float]([1.0, 1.0, 40.0])
-rarities = Array[int]([0, 1, 2])
-icons = Array[Texture2D]([ExtResource("1_8aa5y"), ExtResource("2_j7xn7"), ExtResource("3_i8gby")])
+scenes = Array[PackedScene]([ExtResource("1_7u1v2"), ExtResource("2_ssy8d"), ExtResource("6_ejsus"), ExtResource("7_6s1m4"), ExtResource("8_05hcd"), ExtResource("9_is6mm"), ExtResource("10_kqxme"), ExtResource("11_ctu7m"), ExtResource("12_6q8kx"), ExtResource("13_hgikh")])
+names = Array[String](["Default", "Watermelon", "Voleyball", "Dead bush", "Stone", "Planet", "Red marble", "Blue marble", "Orange marble", "Cataclysm"])
+descriptions = Array[String](["This is your first skin.", "Break 10 times to unlock", "Achieve first sea level to unlock this skin", "Achieve first desert level to unlock this skin", "Achieve first cave level to unlock this skin", "Break 5 times by falling", "Unlock 5 other skins", "Use teleport 10 times", "Find a secret in menu", "Break 50 times by cannon"])
+requirement_types = Array[String](["journey_started", "deaths_total", "levels_completed", "levels_completed", "levels_completed", "deaths_by_fall", "unlocked_skins_count", "teleports_used", "secrets_unlocked", "deaths_by_cannon"])
+requirement_values = Array[float]([1.0, 10.0, 20.0, 40.0, 60.0, 5.0, 6.0, 10.0, 1.0, 50.0])
+rarities = Array[int]([0, 0, 1, 1, 1, 0, 0, 0, 2, 2])
+icons = Array[Texture2D]([ExtResource("1_8ck4y"), ExtResource("2_ftdr4"), ExtResource("3_p6kjq"), ExtResource("4_d1tem"), ExtResource("5_w74bf"), ExtResource("6_843pv"), ExtResource("7_h55gq"), ExtResource("8_fpx10"), ExtResource("9_vxqt3"), ExtResource("10_h5dcw")])

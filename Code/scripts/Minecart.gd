@@ -17,6 +17,8 @@ func _physics_process(delta):
 	if contacted_bodies.size()==0:
 		var vertical_speed = linear_velocity.y
 		linear_velocity = Vector3(linear_velocity.x,0,linear_velocity.z).normalized() * previous_frame_horizontal_velocity.length() * speed_damp
+		if linear_velocity.length()<5:
+			linear_velocity*=0.99
 		if linear_velocity.angle_to(previous_frame_horizontal_velocity)>PI/3:
 			linear_velocity*=bounce
 		linear_velocity.y = vertical_speed

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://15k5dmhnetma"
-path="res://.godot/imported/Watermelon-removebg-preview.png-377a15b4c8e9dcff6042b889f6d90204.ctex"
+uid="uid://b6rcfbd0r8tx5"
+path="res://.godot/imported/Stone-removebg-preview.png-eea70625e1fd5943268531a37f0c494e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/menu/SkinsIcons/Watermelon-removebg-preview.png"
-dest_files=["res://.godot/imported/Watermelon-removebg-preview.png-377a15b4c8e9dcff6042b889f6d90204.ctex"]
+source_file="res://Assets/menu/SkinsIcons/Stone-removebg-preview.png"
+dest_files=["res://.godot/imported/Stone-removebg-preview.png-eea70625e1fd5943268531a37f0c494e.ctex"]
 
 [params]
 

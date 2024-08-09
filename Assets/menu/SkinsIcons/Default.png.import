@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyfoy6vhvp6f2"
-path="res://.godot/imported/locked-removebg-preview.png-fd1423fb64ff15687f1cb6f7e7bc873a.ctex"
+uid="uid://dc4fuofedyjis"
+path="res://.godot/imported/Default.png-bb16a71cacbbe8beed50f9e2c066c6fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/menu/SkinsIcons/locked-removebg-preview.png"
-dest_files=["res://.godot/imported/locked-removebg-preview.png-fd1423fb64ff15687f1cb6f7e7bc873a.ctex"]
+source_file="res://Assets/menu/SkinsIcons/Default.png"
+dest_files=["res://.godot/imported/Default.png-bb16a71cacbbe8beed50f9e2c066c6fd.ctex"]
 
 [params]
 
