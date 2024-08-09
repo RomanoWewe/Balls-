@@ -20,7 +20,7 @@
 [ext_resource type="Script" path="res://Code/scripts/menu/SkinsMenu.gd" id="17_7ifg4"]
 [ext_resource type="Texture2D" uid="uid://curnxivnrgcrv" path="res://Assets/menu/SkinsMenu.png" id="17_txhdg"]
 [ext_resource type="Texture2D" uid="uid://cyfoy6vhvp6f2" path="res://Assets/menu/SkinsIcons/Locked.png" id="18_gy3u5"]
-[ext_resource type="Texture2D" path="res://Assets/menu/SkinsIcons/default-removebg-preview (1).png" id="19_pt1fc"]
+[ext_resource type="Texture2D" uid="uid://dc4fuofedyjis" path="res://Assets/menu/SkinsIcons/Default.png" id="19_pt1fc"]
 [ext_resource type="Texture2D" uid="uid://bic2v4m2f0063" path="res://Assets/menu/empty.png" id="20_nsn0c"]
 [ext_resource type="Texture2D" uid="uid://bvdvxst0rlusf" path="res://Assets/menu/меню скинов (которые выпали).png" id="21_74ahc"]
 
