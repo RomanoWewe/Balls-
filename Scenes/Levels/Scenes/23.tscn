@@ -25,7 +25,7 @@
 script = ExtResource("1_3l46k")
 
 [node name="MainCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 38, 34, 3)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 42.9225, 34, 2.54222)
 fov = 80.0
 size = 25.0
 

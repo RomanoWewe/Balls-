@@ -64,9 +64,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1390, 0, 145)
 [node name="0,1715,-250(0)" parent="static" instance=ExtResource("3_x2i1o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1715, 0, -250)
 
-[node name="0,-120,840(0)" parent="static" instance=ExtResource("4_mt1ml")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 840)
-
 [node name="-5,65,-25(0)" parent="static" instance=ExtResource("5_qr1ud")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -5, -25)
 
@@ -883,7 +880,7 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="MainCamera" type="Camera3D" parent="empty"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.9975, 53, -43.4535)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.3205, 51, -38.9752)
 fov = 80.0
 size = 25.0
 

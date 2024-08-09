@@ -45,9 +45,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1390, 0, 145)
 [node name="0,1715,-250(0)" parent="static" instance=ExtResource("3_on2o5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1715, 0, -250)
 
-[node name="0,-120,840(0)" parent="static" instance=ExtResource("4_5g453")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 840)
-
 [node name="-5,65,-5(0)" parent="static" instance=ExtResource("5_5668s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -5, -5)
 
@@ -795,10 +792,8 @@ physics_material_override = SubResource("PhysicsMaterial_nsy35")
 [node name="-5,70,-25(0)" parent="static" instance=ExtResource("20_i4kau")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, -5, -25)
 
-[node name="0,65,-25(0)" type="StaticBody3D" parent="static" instance=ExtResource("10_vfiqs")]
+[node name="0,65,-25(0)" parent="static" instance=ExtResource("10_vfiqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -25)
-collision_layer = 8
-collision_mask = 8
 
 [node name="empty" parent="." instance=ExtResource("35_668bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9121, -17.3926, 29.8806)
@@ -811,6 +806,6 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="MainCamera" type="Camera3D" parent="empty"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.9975, 53, -43.4535)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.9975, 51.1105, -42.3988)
 fov = 80.0
 size = 25.0

@@ -559,11 +559,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -5)
 current_direction = Vector3(0, 0, -1)
 show_visuals = false
 
-[node name="MainCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 33, 34, -21.5127)
-fov = 80.0
-size = 25.0
-
 [node name="empty" parent="." instance=ExtResource("37_awn41")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.9558, -5.73766, 27.2041)
 
@@ -573,3 +568,8 @@ light_energy = 2.0
 light_indirect_energy = 0.1
 shadow_enabled = true
 sky_mode = 1
+
+[node name="MainCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 36.8989, 31.0332, -14.9614)
+fov = 80.0
+size = 25.0

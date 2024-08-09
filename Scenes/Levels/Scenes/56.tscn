@@ -813,7 +813,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -8)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -30)
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
 
-[node name="0,60,5(0)" type="Node3D" parent="static" instance=ExtResource("17_aeul7")]
+[node name="0,60,5(0)" parent="static" instance=ExtResource("17_aeul7")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 60, 0, 5)
 
 [node name="empty" parent="." instance=ExtResource("25_62pdr")]
@@ -827,6 +827,6 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="MainCamera" type="Camera3D" parent="empty"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.9975, 53, -43.4535)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 11.9975, 51, -41.4535)
 fov = 80.0
 size = 25.0
