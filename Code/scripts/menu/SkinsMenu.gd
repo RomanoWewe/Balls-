@@ -22,7 +22,7 @@ func _ready():
 	if stats == null:
 		if   FileAccess.file_exists("user://stats.tres"):
 			stats = load("user://stats.tres")
-		else:
+		if stats ==null or stats.unlocked_skins.size()!=skin_data.scenes.size():
 			stats = Stats.new()
 	if settings == null:
 		if   FileAccess.file_exists("user://settings.tres"):

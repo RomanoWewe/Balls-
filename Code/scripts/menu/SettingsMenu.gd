@@ -27,6 +27,7 @@ func _ready():
 	music_mute_button.button_pressed = settings.is_music_mute
 	sound_mute_button.button_pressed = settings.is_sound_mute
 	apply_settings()
+	save()
 
 func _on_resolution_set(index):
 	settings.resolution = index
