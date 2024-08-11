@@ -5,7 +5,7 @@
 
 [node name="CannonShoot" type="AudioStreamPlayer"]
 stream = ExtResource("1_i1o3x")
-volume_db = -15.0
+volume_db = -35.0
 pitch_scale = 1.14163
 bus = &"Sound"
 script = ExtResource("2_wj8b7")
