@@ -45,7 +45,7 @@ func refresh():
 	if !is_menu:
 		return
 	if stats.unlocked_skins[current_skin]:
-		$Name.text = skin_data.names[current_skin]
+		$Name.text = "[center]"+skin_data.names[current_skin]
 	else:
 		$Name.text = "Locked"
 	$Description.text = skin_data.descriptions[current_skin]
@@ -61,6 +61,7 @@ func refresh():
 			$Skin1/Icon/Texture.texture = icon_locked
 			$Skin1/Background.self_modulate = locked_background_color
 			$Skin1/index.text = str(current_skin-1)
+		$Skin1/Selected.visible=settings.selected_skin==current_skin-1
 	else:
 		if stats.unlocked_skins[current_skin-1]:
 			$Skin1/Icon/Texture.texture = skin_data.icons[skin_data.icons.size()-1]
@@ -70,6 +71,7 @@ func refresh():
 			$Skin1/Icon/Texture.texture = icon_locked
 			$Skin1/Background.self_modulate = locked_background_color
 			$Skin1/index.text = str(skin_data.icons.size()-1)
+		$Skin1/Selected.visible=settings.selected_skin==skin_data.icons.size()-1
 	if stats.unlocked_skins[current_skin]:
 		$Skin2/Icon/Texture.texture = skin_data.icons[current_skin]
 		$Skin2/Background.self_modulate = background_colors[skin_data.rarities[current_skin]]
@@ -78,6 +80,7 @@ func refresh():
 		$Skin2/Icon/Texture.texture = icon_locked
 		$Skin2/Background.self_modulate = locked_background_color
 		$Skin2/index.text = str(current_skin)
+	$Skin2/Selected.visible=settings.selected_skin==current_skin
 	if current_skin !=skin_data.icons.size()-1:
 		if stats.unlocked_skins[current_skin+1]:
 			$Skin3/Icon/Texture.texture = skin_data.icons[current_skin+1]
@@ -87,6 +90,7 @@ func refresh():
 			$Skin3/Icon/Texture.texture = icon_locked
 			$Skin3/Background.self_modulate = locked_background_color
 			$Skin3/index.text = str(current_skin+1)
+		$Skin3/Selected.visible=settings.selected_skin==current_skin+1
 	else:
 		if stats.unlocked_skins[0]:
 			$Skin3/Icon/Texture.texture = skin_data.icons[0]
@@ -95,6 +99,7 @@ func refresh():
 			$Skin3/Icon/Texture.texture = icon_locked
 			$Skin3/Background.self_modulate = locked_background_color
 		$Skin3/index.text = "0"
+		$Skin3/Selected.visible=settings.selected_skin==0
 
 func _on_select_pressed():
 	if settings.selected_skin !=current_skin:
@@ -123,3 +128,9 @@ func unlock_skin(i):
 	achievement_animator.current_animation = "Up"
 	await  get_tree().create_timer(2).timeout
 	achievement_animator.current_animation = "Down"
+
+
+func _on_secret_pressed():
+	stats.secrets_unlocked+=1
+	$Secret.disabled=true
+	refresh()
