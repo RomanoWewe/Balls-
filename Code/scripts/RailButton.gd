@@ -16,6 +16,8 @@ func _on_area_3d_area_entered(area):
 		return
 	if area_parent.fill_level>=weight_to_activate:
 		is_active = true
+		if $ButtonOffSound.is_inside_tree():
+			$ButtonOffSound.playing=true
 		for i in range(connections.size()):
 			activate(i)
 
@@ -25,6 +27,8 @@ func _on_area_3d_area_exited(area):
 		return
 	if is_active:
 		is_active = false
+		if $ButtonOnSound.is_inside_tree():
+			$ButtonOnSound.playing=false
 		for i in range(connections.size()):
 			deactivate(i)
 

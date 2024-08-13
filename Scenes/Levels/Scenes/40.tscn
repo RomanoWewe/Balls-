@@ -711,6 +711,7 @@ show_visuals = false
 [node name="0,-20,-10(0)" parent="static" instance=ExtResource("4_gyqnt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -10)
 current_direction = Vector3(0, 0, 1)
+current_power = 10.0
 
 [node name="0,5,-10(0)" parent="static" instance=ExtResource("4_gyqnt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -10)

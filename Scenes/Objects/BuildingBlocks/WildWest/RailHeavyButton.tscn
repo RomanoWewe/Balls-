@@ -17,7 +17,6 @@ size = Vector3(3, 4, 3)
 [node name="Rail" type="Node3D"]
 script = ExtResource("1_wrndp")
 weight_to_activate = 3
-catch_mask = 31
 
 [node name="MovingPlatform" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)

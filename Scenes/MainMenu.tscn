@@ -2518,6 +2518,7 @@ text = "[center]1
 "
 
 [node name="Selected" type="RichTextLabel" parent="Control/Skins/Skin3"]
+layout_mode = 0
 offset_top = 282.0
 offset_right = 133.0
 offset_bottom = 330.0
@@ -2593,6 +2594,7 @@ text = "[center]1
 "
 
 [node name="Selected" type="RichTextLabel" parent="Control/Skins/Skin2"]
+layout_mode = 0
 offset_top = 282.0
 offset_right = 133.0
 offset_bottom = 330.0
