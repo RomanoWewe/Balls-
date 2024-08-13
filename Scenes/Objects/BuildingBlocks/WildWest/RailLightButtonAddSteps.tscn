@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://qet5sso4kd4a"]
+
+[ext_resource type="Script" path="res://Code/scripts/RailButtonAddSteps.gd" id="1_40r8x"]
+[ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="2_n8nag"]
+[ext_resource type="ArrayMesh" uid="uid://qrt3db80cnq2" path="res://Assets/western2/button 1 for objects.obj" id="3_fni6n"]
+[ext_resource type="AudioStream" uid="uid://b4810rkqf81kw" path="res://Assets/Sounds/ButtonOff.mp3" id="4_okcm6"]
+[ext_resource type="AudioStream" uid="uid://bctijlrxgm6gm" path="res://Assets/Sounds/ButtonOn.mp3" id="5_t0m1k"]
+[ext_resource type="PackedScene" uid="uid://cwxr5dui74n3t" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailStraight.tscn" id="6_no2ms"]
+
+[sub_resource type="Curve" id="Curve_pr6tl"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6a3ym"]
+size = Vector3(3, 4, 3)
+
+[node name="Rail" type="Node3D"]
+script = ExtResource("1_40r8x")
+
+[node name="MovingPlatform" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+script = ExtResource("2_n8nag")
+speed_curve = SubResource("Curve_pr6tl")
+positions_count = 2
+next_position = 1
+positions = Array[Transform3D]([Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)])
+movement_times = Array[float]([0.02, 0.02])
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MovingPlatform"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.185032, 0)
+mesh = ExtResource("3_fni6n")
+
+[node name="ButtonOffSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_okcm6")
+volume_db = -20.0
+bus = &"Sound"
+
+[node name="ButtonOnSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_t0m1k")
+volume_db = -20.0
+bus = &"Sound"
+
+[node name="Rail" parent="." instance=ExtResource("6_no2ms")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_6a3ym")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
