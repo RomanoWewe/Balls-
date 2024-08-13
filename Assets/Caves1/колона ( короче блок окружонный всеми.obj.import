@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://yx0nk2chabas"
+path="res://.godot/imported/колона ( короче блок окружонный всеми.obj-6fc3e8db4b89a89b15eac2e1977191d2.mesh"
+
+[deps]
+
+files=["res://.godot/imported/колона ( короче блок окружонный всеми.obj-6fc3e8db4b89a89b15eac2e1977191d2.mesh"]
+
+source_file="res://Assets/Caves1/колона ( короче блок окружонный всеми.obj"
+dest_files=["res://.godot/imported/колона ( короче блок окружонный всеми.obj-6fc3e8db4b89a89b15eac2e1977191d2.mesh", "res://.godot/imported/колона ( короче блок окружонный всеми.obj-6fc3e8db4b89a89b15eac2e1977191d2.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

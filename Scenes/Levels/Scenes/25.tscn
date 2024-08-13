@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://rinemnhrpspx"]
+[gd_scene load_steps=19 format=3 uid="uid://rinemnhrpspx"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_yam7w"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="2_qh44e"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cv0ujlsyax1ov" path="res://Scenes/Objects/BuildingBlocks/Beach/island.tscn" id="15_arxnr"]
 [ext_resource type="PackedScene" uid="uid://c44nt21dv3k5w" path="res://Scenes/Objects/BuildingBlocks/Beach/Buttons/ButtonHoldNReturnBeach.tscn" id="16_4h11j"]
 [ext_resource type="PackedScene" uid="uid://cjvp3dq3rh27u" path="res://Scenes/Objects/BuildingBlocks/Beach/doubleDoorBeach.tscn" id="16_de7j2"]
+[ext_resource type="Script" path="res://Code/scripts/Water.gd" id="16_fy4hd"]
 [ext_resource type="PackedScene" uid="uid://bhuxrpafb33bf" path="res://Scenes/Objects/BuildingBlocks/Beach/Whirlpool.tscn" id="19_1s0xy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8a43"]
@@ -34,7 +35,7 @@ sky_mode = 1
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 50, 0, -10)
 
 [node name="empty" parent="." instance=ExtResource("3_whn2b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95086, -5.6292, 29.0448)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -5.5, 29.045)
 
 [node name="static" type="Node" parent="."]
 
@@ -423,8 +424,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -5, 0)
 [node name="-5,60,-10(1)" parent="static" instance=ExtResource("6_qtbfk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -5, -10)
 
-[node name="0,45,20" parent="." instance=ExtResource("19_1s0xy")]
+[node name="0,70,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("13_du27w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -10)
+sync_to_physics = false
+script = ExtResource("16_fy4hd")
+LINEAR_DAMP = 0.99
 
 [node name="MainCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 30, 31, -10)

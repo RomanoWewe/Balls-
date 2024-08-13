@@ -13,10 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://k3s6f10dpb4m" path="res://Scenes/Objects/BuildingBlocks/Beach/1sideV2.tscn" id="15_pgavi"]
 [ext_resource type="PackedScene" uid="uid://pucv7j6m3047" path="res://Scenes/Objects/BuildingBlocks/Beach/2sidesCO.tscn" id="16_4ddvt"]
 [ext_resource type="PackedScene" uid="uid://cv7h2aq0jcp6u" path="res://Scenes/Objects/BuildingBlocks/Basic/holeBeach.tscn" id="16_lkb8n"]
+[ext_resource type="Script" path="res://Code/scripts/Water.gd" id="16_o5ueu"]
 [ext_resource type="PackedScene" uid="uid://cjvp3dq3rh27u" path="res://Scenes/Objects/BuildingBlocks/Beach/doubleDoorBeach.tscn" id="17_214tl"]
 [ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="17_jxfkf"]
 [ext_resource type="PackedScene" uid="uid://c44nt21dv3k5w" path="res://Scenes/Objects/BuildingBlocks/Beach/Buttons/ButtonHoldNReturnBeach.tscn" id="18_4r3iy"]
-[ext_resource type="PackedScene" uid="uid://bhuxrpafb33bf" path="res://Scenes/Objects/BuildingBlocks/Beach/Whirlpool.tscn" id="22_2j1gh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8a43"]
 friction = 0.26
@@ -558,11 +558,14 @@ current_direction = Vector3(-1, 0, 0)
 [node name="-5,60,-10(0)" parent="static" instance=ExtResource("16_lkb8n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -5, -10)
 
-[node name="0,45,20" parent="." instance=ExtResource("22_2j1gh")]
+[node name="0,70,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("10_rw5cu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -10)
+sync_to_physics = false
+script = ExtResource("16_o5ueu")
+LINEAR_DAMP = 0.99
 
 [node name="MainCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 37.1489, 39.3678, -12.0741)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 37, 40, -12.074)
 fov = 80.0
 size = 25.0
 

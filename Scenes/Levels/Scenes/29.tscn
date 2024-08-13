@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ra7gweqty3vi"]
+[gd_scene load_steps=12 format=3 uid="uid://ra7gweqty3vi"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_rcjow"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="2_x6quf"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="9_gspjy"]
 [ext_resource type="PackedScene" uid="uid://bk5h1yt68k5f0" path="res://Scenes/Objects/BuildingBlocks/Beach/boxBeach.tscn" id="10_6vxvx"]
 [ext_resource type="PackedScene" uid="uid://cv7h2aq0jcp6u" path="res://Scenes/Objects/BuildingBlocks/Basic/holeBeach.tscn" id="11_nyseu"]
+[ext_resource type="Script" path="res://Code/scripts/Water.gd" id="11_pvabn"]
 [ext_resource type="PackedScene" uid="uid://c5x3uhyfhx45s" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterStill.tscn" id="13_ohv8i"]
 [ext_resource type="PackedScene" uid="uid://bhuxrpafb33bf" path="res://Scenes/Objects/BuildingBlocks/Beach/Whirlpool.tscn" id="21_pp23h"]
 
@@ -726,11 +727,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 10)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 25)
 buoyancy = 1.1
 
-[node name="0,45,20" parent="." instance=ExtResource("21_pp23h")]
+[node name="0,60,-25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("13_ohv8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -10)
+sync_to_physics = false
+script = ExtResource("11_pvabn")
+LINEAR_DAMP = 0.99
 
 [node name="MainCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 35, 37, 5.03966)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 35, 37, 5)
 fov = 80.0
 size = 25.0
 

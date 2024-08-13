@@ -15,9 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://c5x3uhyfhx45s" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterStill.tscn" id="13_5lrfy"]
 [ext_resource type="PackedScene" uid="uid://dd88rxngshpdk" path="res://Scenes/Objects/BuildingBlocks/Beach/2corners.tscn" id="13_pmsea"]
 [ext_resource type="PackedScene" uid="uid://cv0ujlsyax1ov" path="res://Scenes/Objects/BuildingBlocks/Beach/island.tscn" id="15_3m85d"]
-[ext_resource type="PackedScene" uid="uid://bhuxrpafb33bf" path="res://Scenes/Objects/BuildingBlocks/Beach/Whirlpool.tscn" id="15_ltjug"]
 [ext_resource type="PackedScene" uid="uid://bohv417au5whr" path="res://Scenes/Objects/BuildingBlocks/Beach/landlocked.tscn" id="16_ma34l"]
 [ext_resource type="PackedScene" uid="uid://c44nt21dv3k5w" path="res://Scenes/Objects/BuildingBlocks/Beach/Buttons/ButtonHoldNReturnBeach.tscn" id="17_gfhak"]
+[ext_resource type="Script" path="res://Code/scripts/Water.gd" id="18_gtsut"]
 [ext_resource type="PackedScene" uid="uid://cjvp3dq3rh27u" path="res://Scenes/Objects/BuildingBlocks/Beach/doubleDoorBeach.tscn" id="19_s3f6d"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8a43"]
@@ -42,7 +42,7 @@ sky_mode = 1
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 45, 0, -10)
 
 [node name="empty" parent="." instance=ExtResource("3_rbfgw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.13998, -6, 9.74326)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -6, 10)
 
 [node name="static" type="Node" parent="."]
 
@@ -420,8 +420,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -5)
 connections = [NodePath("../../DoubleDoor")]
 
-[node name="0,45,20" parent="." instance=ExtResource("15_ltjug")]
+[node name="0,70,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("13_5lrfy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -10)
+sync_to_physics = false
+script = ExtResource("18_gtsut")
+LINEAR_DAMP = 0.99
 
 [node name="-5,25,-5(0)" parent="." instance=ExtResource("4_hitia")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -5, -5)

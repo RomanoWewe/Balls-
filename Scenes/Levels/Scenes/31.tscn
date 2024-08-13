@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d356s3qmd8a15"]
+[gd_scene load_steps=22 format=3 uid="uid://d356s3qmd8a15"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_a668n"]
 [ext_resource type="PackedScene" uid="uid://blpll3jiurqsk" path="res://Scenes/Objects/BuildingBlocks/Beach/floorBeachSand.tscn" id="4_ojqm6"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://pucv7j6m3047" path="res://Scenes/Objects/BuildingBlocks/Beach/2sidesCO.tscn" id="15_sowpp"]
 [ext_resource type="PackedScene" uid="uid://c5x3uhyfhx45s" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterStill.tscn" id="16_4jn5d"]
 [ext_resource type="PackedScene" uid="uid://bk5h1yt68k5f0" path="res://Scenes/Objects/BuildingBlocks/Beach/boxBeach.tscn" id="17_ygn2v"]
+[ext_resource type="Script" path="res://Code/scripts/Water.gd" id="18_06cao"]
 [ext_resource type="PackedScene" uid="uid://c44nt21dv3k5w" path="res://Scenes/Objects/BuildingBlocks/Beach/Buttons/ButtonHoldNReturnBeach.tscn" id="18_ecr3w"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="18_yxgqq"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="20_d6e8v"]
@@ -556,9 +557,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -30)
 [node name="-5,65,-20(0)" parent="static" instance=ExtResource("7_ygple")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -5, -20)
 
-[node name="0,65,-20(0)" parent="static" instance=ExtResource("13_coyi7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -20)
-
 [node name="0,60,-20(0)" parent="static" instance=ExtResource("10_w64gt")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 60, 0, -20)
 
@@ -727,8 +725,14 @@ physics_material_override = SubResource("PhysicsMaterial_p8a43")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -30)
 physics_material_override = SubResource("PhysicsMaterial_p8a43")
 
+[node name="0,75,-20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("16_4jn5d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -20)
+sync_to_physics = false
+script = ExtResource("18_06cao")
+LINEAR_DAMP = 0.99
+
 [node name="MainCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 37.4856, 30.7261, -20.0512)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 38, 31, -20.051)
 fov = 80.0
 size = 25.0
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d0o4yw0sipgf0"]
+[gd_scene load_steps=19 format=3 uid="uid://d0o4yw0sipgf0"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_e8t1b"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="2_f8o21"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://c5x3uhyfhx45s" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterStill.tscn" id="15_g2hom"]
 [ext_resource type="PackedScene" uid="uid://c44nt21dv3k5w" path="res://Scenes/Objects/BuildingBlocks/Beach/Buttons/ButtonHoldNReturnBeach.tscn" id="16_ubwwu"]
 [ext_resource type="PackedScene" uid="uid://cjvp3dq3rh27u" path="res://Scenes/Objects/BuildingBlocks/Beach/doubleDoorBeach.tscn" id="17_03nky"]
+[ext_resource type="Script" path="res://Code/scripts/Water.gd" id="17_6j0km"]
 
 [node name="22" type="Node3D"]
 script = ExtResource("1_e8t1b")
@@ -392,8 +393,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -5, 5)
 [node name="-5,55,5" parent="static" instance=ExtResource("4_c87tg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, -5, 5)
 
-[node name="0,45,20" parent="." instance=ExtResource("7_l8kh0")]
+[node name="0,70,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("15_g2hom")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -10)
+sync_to_physics = false
+script = ExtResource("17_6j0km")
+LINEAR_DAMP = 0.99
 
 [node name="5,50,-10" parent="." instance=ExtResource("6_4jna4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10)
