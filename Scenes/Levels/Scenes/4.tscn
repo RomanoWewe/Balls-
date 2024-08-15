@@ -41,9 +41,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -5, 15)
 [node name="wall10" parent="." instance=ExtResource("3_7lsva")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -5, 5)
 
-[node name="wall17" parent="." instance=ExtResource("3_7lsva")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, 10)
-
 [node name="wall18" parent="." instance=ExtResource("3_7lsva")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -5, 0)
 
@@ -58,6 +55,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -5, 5)
 
 [node name="wall22" parent="." instance=ExtResource("3_7lsva")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -5, 10)
+
+[node name="wall25" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -5, 0)
+
+[node name="wall26" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -5, -5)
+
+[node name="wall27" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -5, 15)
+
+[node name="wall28" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -5, 5)
+
+[node name="wall29" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -5, 10)
+
+[node name="wall30" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, 0)
+
+[node name="wall31" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, -5)
+
+[node name="wall32" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, 15)
+
+[node name="wall33" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, 5)
+
+[node name="wall34" parent="." instance=ExtResource("3_7lsva")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, 10)
 
 [node name="wall3" parent="." instance=ExtResource("3_7lsva")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -5)
@@ -133,6 +160,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -10, 10)
 
 [node name="floor16" parent="." instance=ExtResource("1_loc5m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -10, 10)
+
+[node name="floor10" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -10, -5)
+
+[node name="floor15" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -10, -5)
+
+[node name="floor22" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -10, -5)
+
+[node name="floor23" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -10, -5)
+
+[node name="floor24" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, -5)
+
+[node name="floor25" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -10, -5)
+
+[node name="floor26" parent="." instance=ExtResource("1_loc5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -10, -5)
 
 [node name="floor20" parent="." instance=ExtResource("1_loc5m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -10, 5)
