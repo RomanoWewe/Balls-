@@ -1,8 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://btq1pvoqu357x"]
+[gd_scene load_steps=22 format=3 uid="uid://btq1pvoqu357x"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_bl0ma"]
-[ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="2_xy3u3"]
-[ext_resource type="PackedScene" uid="uid://dd88rxngshpdk" path="res://Scenes/Objects/BuildingBlocks/Beach/2corners.tscn" id="3_jppxx"]
 [ext_resource type="PackedScene" uid="uid://cn4cthpfbswys" path="res://Scenes/Objects/BuildingBlocks/WildWest/BridgeWooden.tscn" id="4_txajo"]
 [ext_resource type="PackedScene" uid="uid://irygqx05pqx3" path="res://Scenes/Objects/BuildingBlocks/WildWest/floorWildWest.tscn" id="5_c2yd2"]
 [ext_resource type="PackedScene" uid="uid://7r4f4bpsd55u" path="res://Scenes/Objects/BuildingBlocks/WildWest/BridgeStone.tscn" id="6_6m3bf"]
@@ -33,15 +31,6 @@ rough = true
 script = ExtResource("1_bl0ma")
 
 [node name="static" type="Node" parent="."]
-
-[node name="0,1390,145(0)" parent="static" instance=ExtResource("2_xy3u3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1390, 0, 145)
-
-[node name="0,1715,-250(0)" parent="static" instance=ExtResource("3_jppxx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1715, 0, -250)
-
-[node name="0,-120,840(0)" parent="static" instance=ExtResource("4_txajo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 840)
 
 [node name="-5,65,-5(0)" parent="static" instance=ExtResource("5_c2yd2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -5, -5)
@@ -762,11 +751,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -25)
 
 [node name="0,25,5(0)" parent="static" instance=ExtResource("14_541fo")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 31, 0, 5)
-reload_time = 0.1
+reload_time = 0.3
 
 [node name="0,60,5(0)" parent="static" instance=ExtResource("14_541fo")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 60, 0, 5)
-reload_time = 0.1
+reload_time = 0.3
 
 [node name="0,15,-20(0)" parent="static" instance=ExtResource("23_5th8l")]
 transform = Transform3D(-1, 0, 2.62268e-07, 0, 1, 0, -2.62268e-07, 0, -1, 15, 0, -20)
@@ -816,5 +805,5 @@ sky_mode = 1
 
 [node name="MainCamera" type="Camera3D" parent="empty"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 13.4997, 51, -42.4535)
-fov = 80.0
+fov = 74.0
 size = 25.0

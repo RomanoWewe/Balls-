@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://k3s6f10dpb4m" path="res://Scenes/Objects/BuildingBlocks/Beach/1sideV2.tscn" id="8_v68qq"]
 [ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="9_gspjy"]
 [ext_resource type="PackedScene" uid="uid://bk5h1yt68k5f0" path="res://Scenes/Objects/BuildingBlocks/Beach/boxBeach.tscn" id="10_6vxvx"]
+[ext_resource type="PackedScene" uid="uid://b04sv73h2yqs8" path="res://Scenes/Objects/BuildingBlocks/Beach/plane.tscn" id="11_366qu"]
 [ext_resource type="PackedScene" uid="uid://cv7h2aq0jcp6u" path="res://Scenes/Objects/BuildingBlocks/Basic/holeBeach.tscn" id="11_nyseu"]
-[ext_resource type="Script" path="res://Code/scripts/Water.gd" id="11_pvabn"]
 [ext_resource type="PackedScene" uid="uid://c5x3uhyfhx45s" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterStill.tscn" id="13_ohv8i"]
 [ext_resource type="PackedScene" uid="uid://bhuxrpafb33bf" path="res://Scenes/Objects/BuildingBlocks/Beach/Whirlpool.tscn" id="21_pp23h"]
 
@@ -727,14 +727,187 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 10)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 25)
 buoyancy = 1.1
 
-[node name="0,60,-25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("13_ohv8i")]
+[node name="0,60,-25(0)" parent="static" instance=ExtResource("13_ohv8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -10)
+
+[node name="0,-5,-20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -20)
 sync_to_physics = false
-script = ExtResource("11_pvabn")
-LINEAR_DAMP = 0.99
+
+[node name="0,-5,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -15)
+sync_to_physics = false
+
+[node name="0,-5,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -10)
+sync_to_physics = false
+
+[node name="0,-5,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+sync_to_physics = false
+
+[node name="0,-5,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+sync_to_physics = false
+
+[node name="0,-5,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
+sync_to_physics = false
+
+[node name="0,-5,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 10)
+sync_to_physics = false
+
+[node name="0,-5,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 15)
+sync_to_physics = false
+
+[node name="0,-5,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 20)
+sync_to_physics = false
+
+[node name="0,-5,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 25)
+sync_to_physics = false
+
+[node name="0,-5,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 30)
+sync_to_physics = false
+
+[node name="0,75,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 30)
+sync_to_physics = false
+
+[node name="0,75,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 25)
+sync_to_physics = false
+
+[node name="0,75,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 20)
+sync_to_physics = false
+
+[node name="0,75,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 15)
+sync_to_physics = false
+
+[node name="0,75,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -5)
+sync_to_physics = false
+
+[node name="0,75,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 0)
+sync_to_physics = false
+
+[node name="0,75,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 5)
+sync_to_physics = false
+
+[node name="0,75,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 10)
+sync_to_physics = false
+
+[node name="0,75,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -10)
+sync_to_physics = false
+
+[node name="0,75,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -15)
+sync_to_physics = false
+
+[node name="0,75,-20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -20)
+sync_to_physics = false
+
+[node name="0,80,-20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, -20)
+sync_to_physics = false
+
+[node name="0,80,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, -15)
+sync_to_physics = false
+
+[node name="0,80,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, -10)
+sync_to_physics = false
+
+[node name="0,80,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, -5)
+sync_to_physics = false
+
+[node name="0,80,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 0)
+sync_to_physics = false
+
+[node name="0,80,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 5)
+sync_to_physics = false
+
+[node name="0,80,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 10)
+sync_to_physics = false
+
+[node name="0,80,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 15)
+sync_to_physics = false
+
+[node name="0,80,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 20)
+sync_to_physics = false
+
+[node name="0,80,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 25)
+sync_to_physics = false
+
+[node name="0,80,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, 30)
+sync_to_physics = false
+
+[node name="0,-10,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 30)
+sync_to_physics = false
+
+[node name="0,-10,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 25)
+sync_to_physics = false
+
+[node name="0,-10,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 20)
+sync_to_physics = false
+
+[node name="0,-10,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 15)
+sync_to_physics = false
+
+[node name="0,-10,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+sync_to_physics = false
+
+[node name="0,-10,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 5)
+sync_to_physics = false
+
+[node name="0,-10,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+sync_to_physics = false
+
+[node name="0,-10,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -5)
+sync_to_physics = false
+
+[node name="0,-10,-10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+sync_to_physics = false
+
+[node name="0,-10,-15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -15)
+sync_to_physics = false
+
+[node name="0,-10,-20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_366qu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -20)
+sync_to_physics = false
 
 [node name="MainCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 35, 37, 5)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 35, 33, 5)
 fov = 80.0
 size = 25.0
 

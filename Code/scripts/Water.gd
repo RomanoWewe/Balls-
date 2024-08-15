@@ -40,6 +40,8 @@ func _on_area_3d_body_exited(body):
 			body.amount_of_ground_contacted-=1
 
 func get_body_submerge_percentage(body : Node3D):
+	if !body.has_node("mesh"):
+		return 0
 	var body_aabb = body.get_node("mesh").get_aabb() as AABB
 	body_aabb.position+=body.get_node("mesh").global_position
 	return body_aabb.intersection(aabb).get_volume()/body_aabb.get_volume()

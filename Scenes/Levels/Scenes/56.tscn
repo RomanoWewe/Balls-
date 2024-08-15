@@ -1,8 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://cddfaacajapxn"]
+[gd_scene load_steps=19 format=3 uid="uid://cddfaacajapxn"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_26c7f"]
-[ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="2_vawn6"]
-[ext_resource type="PackedScene" uid="uid://dd88rxngshpdk" path="res://Scenes/Objects/BuildingBlocks/Beach/2corners.tscn" id="3_qdirl"]
 [ext_resource type="PackedScene" uid="uid://cn4cthpfbswys" path="res://Scenes/Objects/BuildingBlocks/WildWest/BridgeWooden.tscn" id="4_42ie8"]
 [ext_resource type="PackedScene" uid="uid://irygqx05pqx3" path="res://Scenes/Objects/BuildingBlocks/WildWest/floorWildWest.tscn" id="5_5lnvi"]
 [ext_resource type="PackedScene" uid="uid://b1b031yv6tgqc" path="res://Scenes/Objects/BuildingBlocks/WildWest/CanyonWildWest.tscn" id="6_niymj"]
@@ -30,15 +28,6 @@ rough = true
 script = ExtResource("1_26c7f")
 
 [node name="static" type="Node" parent="."]
-
-[node name="0,1390,145(0)" parent="static" instance=ExtResource("2_vawn6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1390, 0, 145)
-
-[node name="0,1715,-250(0)" parent="static" instance=ExtResource("3_qdirl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1715, 0, -250)
-
-[node name="0,-120,840(0)" parent="static" instance=ExtResource("4_42ie8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 840)
 
 [node name="-5,65,-25(0)" parent="static" instance=ExtResource("5_5lnvi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -5, -25)
@@ -817,7 +806,7 @@ physics_material_override = SubResource("PhysicsMaterial_nsy35")
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 60, 0, 5)
 
 [node name="empty" parent="." instance=ExtResource("25_62pdr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4402, -17.3926, 29.0471)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -17.5, 30)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="empty"]
 transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.5, -0.784886, 0.365998, -0.105519, 0.0240707, -0.0528288)
@@ -827,6 +816,6 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="MainCamera" type="Camera3D" parent="empty"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 11.9975, 51, -41.4535)
-fov = 80.0
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.5, 51, -42.5)
+fov = 74.0
 size = 25.0

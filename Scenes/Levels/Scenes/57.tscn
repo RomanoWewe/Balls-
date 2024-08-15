@@ -1,8 +1,6 @@
-[gd_scene load_steps=36 format=3 uid="uid://ddt7so1ddv71p"]
+[gd_scene load_steps=34 format=3 uid="uid://ddt7so1ddv71p"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_x05vj"]
-[ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="2_t4d1h"]
-[ext_resource type="PackedScene" uid="uid://dd88rxngshpdk" path="res://Scenes/Objects/BuildingBlocks/Beach/2corners.tscn" id="3_x2i1o"]
 [ext_resource type="PackedScene" uid="uid://cn4cthpfbswys" path="res://Scenes/Objects/BuildingBlocks/WildWest/BridgeWooden.tscn" id="4_mt1ml"]
 [ext_resource type="PackedScene" uid="uid://irygqx05pqx3" path="res://Scenes/Objects/BuildingBlocks/WildWest/floorWildWest.tscn" id="5_qr1ud"]
 [ext_resource type="PackedScene" uid="uid://cd0h3jlrhq4rw" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallStraightWildWest.tscn" id="6_pnsky"]
@@ -57,12 +55,6 @@ friction = 0.1
 script = ExtResource("1_x05vj")
 
 [node name="static" type="Node" parent="."]
-
-[node name="0,1390,145(0)" parent="static" instance=ExtResource("2_t4d1h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1390, 0, 145)
-
-[node name="0,1715,-250(0)" parent="static" instance=ExtResource("3_x2i1o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1715, 0, -250)
 
 [node name="-5,65,-25(0)" parent="static" instance=ExtResource("5_qr1ud")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, -5, -25)
@@ -870,7 +862,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 0,
 physics_material_override = SubResource("PhysicsMaterial_by6o8")
 
 [node name="empty" parent="." instance=ExtResource("17_4ysnq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0714, -17.3926, 26.5887)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -17, 25)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="empty"]
 transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.5, -0.784886, 0.365998, -0.105519, 0.0240707, -0.0528288)
@@ -880,8 +872,8 @@ shadow_enabled = true
 sky_mode = 1
 
 [node name="MainCamera" type="Camera3D" parent="empty"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.3205, 51, -38.9752)
-fov = 80.0
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12.5, 51, -37.5)
+fov = 72.0
 size = 25.0
 
 [node name="InvisibleWallWildWest" parent="." instance=ExtResource("28_jo3s6")]

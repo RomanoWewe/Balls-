@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cv7h2aq0jcp6u"]
 
 [ext_resource type="Script" path="res://Code/scripts/Hole.gd" id="1_ef4yg"]
-[ext_resource type="ArrayMesh" uid="uid://bojsi24x0xlq2" path="res://Assets/3D/Beach/трубка скин 1.obj" id="2_hrfdu"]
+[ext_resource type="ArrayMesh" uid="uid://ef6nmxbwxhx0" path="res://Assets/3D/beach 33/holle new.obj" id="2_40ebg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yqt3i"]
 size = Vector3(4, 2.5, 4)
@@ -43,7 +43,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
 shape = SubResource("BoxShape3D_q15y2")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
-mesh = ExtResource("2_hrfdu")
+mesh = ExtResource("2_40ebg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

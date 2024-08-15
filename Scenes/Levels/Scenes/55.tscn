@@ -1,8 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://ctxwbq8er8tw0"]
+[gd_scene load_steps=29 format=3 uid="uid://ctxwbq8er8tw0"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_1n3vk"]
-[ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="2_q8xg1"]
-[ext_resource type="PackedScene" uid="uid://dd88rxngshpdk" path="res://Scenes/Objects/BuildingBlocks/Beach/2corners.tscn" id="3_47opr"]
 [ext_resource type="PackedScene" uid="uid://cn4cthpfbswys" path="res://Scenes/Objects/BuildingBlocks/WildWest/BridgeWooden.tscn" id="4_8nxie"]
 [ext_resource type="PackedScene" uid="uid://irygqx05pqx3" path="res://Scenes/Objects/BuildingBlocks/WildWest/floorWildWest.tscn" id="5_83cwo"]
 [ext_resource type="PackedScene" uid="uid://cd0h3jlrhq4rw" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallStraightWildWest.tscn" id="6_26mp7"]
@@ -47,15 +45,6 @@ friction = 0.26
 script = ExtResource("1_1n3vk")
 
 [node name="static" type="Node" parent="."]
-
-[node name="0,1390,145(0)" parent="static" instance=ExtResource("2_q8xg1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1390, 0, 145)
-
-[node name="0,1715,-250(0)" parent="static" instance=ExtResource("3_47opr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1715, 0, -250)
-
-[node name="0,-120,840(0)" parent="static" instance=ExtResource("4_8nxie")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 0, 840)
 
 [node name="-5,50,0(0)" parent="static" instance=ExtResource("5_83cwo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -5, 0)
@@ -813,5 +802,4 @@ sky_mode = 1
 
 [node name="MainCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 42.4213, 33.3752, -12.4535)
-fov = 80.0
 size = 25.0

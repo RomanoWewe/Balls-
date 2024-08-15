@@ -700,5 +700,5 @@ sky_mode = 1
 
 [node name="MainCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 18, 31, -24.9923)
-fov = 80.0
+fov = 70.0
 size = 25.0
