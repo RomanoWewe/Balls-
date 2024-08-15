@@ -17,7 +17,7 @@ ambient_light_color = Color(0.415686, 0.380392, 0.427451, 1)
 script = ExtResource("1_y6tpl")
 
 [node name="MainCamera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 3, 25, -10)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 21, -8)
 fov = 80.0
 size = 25.0
 
@@ -198,6 +198,198 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, 0)
 
 [node name="-10,5" parent="static" instance=ExtResource("2_c15us")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -5, 5)
+
+[node name="0,10,-10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+sync_to_physics = false
+
+[node name="0,5,10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 10)
+sync_to_physics = false
+
+[node name="0,10,10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+sync_to_physics = false
+
+[node name="0,15,10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 10)
+sync_to_physics = false
+
+[node name="0,20,10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 10)
+sync_to_physics = false
+
+[node name="0,10,-15(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -15)
+sync_to_physics = false
+
+[node name="0,10,-20(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -20)
+sync_to_physics = false
+
+[node name="0,10,-25(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -25)
+sync_to_physics = false
+
+[node name="0,15,-10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -10)
+sync_to_physics = false
+
+[node name="0,15,-15(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -15)
+sync_to_physics = false
+
+[node name="0,15,-20(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -20)
+sync_to_physics = false
+
+[node name="0,15,-25(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -25)
+sync_to_physics = false
+
+[node name="0,20,-20(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
+sync_to_physics = false
+
+[node name="0,20,-15(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -15)
+sync_to_physics = false
+
+[node name="0,20,-10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -10)
+sync_to_physics = false
+
+[node name="0,20,-25(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -25)
+sync_to_physics = false
+
+[node name="0,20,-30(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -30)
+sync_to_physics = false
+
+[node name="0,15,-30(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -30)
+sync_to_physics = false
+
+[node name="0,10,-30(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -30)
+sync_to_physics = false
+
+[node name="0,5,-30(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -30)
+sync_to_physics = false
+
+[node name="0,0,-30(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+sync_to_physics = false
+
+[node name="0,-20,10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 10)
+sync_to_physics = false
+
+[node name="0,-20,5(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 5)
+sync_to_physics = false
+
+[node name="0,-20,0(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
+sync_to_physics = false
+
+[node name="0,-20,-5(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -5)
+sync_to_physics = false
+
+[node name="0,-20,-10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -10)
+sync_to_physics = false
+
+[node name="0,-20,-15(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -15)
+sync_to_physics = false
+
+[node name="0,-20,-20(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
+sync_to_physics = false
+
+[node name="0,-20,-25(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -25)
+sync_to_physics = false
+
+[node name="0,-20,-30(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -30)
+sync_to_physics = false
+
+[node name="0,25,-30(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -30)
+sync_to_physics = false
+
+[node name="0,25,-25(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -25)
+sync_to_physics = false
+
+[node name="0,25,-20(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -20)
+sync_to_physics = false
+
+[node name="0,25,-15(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -15)
+sync_to_physics = false
+
+[node name="0,25,-10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -10)
+sync_to_physics = false
+
+[node name="0,25,-5(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -5)
+sync_to_physics = false
+
+[node name="0,25,0(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
+sync_to_physics = false
+
+[node name="0,25,5(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 5)
+sync_to_physics = false
+
+[node name="0,25,10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 10)
+sync_to_physics = false
+
+[node name="0,-25,-30(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -30)
+sync_to_physics = false
+
+[node name="0,-25,-25(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -25)
+sync_to_physics = false
+
+[node name="0,-25,-20(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -20)
+sync_to_physics = false
+
+[node name="0,-25,-15(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -15)
+sync_to_physics = false
+
+[node name="0,-25,-10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -10)
+sync_to_physics = false
+
+[node name="0,-25,-5(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -5)
+sync_to_physics = false
+
+[node name="0,-25,0(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)
+sync_to_physics = false
+
+[node name="0,-25,5(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 5)
+sync_to_physics = false
+
+[node name="0,-25,10(0)" type="AnimatableBody3D" parent="static" instance=ExtResource("3_q3se4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 10)
+sync_to_physics = false
 
 [node name="Box" parent="." instance=ExtResource("8_bnyjp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
