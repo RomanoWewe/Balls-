@@ -770,7 +770,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 0, -25)
 
 [node name="0,50,-25(0)" parent="static" instance=ExtResource("25_o0hdt")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 50, 0, -25)
-reload_time = 0.1
+reload_time = 0.3
 
 [node name="empty" parent="." instance=ExtResource("28_nd5oy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0714, -17.3926, 26.5887)

@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://co8qy2ojkjpej" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailHeavyButton.tscn" id="17_7ijsd"]
 [ext_resource type="Script" path="res://Code/scripts/RailButtonToggle.gd" id="17_ephb0"]
 [ext_resource type="PackedScene" uid="uid://rgqv4xt7k8wa" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailRotator180.tscn" id="20_i4kau"]
-[ext_resource type="Script" path="res://Code/scripts/RailButton.gd" id="22_ns6aa"]
 [ext_resource type="PackedScene" uid="uid://dbhbnk335ny34" path="res://Scenes/Objects/BuildingBlocks/WildWest/HoleWildWest.tscn" id="23_7kw3s"]
 [ext_resource type="PackedScene" uid="uid://xuchxlo3mui8" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailLightButton.tscn" id="27_cn2fr"]
 [ext_resource type="PackedScene" uid="uid://cckwyapi61vvd" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailBarrier.tscn" id="30_ufs1b"]
@@ -781,21 +780,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, -5, -25)
 [node name="0,65,-25(0)" parent="static" instance=ExtResource("10_vfiqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -25)
 
-[node name="0,75,-25(0)" type="StaticBody3D" parent="static" instance=ExtResource("10_vfiqs")]
+[node name="0,75,-25(0)" parent="static" instance=ExtResource("10_vfiqs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -25)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,70,-5(0)" type="StaticBody3D" parent="static" instance=ExtResource("10_vfiqs")]
+[node name="0,70,-5(0)" parent="static" instance=ExtResource("10_vfiqs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70, 0, -5)
-collision_layer = 8
-collision_mask = 8
 
-[node name="0,60,0(0)" type="Node3D" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("17_7ijsd")]
+[node name="0,60,0(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("17_7ijsd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 0)
-script = ExtResource("22_ns6aa")
 connections = [NodePath("../0,55,-20(0)"), NodePath("../0,55,-20(0)")]
-weight_to_activate = 3
 
 [node name="empty" parent="." instance=ExtResource("35_668bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9121, -17.3926, 29.8806)

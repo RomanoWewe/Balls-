@@ -46,4 +46,3 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.5, 
 script = ExtResource("4_4w2cq")
 activate_sound = ExtResource("5_sm7gr")
 deactivate_sound = ExtResource("6_8hxa5")
-bus = null
