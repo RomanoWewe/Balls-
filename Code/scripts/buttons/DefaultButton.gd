@@ -32,7 +32,7 @@ func _on_body_entered(body):
 	if not body is GravitationalObject:
 		return
 	times_activated +=1
-	if is_active:
+	if times_activated>1:
 		return
 	if $ButtonOffSound.is_inside_tree():
 		$ButtonOffSound.playing=false
@@ -45,12 +45,14 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if not body is GravitationalObject:
 		return
+	times_activated-=1
+	if times_activated>0:
+		return
 	is_active = true
-	var old_times_activated = times_activated
 	var waiting_time = delay
 	var prev_number = floor(waiting_time)
 	while waiting_time>0:
-		if old_times_activated!=times_activated:
+		if times_activated>0:
 			return
 		if (prev_number != floor(waiting_time)):
 			prev_number = floor(waiting_time)

@@ -3,7 +3,7 @@ extends DefaultButton
 class_name ButtonToggle
 
 func _on_body_exited(body):
-	pass
+	times_activated-=1
 
 func activate(index:int):
 	super.activate(index)
@@ -19,6 +19,9 @@ func deactivate(index:int):
 
 func _on_body_entered(body):
 	if not body is GravitationalObject:
+		return
+	times_activated+=1
+	if times_activated>1:
 		return
 	is_active = !is_active
 	if $ButtonOffSound.is_inside_tree() and is_active:
