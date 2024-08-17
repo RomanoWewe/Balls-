@@ -30,9 +30,6 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wa4fo"]
 friction = 0.01
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8a43"]
-friction = 0.26
-
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nsy35"]
 friction = 0.5
 rough = true
@@ -47,9 +44,6 @@ rough = true
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_1q6hv"]
 friction = 0.26
 rough = true
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_by6o8"]
-friction = 0.1
 
 [node name="57" type="Node3D"]
 script = ExtResource("1_x05vj")
@@ -699,14 +693,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -5)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 65, 0, -15)
 physics_material_override = SubResource("PhysicsMaterial_wa4fo")
 
-[node name="0,60,-25(0)" parent="static" instance=ExtResource("12_hsce0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -25)
-physics_material_override = SubResource("PhysicsMaterial_p8a43")
-
-[node name="0,60,0(0)" parent="static" instance=ExtResource("12_hsce0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 0)
-physics_material_override = SubResource("PhysicsMaterial_p8a43")
-
 [node name="0,10,-15(0)" parent="static" instance=ExtResource("16_0e6ed")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8733, 0, -15)
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
@@ -803,12 +789,6 @@ physics_material_override = SubResource("PhysicsMaterial_1q6hv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 0, 1380)
 physics_material_override = SubResource("PhysicsMaterial_1q6hv")
 
-[node name="-5,40,-5(0)" parent="static" instance=ExtResource("10_v0phq")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 40, -5, -5)
-
-[node name="-5,45,-5(0)" parent="static" instance=ExtResource("10_v0phq")]
-transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 45, -5, -5)
-
 [node name="-5,40,0(0)" parent="static" instance=ExtResource("5_qr1ud")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -5, 0)
 
@@ -857,9 +837,25 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 0,
 [node name="0,45,5(0)" parent="static" instance=ExtResource("6_pnsky")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 45, 0, 5)
 
-[node name="0,25,0(1)" parent="static" instance=ExtResource("19_uh4fg")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 0, 0)
-physics_material_override = SubResource("PhysicsMaterial_by6o8")
+[node name="-5,45,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_qr1ud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -5, -5)
+collision_layer = 7
+collision_mask = 7
+
+[node name="-5,40,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("5_qr1ud")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -5, -5)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,40,-5(0)" type="StaticBody3D" parent="static" instance=ExtResource("17_n2e60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -5)
+collision_layer = 8
+collision_mask = 8
+
+[node name="0,45,-5(0)" type="StaticBody3D" parent="static" instance=ExtResource("17_n2e60")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -5)
+collision_layer = 8
+collision_mask = 8
 
 [node name="empty" parent="." instance=ExtResource("17_4ysnq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -17, 25)
