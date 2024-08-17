@@ -78,7 +78,7 @@ size = Vector3(1, 6, 1)
 size = Vector3(1, 2, 1.8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_insim"]
-size = Vector3(4, 4, 4)
+size = Vector3(4, 4, 0.1)
 
 [node name="GoldExtractor" type="StaticBody3D" node_paths=PackedStringArray("spawn_point")]
 physics_material_override = SubResource("PhysicsMaterial_wa4fo")

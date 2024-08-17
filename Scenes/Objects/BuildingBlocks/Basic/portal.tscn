@@ -9,8 +9,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_5y42k"]
 size = Vector3(2, 6, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mb28o"]
-albedo_color = Color(0.2, 0.2, 0.2, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4yau"]
 albedo_texture = ExtResource("2_cgyte")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bwv35"]
@@ -30,7 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11731, 0, -2.50001)
 shape = SubResource("BoxShape3D_5y42k")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_mb28o")
+material_override = SubResource("StandardMaterial3D_l4yau")
 mesh = ExtResource("3_fsinn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -52,6 +51,6 @@ sounds_amount = 1
 volume_range = Vector2(-15, -15)
 
 [node name="TeleportPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.99457, 1.28615)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 1.1)
 
 [connection signal="body_entered" from="area" to="." method="_on_area_body_entered"]

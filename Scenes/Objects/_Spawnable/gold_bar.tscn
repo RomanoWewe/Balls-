@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdbc8ejx8dv1r"]
+[gd_scene load_steps=5 format=3 uid="uid://cdbc8ejx8dv1r"]
 
 [ext_resource type="Script" path="res://Code/scripts/GravitationalObject.gd" id="1_wu167"]
 [ext_resource type="ArrayMesh" uid="uid://dqoqkwhpv3eu8" path="res://Assets/western2/слиток голды.obj" id="2_801t0"]
+[ext_resource type="Script" path="res://Code/scripts/DieAfterTime.gd" id="3_obclj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_id74y"]
 size = Vector3(2, 0.4, 0.8)
@@ -15,5 +16,9 @@ mesh = ExtResource("2_801t0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_id74y")
+
+[node name="DieAfterTime" type="Node" parent="."]
+script = ExtResource("3_obclj")
+time_seconds = 3.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
