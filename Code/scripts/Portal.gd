@@ -73,7 +73,7 @@ func _on_area_body_entered(body):
 		return
 	if (!auto_cycling and steps_left<1):
 		return
-	if (not body is GravitationalObject):
+	if (not body is GravitationalObject and not body is Minecart):
 		return
 	if exit_portal and not cooldown and  not body.invincible:
 		body.global_position = exit_portal.get_node("TeleportPoint").global_position

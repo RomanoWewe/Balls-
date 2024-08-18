@@ -6,6 +6,7 @@ class_name Minecart
 @export var gold_fill_meshes :Array[ArrayMesh] = []
 @export var speed_damp :=0.997
 @export var bounce := 0.5
+@export var invincible :=false
 var contacted_bodies := []
 var previous_frame_horizontal_velocity := Vector3.ZERO
 
@@ -45,3 +46,8 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body in contacted_bodies:
 		contacted_bodies.erase(body)
+
+func make_invincible(seconds:float):
+	invincible = true
+	await get_tree().create_timer(seconds).timeout
+	invincible=false
