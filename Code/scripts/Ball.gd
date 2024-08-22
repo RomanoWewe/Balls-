@@ -5,10 +5,10 @@ var mesh : Node3D
 var amount_of_ground_contacted:=0
 var is_destroyed :=false
 @export var destroyed_particles = preload("res://Scenes/Objects/_Spawnable/shards.tscn")
-@export var move_particles_instance : GPUParticles3D
+@export var light : Node3D
 
 func _ready():
-	move_particles_instance.call_deferred("reparent",get_parent())
+	light.call_deferred("reparent",get_parent())
 	$Skin.queue_free()
 	mesh = load("res://skindata.tres").scenes[load("user://settings.tres").selected_skin].instantiate()
 	add_child(mesh)
@@ -16,8 +16,7 @@ func _ready():
 
 func _process(delta):
 	super._process(delta)
-	move_particles_instance.position = position - Vector3.UP * 1.5
-	move_particles_instance.amount_ratio = (linear_velocity.length()/max_speed)
+	light.position = position + Vector3.UP * 5
 	if is_destroyed:
 		return
 	if !$RollingSound.playing:

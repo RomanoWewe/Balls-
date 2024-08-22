@@ -1,15 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://irygqx05pqx3"]
+[gd_scene load_steps=6 format=3 uid="uid://b5lgd6jcsqxf3"]
 
-[ext_resource type="Texture2D" uid="uid://b6hfmcy6gisna" path="res://Assets/Textures/WWFloor.png" id="1_kom45"]
-[ext_resource type="Texture2D" uid="uid://hi6sjerqxc0i" path="res://Assets/Textures/NormalMap (1).png" id="2_66agl"]
+[ext_resource type="Texture2D" uid="uid://spgfb3cpa3w0" path="res://Assets/Textures/floorTile.png" id="1_7wotc"]
+[ext_resource type="Texture2D" uid="uid://hi6sjerqxc0i" path="res://Assets/Textures/NormalMap (1).png" id="2_2vriw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e22vb"]
 size = Vector3(5, 5, 5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_87mhg"]
-albedo_texture = ExtResource("1_kom45")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw38d"]
+albedo_texture = ExtResource("1_7wotc")
 normal_enabled = true
-normal_texture = ExtResource("2_66agl")
+normal_texture = ExtResource("2_2vriw")
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_unfwo"]
@@ -25,5 +25,5 @@ shape = SubResource("BoxShape3D_e22vb")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-material_override = SubResource("StandardMaterial3D_87mhg")
+material_override = SubResource("StandardMaterial3D_sw38d")
 mesh = SubResource("PlaneMesh_unfwo")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://rphxqfqajesi"]
+
+[ext_resource type="ArrayMesh" uid="uid://circeplcnvwnl" path="res://Assets/Caves1/125.obj" id="1_ot2gn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
+size = Vector3(5, 10, 5)
+
+[node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_t24w4")
+
+[node name="122" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+mesh = ExtResource("1_ot2gn")

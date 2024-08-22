@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7i03vwwk8xxc"]
+[gd_scene load_steps=11 format=3 uid="uid://c7i03vwwk8xxc"]
 
 [ext_resource type="Script" path="res://Code/scripts/Ball.gd" id="1_tkg3c"]
 [ext_resource type="AudioStream" uid="uid://bxyg6it8lvmts" path="res://Assets/Sounds/BallDestroy.mp3" id="4_4wlkm"]
@@ -6,7 +6,6 @@
 [ext_resource type="AudioStream" uid="uid://dyj2cabo8xekl" path="res://Assets/Sounds/RollingSound1.wav" id="6_ln7sw"]
 [ext_resource type="PackedScene" uid="uid://ccuair27bjkhj" path="res://Scenes/Objects/_Skins/DefaultSkin.tscn" id="7_1tsxk"]
 [ext_resource type="AudioStream" uid="uid://cvl4ws5kfetw" path="res://Assets/Sounds/BallHit1.wav" id="7_o4qjx"]
-[ext_resource type="PackedScene" uid="uid://ck1ajqkiep41a" path="res://Scenes/Objects/_Spawnable/BallParticles.tscn" id="8_iudsg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nsy35"]
 friction = 0.5
@@ -23,7 +22,7 @@ albedo_color = Color(1, 1, 1, 0)
 radius = 2.0
 height = 4.0
 
-[node name="ball" type="RigidBody3D" node_paths=PackedStringArray("move_particles_instance")]
+[node name="ball" type="RigidBody3D" node_paths=PackedStringArray("light")]
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
 gravity_scale = 10.0
 continuous_cd = true
@@ -34,7 +33,7 @@ linear_damp = 1.0
 angular_damp_mode = 1
 angular_damp = 1.0
 script = ExtResource("1_tkg3c")
-move_particles_instance = NodePath("GPUParticles3D")
+light = NodePath("OmniLight3D")
 buoyancy = 0.4
 gravity_force = 4500.0
 max_tilt_x = 90.0
@@ -73,13 +72,15 @@ base_name = "BallHit"
 sounds_amount = 2
 pitch_range = Vector2(0.75, 1.25)
 
-[node name="GPUParticles3D" parent="." instance=ExtResource("8_iudsg")]
-
 [node name="Skin" parent="." instance=ExtResource("7_1tsxk")]
 
 [node name="mesh" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_bgepc")
 mesh = SubResource("SphereMesh_3push")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+omni_range = 10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

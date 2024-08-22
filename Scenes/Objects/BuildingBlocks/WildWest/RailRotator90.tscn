@@ -50,11 +50,10 @@ _data = {
 "90Forward": SubResource("Animation_yq7kn")
 }
 
-[node name="RailRotator90" type="AnimatableBody3D" node_paths=PackedStringArray("top") groups=["IsFloor"]]
+[node name="RailRotator90" type="AnimatableBody3D" groups=["IsFloor"]]
 script = ExtResource("1_vgwqu")
 forward_animation = "90Forward"
 backward_animation = "90Backward"
-top = NodePath("КрутящийЕлемент(вал)/top")
 
 [node name="КрутящийЕлемент(вал)" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
