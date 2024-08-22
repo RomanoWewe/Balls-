@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4ewchetyfofr"]
+
+[ext_resource type="Script" path="res://Code/scripts/ActivatableLight.gd" id="1_fhasg"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4fimt"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 4.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvlkt"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_pqh4s"]
+
+[node name="LampCave" type="AnimatableBody3D"]
+script = ExtResource("1_fhasg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -1.99601, 7.27435, 0)
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_4fimt")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.0816851, 7.27448, 0)
+material_override = SubResource("StandardMaterial3D_bvlkt")
+cast_shadow = 0
+mesh = SubResource("SphereMesh_pqh4s")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 17, 0)
+light_energy = 500.0
+shadow_enabled = true
+spot_range = 20.0
+spot_attenuation = 1.46409
+spot_angle = 25.0
+spot_angle_attenuation = 100.0
