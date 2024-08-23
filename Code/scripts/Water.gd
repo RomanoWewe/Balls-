@@ -14,6 +14,8 @@ func _ready():
 func _physics_process(delta):
 	for body in bodies_affected:
 		body.linear_velocity *= LINEAR_DAMP
+		if body is Ball:
+			continue
 		body.apply_force(get_body_submerge_percentage(body)*body.mass*
 		Vector3.UP*body.buoyancy*body.gravity_scale*9.8)
 

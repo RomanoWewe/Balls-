@@ -1,0 +1,28 @@
+extends Area3D
+class_name Light
+
+@export var is_active :bool
+var angels_inside:=[]
+
+func _on_body_entered(body):
+	if body is AIAngel:
+		if is_active:
+			body.lights_count+=1
+		angels_inside.append(body)
+
+
+func _on_body_exited(body):
+	if body is AIAngel:
+		if is_active:
+			body.lights_count-=1
+		angels_inside.erase(body)
+
+func set_light_active(value:bool):
+	is_active=value
+	$SpotLight3D.visible=is_active
+	if is_active:
+		for angel in angels_inside:
+			angel.lights_count+=1
+	else:
+		for angel in angels_inside:
+			angel.lights_count-=1

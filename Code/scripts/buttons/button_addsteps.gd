@@ -7,4 +7,3 @@ class_name ButtonAddSteps
 func activate(index:int):
 	super.activate(index)
 	connections[index].add_steps(steps)
-

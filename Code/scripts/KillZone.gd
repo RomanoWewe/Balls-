@@ -18,4 +18,3 @@ func _on_body_entered(body):
 		get_parent().call_deferred("queue_free")
 	elif (destroy_self_on_contact):
 		call_deferred("queue_free")
-

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://buo7fbcw0kar0"
+path="res://.godot/imported/128синняя руна дверь открыта.obj-dfdf56052ca3d027eca14aaf82ca8fc9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/128синняя руна дверь открыта.obj-dfdf56052ca3d027eca14aaf82ca8fc9.mesh"]
+
+source_file="res://Assets/Caves1/128синняя руна дверь открыта.obj"
+dest_files=["res://.godot/imported/128синняя руна дверь открыта.obj-dfdf56052ca3d027eca14aaf82ca8fc9.mesh", "res://.godot/imported/128синняя руна дверь открыта.obj-dfdf56052ca3d027eca14aaf82ca8fc9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

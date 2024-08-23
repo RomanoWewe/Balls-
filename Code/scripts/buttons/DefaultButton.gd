@@ -32,7 +32,7 @@ func _on_body_entered(body):
 	if not body is GravitationalObject:
 		return
 	times_activated +=1
-	if times_activated>1:
+	if times_activated>1 or is_active:
 		return
 	if $ButtonOffSound.is_inside_tree():
 		$ButtonOffSound.playing=false

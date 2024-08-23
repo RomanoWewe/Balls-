@@ -24,13 +24,13 @@
 [ext_resource type="Texture2D" uid="uid://bic2v4m2f0063" path="res://Assets/menu/empty.png" id="20_nsn0c"]
 [ext_resource type="Texture2D" uid="uid://bvdvxst0rlusf" path="res://Assets/menu/меню скинов (которые выпали).png" id="21_74ahc"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwnkv"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2btio"]
 bg_color = Color(0, 0.67451, 0, 0.454902)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s36eg"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwnkv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x40ki"]
+bg_color = Color(0, 0.894118, 0.435294, 0.588235)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h7e6a"]
 bg_color = Color(0, 0.894118, 0.435294, 0.184314)
@@ -38,36 +38,36 @@ bg_color = Color(0, 0.894118, 0.435294, 0.184314)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vp41a"]
 bg_color = Color(0, 0.894118, 0.435294, 0.588235)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x40ki"]
-bg_color = Color(0, 0.894118, 0.435294, 0.588235)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s36eg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0ixe"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3m32e"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kpptt"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3yox"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j7t1p"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b3yox"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kpptt"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_avkpb"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3m32e"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ky5oi"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4pfxx"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_avkpb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rw2a7"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4pfxx"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_obyuf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n0egg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eoajp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v51sa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4w2ms"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eoajp"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n0egg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc25f"]
 bg_color = Color(0, 0, 0, 0.364706)
@@ -198,8 +198,8 @@ focus_next = NodePath("../Levels")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_moibi")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 toggle_mode = true
 button_group = ExtResource("3_04kml")
 script = ExtResource("4_gc4lt")
@@ -247,8 +247,8 @@ focus_previous = NodePath("../Settings")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_moibi")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 toggle_mode = true
 button_group = ExtResource("3_04kml")
 script = ExtResource("4_gc4lt")
@@ -296,8 +296,8 @@ focus_previous = NodePath("../Levels")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_moibi")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 toggle_mode = true
 button_group = ExtResource("3_04kml")
 script = ExtResource("4_gc4lt")
@@ -343,8 +343,8 @@ focus_previous = NodePath("../Achievements")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_moibi")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 toggle_mode = true
 button_group = ExtResource("3_04kml")
 script = ExtResource("4_cci7w")
@@ -418,10 +418,10 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_moibi")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxFlat_s36eg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x40ki")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h7e6a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vp41a")
-theme_override_styles/focus = SubResource("StyleBoxFlat_x40ki")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s36eg")
 toggle_mode = true
 button_group = ExtResource("3_04kml")
 script = ExtResource("4_gc4lt")
@@ -472,10 +472,10 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_moibi")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxFlat_s36eg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_x40ki")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h7e6a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vp41a")
-theme_override_styles/focus = SubResource("StyleBoxFlat_x40ki")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s36eg")
 text = "
 "
 script = ExtResource("4_gc4lt")
@@ -1738,8 +1738,8 @@ offset_left = 406.0
 offset_top = -16.0
 offset_right = 486.0
 offset_bottom = 64.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_k0ixe")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k0ixe")
 toggle_mode = true
 script = ExtResource("4_gc4lt")
 
@@ -1778,8 +1778,8 @@ offset_left = 406.0
 offset_top = -16.0
 offset_right = 486.0
 offset_bottom = 64.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_k0ixe")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k0ixe")
 toggle_mode = true
 script = ExtResource("4_gc4lt")
 
@@ -1818,8 +1818,8 @@ offset_left = 406.0
 offset_top = -16.0
 offset_right = 486.0
 offset_bottom = 64.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_k0ixe")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k0ixe")
 toggle_mode = true
 script = ExtResource("4_gc4lt")
 
@@ -1840,11 +1840,11 @@ offset_bottom = 1021.0
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_7dh81")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_3m32e")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b3yox")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7t1p")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_kpptt")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_j7t1p")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_b3yox")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3m32e")
 toggle_mode = true
 script = ExtResource("9_vwb6k")
 sure_screen = NodePath("../SureScreen")
@@ -1883,14 +1883,14 @@ offset_right = 328.0
 offset_bottom = -121.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 0)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("2_7dh81")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_avkpb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_ky5oi")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_avkpb")
 toggle_mode = true
 button_group = ExtResource("3_04kml")
 script = ExtResource("4_gc4lt")
@@ -1929,15 +1929,14 @@ offset_right = 943.0
 offset_bottom = 443.0
 theme = ExtResource("15_4aq8k")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxEmpty_4pfxx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_rw2a7")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4pfxx")
 alignment = 1
-item_count = 8
 selected = 0
 allow_reselect = true
+item_count = 8
 popup/item_0/text = "640x360"
-popup/item_0/id = 0
 popup/item_1/text = "854x480"
 popup/item_1/id = 1
 popup/item_2/text = "960x540"
@@ -2005,9 +2004,9 @@ offset_left = 112.0
 offset_top = 113.0
 offset_right = 404.0
 offset_bottom = 187.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_k0ixe")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_obyuf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k0ixe")
 script = ExtResource("4_gc4lt")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/Settings/SureScreen/Yes"]
@@ -2038,9 +2037,9 @@ offset_left = -404.184
 offset_top = 112.837
 offset_right = -112.184
 offset_bottom = 186.837
-theme_override_styles/normal = SubResource("StyleBoxEmpty_k0ixe")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_obyuf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k0ixe")
 script = ExtResource("4_gc4lt")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/Settings/SureScreen/Yes2"]
@@ -2109,11 +2108,11 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_moibi")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxFlat_s36eg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n0egg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_eoajp")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_v51sa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_4w2ms")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_eoajp")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_n0egg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s36eg")
 toggle_mode = true
 button_group = ExtResource("3_04kml")
 script = ExtResource("4_gc4lt")
@@ -2163,11 +2162,11 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_moibi")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxFlat_s36eg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n0egg")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_tc25f")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_v51sa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_4w2ms")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_tc25f")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_n0egg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s36eg")
 script = ExtResource("4_gc4lt")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/Skins/Select"]
@@ -2215,11 +2214,11 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_moibi")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxFlat_s36eg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n0egg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p3rao")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_v51sa")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_4w2ms")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_p3rao")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_n0egg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_s36eg")
 script = ExtResource("4_gc4lt")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Control/Skins/Secret"]
@@ -2299,8 +2298,8 @@ focus_next = NodePath("../Levels")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_moibi")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 button_group = ExtResource("3_04kml")
 script = ExtResource("4_gc4lt")
 
@@ -2345,8 +2344,8 @@ focus_next = NodePath("../Levels")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_moibi")
 theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2btio")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_iwnkv")
 button_group = ExtResource("3_04kml")
 script = ExtResource("4_gc4lt")
 

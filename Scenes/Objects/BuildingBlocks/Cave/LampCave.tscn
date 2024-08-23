@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4ewchetyfofr"]
+[gd_scene load_steps=7 format=3 uid="uid://d4ewchetyfofr"]
 
 [ext_resource type="Script" path="res://Code/scripts/ActivatableLight.gd" id="1_fhasg"]
+[ext_resource type="Script" path="res://Code/scripts/Light.gd" id="2_ttqdd"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_4fimt"]
 top_radius = 0.2
@@ -12,7 +13,13 @@ albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_pqh4s"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_iadso"]
+height = 10.0
+radius = 4.0
+
 [node name="LampCave" type="AnimatableBody3D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_fhasg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -26,11 +33,26 @@ material_override = SubResource("StandardMaterial3D_bvlkt")
 cast_shadow = 0
 mesh = SubResource("SphereMesh_pqh4s")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+shape = SubResource("CylinderShape3D_iadso")
+
+[node name="Light" type="Area3D" parent="."]
+script = ExtResource("2_ttqdd")
+is_active = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+shape = SubResource("CylinderShape3D_iadso")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Light"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 17, 0)
-light_energy = 500.0
+light_energy = 1000.0
 shadow_enabled = true
 spot_range = 20.0
 spot_attenuation = 1.46409
-spot_angle = 25.0
+spot_angle = 15.0
 spot_angle_attenuation = 100.0
+
+[connection signal="body_entered" from="Light" to="Light" method="_on_body_entered"]
+[connection signal="body_exited" from="Light" to="Light" method="_on_body_exited"]
