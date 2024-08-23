@@ -3,7 +3,11 @@
 importer="wavefront_obj"
 importer_version=1
 type="Mesh"
+<<<<<<< HEAD
 uid="uid://cexjjfit3vmxy"
+=======
+uid="uid://ctt1v4hadsp3v"
+>>>>>>> 5ae8377645c239dcc72049aa8f7eb863d5c9ba81
 path="res://.godot/imported/128( дверь с красной руной открытая ).obj-dda14ea9640f19a66f09a05e07e1261c.mesh"
 
 [deps]

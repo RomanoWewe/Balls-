@@ -16,7 +16,7 @@ func _ready():
 
 func _process(delta):
 	super._process(delta)
-	light.position = position + Vector3.UP * 12.5
+	light.position = position
 	if is_destroyed:
 		return
 	if !$RollingSound.playing:

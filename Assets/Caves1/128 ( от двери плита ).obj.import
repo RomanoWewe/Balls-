@@ -3,7 +3,11 @@
 importer="wavefront_obj"
 importer_version=1
 type="Mesh"
+<<<<<<< HEAD
 uid="uid://dpy52e7oqwr08"
+=======
+uid="uid://dqx2e5h7w8ta2"
+>>>>>>> 5ae8377645c239dcc72049aa8f7eb863d5c9ba81
 path="res://.godot/imported/128 ( от двери плита ).obj-a72929fe69ff6b64960e303b109a54a1.mesh"
 
 [deps]

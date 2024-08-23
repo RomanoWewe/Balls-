@@ -34,4 +34,3 @@ func set_auto_cycling(new_value:bool):
 	
 func set_step(step : int):
 	steps_left = step
-

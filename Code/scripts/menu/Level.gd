@@ -56,4 +56,3 @@ func fail_level():
 		screen.get_node("NextLevelButton").scene_name = "res://Scenes/MainMenu.tscn"
 		screen.get_node("NextLevelButton").text = "Return to menu"
 	skins.refresh()
-
