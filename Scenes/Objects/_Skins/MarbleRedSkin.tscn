@@ -10,6 +10,7 @@ albedo_texture = ExtResource("1_1dfuk")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+layers = 4
 material_override = SubResource("StandardMaterial3D_socun")
 mesh = ExtResource("2_pdux4")
 skeleton = NodePath("../..")

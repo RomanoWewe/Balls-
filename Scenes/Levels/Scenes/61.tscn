@@ -1,16 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://cc7qr1578dyfm"]
+[gd_scene load_steps=18 format=3 uid="uid://cc7qr1578dyfm"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_pqft0"]
 [ext_resource type="PackedScene" uid="uid://b5lgd6jcsqxf3" path="res://Scenes/Objects/BuildingBlocks/Cave/floorCave.tscn" id="3_0mo84"]
 [ext_resource type="PackedScene" uid="uid://bji05vr0y4cdq" path="res://Scenes/Objects/BuildingBlocks/Cave/WallStraightCave.tscn" id="5_3kujj"]
+[ext_resource type="PackedScene" uid="uid://cvb8fne1cesb3" path="res://Scenes/Objects/BuildingBlocks/Cave/GolemCave.tscn" id="6_vedfj"]
 [ext_resource type="PackedScene" uid="uid://blpe4uvjfaslc" path="res://Scenes/Objects/BuildingBlocks/Cave/Buttons/ButtonHoldNReturnCave.tscn" id="7_xd68c"]
 [ext_resource type="PackedScene" uid="uid://ca5xji6w0lkod" path="res://Scenes/Objects/BuildingBlocks/Cave/WallThinTCave.tscn" id="8_qxanu"]
 [ext_resource type="PackedScene" uid="uid://m3tt1t33t28s" path="res://Scenes/Objects/BuildingBlocks/Cave/WallInnerCornerCave.tscn" id="9_ripb7"]
+[ext_resource type="PackedScene" uid="uid://c12ud0ss4hte7" path="res://Scenes/Objects/BuildingBlocks/Cave/WallThinCave.tscn" id="10_28r2m"]
+[ext_resource type="PackedScene" uid="uid://rphxqfqajesi" path="res://Scenes/Objects/BuildingBlocks/Cave/MossyWallThinDeadendCave.tscn" id="11_df501"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="12_0ltr4"]
+[ext_resource type="PackedScene" uid="uid://d4ewchetyfofr" path="res://Scenes/Objects/BuildingBlocks/Cave/LampCave.tscn" id="12_al4ni"]
 [ext_resource type="PackedScene" uid="uid://bxkfb7iwck0d4" path="res://Scenes/Objects/BuildingBlocks/Cave/DoorBlueCave.tscn" id="12_d1nxx"]
 [ext_resource type="PackedScene" uid="uid://dqxts68d6qc3p" path="res://Scenes/Objects/BuildingBlocks/Cave/WallOuterCornerCave.tscn" id="13_x6rhp"]
-[ext_resource type="PackedScene" uid="uid://0jo6cb5jqv1c" path="res://Scenes/Objects/BuildingBlocks/Cave/DoorRedCave.tscn" id="14_1myrl"]
-[ext_resource type="PackedScene" uid="uid://dgmhji0oeyxhu" path="res://Scenes/Objects/BuildingBlocks/Cave/RuneRedCave.tscn" id="14_kspt8"]
 [ext_resource type="PackedScene" uid="uid://k5el1vq31tlr" path="res://Scenes/Objects/BuildingBlocks/Cave/RuneBlueCave.tscn" id="14_s2uyc"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="17_3qcub"]
 
@@ -46,6 +48,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 25, 35
 fov = 60.0
 
 [node name="static" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 navigation_mesh = SubResource("NavigationMesh_4c5yn")
 
 [node name="0,25,30(0)" parent="static" instance=ExtResource("3_0mo84")]
@@ -189,8 +192,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30, 5,
 [node name="5,40,10(0)" parent="static" instance=ExtResource("5_3kujj")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, 10)
 
-[node name="5,10,20(0)" parent="static" instance=ExtResource("7_xd68c")]
+[node name="5,10,20(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("7_xd68c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 20)
+connections = [NodePath("../5,25,35(0)")]
 
 [node name="5,35,10(0)" parent="static" instance=ExtResource("8_qxanu")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 5, 10)
@@ -236,9 +240,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 45, 5,
 
 [node name="5,45,15(0)" parent="static" instance=ExtResource("5_3kujj")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 45, 5, 15)
-
-[node name="5,25,40(0)" parent="static" instance=ExtResource("8_qxanu")]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 25, 5, 40)
 
 [node name="5,45,40(0)" parent="static" instance=ExtResource("9_ripb7")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 45, 5, 40)
@@ -321,26 +322,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 35)
 [node name="5,10,35(0)" parent="static" instance=ExtResource("13_x6rhp")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10, 5, 35)
 
-[node name="5,15,25(0)" parent="static" instance=ExtResource("14_kspt8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 25)
-
-[node name="5,15,30(0)" parent="static" instance=ExtResource("14_s2uyc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 30)
-
-[node name="5,10,30(0)" parent="static" instance=ExtResource("14_s2uyc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 30)
-
-[node name="5,10,25(0)" parent="static" instance=ExtResource("14_kspt8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 25)
-
-[node name="5,40,25(0)" parent="static" instance=ExtResource("14_1myrl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 25)
-
-[node name="5,40,20(0)" parent="static" instance=ExtResource("12_d1nxx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 20)
-
 [node name="0,40,20(0)" parent="static" instance=ExtResource("3_0mo84")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 20)
 
 [node name="0,40,25(0)" parent="static" instance=ExtResource("3_0mo84")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 25)
+
+[node name="5,10,30(0)" parent="static" instance=ExtResource("14_s2uyc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 30)
+
+[node name="5,25,15(0)" parent="static" instance=ExtResource("12_d1nxx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 15)
+
+[node name="5,25,25(0)" parent="static" instance=ExtResource("10_28r2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 25)
+
+[node name="5,25,20(0)" parent="static" instance=ExtResource("10_28r2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 20)
+
+[node name="5,25,40(0)" parent="static" instance=ExtResource("5_3kujj")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 25, 5, 40)
+
+[node name="5,25,35(0)" parent="static" instance=ExtResource("12_al4ni")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 25, 5, 35)
+auto_cycling = true
+
+[node name="5,25,30(0)" parent="static" instance=ExtResource("11_df501")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 5, 30)
+
+[node name="5,40,15(0)" parent="static" instance=ExtResource("6_vedfj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 15)

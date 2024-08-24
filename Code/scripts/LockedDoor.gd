@@ -16,3 +16,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		level.rune_used(preview)
 		$AnimationPlayer.current_animation="Open"
 		open=true
+		await get_tree().create_timer(1.5).timeout
+		level.get_node("static").bake_navigation_mesh()

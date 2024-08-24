@@ -28,10 +28,6 @@ func _physics_process(delta):
 	var direction = Vector3()
 	agent.target_position = ball.global_position # this one needs the @onready vars we defined earlier
 	direction = agent.get_next_path_position() - position # and so does this
-	
-	if direction.length()<0.2:
-		stop()
-		return
 	move()
 	direction = direction.normalized()
 	basis=basis.rotated(Vector3.UP, basis.z.signed_angle_to(direction,Vector3.UP))
