@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b5lgd6jcsqxf3"]
 
 [ext_resource type="Texture2D" uid="uid://spgfb3cpa3w0" path="res://Assets/Textures/floorTile.png" id="1_7wotc"]
-[ext_resource type="Texture2D" uid="uid://hi6sjerqxc0i" path="res://Assets/Textures/NormalMap (1).png" id="2_2vriw"]
+[ext_resource type="Texture2D" uid="uid://do31p3ek5toaw" path="res://Assets/Textures/CaveFloorNormalMap.png" id="2_t8cdv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e22vb"]
 size = Vector3(5, 5, 5)
@@ -9,7 +9,8 @@ size = Vector3(5, 5, 5)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw38d"]
 albedo_texture = ExtResource("1_7wotc")
 normal_enabled = true
-normal_texture = ExtResource("2_2vriw")
+normal_scale = 1.5
+normal_texture = ExtResource("2_t8cdv")
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_unfwo"]

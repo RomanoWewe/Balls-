@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cus062njh38pw"
-path.s3tc="res://.godot/imported/128.png-2c4b7ee30398a2aa842a3111c8f3ec83.s3tc.ctex"
+uid="uid://b6b5t4dj0aw6h"
+path.s3tc="res://.godot/imported/фонарь.png-12a99c9a7584ab08ced7e92d7f98cc45.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Caves1/128.png"
-dest_files=["res://.godot/imported/128.png-2c4b7ee30398a2aa842a3111c8f3ec83.s3tc.ctex"]
+source_file="res://Assets/Caves1/фонарь.png"
+dest_files=["res://.godot/imported/фонарь.png-12a99c9a7584ab08ced7e92d7f98cc45.s3tc.ctex"]
 
 [params]
 

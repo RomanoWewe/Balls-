@@ -4,11 +4,16 @@ class_name Ball
 var mesh : Node3D
 var amount_of_ground_contacted:=0
 var is_destroyed :=false
+var level :Level
 @export var destroyed_particles = preload("res://Scenes/Objects/_Spawnable/shards.tscn")
 @export var light : Node3D
 
 func _ready():
-	light.call_deferred("reparent",get_parent())
+	level = get_tree().root.get_child(0) as Level
+	if int(str(level.name))>60:
+		light.call_deferred("reparent",get_parent())
+	else:
+		light.queue_free()
 	$Skin.queue_free()
 	mesh = load("res://skindata.tres").scenes[load("user://settings.tres").selected_skin].instantiate()
 	add_child(mesh)
@@ -16,7 +21,8 @@ func _ready():
 
 func _process(delta):
 	super._process(delta)
-	light.position = position
+	if is_instance_valid(light):
+		light.position = position
 	if is_destroyed:
 		return
 	if !$RollingSound.playing:
@@ -28,7 +34,7 @@ func hit(_body : CollisionObject3D):
 	if (invincible):
 		return
 	var rng = RandomNumberGenerator.new()
-	var level = get_tree().root.get_child(0) as Level
+	
 
 	level.skins.stats.deaths_total+=1
 	if _body.is_in_group("Spikes"):

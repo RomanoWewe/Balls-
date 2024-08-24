@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ljw7ehdr7alt"]
+[gd_scene load_steps=47 format=3 uid="uid://ljw7ehdr7alt"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/SettingsMenu.gd" id="1_qayne"]
 [ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="2_pmr5i"]
@@ -18,29 +18,29 @@
 [sub_resource type="ButtonGroup" id="ButtonGroup_avhu0"]
 allow_unpress = true
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qudmc"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ohpqt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yj2j"]
 bg_color = Color(0, 0.67451, 0, 0.454902)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7stgp"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ohpqt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02n20"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qudmc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdrxn"]
 bg_color = Color(0, 0.67451, 0, 0.454902)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2l7i"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02n20"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1r507"]
 bg_color = Color(0, 0.67451, 0, 0.454902)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5smf"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q2l7i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awrnt"]
 bg_color = Color(0, 0.67451, 0, 0.454902)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5smf"]
 
 [sub_resource type="Animation" id="Animation_bumu1"]
 resource_name = "game-paused"
@@ -142,18 +142,68 @@ _data = {
 "settings-paused": SubResource("Animation_kmb02")
 }
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm8s7"]
+[sub_resource type="Gradient" id="Gradient_gg4kt"]
+offsets = PackedFloat32Array(0, 0.997625)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pqvdo"]
+gradient = SubResource("Gradient_gg4kt")
+
+[sub_resource type="Animation" id="Animation_odacy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Static UI/Runes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1143, -79)]
+}
+
+[sub_resource type="Animation" id="Animation_1u4kh"]
+resource_name = "Activate"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Static UI/Runes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1143, -79), Vector2(1143, 79)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k8ol1"]
+_data = {
+"Active": SubResource("Animation_1u4kh"),
+"RESET": SubResource("Animation_odacy")
+}
+
+[sub_resource type="Gradient" id="Gradient_o6lga"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yd323"]
+gradient = SubResource("Gradient_o6lga")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_faek1"]
 bg_color = Color(0, 0.67451, 0, 0.454902)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rwfcm"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm8s7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vu8rg"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5o36"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rwfcm"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n7o5w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5o36"]
 
 [sub_resource type="Animation" id="Animation_cefdj"]
 resource_name = "Down"
@@ -260,10 +310,10 @@ offset_right = 867.0
 offset_bottom = 285.0
 theme_override_fonts/font = ExtResource("3_gyqev")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_qudmc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ohpqt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_0yj2j")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_7stgp")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ohpqt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qudmc")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_avhu0")
 script = ExtResource("6_1a5vb")
@@ -297,8 +347,8 @@ offset_right = 867.0
 offset_bottom = 394.0
 theme_override_fonts/font = ExtResource("3_gyqev")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_02n20")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hdrxn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_02n20")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_avhu0")
 shortcut_in_tooltip = false
@@ -334,8 +384,8 @@ offset_right = 867.0
 offset_bottom = 497.0
 theme_override_fonts/font = ExtResource("3_gyqev")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_q2l7i")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1r507")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_q2l7i")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_avhu0")
 script = ExtResource("6_1a5vb")
@@ -370,8 +420,8 @@ offset_right = 867.0
 offset_bottom = 615.0
 theme_override_fonts/font = ExtResource("3_gyqev")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_g5smf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_awrnt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_g5smf")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_avhu0")
 script = ExtResource("5_8qlk6")
@@ -403,12 +453,20 @@ libraries = {
 "": SubResource("AnimationLibrary_7ghbw")
 }
 
-[node name="Static UI" type="Control" parent="."]
+[node name="Static UI" type="Control" parent="." node_paths=PackedStringArray("rune_icons")]
 anchors_preset = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2
 script = ExtResource("6_4heqp")
+rune_empty = SubResource("GradientTexture1D_pqvdo")
+rune_icons = [NodePath("Runes/HBoxContainer/Icon1"), NodePath("Runes/HBoxContainer/Icon2"), NodePath("Runes/HBoxContainer/Icon3"), NodePath("Runes/HBoxContainer/Icon4")]
+
+[node name="RuneAnimator" type="AnimationPlayer" parent="Static UI"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_k8ol1")
+}
 
 [node name="Levelbackground" type="Sprite2D" parent="Static UI"]
 position = Vector2(90, 45)
@@ -436,16 +494,68 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 615.0
-offset_top = 1.0
-offset_right = 815.0
-offset_bottom = 101.0
+offset_left = -637.0
+offset_top = 698.0
+offset_right = -437.0
+offset_bottom = 798.0
 grow_horizontal = 2
 theme_override_fonts/normal_font = ExtResource("3_gyqev")
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "60
 "
+
+[node name="Runes" type="Control" parent="Static UI"]
+anchors_preset = 0
+offset_left = 1143.0
+offset_top = -79.0
+offset_right = 1143.0
+offset_bottom = -79.0
+
+[node name="Background" type="Sprite2D" parent="Static UI/Runes"]
+position = Vector2(0, -17)
+scale = Vector2(0.3, 0.2375)
+texture = ExtResource("14_e6x3s")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Static UI/Runes"]
+layout_mode = 0
+offset_left = -85.0
+offset_top = -51.0
+offset_right = 85.0
+offset_bottom = 17.0
+theme_override_constants/separation = 17
+
+[node name="Icon1" type="TextureRect" parent="Static UI/Runes/HBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("GradientTexture1D_yd323")
+expand_mode = 1
+
+[node name="Icon2" type="TextureRect" parent="Static UI/Runes/HBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("GradientTexture1D_yd323")
+expand_mode = 1
+
+[node name="Icon3" type="TextureRect" parent="Static UI/Runes/HBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("GradientTexture1D_yd323")
+expand_mode = 1
+
+[node name="Icon4" type="TextureRect" parent="Static UI/Runes/HBoxContainer"]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("GradientTexture1D_yd323")
+expand_mode = 1
 
 [node name="Settings" type="Control" parent="." node_paths=PackedStringArray("interface_node", "fps_counter", "resolution_menu", "fullscreen_button", "sound_mute_button", "music_mute_button")]
 layout_mode = 1
@@ -526,8 +636,8 @@ offset_left = 268.0
 offset_top = 6.0
 offset_right = 310.0
 offset_bottom = 49.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_nm8s7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_faek1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nm8s7")
 toggle_mode = true
 script = ExtResource("6_1a5vb")
 
@@ -566,8 +676,8 @@ offset_left = 269.0
 offset_top = -6.0
 offset_right = 313.0
 offset_bottom = 37.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_nm8s7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_faek1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nm8s7")
 toggle_mode = true
 script = ExtResource("6_1a5vb")
 
@@ -606,8 +716,8 @@ offset_left = 266.0
 offset_top = -8.0
 offset_right = 309.0
 offset_bottom = 35.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_nm8s7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_faek1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nm8s7")
 toggle_mode = true
 script = ExtResource("6_1a5vb")
 
@@ -633,14 +743,14 @@ offset_right = 179.0
 offset_bottom = -57.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_colors/font_color = Color(0, 0, 0, 0)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 0)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 0)
+theme_override_colors/font_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("3_gyqev")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_rwfcm")
 theme_override_styles/hover = SubResource("StyleBoxFlat_faek1")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_vu8rg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rwfcm")
 toggle_mode = true
 button_group = SubResource("ButtonGroup_avhu0")
 script = ExtResource("6_1a5vb")
@@ -682,15 +792,14 @@ offset_right = 796.0
 offset_bottom = 414.0
 theme = ExtResource("13_f4x43")
 theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxEmpty_f5o36")
 theme_override_styles/hover = SubResource("StyleBoxFlat_faek1")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_n7o5w")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f5o36")
 alignment = 1
-item_count = 8
 selected = 0
 allow_reselect = true
+item_count = 8
 popup/item_0/text = "640x360"
-popup/item_0/id = 0
 popup/item_1/text = "854x480"
 popup/item_1/id = 1
 popup/item_2/text = "960x540"

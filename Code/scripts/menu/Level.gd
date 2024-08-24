@@ -11,6 +11,7 @@ var level_fail_scene = preload("res://Scenes/Menu/LevelFailScreen.tscn")
 var pause_ui = preload("res://Scenes/Menu/LevelUI.tscn")
 
 var level_finished := false
+var runes_collected : Array[Texture2D] =[]
 
 func _ready():
 	skins=SkinsMenu.new()
@@ -56,3 +57,14 @@ func fail_level():
 		screen.get_node("NextLevelButton").scene_name = "res://Scenes/MainMenu.tscn"
 		screen.get_node("NextLevelButton").text = "Return to menu"
 	skins.refresh()
+
+func rune_collected(rune:Texture2D):
+	runes_collected.append(rune)
+	StaticLevelUI.singleton.add_rune_icon(rune)
+
+func rune_used(rune:Texture2D):
+	for i in runes_collected:
+		if i==rune:
+			runes_collected.erase(i)
+			StaticLevelUI.singleton.remove_rune_icon(rune)
+			return

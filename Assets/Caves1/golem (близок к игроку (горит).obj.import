@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d2py8d4tgvan"
+path="res://.godot/imported/golem (близок к игроку (горит).obj-a2555ecaae09f2ff08d0d4c81af57d3e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/golem (близок к игроку (горит).obj-a2555ecaae09f2ff08d0d4c81af57d3e.mesh"]
+
+source_file="res://Assets/Caves1/golem (близок к игроку (горит).obj"
+dest_files=["res://.godot/imported/golem (близок к игроку (горит).obj-a2555ecaae09f2ff08d0d4c81af57d3e.mesh", "res://.godot/imported/golem (близок к игроку (горит).obj-a2555ecaae09f2ff08d0d4c81af57d3e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

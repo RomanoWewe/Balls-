@@ -1,0 +1,117 @@
+[gd_scene load_steps=12 format=3 uid="uid://bxkfb7iwck0d4"]
+
+[ext_resource type="Script" path="res://Code/scripts/LockedDoor.gd" id="1_38b3i"]
+[ext_resource type="ArrayMesh" uid="uid://x03joci87d5c" path="res://Assets/Caves1/128( дверь открыта и без руны в нутри ).obj" id="2_ku0n3"]
+[ext_resource type="Texture2D" uid="uid://5j2eigkknoph" path="res://RuneBlueCave.tres" id="2_yodm1"]
+[ext_resource type="ArrayMesh" uid="uid://bmpssno54faur" path="res://Assets/Caves1/128 ( от двери плита ).obj" id="3_4w1xi"]
+[ext_resource type="ArrayMesh" uid="uid://cy8naiqc1b0sd" path="res://Assets/Caves1/128синняя руна дверь открыта.obj" id="4_umdpj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lpata"]
+size = Vector3(5, 10, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_64dcv"]
+size = Vector3(3.8, 10, 4.2)
+
+[sub_resource type="Animation" id="Animation_k372j"]
+resource_name = "Open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("128:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_ku0n3"), ExtResource("4_umdpj")]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatableBody3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, -10, 0)
+
+[sub_resource type="Animation" id="Animation_btb3e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("128:mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_ku0n3")]
+}
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatableBody3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vgplc"]
+_data = {
+"Open": SubResource("Animation_k372j"),
+"RESET": SubResource("Animation_btb3e")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0rw33"]
+size = Vector3(7.5, 10, 5)
+
+[node name="DoorCave" type="AnimatableBody3D"]
+script = ExtResource("1_38b3i")
+preview = ExtResource("2_yodm1")
+
+[node name="128" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+mesh = ExtResource("2_ku0n3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8.8, 0)
+light_color = Color(0, 0, 1, 1)
+light_energy = 2.0
+omni_range = 3.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8.8, 0)
+light_color = Color(0, 0, 1, 1)
+light_energy = 2.0
+omni_range = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -2.3)
+shape = SubResource("BoxShape3D_lpata")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 2.3)
+shape = SubResource("BoxShape3D_lpata")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_64dcv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D"]
+mesh = ExtResource("3_4w1xi")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vgplc")
+}
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_0rw33")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

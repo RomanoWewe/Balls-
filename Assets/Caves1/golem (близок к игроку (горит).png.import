@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cus062njh38pw"
-path.s3tc="res://.godot/imported/128.png-2c4b7ee30398a2aa842a3111c8f3ec83.s3tc.ctex"
+uid="uid://cqkomcuorklcp"
+path="res://.godot/imported/golem (близок к игроку (горит).png-2af5d8be3295aeb80de8420d62aaa2d6.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Caves1/128.png"
-dest_files=["res://.godot/imported/128.png-2c4b7ee30398a2aa842a3111c8f3ec83.s3tc.ctex"]
+source_file="res://Assets/Caves1/golem (близок к игроку (горит).png"
+dest_files=["res://.godot/imported/golem (близок к игроку (горит).png-2af5d8be3295aeb80de8420d62aaa2d6.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
