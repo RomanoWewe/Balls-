@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dhisb25iefh20"
+path="res://.godot/imported/карсный камень.obj-3b22ad3d98a19d15e57c8e4536d6284a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/карсный камень.obj-3b22ad3d98a19d15e57c8e4536d6284a.mesh"]
+
+source_file="res://Assets/Caves1/карсный камень.obj"
+dest_files=["res://.godot/imported/карсный камень.obj-3b22ad3d98a19d15e57c8e4536d6284a.mesh", "res://.godot/imported/карсный камень.obj-3b22ad3d98a19d15e57c8e4536d6284a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
