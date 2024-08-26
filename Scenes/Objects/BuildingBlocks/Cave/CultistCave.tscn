@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://cdoiaecyodlvh"]
+
+[ext_resource type="Script" path="res://Code/scripts/AI/AICultist.gd" id="1_w5vwe"]
+[ext_resource type="ArrayMesh" uid="uid://cl3mvr8cja1fg" path="res://Assets/Caves1/Aket(new).obj" id="2_xmqrj"]
+[ext_resource type="PackedScene" uid="uid://cyytbb0d7dyg" path="res://Scenes/Objects/_Spawnable/cannon_particles.tscn" id="3_nefty"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_06nr7"]
+radius = 1.5
+height = 7.0
+
+[sub_resource type="Gradient" id="Gradient_7wdyd"]
+offsets = PackedFloat32Array(0, 0.933594)
+colors = PackedColorArray(0.156863, 0, 0.352941, 1, 0, 0, 0.133333, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_flly8"]
+gradient = SubResource("Gradient_7wdyd")
+
+[sub_resource type="Curve" id="Curve_byrr2"]
+_data = [Vector2(0, 0.50377), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0106s"]
+curve = SubResource("Curve_byrr2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8j2ht"]
+emission_shape_scale = Vector3(1, 1, 0.5)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(-1, 0, 0)
+spread = 15.0
+initial_velocity_min = 4.0
+initial_velocity_max = 8.0
+gravity = Vector3(0, 5, 0)
+scale_min = 2.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_0106s")
+color = Color(2.00392, 2.00392, 2.00392, 1)
+color_ramp = SubResource("GradientTexture1D_flly8")
+
+[node name="Angel" type="RigidBody3D"]
+collision_layer = 2049
+collision_mask = 2049
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("1_w5vwe")
+speed = 2
+accel = 0
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+height = 8.0
+radius = 1.5
+neighbor_distance = 5.0
+max_speed = 1.0
+debug_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0.85)
+layers = 2
+mesh = ExtResource("2_xmqrj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
+shape = SubResource("CapsuleShape3D_06nr7")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.11579, 1.42448)
+light_color = Color(1, 0, 1, 1)
+omni_range = 1.0
+
+[node name="CannonParticles" parent="." instance=ExtResource("3_nefty")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 1.5405, 0)
+emitting = true
+one_shot = false
+explosiveness = 0.0
+process_material = SubResource("ParticleProcessMaterial_8j2ht")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]

@@ -65,7 +65,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_bsyxc"]
 size = Vector3(7.5, 10, 5)
 
-[node name="DoorCave" type="AnimatableBody3D"]
+[node name="DoorCave" type="AnimatableBody3D" groups=["cultist_navigation_group", "golem_navigation_group"]]
 script = ExtResource("1_3xn87")
 preview = ExtResource("2_2g51f")
 
@@ -93,7 +93,7 @@ shape = SubResource("BoxShape3D_375n5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 2.3)
 shape = SubResource("BoxShape3D_375n5")
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." groups=["cultist_navigation_group", "golem_navigation_group"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)

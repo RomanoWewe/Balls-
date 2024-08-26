@@ -1,14 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqxts68d6qc3p"]
+[gd_scene load_steps=7 format=3 uid="uid://dqxts68d6qc3p"]
 
+[ext_resource type="Script" path="res://Code/scripts/ActivatableLight.gd" id="1_dhoub"]
 [ext_resource type="ArrayMesh" uid="uid://jp4n4177vrnd" path="res://Assets/Caves1/129.obj" id="1_tkujq"]
+[ext_resource type="Script" path="res://Code/scripts/Light.gd" id="3_fnmha"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
 size = Vector3(4.59766, 10, 4.59979)
 
-[node name="floor" type="AnimatableBody3D" groups=["IsFloor"]]
+[sub_resource type="SphereShape3D" id="SphereShape3D_23rd7"]
+radius = 5.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_atgiu"]
+height = 12.0
+radius = 5.5
+
+[node name="floor" type="AnimatableBody3D" node_paths=PackedStringArray("light", "light_collider") groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"]]
 collision_layer = 7
 collision_mask = 7
 sync_to_physics = false
+script = ExtResource("1_dhoub")
+light = NodePath("Light")
+light_collider = NodePath("StaticBody3D/CollisionShape3D")
 
 [node name="collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201172, 5, -0.200104)
@@ -16,3 +28,27 @@ shape = SubResource("BoxShape3D_t24w4")
 
 [node name="122" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_tkujq")
+
+[node name="Light" type="Area3D" parent="." node_paths=PackedStringArray("light")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 9.38028, 1)
+script = ExtResource("3_fnmha")
+is_active = true
+light = NodePath("OmniLight3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Light"]
+shape = SubResource("SphereShape3D_23rd7")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Light"]
+light_color = Color(0.733738, 0.771739, 0.999999, 1)
+omni_range = 11.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 7, 1)
+shape = SubResource("CylinderShape3D_atgiu")
+
+[connection signal="body_entered" from="Light" to="Light" method="_on_body_entered"]
+[connection signal="body_exited" from="Light" to="Light" method="_on_body_exited"]

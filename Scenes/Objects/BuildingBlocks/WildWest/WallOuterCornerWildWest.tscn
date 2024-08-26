@@ -2,8 +2,8 @@
 
 [ext_resource type="ArrayMesh" uid="uid://rrkxgmhc1quo" path="res://Assets/western2/western3.obj" id="1_t7t0y"]
 [ext_resource type="PackedScene" uid="uid://c2quyiba7dng5" path="res://Scenes/Objects/_Abstract/WildWest/decoratorWildWestWalls.tscn" id="3_7vsfb"]
-[ext_resource type="PackedScene" uid="uid://upb5jbxqyjto" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/DeadBush.tscn" id="3_mevye"]
 [ext_resource type="PackedScene" uid="uid://c0g4pgwcxr0w5" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/Cactus3.tscn" id="4_bnau7"]
+[ext_resource type="PackedScene" uid="uid://da8gyfygf2y2q" path="res://Scenes/Objects/_Spawnable/Decorations/WildWest/DeadBushSmall.tscn" id="4_hj3db"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
 size = Vector3(4.71094, 5, 4.61316)
@@ -24,8 +24,11 @@ mesh = ExtResource("1_t7t0y")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.277731, 3.795, -0.277731)
 position_extents = Vector3(1.5, 0, 1.5)
 
-[node name="2" type="Node3D" parent="Decorator" instance=ExtResource("3_mevye")]
-transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.12989, 0, 1.06846)
+[node name="@Node3D@29572" type="Node3D" parent="Decorator" instance=ExtResource("4_bnau7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0133815, 0, 1.01597)
 
-[node name="@Node3D@37508" type="Node3D" parent="Decorator" instance=ExtResource("4_bnau7")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.604046, 0, -0.217386)
+[node name="@Node3D@29573" type="Node3D" parent="Decorator" instance=ExtResource("4_hj3db")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.149561, 0, 1.06586)
+
+[node name="@Node3D@29574" type="Node3D" parent="Decorator" instance=ExtResource("4_hj3db")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.240734, 0, -0.405903)

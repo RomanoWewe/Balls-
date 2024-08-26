@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bkkqow6fyxien"]
+[gd_scene load_steps=25 format=3 uid="uid://bkkqow6fyxien"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_3l46k"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="2_v5jr3"]
@@ -19,7 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://c44nt21dv3k5w" path="res://Scenes/Objects/BuildingBlocks/Beach/Buttons/ButtonHoldNReturnBeach.tscn" id="18_b7xlk"]
 [ext_resource type="PackedScene" uid="uid://b04sv73h2yqs8" path="res://Scenes/Objects/BuildingBlocks/Beach/plane.tscn" id="19_uojxs"]
 [ext_resource type="PackedScene" uid="uid://cjvp3dq3rh27u" path="res://Scenes/Objects/BuildingBlocks/Beach/doubleDoorBeach.tscn" id="20_fkffw"]
+[ext_resource type="Script" path="res://Code/scripts/Relay.gd" id="21_4lk4h"]
 [ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="21_80pyr"]
+[ext_resource type="Script" path="res://Code/scripts/buttons/button_hold_n_return.gd" id="22_ooudm"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8a43"]
 friction = 0.26
@@ -663,3 +665,17 @@ physics_material_override = SubResource("PhysicsMaterial_4k3sw")
 
 [node name="0,55,5(1)" parent="static" instance=ExtResource("20_fkffw")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 53.5, 0, 5)
+
+[node name="0,45,15(1)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("activatables") instance=ExtResource("20_fkffw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 15)
+script = ExtResource("21_4lk4h")
+activatables = [NodePath("MovingPlatform"), NodePath("MovingPlatform2"), NodePath("ActivatableSound")]
+
+[node name="0,50,5(1)" type="Area3D" parent="static" node_paths=PackedStringArray("connections", "text_timer") instance=ExtResource("18_b7xlk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 5)
+script = ExtResource("22_ooudm")
+connections = [NodePath("../0,45,15(1)")]
+text_timer = NodePath("Text")
+
+[connection signal="body_entered" from="static/0,50,5(1)" to="static/0,50,5(1)" method="_on_body_entered"]
+[connection signal="body_exited" from="static/0,50,5(1)" to="static/0,50,5(1)" method="_on_body_exited"]

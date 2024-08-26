@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cc7qr1578dyfm"]
+[gd_scene load_steps=20 format=3 uid="uid://cc7qr1578dyfm"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_pqft0"]
 [ext_resource type="PackedScene" uid="uid://b5lgd6jcsqxf3" path="res://Scenes/Objects/BuildingBlocks/Cave/floorCave.tscn" id="3_0mo84"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bxkfb7iwck0d4" path="res://Scenes/Objects/BuildingBlocks/Cave/DoorBlueCave.tscn" id="12_d1nxx"]
 [ext_resource type="PackedScene" uid="uid://dqxts68d6qc3p" path="res://Scenes/Objects/BuildingBlocks/Cave/WallOuterCornerCave.tscn" id="13_x6rhp"]
 [ext_resource type="PackedScene" uid="uid://k5el1vq31tlr" path="res://Scenes/Objects/BuildingBlocks/Cave/RuneBlueCave.tscn" id="14_s2uyc"]
+[ext_resource type="PackedScene" uid="uid://cdoiaecyodlvh" path="res://Scenes/Objects/BuildingBlocks/Cave/CultistCave.tscn" id="16_xuq5h"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="17_3qcub"]
 
 [sub_resource type="Environment" id="Environment_duhm2"]
@@ -23,7 +24,18 @@ ambient_light_energy = 0.0
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_4c5yn"]
 geometry_parsed_geometry_type = 1
+geometry_source_geometry_mode = 2
+geometry_source_group_name = &"golem_navigation_group"
 agent_height = 7.0
+agent_radius = 1.5
+agent_max_climb = 0.0
+agent_max_slope = 0.02
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_kdw2k"]
+geometry_parsed_geometry_type = 1
+geometry_source_geometry_mode = 2
+geometry_source_group_name = &"cultist_navigation_group"
+agent_height = 8.0
 agent_radius = 1.5
 agent_max_climb = 0.0
 agent_max_slope = 0.02
@@ -33,6 +45,7 @@ script = ExtResource("1_pqft0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.5, -0.784886, 0.365998, -70, 0, 0)
+visible = false
 light_indirect_energy = 0.1
 shadow_enabled = true
 editor_only = true
@@ -47,9 +60,15 @@ environment = SubResource("Environment_duhm2")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 25, 35, 25)
 fov = 60.0
 
-[node name="static" type="NavigationRegion3D" parent="."]
+[node name="GolemNavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 navigation_mesh = SubResource("NavigationMesh_4c5yn")
+
+[node name="CultistNavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_kdw2k")
+navigation_layers = 2
+
+[node name="static" type="Node3D" parent="."]
 
 [node name="0,25,30(0)" parent="static" instance=ExtResource("3_0mo84")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 30)
@@ -194,7 +213,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5,
 
 [node name="5,10,20(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("7_xd68c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 20)
-connections = [NodePath("../5,25,35(0)")]
+connections = [NodePath("../5,10,35(0)"), NodePath("../5,25,35(0)")]
 
 [node name="5,35,10(0)" parent="static" instance=ExtResource("8_qxanu")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 5, 10)
@@ -321,6 +340,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 35)
 
 [node name="5,10,35(0)" parent="static" instance=ExtResource("13_x6rhp")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10, 5, 35)
+auto_cycling = true
 
 [node name="0,40,20(0)" parent="static" instance=ExtResource("3_0mo84")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 20)
@@ -352,3 +372,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 5,
 
 [node name="5,40,15(0)" parent="static" instance=ExtResource("6_vedfj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 15)
+
+[node name="5,40,35(0)" parent="static" instance=ExtResource("16_xuq5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 35)

@@ -92,7 +92,7 @@ func get_scenes_in_folder(path:StringName):
 func set_static_node():
 	static_node = get_tree().get_edited_scene_root().find_child("static")
 	if !static_node:
-		static_node = NavigationRegion3D.new()
+		static_node = Node3D.new()
 		get_tree().get_edited_scene_root().add_child(static_node)
 		static_node.set_owner(get_tree().get_edited_scene_root())
 		static_node.name = "static"

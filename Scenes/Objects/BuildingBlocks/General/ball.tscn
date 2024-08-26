@@ -29,7 +29,7 @@ radius = 8.0
 
 [node name="ball" type="RigidBody3D" node_paths=PackedStringArray("light")]
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
-gravity_scale = 10.0
+gravity_scale = 13.0
 continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 5
