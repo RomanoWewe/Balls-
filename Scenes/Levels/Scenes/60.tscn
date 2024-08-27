@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bigjnygb7f33t"]
+[gd_scene load_steps=24 format=3 uid="uid://bigjnygb7f33t"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_tuon8"]
 [ext_resource type="PackedScene" uid="uid://irygqx05pqx3" path="res://Scenes/Objects/BuildingBlocks/WildWest/floorWildWest.tscn" id="5_k5oxr"]
@@ -11,7 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://dc2013l0px6je" path="res://Scenes/Objects/BuildingBlocks/WildWest/WallPlaneWildWest.tscn" id="16_cgic2"]
 [ext_resource type="PackedScene" uid="uid://1qm8s5jlvwtn" path="res://Scenes/Objects/BuildingBlocks/WildWest/CanyonWildWestCorner.tscn" id="16_iomdd"]
 [ext_resource type="PackedScene" uid="uid://b1b031yv6tgqc" path="res://Scenes/Objects/BuildingBlocks/WildWest/CanyonWildWest.tscn" id="17_dwjy8"]
+[ext_resource type="PackedScene" uid="uid://bxkfb7iwck0d4" path="res://Scenes/Objects/BuildingBlocks/Cave/DoorBlueCave.tscn" id="17_ywcid"]
 [ext_resource type="PackedScene" uid="uid://yajsnrr0bbyo" path="res://Scenes/Objects/BuildingBlocks/WildWest/InvisibleWallWildWest.tscn" id="18_jpmgr"]
+[ext_resource type="Script" path="res://Code/scripts/LockedDoor.gd" id="18_nyw3w"]
+[ext_resource type="Texture2D" uid="uid://5j2eigkknoph" path="res://RuneBlueCave.tres" id="19_hrumq"]
 [ext_resource type="PackedScene" uid="uid://cwxr5dui74n3t" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailStraight.tscn" id="22_aka00"]
 [ext_resource type="PackedScene" uid="uid://cr08bv5lxwxim" path="res://Scenes/Objects/BuildingBlocks/Basic/Buttons/ButtonHoldNReturn.tscn" id="27_di4o0"]
 [ext_resource type="PackedScene" uid="uid://dex6u2j1i8amw" path="res://Scenes/Objects/BuildingBlocks/WildWest/Minecart.tscn" id="29_8rbxh"]
@@ -913,6 +916,41 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 
 [node name="0,85,5(1)" parent="static" instance=ExtResource("16_cgic2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 5)
+
+[node name="5,40,1030(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 1030)
+script = ExtResource("18_nyw3w")
+preview = ExtResource("19_hrumq")
+
+[node name="5,-550,970(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -550, 5, 970)
+script = ExtResource("18_nyw3w")
+preview = ExtResource("19_hrumq")
+
+[node name="5,-580,940(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -580, 5, 940)
+script = ExtResource("18_nyw3w")
+preview = ExtResource("19_hrumq")
+
+[node name="5,-575,940(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -575, 5, 940)
+script = ExtResource("18_nyw3w")
+preview = ExtResource("19_hrumq")
+
+[node name="5,-585,935(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -585, 5, 935)
+script = ExtResource("18_nyw3w")
+preview = ExtResource("19_hrumq")
+
+[node name="5,35,-25(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, -25)
+script = ExtResource("18_nyw3w")
+preview = ExtResource("19_hrumq")
+
+[node name="5,1630,-1035(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1630, 5, -1035)
+script = ExtResource("18_nyw3w")
+preview = ExtResource("19_hrumq")
 
 [node name="empty" parent="." instance=ExtResource("40_wlqt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -17.5, 27.5)
