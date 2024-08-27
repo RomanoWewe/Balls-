@@ -12,7 +12,7 @@ func _ready():
 		await region.bake_finished
 	region.bake_navigation_mesh()
 
-func add_steps(steps : int):
+func add_steps(_steps : int):
 	auto_cycling = !auto_cycling
 	light.set_light_active(auto_cycling)
 	light_collider.disabled=!auto_cycling

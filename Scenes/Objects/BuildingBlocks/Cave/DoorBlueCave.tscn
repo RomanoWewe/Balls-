@@ -10,7 +10,7 @@
 size = Vector3(5, 10, 0.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_64dcv"]
-size = Vector3(3.8, 10, 4.2)
+size = Vector3(3.8, 8, 4.2)
 
 [sub_resource type="Animation" id="Animation_k372j"]
 resource_name = "Open"
@@ -96,7 +96,7 @@ shape = SubResource("BoxShape3D_lpata")
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="." groups=["cultist_navigation_group", "golem_navigation_group"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 shape = SubResource("BoxShape3D_64dcv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D"]
