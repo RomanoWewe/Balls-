@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://ljw7ehdr7alt"]
+[gd_scene load_steps=46 format=3 uid="uid://ljw7ehdr7alt"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/SettingsMenu.gd" id="1_qayne"]
 [ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="2_pmr5i"]
@@ -9,11 +9,14 @@
 [ext_resource type="Script" path="res://Code/scripts/menu/CustomTextureButton.gd" id="6_1a5vb"]
 [ext_resource type="Script" path="res://Scenes/Menu/StaticLevelUI.gd" id="6_4heqp"]
 [ext_resource type="Texture2D" uid="uid://cs5w5fjb18sb1" path="res://Assets/Textures/Menu/Buttongreen.png" id="7_qkxvv"]
+[ext_resource type="Script" path="res://Code/scripts/menu/ButtonSoundPlayer.gd" id="8_5wx3d"]
+[ext_resource type="Texture2D" uid="uid://br60s0a5blqh2" path="res://Assets/RuneEmpty.png" id="9_f2h6h"]
 [ext_resource type="Texture2D" uid="uid://ctbyrd1jlkyyu" path="res://Assets/menu/levelbackground.png" id="9_xsoqc"]
 [ext_resource type="Texture2D" uid="uid://o6xoa52l7p4k" path="res://Assets/Textures/Menu/settings menu in game.png" id="10_vsem1"]
 [ext_resource type="Texture2D" uid="uid://dqrtgnqjch4tb" path="res://Assets/Textures/Menu/ButtonLevel.png" id="11_yc4n5"]
 [ext_resource type="Theme" uid="uid://vcn2812d42op" path="res://Scenes/Menu/Theme.tres" id="13_f4x43"]
 [ext_resource type="Texture2D" uid="uid://bvdvxst0rlusf" path="res://Assets/menu/меню скинов (которые выпали).png" id="14_e6x3s"]
+[ext_resource type="AudioStream" uid="uid://bqlm4d36lu7qx" path="res://Assets/Sounds/ClickUI.mp3" id="16_26o1d"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_avhu0"]
 allow_unpress = true
@@ -142,28 +145,6 @@ _data = {
 "settings-paused": SubResource("Animation_kmb02")
 }
 
-[sub_resource type="Gradient" id="Gradient_gg4kt"]
-offsets = PackedFloat32Array(0, 0.997625)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_pqvdo"]
-gradient = SubResource("Gradient_gg4kt")
-
-[sub_resource type="Animation" id="Animation_odacy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Static UI/Runes:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1143, -79)]
-}
-
 [sub_resource type="Animation" id="Animation_1u4kh"]
 resource_name = "Activate"
 length = 0.3
@@ -180,17 +161,26 @@ tracks/0/keys = {
 "values": [Vector2(1143, -79), Vector2(1143, 79)]
 }
 
+[sub_resource type="Animation" id="Animation_odacy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Static UI/Runes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1143, -79)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k8ol1"]
 _data = {
 "Active": SubResource("Animation_1u4kh"),
 "RESET": SubResource("Animation_odacy")
 }
-
-[sub_resource type="Gradient" id="Gradient_o6lga"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_yd323"]
-gradient = SubResource("Gradient_o6lga")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_faek1"]
 bg_color = Color(0, 0.67451, 0, 0.454902)
@@ -338,6 +328,20 @@ theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[center]Resume"
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Paused/Unpause"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("8_5wx3d")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Paused/Unpause"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("8_5wx3d")
+signal_name = "pressed"
+
 [node name="Restart" type="Button" parent="Paused"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -375,6 +379,20 @@ theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[center]Restart level"
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Paused/Restart"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("8_5wx3d")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Paused/Restart"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("8_5wx3d")
+signal_name = "pressed"
+
 [node name="Settings" type="Button" parent="Paused"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -410,6 +428,20 @@ theme_override_fonts/normal_font = ExtResource("2_pmr5i")
 theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[center]Settings"
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Paused/Settings"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("8_5wx3d")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Paused/Settings"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("8_5wx3d")
+signal_name = "pressed"
 
 [node name="Back to main" type="Button" parent="Paused"]
 custom_minimum_size = Vector2(50, 50)
@@ -448,6 +480,20 @@ theme_override_font_sizes/normal_font_size = 48
 bbcode_enabled = true
 text = "[center]Return to menu"
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Paused/Back to main"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("8_5wx3d")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Paused/Back to main"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("8_5wx3d")
+signal_name = "pressed"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_7ghbw")
@@ -459,7 +505,7 @@ offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2
 script = ExtResource("6_4heqp")
-rune_empty = SubResource("GradientTexture1D_pqvdo")
+rune_empty = ExtResource("9_f2h6h")
 rune_icons = [NodePath("Runes/HBoxContainer/Icon1"), NodePath("Runes/HBoxContainer/Icon2"), NodePath("Runes/HBoxContainer/Icon3"), NodePath("Runes/HBoxContainer/Icon4")]
 
 [node name="RuneAnimator" type="AnimationPlayer" parent="Static UI"]
@@ -526,36 +572,40 @@ offset_bottom = 17.0
 theme_override_constants/separation = 17
 
 [node name="Icon1" type="TextureRect" parent="Static UI/Runes/HBoxContainer"]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("GradientTexture1D_yd323")
+texture = ExtResource("9_f2h6h")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="Icon2" type="TextureRect" parent="Static UI/Runes/HBoxContainer"]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("GradientTexture1D_yd323")
+texture = ExtResource("9_f2h6h")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="Icon3" type="TextureRect" parent="Static UI/Runes/HBoxContainer"]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("GradientTexture1D_yd323")
+texture = ExtResource("9_f2h6h")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="Icon4" type="TextureRect" parent="Static UI/Runes/HBoxContainer"]
-custom_minimum_size = Vector2(30, 30)
+custom_minimum_size = Vector2(30, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = SubResource("GradientTexture1D_yd323")
+texture = ExtResource("9_f2h6h")
 expand_mode = 1
+stretch_mode = 5
 
 [node name="Settings" type="Control" parent="." node_paths=PackedStringArray("interface_node", "fps_counter", "resolution_menu", "fullscreen_button", "sound_mute_button", "music_mute_button")]
 layout_mode = 1
@@ -649,6 +699,20 @@ offset_right = 56.0
 offset_bottom = 57.0
 texture = ExtResource("11_yc4n5")
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Settings/Fullscreen/CustomTextureButton"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("8_5wx3d")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Settings/Fullscreen/CustomTextureButton"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("8_5wx3d")
+signal_name = "pressed"
+
 [node name="SoundMute" type="Control" parent="Settings"]
 layout_mode = 2
 anchors_preset = 0
@@ -689,6 +753,20 @@ offset_right = 58.0
 offset_bottom = 57.0
 texture = ExtResource("11_yc4n5")
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Settings/SoundMute/CustomTextureButton"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("8_5wx3d")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Settings/SoundMute/CustomTextureButton"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("8_5wx3d")
+signal_name = "pressed"
+
 [node name="MusicMute" type="Control" parent="Settings"]
 layout_mode = 2
 anchors_preset = 0
@@ -728,6 +806,20 @@ offset_top = -13.0
 offset_right = 57.0
 offset_bottom = 57.0
 texture = ExtResource("11_yc4n5")
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Settings/MusicMute/CustomTextureButton"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("8_5wx3d")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Settings/MusicMute/CustomTextureButton"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("8_5wx3d")
+signal_name = "pressed"
 
 [node name="Apply" type="Button" parent="Settings"]
 custom_minimum_size = Vector2(50, 50)
@@ -776,6 +868,20 @@ theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "[center]Save and exit"
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Settings/Apply"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("8_5wx3d")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Settings/Apply"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("8_5wx3d")
+signal_name = "pressed"
+
 [node name="Resolution" type="Control" parent="Settings"]
 anchors_preset = 0
 offset_left = 80.0
@@ -814,6 +920,20 @@ popup/item_6/text = "1600x900"
 popup/item_6/id = 6
 popup/item_7/text = "1920x1080"
 popup/item_7/id = 7
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Settings/Resolution/OptionButton"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("8_5wx3d")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Settings/Resolution/OptionButton"]
+stream = ExtResource("16_26o1d")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("8_5wx3d")
+signal_name = "item_selected"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Settings/Resolution"]
 custom_minimum_size = Vector2(200, 50)

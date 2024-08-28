@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://lqtm7g6w8w5j"]
+[gd_scene load_steps=53 format=3 uid="uid://lqtm7g6w8w5j"]
 
 [ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="1_moibi"]
 [ext_resource type="Texture2D" uid="uid://civl5wx7w56hc" path="res://Assets/Textures/Menu/snap2024-01-27-16-17-05.png" id="1_xjj4g"]
@@ -9,7 +9,9 @@
 [ext_resource type="Script" path="res://Code/scripts/menu/QuitButton.gd" id="4_cci7w"]
 [ext_resource type="Script" path="res://Code/scripts/menu/CustomTextureButton.gd" id="4_gc4lt"]
 [ext_resource type="Texture2D" uid="uid://cs5w5fjb18sb1" path="res://Assets/Textures/Menu/Buttongreen.png" id="5_yhwie"]
+[ext_resource type="Script" path="res://Code/scripts/menu/ButtonSoundPlayer.gd" id="6_arpc6"]
 [ext_resource type="Texture2D" uid="uid://bu7fatn67rd2g" path="res://Assets/Textures/Menu/snap2024-01-27-16-17-38.png" id="6_fliuc"]
+[ext_resource type="AudioStream" uid="uid://bqlm4d36lu7qx" path="res://Assets/Sounds/ClickUI.mp3" id="6_lp65n"]
 [ext_resource type="Script" path="res://Code/scripts/menu/SettingsMenu.gd" id="8_6q3uc"]
 [ext_resource type="Script" path="res://Code/scripts/menu/ClearProgress.gd" id="9_vwb6k"]
 [ext_resource type="Script" path="res://Code/scripts/menu/MainMenuAnimator.gd" id="10_bdqee"]
@@ -234,6 +236,20 @@ theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]Settings"
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Main/Settings"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Main/Settings"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
+
 [node name="Levels" type="Button" parent="Control/Main"]
 layout_mode = 2
 offset_left = 410.0
@@ -282,6 +298,20 @@ theme_override_fonts/normal_font = ExtResource("1_moibi")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]Levels"
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Main/Levels"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Main/Levels"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
 
 [node name="Achievements" type="Button" parent="Control/Main"]
 layout_mode = 2
@@ -332,6 +362,20 @@ theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]Skins"
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Main/Achievements"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Main/Achievements"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
+
 [node name="Quit" type="Button" parent="Control/Main"]
 layout_mode = 2
 offset_left = 410.0
@@ -378,6 +422,20 @@ theme_override_fonts/normal_font = ExtResource("1_moibi")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]Quit"
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Main/Quit"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Main/Quit"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
 
 [node name="Levels" type="Control" parent="Control"]
 layout_mode = 1
@@ -456,6 +514,20 @@ theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]Back"
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Levels/Quit"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Levels/Quit"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
+
 [node name="Play" type="Button" parent="Control/Levels"]
 layout_mode = 1
 anchors_preset = 3
@@ -509,6 +581,20 @@ theme_override_fonts/normal_font = ExtResource("1_moibi")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]Play"
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Levels/Play"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Levels/Play"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
 
 [node name="GridContainer" type="Control" parent="Control/Levels"]
 anchors_preset = 0
@@ -1751,6 +1837,20 @@ offset_right = 106.0
 offset_bottom = 105.0
 texture = ExtResource("12_8u2kf")
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Settings/Fullscreen/CustomTextureButton"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Settings/Fullscreen/CustomTextureButton"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
+
 [node name="SoundMute" type="Control" parent="Control/Settings"]
 layout_mode = 2
 anchors_preset = 0
@@ -1790,6 +1890,20 @@ offset_top = -25.0
 offset_right = 106.0
 offset_bottom = 105.0
 texture = ExtResource("12_8u2kf")
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Settings/SoundMute/CustomTextureButton"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Settings/SoundMute/CustomTextureButton"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
 
 [node name="MusicMute" type="Control" parent="Control/Settings"]
 layout_mode = 2
@@ -1831,6 +1945,20 @@ offset_right = 106.0
 offset_bottom = 105.0
 texture = ExtResource("12_8u2kf")
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Settings/MusicMute/CustomTextureButton"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Settings/MusicMute/CustomTextureButton"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
+
 [node name="ClearProgress" type="Button" parent="Control/Settings" node_paths=PackedStringArray("sure_screen")]
 layout_mode = 2
 offset_left = 174.0
@@ -1868,6 +1996,20 @@ theme_override_fonts/normal_font = ExtResource("1_moibi")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]Clear all progress"
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Settings/ClearProgress"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Settings/ClearProgress"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
 
 [node name="Apply" type="Button" parent="Control/Settings"]
 custom_minimum_size = Vector2(50, 50)
@@ -1915,6 +2057,20 @@ theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]Save and exit"
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Settings/Apply"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Settings/Apply"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
+
 [node name="Resolution" type="Control" parent="Control/Settings"]
 anchors_preset = 0
 offset_right = 40.0
@@ -1951,6 +2107,20 @@ popup/item_6/text = "1600x900"
 popup/item_6/id = 6
 popup/item_7/text = "1920x1080"
 popup/item_7/id = 7
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Settings/Resolution/OptionButton"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Settings/Resolution/OptionButton"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "item_selected"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control/Settings/Resolution"]
 custom_minimum_size = Vector2(200, 50)
@@ -2017,6 +2187,20 @@ offset_right = 388.0
 offset_bottom = 101.0
 texture = ExtResource("5_yhwie")
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Settings/SureScreen/Yes"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Settings/SureScreen/Yes"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
+
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control/Settings/SureScreen"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 0
@@ -2049,6 +2233,20 @@ offset_top = -25.0
 offset_right = 388.0
 offset_bottom = 101.0
 texture = ExtResource("5_yhwie")
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Settings/SureScreen/Yes2"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Settings/SureScreen/Yes2"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Control/Settings/SureScreen"]
 custom_minimum_size = Vector2(200, 50)
@@ -2148,6 +2346,20 @@ theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]Back"
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Skins/Quit"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Skins/Quit"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
+
 [node name="Select" type="Button" parent="Control/Skins"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
@@ -2200,6 +2412,20 @@ theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]Select"
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Skins/Select"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Skins/Select"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
+
 [node name="Secret" type="Button" parent="Control/Skins"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
@@ -2238,6 +2464,13 @@ patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Skins/Secret"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
 
 [node name="SkinCounter" type="RichTextLabel" parent="Control/Skins"]
 layout_mode = 0
@@ -2333,6 +2566,20 @@ theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]>"
 
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Skins/NextSkin"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Skins/NextSkin"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
+
 [node name="PrevSkin" type="Button" parent="Control/Skins"]
 layout_mode = 0
 offset_left = 79.0
@@ -2378,6 +2625,20 @@ theme_override_fonts/normal_font = ExtResource("1_moibi")
 theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]<"
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="Control/Skins/PrevSkin"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("6_arpc6")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="Control/Skins/PrevSkin"]
+stream = ExtResource("6_lp65n")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("6_arpc6")
+signal_name = "pressed"
 
 [node name="Skin1" type="Control" parent="Control/Skins"]
 anchors_preset = 0

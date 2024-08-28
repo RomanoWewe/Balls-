@@ -12,8 +12,10 @@ func _ready() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if !body is Ball or collected:
 		return
+	collected=true
 	level.rune_collected(preview)
 	$AnimationPlayer.current_animation="Collected"
+	$AudioStreamPlayer.play()
 	$Light.set_light_active(true)
 	$StaticBody3D/CollisionShape3D.disabled=true
 	region.bake_navigation_mesh()

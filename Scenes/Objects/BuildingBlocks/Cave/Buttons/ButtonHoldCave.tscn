@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bctijlrxgm6gm" path="res://Assets/Sounds/ButtonOn.mp3" id="4_kbibb"]
 [ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="5_v0xcv"]
 [ext_resource type="Texture2D" uid="uid://dpeskkh334272" path="res://Assets/3D/Beach/button 1 скин 1.png" id="6_pvspd"]
-[ext_resource type="ArrayMesh" uid="uid://c3isicl5i1yfa" path="res://Assets/3D/Beach/button 1 скин 1.obj" id="7_of18b"]
+[ext_resource type="ArrayMesh" uid="uid://cmf22lc24mr4u" path="res://Assets/Caves1/button ( caves).obj" id="7_t4oni"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_uaxp1"]
 radius = 2.04085
@@ -55,9 +55,15 @@ positions = Array[Transform3D]([Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 
 movement_times = Array[float]([0.08, 0.08])
 
 [node name="mesh" type="MeshInstance3D" parent="MovingPlatform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 material_override = SubResource("StandardMaterial3D_f8y6h")
-mesh = ExtResource("7_of18b")
+mesh = ExtResource("7_t4oni")
 skeleton = NodePath("../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="MovingPlatform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+light_color = Color(0, 0, 1, 1)
+omni_range = 1.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

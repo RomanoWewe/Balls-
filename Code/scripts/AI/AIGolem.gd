@@ -21,12 +21,18 @@ func _ready():
 # the stupid physics stuff
 func _physics_process(delta):
 	if !NavigationServer3D.map_is_active(RID(agent.get_navigation_map())):
+		$AudioStreamPlayer.volume_db=lerp($AudioStreamPlayer.volume_db,-80.0,0.5)
 		return
-	if lights_count>0:
+	
+	agent.target_position = ball.global_position # this one needs the @onready vars we defined earlier
+
+	
+	if lights_count>0 or agent.is_navigation_finished():
+		$AudioStreamPlayer.volume_db=lerp($AudioStreamPlayer.volume_db,-80.0,0.5)
 		stop()
 		return
+	$AudioStreamPlayer.volume_db=lerp($AudioStreamPlayer.volume_db,-20.0,0.5)
 	var direction = Vector3()
-	agent.target_position = ball.global_position # this one needs the @onready vars we defined earlier
 	direction = agent.get_next_path_position() - position # and so does this
 	move()
 	direction = direction.normalized()
@@ -48,7 +54,6 @@ func move():
 	axis_lock_linear_x=false
 	axis_lock_linear_y=false
 	axis_lock_linear_z=false
-
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Ball:

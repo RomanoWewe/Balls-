@@ -1,31 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyhcmvj62xbj2"]
+[gd_scene load_steps=11 format=3 uid="uid://dyhcmvj62xbj2"]
 
 [ext_resource type="FontFile" uid="uid://bbfcth2cdl4l1" path="res://Assets/OpenSans_Condensed-Bold.ttf" id="1_ui1ia"]
 [ext_resource type="Script" path="res://Code/scripts/menu/LevelSelectButton.gd" id="2_60oha"]
 [ext_resource type="Texture2D" uid="uid://dqrtgnqjch4tb" path="res://Assets/Textures/Menu/ButtonLevel.png" id="3_nnrvt"]
+[ext_resource type="AudioStream" uid="uid://bqlm4d36lu7qx" path="res://Assets/Sounds/ClickUI.mp3" id="4_pxrep"]
+[ext_resource type="Script" path="res://Code/scripts/menu/ButtonSoundPlayer.gd" id="5_g0jcd"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_swjuf"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yq1vp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cbgt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pc01"]
 bg_color = Color(1, 1, 0.0352941, 0.0588235)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f6b7t"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6cbgt"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yq1vp"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_swjuf"]
 
 [node name="LevelIcon" type="Button"]
 custom_minimum_size = Vector2(94, 94)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.560784, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ui1ia")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxEmpty_swjuf")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yq1vp")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6cbgt")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5pc01")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_f6b7t")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_6cbgt")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_yq1vp")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_swjuf")
 toggle_mode = true
 text = "10"
 script = ExtResource("2_60oha")
@@ -48,5 +50,19 @@ patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
+
+[node name="ButtonSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pxrep")
+volume_db = -30.0
+pitch_scale = 3.0
+script = ExtResource("5_g0jcd")
+signal_name = "mouse_entered"
+
+[node name="ButtonSoundPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_pxrep")
+volume_db = -30.0
+pitch_scale = 2.0
+script = ExtResource("5_g0jcd")
+signal_name = "pressed"
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

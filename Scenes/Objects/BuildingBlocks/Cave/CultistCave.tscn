@@ -48,7 +48,7 @@ axis_lock_angular_z = true
 contact_monitor = true
 max_contacts_reported = 4
 script = ExtResource("1_w5vwe")
-speed = 2
+speed = 4
 accel = 0
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -56,7 +56,7 @@ avoidance_enabled = true
 height = 8.0
 radius = 1.5
 neighbor_distance = 5.0
-max_speed = 1.0
+max_speed = 4.0
 debug_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

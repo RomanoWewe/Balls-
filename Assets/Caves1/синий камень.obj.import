@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bbkntr0lyndev"
+path="res://.godot/imported/синий камень.obj-1d0854685b8e1ef18a467875247cf0d8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/синий камень.obj-1d0854685b8e1ef18a467875247cf0d8.mesh"]
+
+source_file="res://Assets/Caves1/синий камень.obj"
+dest_files=["res://.godot/imported/синий камень.obj-1d0854685b8e1ef18a467875247cf0d8.mesh", "res://.godot/imported/синий камень.obj-1d0854685b8e1ef18a467875247cf0d8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

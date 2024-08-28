@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bigjnygb7f33t"]
+[gd_scene load_steps=28 format=3 uid="uid://bigjnygb7f33t"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_tuon8"]
 [ext_resource type="PackedScene" uid="uid://irygqx05pqx3" path="res://Scenes/Objects/BuildingBlocks/WildWest/floorWildWest.tscn" id="5_k5oxr"]
@@ -13,8 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://b1b031yv6tgqc" path="res://Scenes/Objects/BuildingBlocks/WildWest/CanyonWildWest.tscn" id="17_dwjy8"]
 [ext_resource type="PackedScene" uid="uid://bxkfb7iwck0d4" path="res://Scenes/Objects/BuildingBlocks/Cave/DoorBlueCave.tscn" id="17_ywcid"]
 [ext_resource type="PackedScene" uid="uid://yajsnrr0bbyo" path="res://Scenes/Objects/BuildingBlocks/WildWest/InvisibleWallWildWest.tscn" id="18_jpmgr"]
-[ext_resource type="Script" path="res://Code/scripts/LockedDoor.gd" id="18_nyw3w"]
-[ext_resource type="Texture2D" uid="uid://5j2eigkknoph" path="res://RuneBlueCave.tres" id="19_hrumq"]
 [ext_resource type="PackedScene" uid="uid://cwxr5dui74n3t" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailStraight.tscn" id="22_aka00"]
 [ext_resource type="PackedScene" uid="uid://cr08bv5lxwxim" path="res://Scenes/Objects/BuildingBlocks/Basic/Buttons/ButtonHoldNReturn.tscn" id="27_di4o0"]
 [ext_resource type="PackedScene" uid="uid://dex6u2j1i8amw" path="res://Scenes/Objects/BuildingBlocks/WildWest/Minecart.tscn" id="29_8rbxh"]
@@ -31,6 +29,24 @@ rough = true
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8a43"]
 friction = 0.26
 rough = true
+
+[sub_resource type="Resource" id="Resource_1skx8"]
+metadata/__load_path__ = "res://RuneBlueCave.tres"
+
+[sub_resource type="Resource" id="Resource_t60pg"]
+metadata/__load_path__ = "res://RuneBlueCave.tres"
+
+[sub_resource type="Resource" id="Resource_iyhck"]
+metadata/__load_path__ = "res://RuneBlueCave.tres"
+
+[sub_resource type="Resource" id="Resource_o71o8"]
+metadata/__load_path__ = "res://RuneBlueCave.tres"
+
+[sub_resource type="Resource" id="Resource_yph0u"]
+metadata/__load_path__ = "res://RuneBlueCave.tres"
+
+[sub_resource type="Resource" id="Resource_34fb8"]
+metadata/__load_path__ = "res://RuneBlueCave.tres"
 
 [node name="60" type="Node3D"]
 script = ExtResource("1_tuon8")
@@ -917,40 +933,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 [node name="0,85,5(1)" parent="static" instance=ExtResource("16_cgic2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 5)
 
-[node name="5,40,1030(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
+[node name="5,40,1030(0)" parent="static" instance=ExtResource("17_ywcid")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 1030)
-script = ExtResource("18_nyw3w")
-preview = ExtResource("19_hrumq")
+preview = SubResource("Resource_1skx8")
 
-[node name="5,-550,970(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
+[node name="5,-550,970(0)" parent="static" instance=ExtResource("17_ywcid")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -550, 5, 970)
-script = ExtResource("18_nyw3w")
-preview = ExtResource("19_hrumq")
+preview = SubResource("Resource_t60pg")
 
-[node name="5,-580,940(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
+[node name="5,-580,940(0)" parent="static" instance=ExtResource("17_ywcid")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -580, 5, 940)
-script = ExtResource("18_nyw3w")
-preview = ExtResource("19_hrumq")
+preview = SubResource("Resource_iyhck")
 
-[node name="5,-575,940(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
+[node name="5,-575,940(0)" parent="static" instance=ExtResource("17_ywcid")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -575, 5, 940)
-script = ExtResource("18_nyw3w")
-preview = ExtResource("19_hrumq")
+preview = SubResource("Resource_o71o8")
 
-[node name="5,-585,935(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
+[node name="5,-585,935(0)" parent="static" instance=ExtResource("17_ywcid")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -585, 5, 935)
-script = ExtResource("18_nyw3w")
-preview = ExtResource("19_hrumq")
+preview = SubResource("Resource_yph0u")
 
-[node name="5,35,-25(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, -25)
-script = ExtResource("18_nyw3w")
-preview = ExtResource("19_hrumq")
-
-[node name="5,1630,-1035(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("17_ywcid")]
+[node name="5,1630,-1035(0)" parent="static" instance=ExtResource("17_ywcid")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1630, 5, -1035)
-script = ExtResource("18_nyw3w")
-preview = ExtResource("19_hrumq")
+preview = SubResource("Resource_34fb8")
 
 [node name="empty" parent="." instance=ExtResource("40_wlqt6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -17.5, 27.5)
