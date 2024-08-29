@@ -129,7 +129,7 @@ radius = 5.5
 height = 10.0
 radius = 5.0
 
-[node name="RuneBlue" type="StaticBody3D" groups=["cultist_navigation_group", "golem_navigation_group"]]
+[node name="RuneBlue" type="StaticBody3D" groups=["golem_navigation_group"]]
 script = ExtResource("1_ha6w8")
 preview = ExtResource("2_v32qu")
 

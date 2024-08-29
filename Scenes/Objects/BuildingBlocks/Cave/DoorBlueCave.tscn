@@ -12,7 +12,7 @@
 size = Vector3(5, 10, 0.4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_64dcv"]
-size = Vector3(3.8, 8, 4.2)
+size = Vector3(3.8, 8.5, 4.2)
 
 [sub_resource type="Animation" id="Animation_k372j"]
 resource_name = "Open"
@@ -23,7 +23,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("AnimatableBody3D")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0.6, 1, 0, 0, 0, 1.5, 1, 0, -8, 0)
+tracks/0/keys = PackedFloat32Array(0.6, 1, 0, 0, 0, 1.5, 1, 0, -8.5, 0)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true

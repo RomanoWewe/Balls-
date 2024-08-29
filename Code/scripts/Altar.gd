@@ -17,5 +17,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	$AnimationPlayer.current_animation="Collected"
 	$AudioStreamPlayer.play()
 	$Light.set_light_active(true)
-	$StaticBody3D/CollisionShape3D.disabled=true
+	$CollisionShape3D.set_deferred("disabled",false)
 	region.bake_navigation_mesh()

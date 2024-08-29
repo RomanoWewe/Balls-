@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdoiaecyodlvh"]
+[gd_scene load_steps=11 format=3 uid="uid://cdoiaecyodlvh"]
 
 [ext_resource type="Script" path="res://Code/scripts/AI/AICultist.gd" id="1_w5vwe"]
 [ext_resource type="ArrayMesh" uid="uid://cl3mvr8cja1fg" path="res://Assets/Caves1/Aket(new).obj" id="2_xmqrj"]
 [ext_resource type="PackedScene" uid="uid://cyytbb0d7dyg" path="res://Scenes/Objects/_Spawnable/cannon_particles.tscn" id="3_nefty"]
+[ext_resource type="AudioStream" uid="uid://cm2j34havc608" path="res://Assets/Sounds/Ghost.mp3" id="4_ydewj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_06nr7"]
-radius = 1.5
+radius = 1.75
 height = 7.0
 
 [sub_resource type="Gradient" id="Gradient_7wdyd"]
@@ -52,7 +53,7 @@ speed = 4
 accel = 0
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-avoidance_enabled = true
+navigation_layers = 2
 height = 8.0
 radius = 1.5
 neighbor_distance = 5.0
@@ -79,6 +80,19 @@ emitting = true
 one_shot = false
 explosiveness = 0.0
 process_material = SubResource("ParticleProcessMaterial_8j2ht")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ydewj")
+volume_db = -40.0
+autoplay = true
+bus = &"Sound"
+parameters/looping = true
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.49084, -0.0500661)
+light_color = Color(1, 0, 1, 1)
+light_energy = 0.2
+omni_range = 3.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="velocity_computed" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_velocity_computed"]
