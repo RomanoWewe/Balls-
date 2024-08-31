@@ -19,6 +19,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		$AudioStreamPlayer1.play()
 		await get_tree().create_timer(0.5).timeout
 		$AudioStreamPlayer.play()
-		await get_tree().create_timer(1.1).timeout
-		level.get_node("GolemNavigationRegion3D").bake_navigation_mesh()
+		await get_tree().create_timer(1.5).timeout
+		#level.get_node("GolemNavigationRegion3D").bake_navigation_mesh()
 		level.get_node("CultistNavigationRegion3D").bake_navigation_mesh()

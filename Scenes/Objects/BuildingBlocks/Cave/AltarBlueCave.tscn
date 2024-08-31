@@ -7,9 +7,9 @@
 [ext_resource type="AudioStream" uid="uid://hi47jqdcrwtv" path="res://Assets/Sounds/Cave/Rune_pickup.mp3" id="5_qubil"]
 [ext_resource type="ArrayMesh" uid="uid://bbkntr0lyndev" path="res://Assets/Caves1/синий камень.obj" id="7_8sgly"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_v2dhl"]
-height = 2.5
-radius = 2.0
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_udhu1"]
+height = 10.0
+radius = 5.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ugudf"]
 radius = 2.5
@@ -17,9 +17,9 @@ radius = 2.5
 [sub_resource type="SphereShape3D" id="SphereShape3D_vyi1i"]
 radius = 5.5
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_udhu1"]
-height = 10.0
-radius = 5.0
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_v2dhl"]
+height = 2.5
+radius = 2.0
 
 [sub_resource type="Animation" id="Animation_fo0iq"]
 resource_name = "Collected"
@@ -129,16 +129,18 @@ _data = {
 "RESET": SubResource("Animation_rhpi3")
 }
 
-[node name="RuneBlue" type="StaticBody3D" groups=["cultist_navigation_group", "golem_navigation_group"]]
+[node name="RuneBlue" type="StaticBody3D" groups=["golem_navigation_group"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_esckk")
 preview = ExtResource("2_2ok7y")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_udhu1")
+disabled = true
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("4_46c76")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["cultist_navigation_group", "golem_navigation_group"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CylinderShape3D_v2dhl")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -158,13 +160,11 @@ shape = SubResource("SphereShape3D_vyi1i")
 light_color = Color(0, 0, 1, 1)
 omni_range = 8.0
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["golem_navigation_group"]]
-collision_layer = 2
-collision_mask = 2
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["cultist_navigation_group", "golem_navigation_group"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("CylinderShape3D_udhu1")
-disabled = true
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" groups=["cultist_navigation_group", "golem_navigation_group"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_v2dhl")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_qubil")

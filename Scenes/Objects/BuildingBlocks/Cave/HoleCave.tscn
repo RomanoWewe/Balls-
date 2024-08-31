@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://jaianhn6pa4x"]
+
+[ext_resource type="Script" path="res://Code/scripts/HoleWildWest.gd" id="1_gv6ju"]
+[ext_resource type="ArrayMesh" uid="uid://cocgeyp406c4g" path="res://Assets/western2/exite2.obj" id="2_an8sr"]
+[ext_resource type="PackedScene" uid="uid://bn8qbmg1uamko" path="res://Scenes/Objects/_Spawnable/WildWestHoleDebris.tscn" id="3_4tu6v"]
+[ext_resource type="Script" path="res://Code/scripts/Hole.gd" id="4_riyqv"]
+[ext_resource type="ArrayMesh" uid="uid://doge5dvpoh2lw" path="res://Assets/Caves1/дыра в стене.obj" id="5_rc30u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kdgsg"]
+size = Vector3(3, 4, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_re4a0"]
+size = Vector3(4.5, 5, 0.5)
+
+[node name="HoleWildWest" type="AnimatableBody3D" groups=["cultist_navigation_group", "golem_navigation_group"]]
+script = ExtResource("1_gv6ju")
+exploded_mesh = ExtResource("2_an8sr")
+debris_scene = ExtResource("3_4tu6v")
+
+[node name="Hole" type="Area3D" parent="."]
+script = ExtResource("4_riyqv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.726669, 2.33843, 0)
+shape = SubResource("BoxShape3D_kdgsg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 2.5, 2.25)
+shape = SubResource("BoxShape3D_re4a0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 2.5, -2.25)
+shape = SubResource("BoxShape3D_re4a0")
+
+[node name="Block" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2, 2.5, 0)
+shape = SubResource("BoxShape3D_re4a0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+mesh = ExtResource("5_rc30u")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 4, 0)
+light_color = Color(0, 0, 1, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 0)
+light_color = Color(0, 0, 1, 1)
+
+[connection signal="body_entered" from="Hole" to="Hole" method="_on_body_entered"]

@@ -1,0 +1,653 @@
+[gd_scene load_steps=29 format=3 uid="uid://cc7qr1578dyfm"]
+
+[ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_pqft0"]
+[ext_resource type="PackedScene" uid="uid://b5lgd6jcsqxf3" path="res://Scenes/Objects/BuildingBlocks/Cave/floorCave.tscn" id="3_0mo84"]
+[ext_resource type="PackedScene" uid="uid://bji05vr0y4cdq" path="res://Scenes/Objects/BuildingBlocks/Cave/WallStraightCave.tscn" id="5_3kujj"]
+[ext_resource type="PackedScene" uid="uid://c12ud0ss4hte7" path="res://Scenes/Objects/BuildingBlocks/Cave/WallThinCave.tscn" id="10_28r2m"]
+[ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="12_0ltr4"]
+[ext_resource type="ArrayMesh" uid="uid://x03joci87d5c" path="res://Assets/Caves1/128( дверь открыта и без руны в нутри ).obj" id="12_6a56y"]
+[ext_resource type="ArrayMesh" uid="uid://bmpssno54faur" path="res://Assets/Caves1/128 ( от двери плита ).obj" id="13_hhln4"]
+[ext_resource type="AudioStream" uid="uid://digaq0fj4a5k5" path="res://Assets/Sounds/Cave/Heavy_stone_slide.mp3" id="14_ccyww"]
+[ext_resource type="PackedScene" uid="uid://blu0sxy212tey" path="res://Scenes/Objects/BuildingBlocks/Cave/AltarBlueCave.tscn" id="14_s2uyc"]
+[ext_resource type="Script" path="res://Code/scripts/Ball.gd" id="15_4kydq"]
+[ext_resource type="AudioStream" uid="uid://dvd24747oo5bx" path="res://Assets/Sounds/Cave/Rune_use.mp3" id="15_mt1hj"]
+[ext_resource type="Script" path="res://Code/scripts/Altar.gd" id="16_38iek"]
+[ext_resource type="ArrayMesh" uid="uid://bbkntr0lyndev" path="res://Assets/Caves1/синий камень.obj" id="16_bmq60"]
+[ext_resource type="PackedScene" uid="uid://cdoiaecyodlvh" path="res://Scenes/Objects/BuildingBlocks/Cave/CultistCave.tscn" id="16_xuq5h"]
+[ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="17_3qcub"]
+[ext_resource type="Texture2D" uid="uid://kv4gy2gq82aa" path="res://Assets/RuneBlue.png" id="17_5rnwn"]
+[ext_resource type="Script" path="res://Code/scripts/AI/AICultist.gd" id="18_8cmrn"]
+[ext_resource type="Script" path="res://Code/scripts/LockedDoor.gd" id="18_71rcs"]
+
+[sub_resource type="Environment" id="Environment_duhm2"]
+background_mode = 1
+background_energy_multiplier = 0.0
+ambient_light_energy = 0.0
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_4c5yn"]
+vertices = PackedVector3Array(20, 5.5, -1, 20, 5.5, 6, 32, 5.5, 6, 32, 5.5, -1, 5, 5.5, 9, 5, 5.5, 11, 7, 5.5, 11, 7, 5.5, 9, 25, 15.5, 14.25, 27, 15.5, 14.25, 27, 15.5, 12.25, 25, 15.5, 12.25, 10, 15.5, 9, 10, 15.5, 11, 23.75, 15.5, 11, 28.25, 15.5, 11, 42, 15.5, 9, 42, 15.5, 11, 45.25, 5.5, 9, 45.25, 5.5, 11, 47, 5.5, 11, 47, 5.5, 9, 10.25, 5.5, 9.25, 10.25, 5.5, 11, 12, 5.5, 11, 12, 5.5, 9.25, 15.25, 5.5, 9.25, 15.25, 5.5, 11, 17, 5.5, 11, 17, 5.5, 9.25, 25.25, 5.5, 9.25, 25.25, 5.5, 11, 27, 5.5, 11, 27, 5.5, 9.25, 30.25, 5.5, 9.25, 30.25, 5.5, 11, 32, 5.5, 11, 32, 5.5, 9.25, 35.25, 5.5, 9.25, 35.25, 5.5, 11, 37, 5.5, 11, 37, 5.5, 9.25, 40.25, 5.5, 9.25, 40.25, 5.5, 11, 42, 5.5, 11, 42, 5.5, 9.25, 5, 15.5, 14, 5, 15.5, 36, 7, 15.5, 36, 7, 15.5, 14, 45, 15.5, 14, 45, 15.5, 36, 47, 15.5, 36, 47, 15.5, 14, 5.25, 5.5, 14.25, 5.25, 5.5, 16, 7, 5.5, 16, 7, 5.5, 14.25, 10.25, 5.5, 14.25, 10.25, 5.5, 21.5, 12.25, 5.5, 21.5, 14.5, 5.5, 23.75, 14.5, 5.5, 25, 22, 5.5, 25, 13.25, 5.5, 22, 22, 5.5, 14.25, 25, 15.5, 31.5, 27, 15.5, 31.5, 25.25, 5.5, 14.25, 25.25, 5.5, 16, 27, 5.5, 16, 27, 5.5, 14.25, 30.25, 5.5, 33.25, 29.5, 5.5, 34, 29.5, 5.5, 36, 42, 5.5, 36, 42, 5.5, 14.25, 30.25, 5.5, 14.25, 45.25, 5.5, 14.25, 45.25, 5.5, 16, 47, 5.5, 16, 47, 5.5, 14.25, 5.25, 5.5, 19.25, 5.25, 5.5, 21, 7, 5.5, 21, 7, 5.5, 19.25, 25.25, 5.5, 19.25, 25.25, 5.5, 21, 27, 5.5, 21, 27, 5.5, 19.25, 45.25, 5.5, 19.25, 45.25, 5.5, 21, 47, 5.5, 21, 47, 5.5, 19.25, 5.25, 5.5, 24.25, 5.25, 5.5, 26, 7, 5.5, 26, 7, 5.5, 24.25, 25.25, 5.5, 24.25, 25.25, 5.5, 26, 27, 5.5, 26, 27, 5.5, 24.25, 45.25, 5.5, 24.25, 45.25, 5.5, 26, 47, 5.5, 26, 47, 5.5, 24.25, 10.5, 7.75, 24.5, 10.5, 7.75, 25.5, 11.5, 7.75, 25.5, 11.5, 7.75, 24.5, 22.5, 5.5, 36, 22.5, 5.5, 33.75, 22, 5.5, 33.25, 13.25, 5.5, 28, 12.25, 5.5, 28.5, 10.25, 5.5, 36, 14.5, 5.5, 26.25, 10.25, 5.5, 28.5, 5.25, 5.5, 29.25, 5.25, 5.5, 31, 7, 5.5, 31, 7, 5.5, 29.25, 25.25, 5.5, 29.25, 25.25, 5.5, 31, 27, 5.5, 31, 27, 5.5, 29.25, 45.25, 5.5, 29.25, 45.25, 5.5, 31, 47, 5.5, 31, 47, 5.5, 29.25, 5.25, 5.5, 34.25, 5.25, 5.5, 36, 7, 5.5, 36, 7, 5.5, 34.25, 45.25, 5.5, 34.25, 45.25, 5.5, 36, 47, 5.5, 36, 47, 5.5, 34.25, 25.5, 13.5, 34.5, 25.5, 13.5, 35.5, 26.5, 13.5, 35.5, 26.5, 13.5, 34.5, 25.75, 5.5, 34.5, 25.75, 5.5, 35.5, 26.25, 5.5, 35.5, 26.25, 5.5, 34.5, 28.25, 15.5, 39, 27.75, 15.5, 38.5, 24.25, 15.5, 38.5, 23.75, 15.5, 39, 10, 15.5, 41, 42, 15.5, 41, 42, 15.5, 39, 10, 15.5, 39, 5, 5.5, 39.25, 5, 5.5, 41, 7, 5.5, 41, 7, 5.5, 39.25, 10.25, 5.5, 39.25, 10.25, 5.5, 41, 12, 5.5, 41, 12, 5.5, 39.25, 15.25, 5.5, 39.25, 15.25, 5.5, 41, 17, 5.5, 41, 17, 5.5, 39.25, 20.25, 5.5, 39.25, 20.25, 5.5, 41, 22, 5.5, 41, 22, 5.5, 39.25, 25.25, 5.5, 39.25, 25.25, 5.5, 41, 27, 5.5, 41, 27, 5.5, 39.25, 30.25, 5.5, 39.25, 30.25, 5.5, 41, 32, 5.5, 41, 32, 5.5, 39.25, 35.25, 5.5, 39.25, 35.25, 5.5, 41, 37, 5.5, 41, 37, 5.5, 39.25, 40.25, 5.5, 39.25, 40.25, 5.5, 41, 42, 5.5, 41, 42, 5.5, 39.25, 45.25, 5.5, 39.25, 45.25, 5.5, 41, 47, 5.5, 41, 47, 5.5, 39.25, 20, 5.5, 44.25, 20, 5.5, 51, 32, 5.5, 51, 32, 5.5, 44.25)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(14, 13, 12), PackedInt32Array(11, 14, 10), PackedInt32Array(10, 14, 15), PackedInt32Array(14, 12, 15), PackedInt32Array(15, 12, 16), PackedInt32Array(16, 17, 15), PackedInt32Array(21, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(25, 24, 22), PackedInt32Array(22, 24, 23), PackedInt32Array(29, 28, 26), PackedInt32Array(26, 28, 27), PackedInt32Array(33, 32, 30), PackedInt32Array(30, 32, 31), PackedInt32Array(37, 36, 34), PackedInt32Array(34, 36, 35), PackedInt32Array(41, 40, 38), PackedInt32Array(38, 40, 39), PackedInt32Array(45, 44, 42), PackedInt32Array(42, 44, 43), PackedInt32Array(49, 48, 46), PackedInt32Array(46, 48, 47), PackedInt32Array(53, 52, 50), PackedInt32Array(50, 52, 51), PackedInt32Array(57, 56, 54), PackedInt32Array(54, 56, 55), PackedInt32Array(60, 59, 58), PackedInt32Array(63, 62, 61), PackedInt32Array(64, 60, 58), PackedInt32Array(61, 64, 63), PackedInt32Array(63, 64, 65), PackedInt32Array(65, 64, 58), PackedInt32Array(67, 66, 9), PackedInt32Array(9, 66, 8), PackedInt32Array(71, 70, 68), PackedInt32Array(68, 70, 69), PackedInt32Array(73, 72, 74), PackedInt32Array(74, 72, 75), PackedInt32Array(77, 76, 72), PackedInt32Array(72, 76, 75), PackedInt32Array(81, 80, 78), PackedInt32Array(78, 80, 79), PackedInt32Array(85, 84, 82), PackedInt32Array(82, 84, 83), PackedInt32Array(89, 88, 86), PackedInt32Array(86, 88, 87), PackedInt32Array(93, 92, 90), PackedInt32Array(90, 92, 91), PackedInt32Array(97, 96, 94), PackedInt32Array(94, 96, 95), PackedInt32Array(101, 100, 98), PackedInt32Array(98, 100, 99), PackedInt32Array(105, 104, 102), PackedInt32Array(102, 104, 103), PackedInt32Array(109, 108, 106), PackedInt32Array(106, 108, 107), PackedInt32Array(111, 110, 112), PackedInt32Array(112, 110, 113), PackedInt32Array(113, 110, 114), PackedInt32Array(114, 110, 115), PackedInt32Array(116, 62, 63), PackedInt32Array(115, 117, 114), PackedInt32Array(116, 63, 113), PackedInt32Array(113, 63, 112), PackedInt32Array(121, 120, 118), PackedInt32Array(118, 120, 119), PackedInt32Array(125, 124, 122), PackedInt32Array(122, 124, 123), PackedInt32Array(129, 128, 126), PackedInt32Array(126, 128, 127), PackedInt32Array(133, 132, 130), PackedInt32Array(130, 132, 131), PackedInt32Array(137, 136, 134), PackedInt32Array(134, 136, 135), PackedInt32Array(141, 140, 138), PackedInt32Array(138, 140, 139), PackedInt32Array(145, 144, 142), PackedInt32Array(142, 144, 143), PackedInt32Array(147, 146, 148), PackedInt32Array(148, 146, 149), PackedInt32Array(149, 146, 150), PackedInt32Array(150, 146, 151), PackedInt32Array(146, 152, 151), PackedInt32Array(150, 153, 149), PackedInt32Array(157, 156, 154), PackedInt32Array(154, 156, 155), PackedInt32Array(161, 160, 158), PackedInt32Array(158, 160, 159), PackedInt32Array(165, 164, 162), PackedInt32Array(162, 164, 163), PackedInt32Array(169, 168, 166), PackedInt32Array(166, 168, 167), PackedInt32Array(173, 172, 170), PackedInt32Array(170, 172, 171), PackedInt32Array(177, 176, 174), PackedInt32Array(174, 176, 175), PackedInt32Array(181, 180, 178), PackedInt32Array(178, 180, 179), PackedInt32Array(185, 184, 182), PackedInt32Array(182, 184, 183), PackedInt32Array(189, 188, 186), PackedInt32Array(186, 188, 187), PackedInt32Array(193, 192, 190), PackedInt32Array(190, 192, 191)]
+geometry_parsed_geometry_type = 1
+geometry_source_geometry_mode = 2
+geometry_source_group_name = &"golem_navigation_group"
+agent_height = 7.0
+agent_radius = 1.5
+agent_max_climb = 0.0
+agent_max_slope = 0.02
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_kdw2k"]
+vertices = PackedVector3Array(19, 5.5, -1, 19, 5.5, 6, 31, 5.5, 6, 31, 5.5, -1, 4, 5.5, 9, 4, 5.5, 11, 6, 5.5, 11, 6, 5.5, 9, 24, 15.5, 14.25, 26, 15.5, 14.25, 26, 15.5, 12.25, 24, 15.5, 12.25, 9, 15.5, 9, 9, 15.5, 11, 22.75, 15.5, 11, 27.25, 15.5, 11, 41, 15.5, 9, 41, 15.5, 11, 44.25, 5.5, 9, 44.25, 5.5, 11, 46, 5.5, 11, 46, 5.5, 9, 9.25, 5.5, 9.25, 9.25, 5.5, 11, 11, 5.5, 11, 11, 5.5, 9.25, 14.25, 5.5, 9.25, 14.25, 5.5, 11, 16, 5.5, 11, 16, 5.5, 9.25, 24.25, 5.5, 9.25, 24.25, 5.5, 11, 26, 5.5, 11, 26, 5.5, 9.25, 29.25, 5.5, 9.25, 29.25, 5.5, 11, 31, 5.5, 11, 31, 5.5, 9.25, 34.25, 5.5, 9.25, 34.25, 5.5, 11, 36, 5.5, 11, 36, 5.5, 9.25, 39.25, 5.5, 9.25, 39.25, 5.5, 11, 41, 5.5, 11, 41, 5.5, 9.25, 4, 15.5, 14, 4, 15.5, 36, 6, 15.5, 36, 6, 15.5, 14, 44, 15.5, 14, 44, 15.5, 36, 46, 15.5, 36, 46, 15.5, 14, 4.25, 5.5, 14.25, 4.25, 5.5, 16, 6, 5.5, 16, 6, 5.5, 14.25, 9.25, 5.5, 14.25, 9.25, 5.5, 21.5, 11.25, 5.5, 21.5, 13.5, 5.5, 23.75, 13.5, 5.5, 25, 21, 5.5, 25, 12.25, 5.5, 22, 21, 5.5, 14.25, 24, 15.5, 31.5, 26, 15.5, 31.5, 24.25, 5.5, 14.25, 24.25, 5.5, 16, 26, 5.5, 16, 26, 5.5, 14.25, 29.25, 5.5, 33.25, 28.5, 5.5, 34, 28.5, 5.5, 36, 41, 5.5, 36, 41, 5.5, 14.25, 29.25, 5.5, 14.25, 44.25, 5.5, 14.25, 44.25, 5.5, 16, 46, 5.5, 16, 46, 5.5, 14.25, 4.25, 5.5, 19.25, 4.25, 5.5, 21, 6, 5.5, 21, 6, 5.5, 19.25, 24.25, 5.5, 19.25, 24.25, 5.5, 21, 26, 5.5, 21, 26, 5.5, 19.25, 44.25, 5.5, 19.25, 44.25, 5.5, 21, 46, 5.5, 21, 46, 5.5, 19.25, 4.25, 5.5, 24.25, 4.25, 5.5, 26, 6, 5.5, 26, 6, 5.5, 24.25, 24.25, 5.5, 24.25, 24.25, 5.5, 26, 26, 5.5, 26, 26, 5.5, 24.25, 44.25, 5.5, 24.25, 44.25, 5.5, 26, 46, 5.5, 26, 46, 5.5, 24.25, 9.5, 7.75, 24.5, 9.5, 7.75, 25.5, 10.5, 7.75, 25.5, 10.5, 7.75, 24.5, 21.5, 5.5, 36, 21.5, 5.5, 33.75, 21, 5.5, 33.25, 12.25, 5.5, 28, 11.25, 5.5, 28.5, 9.25, 5.5, 36, 13.5, 5.5, 26.25, 9.25, 5.5, 28.5, 4.25, 5.5, 29.25, 4.25, 5.5, 31, 6, 5.5, 31, 6, 5.5, 29.25, 24.25, 5.5, 29.25, 24.25, 5.5, 31, 26, 5.5, 31, 26, 5.5, 29.25, 44.25, 5.5, 29.25, 44.25, 5.5, 31, 46, 5.5, 31, 46, 5.5, 29.25, 4.25, 5.5, 34.25, 4.25, 5.5, 36, 6, 5.5, 36, 6, 5.5, 34.25, 44.25, 5.5, 34.25, 44.25, 5.5, 36, 46, 5.5, 36, 46, 5.5, 34.25, 24.5, 13.5, 34.5, 24.5, 13.5, 35.5, 25.5, 13.5, 35.5, 25.5, 13.5, 34.5, 24.75, 5.5, 34.5, 24.75, 5.5, 35.5, 25.25, 5.5, 35.5, 25.25, 5.5, 34.5, 27.25, 15.5, 39, 26.75, 15.5, 38.5, 23.25, 15.5, 38.5, 22.75, 15.5, 39, 9, 15.5, 41, 41, 15.5, 41, 41, 15.5, 39, 9, 15.5, 39, 4, 5.5, 39.25, 4, 5.5, 41, 6, 5.5, 41, 6, 5.5, 39.25, 9.25, 5.5, 39.25, 9.25, 5.5, 41, 11, 5.5, 41, 11, 5.5, 39.25, 14.25, 5.5, 39.25, 14.25, 5.5, 41, 16, 5.5, 41, 16, 5.5, 39.25, 19.25, 5.5, 39.25, 19.25, 5.5, 41, 21, 5.5, 41, 21, 5.5, 39.25, 24.25, 5.5, 39.25, 24.25, 5.5, 41, 26, 5.5, 41, 26, 5.5, 39.25, 29.25, 5.5, 39.25, 29.25, 5.5, 41, 31, 5.5, 41, 31, 5.5, 39.25, 34.25, 5.5, 39.25, 34.25, 5.5, 41, 36, 5.5, 41, 36, 5.5, 39.25, 39.25, 5.5, 39.25, 39.25, 5.5, 41, 41, 5.5, 41, 41, 5.5, 39.25, 44.25, 5.5, 39.25, 44.25, 5.5, 41, 46, 5.5, 41, 46, 5.5, 39.25, 19, 5.5, 44.25, 19, 5.5, 51, 31, 5.5, 51, 31, 5.5, 44.25)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(7, 6, 4), PackedInt32Array(4, 6, 5), PackedInt32Array(11, 10, 8), PackedInt32Array(8, 10, 9), PackedInt32Array(14, 13, 12), PackedInt32Array(11, 14, 10), PackedInt32Array(10, 14, 15), PackedInt32Array(14, 12, 15), PackedInt32Array(15, 12, 16), PackedInt32Array(16, 17, 15), PackedInt32Array(21, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(25, 24, 22), PackedInt32Array(22, 24, 23), PackedInt32Array(29, 28, 26), PackedInt32Array(26, 28, 27), PackedInt32Array(33, 32, 30), PackedInt32Array(30, 32, 31), PackedInt32Array(37, 36, 34), PackedInt32Array(34, 36, 35), PackedInt32Array(41, 40, 38), PackedInt32Array(38, 40, 39), PackedInt32Array(45, 44, 42), PackedInt32Array(42, 44, 43), PackedInt32Array(49, 48, 46), PackedInt32Array(46, 48, 47), PackedInt32Array(53, 52, 50), PackedInt32Array(50, 52, 51), PackedInt32Array(57, 56, 54), PackedInt32Array(54, 56, 55), PackedInt32Array(60, 59, 58), PackedInt32Array(63, 62, 61), PackedInt32Array(64, 60, 58), PackedInt32Array(61, 64, 63), PackedInt32Array(63, 64, 65), PackedInt32Array(65, 64, 58), PackedInt32Array(67, 66, 9), PackedInt32Array(9, 66, 8), PackedInt32Array(71, 70, 68), PackedInt32Array(68, 70, 69), PackedInt32Array(73, 72, 74), PackedInt32Array(74, 72, 75), PackedInt32Array(77, 76, 72), PackedInt32Array(72, 76, 75), PackedInt32Array(81, 80, 78), PackedInt32Array(78, 80, 79), PackedInt32Array(85, 84, 82), PackedInt32Array(82, 84, 83), PackedInt32Array(89, 88, 86), PackedInt32Array(86, 88, 87), PackedInt32Array(93, 92, 90), PackedInt32Array(90, 92, 91), PackedInt32Array(97, 96, 94), PackedInt32Array(94, 96, 95), PackedInt32Array(101, 100, 98), PackedInt32Array(98, 100, 99), PackedInt32Array(105, 104, 102), PackedInt32Array(102, 104, 103), PackedInt32Array(109, 108, 106), PackedInt32Array(106, 108, 107), PackedInt32Array(111, 110, 112), PackedInt32Array(112, 110, 113), PackedInt32Array(113, 110, 114), PackedInt32Array(114, 110, 115), PackedInt32Array(116, 62, 63), PackedInt32Array(115, 117, 114), PackedInt32Array(116, 63, 113), PackedInt32Array(113, 63, 112), PackedInt32Array(121, 120, 118), PackedInt32Array(118, 120, 119), PackedInt32Array(125, 124, 122), PackedInt32Array(122, 124, 123), PackedInt32Array(129, 128, 126), PackedInt32Array(126, 128, 127), PackedInt32Array(133, 132, 130), PackedInt32Array(130, 132, 131), PackedInt32Array(137, 136, 134), PackedInt32Array(134, 136, 135), PackedInt32Array(141, 140, 138), PackedInt32Array(138, 140, 139), PackedInt32Array(145, 144, 142), PackedInt32Array(142, 144, 143), PackedInt32Array(147, 146, 148), PackedInt32Array(148, 146, 149), PackedInt32Array(149, 146, 150), PackedInt32Array(150, 146, 151), PackedInt32Array(146, 152, 151), PackedInt32Array(150, 153, 149), PackedInt32Array(157, 156, 154), PackedInt32Array(154, 156, 155), PackedInt32Array(161, 160, 158), PackedInt32Array(158, 160, 159), PackedInt32Array(165, 164, 162), PackedInt32Array(162, 164, 163), PackedInt32Array(169, 168, 166), PackedInt32Array(166, 168, 167), PackedInt32Array(173, 172, 170), PackedInt32Array(170, 172, 171), PackedInt32Array(177, 176, 174), PackedInt32Array(174, 176, 175), PackedInt32Array(181, 180, 178), PackedInt32Array(178, 180, 179), PackedInt32Array(185, 184, 182), PackedInt32Array(182, 184, 183), PackedInt32Array(189, 188, 186), PackedInt32Array(186, 188, 187), PackedInt32Array(193, 192, 190), PackedInt32Array(190, 192, 191)]
+geometry_parsed_geometry_type = 1
+geometry_source_geometry_mode = 2
+geometry_source_group_name = &"cultist_navigation_group"
+agent_height = 7.0
+agent_radius = 1.5
+agent_max_climb = 0.0
+agent_max_slope = 0.02
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nsy35"]
+friction = 0.5
+rough = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lpata"]
+size = Vector3(5, 10, 0.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_64dcv"]
+size = Vector3(3.8, 8, 4.2)
+
+[sub_resource type="Animation" id="Animation_k372j"]
+resource_name = "Open"
+length = 1.5
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.6, 1, 0, 0, 0, 1.5, 1, 0, -8.5, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -2.7, 6.65, 0.001, 0.4, 1, -2.3, 6.65, 0.001)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D3")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 2.7, 6.65, 0.001, 0.4, 1, 2.3, 6.65, 0.001)
+
+[sub_resource type="Animation" id="Animation_btb3e"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -2.3, 6.65, 0.001)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MeshInstance3D3")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 2.3, 6.65, 0.001)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vgplc"]
+_data = {
+"Open": SubResource("Animation_k372j"),
+"RESET": SubResource("Animation_btb3e")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0rw33"]
+size = Vector3(7.5, 10, 5)
+
+[node name="61" type="Node3D"]
+script = ExtResource("1_pqft0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.5, -0.784886, 0.365998, -70, 0, 0)
+light_indirect_energy = 0.1
+shadow_enabled = true
+editor_only = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_duhm2")
+
+[node name="empty" parent="." instance=ExtResource("17_3qcub")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 25, 50, 25)
+fov = 60.0
+
+[node name="GolemNavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+navigation_mesh = SubResource("NavigationMesh_4c5yn")
+
+[node name="CultistNavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_kdw2k")
+navigation_layers = 2
+
+[node name="static" type="Node3D" parent="."]
+
+[node name="0,25,30(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 30)
+
+[node name="0,30,30(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 30)
+
+[node name="0,30,25(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 25)
+
+[node name="0,25,25(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 25)
+
+[node name="0,20,25(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 25)
+
+[node name="0,20,30(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 30)
+
+[node name="0,35,25(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 25)
+
+[node name="0,35,30(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 30)
+
+[node name="0,35,35(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 35)
+
+[node name="0,30,35(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 35)
+
+[node name="0,25,35(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 35)
+
+[node name="0,20,35(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 35)
+
+[node name="0,15,35(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 35)
+
+[node name="0,15,30(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 30)
+
+[node name="0,15,25(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 25)
+
+[node name="0,15,20(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 20)
+
+[node name="0,20,20(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
+
+[node name="0,25,20(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 20)
+
+[node name="0,30,20(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 20)
+
+[node name="0,35,20(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 20)
+
+[node name="0,35,15(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 15)
+
+[node name="0,30,15(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 15)
+
+[node name="0,25,15(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 15)
+
+[node name="0,20,15(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 15)
+
+[node name="0,15,15(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15)
+
+[node name="0,10,15(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 15)
+
+[node name="0,10,20(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
+
+[node name="0,10,25(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 25)
+
+[node name="0,10,30(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 30)
+
+[node name="0,10,35(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 35)
+
+[node name="0,40,35(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 35)
+
+[node name="0,40,30(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 30)
+
+[node name="0,40,15(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 15)
+
+[node name="0,10,10(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+
+[node name="0,15,10(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 10)
+
+[node name="0,20,10(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 20, 0, 10)
+
+[node name="0,25,10(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 10)
+
+[node name="0,30,10(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10)
+
+[node name="0,35,10(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 10)
+
+[node name="0,40,10(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 10)
+
+[node name="0,5,10(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 10)
+
+[node name="0,5,15(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 15)
+
+[node name="0,5,20(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 20)
+
+[node name="0,5,25(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 25)
+
+[node name="0,5,30(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 30)
+
+[node name="0,5,35(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 35)
+
+[node name="0,5,40(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 40)
+
+[node name="0,10,40(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 40)
+
+[node name="0,15,40(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 40)
+
+[node name="0,20,40(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 40)
+
+[node name="0,25,40(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 40)
+
+[node name="0,30,40(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 40)
+
+[node name="0,35,40(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 40)
+
+[node name="0,40,40(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 40)
+
+[node name="0,45,40(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 40)
+
+[node name="0,45,35(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 35)
+
+[node name="0,45,30(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 30)
+
+[node name="0,45,25(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 25)
+
+[node name="0,45,20(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 20)
+
+[node name="0,45,15(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 15)
+
+[node name="0,45,10(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 10)
+
+[node name="0,40,20(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 20)
+
+[node name="0,40,25(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 25)
+
+[node name="0,20,5(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 5)
+
+[node name="0,20,0(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="0,25,0(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
+
+[node name="0,30,0(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="0,30,5(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 5)
+
+[node name="0,25,5(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 5)
+
+[node name="0,20,45(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 45)
+
+[node name="0,20,50(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 50)
+
+[node name="0,25,50(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 50)
+
+[node name="0,30,50(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 50)
+
+[node name="0,30,45(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 45)
+
+[node name="0,25,45(0)" parent="static" instance=ExtResource("3_0mo84")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 45)
+
+[node name="5,5,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 15)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,5,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 20)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,5,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 25)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,5,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 30)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,5,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 35)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 40)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,15,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 40)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,20,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 40)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,25,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 40)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,30,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 40)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,35,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 40)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,40,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 40)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,45,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 35)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,45,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 30)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,45,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 25)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,45,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 20)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,45,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 15)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,40,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 10)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,35,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 10)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,30,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 10)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,25,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 10)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,20,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 10)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,15,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 10)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_3kujj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 10)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,15(0)" type="RigidBody3D" parent="static" node_paths=PackedStringArray("light") instance=ExtResource("12_0ltr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 15)
+physics_material_override = SubResource("PhysicsMaterial_nsy35")
+gravity_scale = 13.0
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 5
+linear_damp_mode = 1
+linear_damp = 1.0
+angular_damp_mode = 1
+angular_damp = 1.0
+script = ExtResource("15_4kydq")
+light = NodePath("Light")
+buoyancy = 0.0
+gravity_force = 4500.0
+max_tilt_x = 90.0
+max_tilt_z = 90.0
+max_speed = 22.5
+
+[node name="5,40,15(0)" type="RigidBody3D" parent="static" instance=ExtResource("16_xuq5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 15)
+collision_layer = 2049
+collision_mask = 2049
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+contact_monitor = true
+max_contacts_reported = 4
+script = ExtResource("18_8cmrn")
+speed = 4
+accel = 0
+
+[node name="5,25,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("10_28r2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 15)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,25,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("10_28r2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 20)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,25,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("10_28r2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 25)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,25,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("10_28r2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 30)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,25,35(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 35)
+script = ExtResource("18_71rcs")
+preview = ExtResource("17_5rnwn")
+
+[node name="128" type="MeshInstance3D" parent="static/5,25,35(0)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
+mesh = ExtResource("12_6a56y")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="static/5,25,35(0)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 8.8, 0)
+light_color = Color(0, 0, 1, 1)
+light_energy = 2.0
+light_cull_mask = 4294967293
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="static/5,25,35(0)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 8.8, 0)
+light_color = Color(0, 0, 1, 1)
+light_energy = 2.0
+light_cull_mask = 4294967293
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="static/5,25,35(0)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -2.3)
+shape = SubResource("BoxShape3D_lpata")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="static/5,25,35(0)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 2.3)
+shape = SubResource("BoxShape3D_lpata")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="static/5,25,35(0)" groups=["cultist_navigation_group", "golem_navigation_group"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="static/5,25,35(0)/AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+shape = SubResource("BoxShape3D_64dcv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="static/5,25,35(0)/AnimatableBody3D"]
+mesh = ExtResource("13_hhln4")
+skeleton = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="static/5,25,35(0)"]
+libraries = {
+"": SubResource("AnimationLibrary_vgplc")
+}
+
+[node name="Area3D" type="Area3D" parent="static/5,25,35(0)"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="static/5,25,35(0)/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_0rw33")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="static/5,25,35(0)"]
+stream = ExtResource("14_ccyww")
+volume_db = -20.0
+pitch_scale = 1.1
+bus = &"Sound"
+parameters/looping = false
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="static/5,25,35(0)"]
+stream = ExtResource("15_mt1hj")
+volume_db = -20.0
+pitch_scale = 1.1
+bus = &"Sound"
+parameters/looping = false
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="static/5,25,35(0)"]
+transform = Transform3D(-3.67176e-08, 0, 0.84, 0, 0.84, 0, -0.84, 0, -3.67176e-08, -2.3, 6.65, 0.001)
+mesh = ExtResource("16_bmq60")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="static/5,25,35(0)"]
+transform = Transform3D(-3.67176e-08, 0, 0.84, 0, 0.84, 0, -0.84, 0, -3.67176e-08, 2.3, 6.65, 0.001)
+mesh = ExtResource("16_bmq60")
+
+[node name="5,10,25(0)" type="StaticBody3D" parent="static" groups=["golem_navigation_group"] instance=ExtResource("14_s2uyc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 25)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("16_38iek")
+preview = ExtResource("17_5rnwn")
+
+[connection signal="body_entered" from="static/5,10,15(0)" to="static/5,10,15(0)" method="_on_body_entered"]
+[connection signal="body_exited" from="static/5,10,15(0)" to="static/5,10,15(0)" method="_on_body_exited"]
+[connection signal="body_entered" from="static/5,40,15(0)" to="static/5,40,15(0)" method="_on_body_entered"]
+[connection signal="body_entered" from="static/5,25,35(0)/Area3D" to="static/5,25,35(0)" method="_on_area_3d_body_entered"]
