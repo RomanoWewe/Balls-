@@ -266,7 +266,6 @@ height = 7.0
 radius = 1.5
 neighbor_distance = 5.0
 max_speed = 25.0
-debug_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
@@ -317,7 +316,6 @@ shape = SubResource("CylinderShape3D_opbx8")
 stream = ExtResource("4_fuylb")
 volume_db = -15.0
 autoplay = true
-stream_paused = true
 bus = &"Sound"
 parameters/looping = true
 
