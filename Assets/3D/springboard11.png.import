@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcp21cuyxau4c"
 path.s3tc="res://.godot/imported/springboard11.png-adfc3ddb64b0488ac761cbf71a69a18b.s3tc.ctex"
-path.etc2="res://.godot/imported/springboard11.png-adfc3ddb64b0488ac761cbf71a69a18b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/springboard11.png"
-dest_files=["res://.godot/imported/springboard11.png-adfc3ddb64b0488ac761cbf71a69a18b.s3tc.ctex", "res://.godot/imported/springboard11.png-adfc3ddb64b0488ac761cbf71a69a18b.etc2.ctex"]
+dest_files=["res://.godot/imported/springboard11.png-adfc3ddb64b0488ac761cbf71a69a18b.s3tc.ctex"]
 
 [params]
 

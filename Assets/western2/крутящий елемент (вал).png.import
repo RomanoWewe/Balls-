@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://hp87mj6kw14"
 path.s3tc="res://.godot/imported/крутящий елемент (вал).png-152158b9fe2b250daf1d4da2c38e0fe7.s3tc.ctex"
-path.etc2="res://.godot/imported/крутящий елемент (вал).png-152158b9fe2b250daf1d4da2c38e0fe7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/крутящий елемент (вал).png"
-dest_files=["res://.godot/imported/крутящий елемент (вал).png-152158b9fe2b250daf1d4da2c38e0fe7.s3tc.ctex", "res://.godot/imported/крутящий елемент (вал).png-152158b9fe2b250daf1d4da2c38e0fe7.etc2.ctex"]
+dest_files=["res://.godot/imported/крутящий елемент (вал).png-152158b9fe2b250daf1d4da2c38e0fe7.s3tc.ctex"]
 
 [params]
 

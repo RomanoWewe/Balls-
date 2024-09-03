@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvhfc8vjs8h6b"
 path.s3tc="res://.godot/imported/exite2.png-c7096f4f84cd5f45b216aae935c69a1b.s3tc.ctex"
-path.etc2="res://.godot/imported/exite2.png-c7096f4f84cd5f45b216aae935c69a1b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/exite2.png"
-dest_files=["res://.godot/imported/exite2.png-c7096f4f84cd5f45b216aae935c69a1b.s3tc.ctex", "res://.godot/imported/exite2.png-c7096f4f84cd5f45b216aae935c69a1b.etc2.ctex"]
+dest_files=["res://.godot/imported/exite2.png-c7096f4f84cd5f45b216aae935c69a1b.s3tc.ctex"]
 
 [params]
 

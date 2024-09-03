@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnvnh50l2nt4n"
 path.s3tc="res://.godot/imported/алтарь с карсным камнем.png-c0242a3dfa69e5da40d18a51bd170813.s3tc.ctex"
-path.etc2="res://.godot/imported/алтарь с карсным камнем.png-c0242a3dfa69e5da40d18a51bd170813.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Caves1/алтарь с карсным камнем.png"
-dest_files=["res://.godot/imported/алтарь с карсным камнем.png-c0242a3dfa69e5da40d18a51bd170813.s3tc.ctex", "res://.godot/imported/алтарь с карсным камнем.png-c0242a3dfa69e5da40d18a51bd170813.etc2.ctex"]
+dest_files=["res://.godot/imported/алтарь с карсным камнем.png-c0242a3dfa69e5da40d18a51bd170813.s3tc.ctex"]
 
 [params]
 
