@@ -33,6 +33,7 @@ script = ExtResource("1_pjb5w")
 light = NodePath("Light")
 buoyancy = 0.0
 gravity_force = 4500.0
+is_affected_by_tilt = true
 max_tilt_x = 90.0
 max_tilt_z = 90.0
 max_speed = 22.5
