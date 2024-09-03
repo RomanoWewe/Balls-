@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://cckwyapi61vvd"]
+[gd_scene load_steps=19 format=3 uid="uid://cckwyapi61vvd"]
 
-[ext_resource type="Script" path="res://Code/scripts/RailRotator.gd" id="1_u0x4f"]
+[ext_resource type="Script" path="res://Code/scripts/RailBarrier.gd" id="1_pppoi"]
 [ext_resource type="ArrayMesh" uid="uid://cxsd7bbas6gur" path="res://Assets/western2/шлагбаум( основа ).obj" id="2_eg7tf"]
 [ext_resource type="ArrayMesh" uid="uid://bnrflt7ni6j47" path="res://Assets/western2/шлагбаум( основа с намотаной катушкой на половину ).obj" id="3_oc4yq"]
 [ext_resource type="ArrayMesh" uid="uid://bhbbviitmxm8f" path="res://Assets/western2/шлагбаум( основа с намотаной катушкой на максимум ).obj" id="4_5qo1h"]
 [ext_resource type="ArrayMesh" uid="uid://bjq2cfavl8nxc" path="res://Assets/western2/шлагбаум( палка).obj" id="5_q6ilb"]
 [ext_resource type="ArrayMesh" uid="uid://dxhrndkbb0nfr" path="res://Assets/western2/шлагбаум(провод).obj" id="6_38rax"]
+[ext_resource type="Script" path="res://Code/scripts/AreaTracker.gd" id="8_p3aeb"]
+[ext_resource type="AudioStream" uid="uid://6k0ud1yr282c" path="res://Assets/Sounds/Cave/MetalHit.mp3" id="8_wlgbl"]
 
 [sub_resource type="Animation" id="Animation_hdgsr"]
 resource_name = "close"
@@ -79,9 +81,101 @@ tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = PackedFloat32Array(0.1, 1, 1, 1, 1, 1, 1, 0.1, 0.1, 1)
 
+[sub_resource type="Animation" id="Animation_8g8v4"]
+resource_name = "half_close"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Шлагбаум(Основа):mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("4_5qo1h"), ExtResource("3_oc4yq")]
+}
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wrapper")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, -0.615877, 0.787842, 0.3, 1, 0, 0, -0.477, 0.879)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("linewrapper")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, -0.375, 0.927, 0.3, 1, 0, 0, 0, 1)
+tracks/3/type = "scale_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("linewrapper")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.1, 0.1, 1, 0.3, 1, 0.5, 0.15, 1)
+
+[sub_resource type="Animation" id="Animation_nan82"]
+resource_name = "half_open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Шлагбаум(Основа):mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_oc4yq"), ExtResource("4_5qo1h")]
+}
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wrapper")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, -0.477, 0.879, 0.3, 1, 0, 0, -0.615877, 0.787842)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("linewrapper")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.3, 1, 0, 0, -0.375, 0.927)
+tracks/3/type = "scale_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("linewrapper")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.5, 0.15, 1, 0.3, 1, 0.1, 0.1, 1)
+
+[sub_resource type="Animation" id="Animation_fnglk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Шлагбаум(Основа):mesh")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_oc4yq")]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c8v4j"]
 _data = {
+"RESET": SubResource("Animation_fnglk"),
 "close": SubResource("Animation_hdgsr"),
+"half_close": SubResource("Animation_8g8v4"),
+"half_open": SubResource("Animation_nan82"),
 "open": SubResource("Animation_m5c04")
 }
 
@@ -91,14 +185,18 @@ bounce = 0.3
 [sub_resource type="BoxShape3D" id="BoxShape3D_2tghx"]
 size = Vector3(5, 0.5, 0.5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_v4i0q"]
+size = Vector3(0.5, 3, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4sns"]
+size = Vector3(5, 4, 0.1)
+
 [node name="RailBarrier" type="AnimatableBody3D"]
-script = ExtResource("1_u0x4f")
-forward_animation = "open"
-backward_animation = "close"
+script = ExtResource("1_pppoi")
 
 [node name="Шлагбаум(Основа)" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1, 0, -0.91507, 0)
-mesh = ExtResource("2_eg7tf")
+mesh = ExtResource("3_oc4yq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -125,3 +223,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29102, 8.23878, 0)
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1, -2.457, -10.0416, 0)
 mesh = ExtResource("6_38rax")
 skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 1, 0)
+shape = SubResource("BoxShape3D_v4i0q")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75, 1, 0)
+shape = SubResource("BoxShape3D_v4i0q")
+
+[node name="AreaTracker" type="Area3D" parent="."]
+script = ExtResource("8_p3aeb")
+tracked_groups = Array[String](["Minecart"])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaTracker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_j4sns")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_wlgbl")
+volume_db = -10.0
+pitch_scale = 0.8
+bus = &"Sound"

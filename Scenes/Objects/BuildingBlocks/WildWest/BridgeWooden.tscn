@@ -12,7 +12,7 @@ size = Vector3(10, 1, 5)
 size = Vector3(10, 2, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4qqsf"]
-size = Vector3(3, 5, 5)
+size = Vector3(0.1, 5, 5)
 
 [node name="floor" type="AnimatableBody3D" node_paths=PackedStringArray("linked_objects") groups=["IsFloor"]]
 sync_to_physics = false

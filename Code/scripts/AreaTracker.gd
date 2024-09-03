@@ -1,7 +1,7 @@
 extends Area3D
 class_name AreaTracker
 
-var objects_in_area: Array[Node3D] = []
+var objects_in_area: Array[PhysicsBody3D] = []
 @export var tracked_groups : Array[String] = []
 
 # Called when the node enters the scene tree for the first time.
@@ -24,3 +24,13 @@ func intersect(array1, array2) -> Array:
 		if array2.has(item):
 			intersection.append(item)
 	return intersection
+
+func has_objects()->bool:
+	return objects_in_area.size()>0
+
+func get_first_object()->PhysicsBody3D:
+	if objects_in_area.size()>0:
+		return objects_in_area[0]
+	else:
+		return null
+	

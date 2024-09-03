@@ -15,6 +15,8 @@ func _ready():
 		$FillMesh.mesh=gold_fill_meshes[fill_level-1]
 
 func _physics_process(delta):
+	if freeze:
+		return
 	if contacted_bodies.size()==0:
 		var vertical_speed = linear_velocity.y
 		linear_velocity = Vector3(linear_velocity.x,0,linear_velocity.z).normalized() * previous_frame_horizontal_velocity.length() * speed_damp
