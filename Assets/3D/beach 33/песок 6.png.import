@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8hll8avjbgb"
 path.s3tc="res://.godot/imported/песок 6.png-95ef8902426e0c6a6eb96ef561059a84.s3tc.ctex"
+path.etc2="res://.godot/imported/песок 6.png-95ef8902426e0c6a6eb96ef561059a84.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/beach 33/песок 6.png"
-dest_files=["res://.godot/imported/песок 6.png-95ef8902426e0c6a6eb96ef561059a84.s3tc.ctex"]
+dest_files=["res://.godot/imported/песок 6.png-95ef8902426e0c6a6eb96ef561059a84.s3tc.ctex", "res://.godot/imported/песок 6.png-95ef8902426e0c6a6eb96ef561059a84.etc2.ctex"]
 
 [params]
 

@@ -1,18 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://d1274acyhjpof"]
+[gd_scene load_steps=15 format=3 uid="uid://d1274acyhjpof"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_2dhrh"]
 [ext_resource type="PackedScene" uid="uid://b5lgd6jcsqxf3" path="res://Scenes/Objects/BuildingBlocks/Cave/floorCave.tscn" id="3_4xpay"]
 [ext_resource type="PackedScene" uid="uid://bji05vr0y4cdq" path="res://Scenes/Objects/BuildingBlocks/Cave/WallStraightCave.tscn" id="6_86iqs"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="8_ch0bx"]
-[ext_resource type="PackedScene" uid="uid://d4ewchetyfofr" path="res://Scenes/Objects/BuildingBlocks/Cave/LampCave.tscn" id="9_04dyx"]
-[ext_resource type="PackedScene" uid="uid://blpe4uvjfaslc" path="res://Scenes/Objects/BuildingBlocks/Cave/Buttons/ButtonHoldNReturnCave.tscn" id="9_253vh"]
 [ext_resource type="PackedScene" uid="uid://c12ud0ss4hte7" path="res://Scenes/Objects/BuildingBlocks/Cave/WallThinCave.tscn" id="10_a2tcr"]
 [ext_resource type="PackedScene" uid="uid://ca5xji6w0lkod" path="res://Scenes/Objects/BuildingBlocks/Cave/WallThinTCave.tscn" id="10_dcx4r"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="10_fjrka"]
-[ext_resource type="PackedScene" uid="uid://cvb8fne1cesb3" path="res://Scenes/Objects/BuildingBlocks/Cave/GolemCave.tscn" id="10_v8xy3"]
 [ext_resource type="PackedScene" uid="uid://rphxqfqajesi" path="res://Scenes/Objects/BuildingBlocks/Cave/MossyWallThinDeadendCave.tscn" id="11_5rdre"]
+[ext_resource type="PackedScene" uid="uid://dj4nsi13c5hpw" path="res://Scenes/Objects/BuildingBlocks/Cave/DoppelgangerCave.tscn" id="11_aydlg"]
+[ext_resource type="Script" path="res://Code/scripts/AI/AIDoppelganger.gd" id="12_8mx0e"]
 [ext_resource type="PackedScene" uid="uid://m3tt1t33t28s" path="res://Scenes/Objects/BuildingBlocks/Cave/WallInnerCornerCave.tscn" id="12_du3t2"]
-[ext_resource type="PackedScene" uid="uid://dqxts68d6qc3p" path="res://Scenes/Objects/BuildingBlocks/Cave/WallOuterCornerCave.tscn" id="13_grk66"]
 
 [sub_resource type="Environment" id="Environment_gry7r"]
 background_mode = 1
@@ -27,6 +25,10 @@ agent_height = 7.0
 agent_radius = 1.5
 agent_max_climb = 0.0
 agent_max_slope = 0.02
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vitqc"]
+friction = 0.5
+rough = true
 
 [node name="Den" type="Node3D"]
 script = ExtResource("1_2dhrh")
@@ -197,13 +199,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30, 5,
 [node name="5,40,10(0)" parent="static" instance=ExtResource("6_86iqs")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, 10)
 
-[node name="5,40,15(1)" parent="static" instance=ExtResource("10_v8xy3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 15)
-
-[node name="5,10,20(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("9_253vh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 20)
-connections = [NodePath("../5,30,20(0)"), NodePath("../5,40,20(0)")]
-
 [node name="5,35,10(0)" parent="static" instance=ExtResource("10_dcx4r")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 5, 10)
 
@@ -348,19 +343,29 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 25, 5, 2
 [node name="5,35,30(0)" parent="static" instance=ExtResource("11_5rdre")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 5, 30)
 
-[node name="5,30,20(0)" parent="static" instance=ExtResource("9_04dyx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 20)
-auto_cycling = true
-
-[node name="5,40,20(0)" parent="static" instance=ExtResource("9_04dyx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 20)
-auto_cycling = true
-
 [node name="5,10,40(0)" parent="static" instance=ExtResource("12_du3t2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 40)
 
 [node name="5,5,35(0)" parent="static" instance=ExtResource("12_du3t2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 35)
 
-[node name="5,10,35(0)" parent="static" instance=ExtResource("13_grk66")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10, 5, 35)
+[node name="5,20,25(0)" type="RigidBody3D" parent="static" node_paths=PackedStringArray("light") instance=ExtResource("11_aydlg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 25)
+physics_material_override = SubResource("PhysicsMaterial_vitqc")
+gravity_scale = 13.0
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 5
+linear_damp_mode = 1
+linear_damp = 1.0
+angular_damp_mode = 1
+angular_damp = 1.0
+script = ExtResource("12_8mx0e")
+light = NodePath("Light")
+buoyancy = 0.0
+gravity_force = 4500.0
+max_tilt_x = 90.0
+max_tilt_z = 90.0
+max_speed = 22.5
+
+[connection signal="body_entered" from="static/5,20,25(0)" to="static/5,20,25(0)" method="_on_body_entered"]

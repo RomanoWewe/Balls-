@@ -2,19 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
 uid="uid://b3lledmmq3ub2"
-
 path.s3tc="res://.godot/imported/propellers11.png-9ae1b6a0202b592bade15ca9f455bdbb.s3tc.ctex"
+path.etc2="res://.godot/imported/propellers11.png-9ae1b6a0202b592bade15ca9f455bdbb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/propellers11.png"
-dest_files=["res://.godot/imported/propellers11.png-9ae1b6a0202b592bade15ca9f455bdbb.s3tc.ctex"]
+dest_files=["res://.godot/imported/propellers11.png-9ae1b6a0202b592bade15ca9f455bdbb.s3tc.ctex", "res://.godot/imported/propellers11.png-9ae1b6a0202b592bade15ca9f455bdbb.etc2.ctex"]
 
 [params]
 

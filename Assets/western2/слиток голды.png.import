@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bctv70nswjguc"
 path.s3tc="res://.godot/imported/слиток голды.png-2dc17420190efb4de6634b3ae267a57d.s3tc.ctex"
+path.etc2="res://.godot/imported/слиток голды.png-2dc17420190efb4de6634b3ae267a57d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/слиток голды.png"
-dest_files=["res://.godot/imported/слиток голды.png-2dc17420190efb4de6634b3ae267a57d.s3tc.ctex"]
+dest_files=["res://.godot/imported/слиток голды.png-2dc17420190efb4de6634b3ae267a57d.s3tc.ctex", "res://.godot/imported/слиток голды.png-2dc17420190efb4de6634b3ae267a57d.etc2.ctex"]
 
 [params]
 

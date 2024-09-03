@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4fc3r2wtpnx8"
 path.s3tc="res://.godot/imported/holle new.png-8e989c0e0c7a0c719fe3ff7b8b5d23ac.s3tc.ctex"
+path.etc2="res://.godot/imported/holle new.png-8e989c0e0c7a0c719fe3ff7b8b5d23ac.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/beach 33/holle new.png"
-dest_files=["res://.godot/imported/holle new.png-8e989c0e0c7a0c719fe3ff7b8b5d23ac.s3tc.ctex"]
+dest_files=["res://.godot/imported/holle new.png-8e989c0e0c7a0c719fe3ff7b8b5d23ac.s3tc.ctex", "res://.godot/imported/holle new.png-8e989c0e0c7a0c719fe3ff7b8b5d23ac.etc2.ctex"]
 
 [params]
 
