@@ -29,6 +29,16 @@ func _physics_process(delta):
 	prev_frame_velocity=linear_velocity
 
 func _process(_delta):
+	if OS.has_feature("mobile"):
+		mobile_movement()
+	else:
+		pc_movement()
+
+func mobile_movement():
+	tilt_x=clamp(Input.get_accelerometer().x*16.30,-max_tilt_x,max_tilt_x)
+	tilt_z=-clamp(Input.get_accelerometer().y*16.30,-max_tilt_z,max_tilt_z)
+
+func pc_movement():
 	if Input.is_action_pressed("press_down") and not Input.is_action_pressed("press_up"):
 		tilt_z=max_tilt_z
 	elif Input.is_action_pressed("press_up") and not Input.is_action_pressed("press_down"):

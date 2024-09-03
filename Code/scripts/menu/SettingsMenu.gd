@@ -42,18 +42,12 @@ func _on_apply_pressed():
 	apply_settings()
 
 func apply_settings():
-	var window = get_window()
-	if settings.fullscreen:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	if OS.has_feature("mobile"):
+		apply_settings_mobile()
 	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-		var center = window.position + window.size/2
-		window.size = settings.resolutions[settings.resolution]
-		window.position = center - window.size/2
-	interface_node.scale = Vector2(float(window.size.y)/DEFAULT_HEIGHT,
-		float(window.size.y)/DEFAULT_HEIGHT)
-	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"),settings.is_music_mute)
-	AudioServer.set_bus_mute(AudioServer.get_bus_index("Sound"),settings.is_sound_mute)
+		apply_settings_pc()
+
+	
 
 func _on_sound_toggled(toggled_on):
 	settings.is_sound_mute = toggled_on
@@ -74,3 +68,22 @@ func _process(_delta):
 
 func save():
 	ResourceSaver.save(settings,"user://settings.tres")
+
+func apply_settings_mobile():
+	var window = get_window()
+	interface_node.scale = Vector2(float(window.size.y)/DEFAULT_HEIGHT,
+		float(window.size.y)/DEFAULT_HEIGHT)
+
+func apply_settings_pc():
+	var window = get_window()
+	if settings.fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		var center = window.position + window.size/2
+		window.size = settings.resolutions[settings.resolution]
+		window.position = center - window.size/2
+	interface_node.scale = Vector2(float(window.size.y)/DEFAULT_HEIGHT,
+		float(window.size.y)/DEFAULT_HEIGHT)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"),settings.is_music_mute)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Sound"),settings.is_sound_mute)
