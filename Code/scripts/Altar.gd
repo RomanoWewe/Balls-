@@ -10,7 +10,7 @@ func _ready() -> void:
 	level= get_tree().root.get_child(0) as Level
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if !body is Ball or collected:
+	if !body.is_in_group("Ball") or collected:
 		return
 	collected=true
 	level.rune_collected(preview)

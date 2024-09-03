@@ -27,7 +27,7 @@ height = 4.0
 height = 20.0
 radius = 8.0
 
-[node name="ball" type="RigidBody3D" node_paths=PackedStringArray("light")]
+[node name="ball" type="RigidBody3D" node_paths=PackedStringArray("light") groups=["Ball"]]
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
 gravity_scale = 13.0
 continuous_cd = true

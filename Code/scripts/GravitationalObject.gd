@@ -7,6 +7,8 @@ var waters_intersected := []
 @export var buoyancy := .9
 @export var gravity_force : float = 5000
 @export var is_affected_by_tilt := false
+@export var inverse_z :=false
+@export var inverse_x :=false
 
 var tilt_x : float
 var tilt_z : float
@@ -20,7 +22,7 @@ var prev_frame_velocity : Vector3 = Vector3()
 
 func _physics_process(delta):
 	if is_affected_by_tilt:
-		apply_force(Vector3(sin(deg_to_rad(tilt_x))*gravity_force*delta,0,sin(deg_to_rad(tilt_z))*gravity_force*delta))
+		apply_force(calculate_pull_force()*delta)
 		var vec2 = Vector2(linear_velocity.x,linear_velocity.z).limit_length(max_speed)
 		linear_velocity = Vector3(vec2.x,linear_velocity.y,vec2.y)
 	if (linear_velocity-prev_frame_velocity).length()>10 and has_node("HitSound"):
@@ -56,3 +58,11 @@ func make_invincible(seconds:float):
 	invincible = true
 	await get_tree().create_timer(seconds).timeout
 	invincible=false
+
+func calculate_pull_force() -> Vector3:
+	var force=Vector3(sin(deg_to_rad(tilt_x))*gravity_force,0,sin(deg_to_rad(tilt_z))*gravity_force)
+	if inverse_x:
+		force.x=-force.x
+	if inverse_z:
+		force.z=-force.z
+	return force
