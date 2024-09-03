@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cispdlftb2uni"
 path.s3tc="res://.godot/imported/крутящий елемент.png-10a1a7af6d123ddb122d89a36b7c1bbe.s3tc.ctex"
-path.etc2="res://.godot/imported/крутящий елемент.png-10a1a7af6d123ddb122d89a36b7c1bbe.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/крутящий елемент.png"
-dest_files=["res://.godot/imported/крутящий елемент.png-10a1a7af6d123ddb122d89a36b7c1bbe.s3tc.ctex", "res://.godot/imported/крутящий елемент.png-10a1a7af6d123ddb122d89a36b7c1bbe.etc2.ctex"]
+dest_files=["res://.godot/imported/крутящий елемент.png-10a1a7af6d123ddb122d89a36b7c1bbe.s3tc.ctex"]
 
 [params]
 

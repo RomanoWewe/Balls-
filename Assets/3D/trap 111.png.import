@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbg72qhgh083q"
 path.s3tc="res://.godot/imported/trap 111.png-27fec307dc1f9487c809374205746bc9.s3tc.ctex"
-path.etc2="res://.godot/imported/trap 111.png-27fec307dc1f9487c809374205746bc9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/trap 111.png"
-dest_files=["res://.godot/imported/trap 111.png-27fec307dc1f9487c809374205746bc9.s3tc.ctex", "res://.godot/imported/trap 111.png-27fec307dc1f9487c809374205746bc9.etc2.ctex"]
+dest_files=["res://.godot/imported/trap 111.png-27fec307dc1f9487c809374205746bc9.s3tc.ctex"]
 
 [params]
 

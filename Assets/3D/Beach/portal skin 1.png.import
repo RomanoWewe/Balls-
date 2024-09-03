@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4iy2icgokecx"
 path.s3tc="res://.godot/imported/portal skin 1.png-9335d289fdfe79644c94f2d1d35c1725.s3tc.ctex"
-path.etc2="res://.godot/imported/portal skin 1.png-9335d289fdfe79644c94f2d1d35c1725.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/Beach/portal skin 1.png"
-dest_files=["res://.godot/imported/portal skin 1.png-9335d289fdfe79644c94f2d1d35c1725.s3tc.ctex", "res://.godot/imported/portal skin 1.png-9335d289fdfe79644c94f2d1d35c1725.etc2.ctex"]
+dest_files=["res://.godot/imported/portal skin 1.png-9335d289fdfe79644c94f2d1d35c1725.s3tc.ctex"]
 
 [params]
 

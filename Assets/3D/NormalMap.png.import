@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbgwmdl8uk3yc"
 path.s3tc="res://.godot/imported/NormalMap.png-cb6f3d928f79be0fd209b26af79a59dc.s3tc.ctex"
-path.etc2="res://.godot/imported/NormalMap.png-cb6f3d928f79be0fd209b26af79a59dc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/NormalMap.png"
-dest_files=["res://.godot/imported/NormalMap.png-cb6f3d928f79be0fd209b26af79a59dc.s3tc.ctex", "res://.godot/imported/NormalMap.png-cb6f3d928f79be0fd209b26af79a59dc.etc2.ctex"]
+dest_files=["res://.godot/imported/NormalMap.png-cb6f3d928f79be0fd209b26af79a59dc.s3tc.ctex"]
 
 [params]
 

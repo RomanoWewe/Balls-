@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2mdgbt6yhklr"
 path.s3tc="res://.godot/imported/wood bridge ошметек 7.png-436b399b509257b03aaaf42b9f09b94c.s3tc.ctex"
-path.etc2="res://.godot/imported/wood bridge ошметек 7.png-436b399b509257b03aaaf42b9f09b94c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/wood bridge ошметек 7.png"
-dest_files=["res://.godot/imported/wood bridge ошметек 7.png-436b399b509257b03aaaf42b9f09b94c.s3tc.ctex", "res://.godot/imported/wood bridge ошметек 7.png-436b399b509257b03aaaf42b9f09b94c.etc2.ctex"]
+dest_files=["res://.godot/imported/wood bridge ошметек 7.png-436b399b509257b03aaaf42b9f09b94c.s3tc.ctex"]
 
 [params]
 

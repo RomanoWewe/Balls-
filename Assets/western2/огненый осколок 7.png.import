@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dipdaal2m7b1p"
 path.s3tc="res://.godot/imported/огненый осколок 7.png-d2373c6ef664ff0f7bf77ea6b13ac82d.s3tc.ctex"
-path.etc2="res://.godot/imported/огненый осколок 7.png-d2373c6ef664ff0f7bf77ea6b13ac82d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/огненый осколок 7.png"
-dest_files=["res://.godot/imported/огненый осколок 7.png-d2373c6ef664ff0f7bf77ea6b13ac82d.s3tc.ctex", "res://.godot/imported/огненый осколок 7.png-d2373c6ef664ff0f7bf77ea6b13ac82d.etc2.ctex"]
+dest_files=["res://.godot/imported/огненый осколок 7.png-d2373c6ef664ff0f7bf77ea6b13ac82d.s3tc.ctex"]
 
 [params]
 
