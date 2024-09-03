@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://h4nw016fujqm"
 path.s3tc="res://.godot/imported/wall4 cкин.png-b4fef5fae87d7d2428e7bceeba2ae4ee.s3tc.ctex"
+path.etc2="res://.godot/imported/wall4 cкин.png-b4fef5fae87d7d2428e7bceeba2ae4ee.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/beach 33/wall4 cкин.png"
-dest_files=["res://.godot/imported/wall4 cкин.png-b4fef5fae87d7d2428e7bceeba2ae4ee.s3tc.ctex"]
+dest_files=["res://.godot/imported/wall4 cкин.png-b4fef5fae87d7d2428e7bceeba2ae4ee.s3tc.ctex", "res://.godot/imported/wall4 cкин.png-b4fef5fae87d7d2428e7bceeba2ae4ee.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c00q237uadubk"
 path.s3tc="res://.godot/imported/крутящий елемент (основа).png-f44a984d0e2e00770fa04a28b2e0b449.s3tc.ctex"
+path.etc2="res://.godot/imported/крутящий елемент (основа).png-f44a984d0e2e00770fa04a28b2e0b449.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/крутящий елемент (основа).png"
-dest_files=["res://.godot/imported/крутящий елемент (основа).png-f44a984d0e2e00770fa04a28b2e0b449.s3tc.ctex"]
+dest_files=["res://.godot/imported/крутящий елемент (основа).png-f44a984d0e2e00770fa04a28b2e0b449.s3tc.ctex", "res://.godot/imported/крутящий елемент (основа).png-f44a984d0e2e00770fa04a28b2e0b449.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgmuroups0i3x"
 path.s3tc="res://.godot/imported/wall1corner2side.png-72c59942eb02c3dc49b70a8d93ae1021.s3tc.ctex"
+path.etc2="res://.godot/imported/wall1corner2side.png-72c59942eb02c3dc49b70a8d93ae1021.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/beach 33/wall1corner2side.png"
-dest_files=["res://.godot/imported/wall1corner2side.png-72c59942eb02c3dc49b70a8d93ae1021.s3tc.ctex"]
+dest_files=["res://.godot/imported/wall1corner2side.png-72c59942eb02c3dc49b70a8d93ae1021.s3tc.ctex", "res://.godot/imported/wall1corner2side.png-72c59942eb02c3dc49b70a8d93ae1021.etc2.ctex"]
 
 [params]
 
