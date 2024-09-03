@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cpgm5eioldkm8"]
+[gd_scene load_steps=17 format=3 uid="uid://cpgm5eioldkm8"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_leu8j"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="2_g0dp2"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cvb8fne1cesb3" path="res://Scenes/Objects/BuildingBlocks/Cave/GolemCave.tscn" id="7_qql52"]
 [ext_resource type="PackedScene" uid="uid://d4ewchetyfofr" path="res://Scenes/Objects/BuildingBlocks/Cave/LampCave.tscn" id="9_vukk2"]
 [ext_resource type="PackedScene" uid="uid://blpe4uvjfaslc" path="res://Scenes/Objects/BuildingBlocks/Cave/Buttons/ButtonHoldNReturnCave.tscn" id="11_fsm2n"]
-[ext_resource type="Script" path="res://Code/scripts/buttons/button_hold_n_return.gd" id="12_f4l80"]
 [ext_resource type="PackedScene" uid="uid://c5xt0mjg1pf48" path="res://Scenes/Objects/BuildingBlocks/Cave/ColumnCave.tscn" id="13_v5svr"]
 [ext_resource type="PackedScene" path="res://Scenes/Objects/BuildingBlocks/Cave/HoleCave.tscn" id="24_xn23x"]
 
@@ -1103,11 +1102,6 @@ physics_material_override = SubResource("PhysicsMaterial_qxiq0")
 [node name="5,35,-20(0)" parent="static" instance=ExtResource("24_xn23x")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 5, -20)
 
-[node name="5,35,-15(0)" type="Area3D" parent="static" node_paths=PackedStringArray("connections", "text_timer") instance=ExtResource("11_fsm2n")]
+[node name="5,35,-15(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("11_fsm2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, -15)
-script = ExtResource("12_f4l80")
 connections = [NodePath("../5,0,-10(0)"), NodePath("../5,0,0(0)"), NodePath("../5,0,10(0)"), NodePath("../5,70,-10(0)"), NodePath("../5,0,45(0)"), NodePath("../5,70,45(0)"), NodePath("../5,70,25(0)"), NodePath("../5,70,0(0)"), NodePath("../5,70,25(0)"), NodePath("../5,70,-10(0)"), NodePath("../5,70,0(0)"), NodePath("../5,70,10(0)"), NodePath("../5,70,25(0)"), NodePath("../5,70,35(0)"), NodePath("../5,70,45(0)"), NodePath("../5,0,35(0)"), NodePath("../5,0,25(0)")]
-text_timer = NodePath("Text")
-
-[connection signal="body_entered" from="static/5,35,-15(0)" to="static/5,35,-15(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="static/5,35,-15(0)" to="static/5,35,-15(0)" method="_on_body_exited"]
