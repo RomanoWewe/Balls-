@@ -1,8 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://oyadbyyikd4n"]
+[gd_scene load_steps=17 format=3 uid="uid://oyadbyyikd4n"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_71goh"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="2_85e5x"]
 [ext_resource type="PackedScene" uid="uid://b5lgd6jcsqxf3" path="res://Scenes/Objects/BuildingBlocks/Cave/floorCave.tscn" id="3_qtju4"]
+[ext_resource type="PackedScene" uid="uid://dj4nsi13c5hpw" path="res://Scenes/Objects/BuildingBlocks/Cave/DoppelgangerCave.tscn" id="4_dvs2w"]
+[ext_resource type="Script" path="res://Code/scripts/AI/AIDoppelganger.gd" id="5_gnlnv"]
+[ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="6_s6vjv"]
+[ext_resource type="Script" path="res://Code/scripts/Ball.gd" id="7_6fap3"]
+[ext_resource type="PackedScene" uid="uid://bji05vr0y4cdq" path="res://Scenes/Objects/BuildingBlocks/Cave/WallStraightCave.tscn" id="8_rafqt"]
+[ext_resource type="PackedScene" uid="uid://m3tt1t33t28s" path="res://Scenes/Objects/BuildingBlocks/Cave/WallInnerCornerCave.tscn" id="9_gfyvu"]
+[ext_resource type="PackedScene" uid="uid://dqxts68d6qc3p" path="res://Scenes/Objects/BuildingBlocks/Cave/WallOuterCornerCave.tscn" id="10_55lxj"]
+[ext_resource type="Script" path="res://Code/scripts/ActivatableLight.gd" id="11_mh5pl"]
 
 [sub_resource type="Environment" id="Environment_duhm2"]
 background_mode = 1
@@ -29,6 +37,14 @@ agent_radius = 1.5
 agent_max_climb = 0.0
 agent_max_slope = 0.02
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vitqc"]
+friction = 0.5
+rough = true
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nsy35"]
+friction = 0.5
+rough = true
+
 [node name="65" type="Node3D"]
 script = ExtResource("1_71goh")
 
@@ -46,7 +62,7 @@ environment = SubResource("Environment_duhm2")
 transform = Transform3D(1, 0, 0, 0, 0.999841, 0.0178538, 0, -0.0178538, 0.999841, 0, -1.3163, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 37.442, 87.8087, 17.7349)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 37.442, 60.8087, 17.7349)
 fov = 60.0
 
 [node name="GolemNavigationRegion3D" type="NavigationRegion3D" parent="."]
@@ -62,35 +78,11 @@ navigation_layers = 2
 [node name="0,25,25(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 25)
 
-[node name="0,30,25(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 25)
-
-[node name="0,35,25(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 25)
-
-[node name="0,35,20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 20)
-
-[node name="0,30,20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 20)
-
 [node name="0,25,20(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 20)
 
 [node name="0,25,15(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 15)
-
-[node name="0,35,15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 15)
-
-[node name="0,40,25(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 25)
-
-[node name="0,40,20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 20)
-
-[node name="0,40,15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 15)
 
 [node name="0,45,25(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 25)
@@ -122,17 +114,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 30)
 [node name="0,20,30(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 30)
 
-[node name="0,30,30(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 30)
-
-[node name="0,40,30(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 30)
-
 [node name="0,45,30(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 30)
-
-[node name="0,35,30(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 30)
 
 [node name="0,20,35(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 35)
@@ -140,29 +123,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 35)
 [node name="0,25,35(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 35)
 
-[node name="0,30,35(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 35)
-
-[node name="0,35,35(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 35)
-
-[node name="0,40,35(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 35)
-
 [node name="0,45,35(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 35)
 
 [node name="0,45,10(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 10)
-
-[node name="0,40,10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 10)
-
-[node name="0,35,10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 10)
-
-[node name="0,30,10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10)
 
 [node name="0,25,10(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 10)
@@ -182,29 +147,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 5)
 [node name="0,25,5(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 5)
 
-[node name="0,30,5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 5)
-
-[node name="0,35,5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 5)
-
-[node name="0,40,5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 5)
-
 [node name="0,45,5(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 5)
-
-[node name="0,10,35(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 35)
-
-[node name="0,10,30(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 30)
-
-[node name="0,10,25(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 25)
-
-[node name="0,10,20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
 
 [node name="0,10,15(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 15)
@@ -257,30 +201,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 10)
 [node name="0,55,5(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 5)
 
-[node name="0,5,35(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 35)
-
-[node name="0,5,30(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 30)
-
-[node name="0,5,25(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 25)
-
-[node name="0,5,20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 20)
-
-[node name="0,5,15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 15)
-
-[node name="0,5,5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
-
-[node name="0,5,10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 10)
-
-[node name="0,5,0(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
-
 [node name="0,10,0(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 
@@ -293,15 +213,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
 [node name="0,25,0(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
 
-[node name="0,30,0(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
-
-[node name="0,35,0(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 0)
-
-[node name="0,40,0(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 0)
-
 [node name="0,45,0(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 0)
 
@@ -311,12 +222,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
 [node name="0,55,0(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 0)
 
-[node name="0,5,40(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 40)
-
-[node name="0,10,40(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 40)
-
 [node name="0,15,40(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 40)
 
@@ -325,15 +230,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 40)
 
 [node name="0,25,40(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 40)
-
-[node name="0,30,40(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 40)
-
-[node name="0,35,40(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 40)
-
-[node name="0,40,40(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 40)
 
 [node name="0,45,40(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 40)
@@ -350,89 +246,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 30)
 [node name="0,20,20(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
 
-[node name="0,30,15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 15)
-
 [node name="0,15,35(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 35)
-
-[node name="0,0,5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-
-[node name="0,0,10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
-
-[node name="0,0,15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
-
-[node name="0,0,20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
-
-[node name="0,0,25(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
-
-[node name="0,0,30(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
-
-[node name="0,0,35(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35)
-
-[node name="0,0,40(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
-
-[node name="0,5,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 45)
-
-[node name="0,0,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 45)
-
-[node name="0,10,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 45)
-
-[node name="0,15,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 45)
-
-[node name="0,20,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 45)
-
-[node name="0,25,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 45)
-
-[node name="0,30,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 45)
-
-[node name="0,35,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 45)
-
-[node name="0,40,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 45)
-
-[node name="0,45,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 45)
-
-[node name="0,50,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 45)
-
-[node name="0,55,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 45)
-
-[node name="0,60,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 45)
-
-[node name="0,60,40(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 40)
-
-[node name="0,60,35(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 35)
-
-[node name="0,60,30(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 30)
-
-[node name="0,60,25(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 25)
-
-[node name="0,60,20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 20)
 
 [node name="0,60,15(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 15)
@@ -458,15 +273,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -5)
 [node name="0,45,-5(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -5)
 
-[node name="0,40,-5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -5)
-
-[node name="0,35,-5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -5)
-
-[node name="0,30,-5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -5)
-
 [node name="0,25,-5(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -5)
 
@@ -479,397 +285,614 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -5)
 [node name="0,10,-5(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -5)
 
-[node name="0,5,-5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
+[node name="0,60,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 30)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,0,-5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+[node name="0,60,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 25)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,0,0(0)" parent="static" instance=ExtResource("3_qtju4")]
+[node name="0,60,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 20)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,0,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+[node name="0,10,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 40)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,5,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -10)
+[node name="0,10,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 35)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,10,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+[node name="0,10,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 30)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,15,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -10)
+[node name="0,10,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 25)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,20,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -10)
+[node name="0,10,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,20,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -15)
+[node name="0,60,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 40)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,25,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -15)
+[node name="0,60,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 35)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,30,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -15)
+[node name="0,10,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 45)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,35,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -15)
+[node name="0,15,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 45)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,40,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -15)
+[node name="0,20,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 45)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,45,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -15)
+[node name="0,25,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 45)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,50,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -15)
+[node name="0,45,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 45)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,55,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, -15)
+[node name="0,50,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 45)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,55,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, -10)
+[node name="0,55,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 45)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,60,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -10)
+[node name="0,60,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 45)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,50,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -10)
-
-[node name="0,45,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -10)
-
-[node name="0,40,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -10)
-
-[node name="0,35,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -10)
-
-[node name="0,30,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -10)
-
-[node name="0,25,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -10)
-
-[node name="0,10,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -15)
-
-[node name="0,5,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -15)
-
-[node name="0,0,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
-
-[node name="0,15,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -15)
-
-[node name="0,50,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -20)
-
-[node name="0,55,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, -20)
-
-[node name="0,60,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -15)
-
-[node name="0,65,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -15)
-
-[node name="0,65,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -10)
-
-[node name="0,65,-5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -5)
-
-[node name="0,65,0(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 0)
-
-[node name="0,65,5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 5)
-
-[node name="0,65,10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 10)
-
-[node name="0,65,15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 15)
-
-[node name="0,65,20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 20)
-
-[node name="0,65,25(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 25)
-
-[node name="0,65,30(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 30)
-
-[node name="0,65,35(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 35)
-
-[node name="0,70,35(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 35)
-
-[node name="0,70,40(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 40)
-
-[node name="0,70,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 45)
-
-[node name="0,70,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 50)
-
-[node name="0,65,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 50)
-
-[node name="0,65,45(0)" parent="static" instance=ExtResource("3_qtju4")]
+[node name="0,65,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 45)
+collision_layer = 7
+collision_mask = 7
 
-[node name="0,65,40(0)" parent="static" instance=ExtResource("3_qtju4")]
+[node name="0,65,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 40)
-
-[node name="0,60,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 50)
-
-[node name="0,55,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 50)
-
-[node name="0,50,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 50)
-
-[node name="0,45,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 50)
-
-[node name="0,40,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 50)
-
-[node name="0,35,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 50)
-
-[node name="0,30,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 50)
-
-[node name="0,25,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 50)
-
-[node name="0,25,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 55)
-
-[node name="0,20,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 55)
-
-[node name="0,15,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 55)
-
-[node name="0,10,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 55)
-
-[node name="0,5,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 55)
-
-[node name="0,0,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 55)
-
-[node name="0,0,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
-
-[node name="0,-5,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 50)
-
-[node name="0,5,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 50)
-
-[node name="0,10,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 50)
-
-[node name="0,20,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 50)
-
-[node name="0,15,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 50)
-
-[node name="0,30,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 55)
-
-[node name="0,35,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 55)
-
-[node name="0,40,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 55)
-
-[node name="0,45,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 55)
-
-[node name="0,50,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 55)
-
-[node name="0,55,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 55)
-
-[node name="0,60,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 55)
-
-[node name="0,65,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 55)
-
-[node name="0,70,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 55)
-
-[node name="0,75,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 55)
-
-[node name="0,75,50(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 50)
-
-[node name="0,75,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 45)
-
-[node name="0,75,40(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 40)
-
-[node name="0,75,35(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 35)
-
-[node name="0,75,30(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 30)
-
-[node name="0,70,30(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 30)
-
-[node name="0,70,25(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 25)
-
-[node name="0,75,25(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 25)
-
-[node name="0,75,20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 20)
-
-[node name="0,75,15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 15)
-
-[node name="0,70,15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 15)
-
-[node name="0,70,20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 20)
-
-[node name="0,75,10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 10)
-
-[node name="0,70,10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 10)
-
-[node name="0,70,5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 5)
-
-[node name="0,70,0(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 0)
-
-[node name="0,75,0(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 0)
-
-[node name="0,75,5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 5)
-
-[node name="0,75,-5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -5)
-
-[node name="0,70,-5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -5)
-
-[node name="0,70,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -10)
-
-[node name="0,75,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -10)
-
-[node name="0,75,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -15)
-
-[node name="0,70,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -15)
-
-[node name="0,70,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -20)
-
-[node name="0,75,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, -20)
-
-[node name="0,65,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -20)
-
-[node name="0,60,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -20)
-
-[node name="0,45,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, -20)
-
-[node name="0,40,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, -20)
-
-[node name="0,35,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, -20)
-
-[node name="0,30,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -20)
-
-[node name="0,25,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -20)
-
-[node name="0,20,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
-
-[node name="0,15,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -20)
-
-[node name="0,10,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -20)
-
-[node name="0,5,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -20)
-
-[node name="0,0,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
-
-[node name="0,-5,-20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -20)
-
-[node name="0,-5,-15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -15)
-
-[node name="0,-5,-10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -10)
-
-[node name="0,-5,-5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
-
-[node name="0,-5,0(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
-
-[node name="0,-5,5(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
-
-[node name="0,-5,10(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 10)
-
-[node name="0,-5,15(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 15)
-
-[node name="0,-5,20(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 20)
-
-[node name="0,-5,25(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 25)
-
-[node name="0,-5,30(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 30)
-
-[node name="0,-5,35(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 35)
-
-[node name="0,-5,40(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 40)
-
-[node name="0,-5,45(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 45)
-
-[node name="0,-5,55(0)" parent="static" instance=ExtResource("3_qtju4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 55)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,65,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 35)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,65,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 30)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,65,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 25)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,65,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 20)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,65,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 15)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,65,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 10)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,65,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 5)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,65,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 0)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,65,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, -5)
+collision_layer = 7
+collision_mask = 7
+
+[node name="5,60,0(0)" type="RigidBody3D" parent="static" node_paths=PackedStringArray("light") instance=ExtResource("4_dvs2w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 5, 0)
+physics_material_override = SubResource("PhysicsMaterial_vitqc")
+gravity_scale = 13.0
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 5
+linear_damp_mode = 1
+linear_damp = 1.0
+angular_damp_mode = 1
+angular_damp = 1.0
+script = ExtResource("5_gnlnv")
+light = NodePath("Light")
+buoyancy = 0.0
+gravity_force = 4500.0
+max_tilt_x = 90.0
+max_tilt_z = 90.0
+max_speed = 22.5
+
+[node name="0,30,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 45)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,30,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 40)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,30,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 35)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,30,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 30)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,30,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 25)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,30,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 20)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,30,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 15)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,30,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 10)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,30,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 5)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,30,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,30,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -5)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,40,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 20)
+collision_layer = 7
+collision_mask = 7
+
+[node name="0,35,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_qtju4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 20)
+collision_layer = 7
+collision_mask = 7
+
+[node name="5,15,40(0)" type="RigidBody3D" parent="static" node_paths=PackedStringArray("light") instance=ExtResource("6_s6vjv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 40)
+physics_material_override = SubResource("PhysicsMaterial_nsy35")
+gravity_scale = 13.0
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 5
+linear_damp_mode = 1
+linear_damp = 1.0
+angular_damp_mode = 1
+angular_damp = 1.0
+script = ExtResource("7_6fap3")
+light = NodePath("Light")
+buoyancy = 0.0
+gravity_force = 4500.0
+max_tilt_x = 90.0
+max_tilt_z = 90.0
+max_speed = 22.5
+
+[node name="5,15,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 5, -5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,20,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 5, -5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,25,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 5, -5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,30,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 5, 0)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,30,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 5, 5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,30,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 5, 10)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,35,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 5, 15)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,40,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, 15)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,45,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 10)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,45,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,45,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 0)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,40,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, 5, 25)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,35,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 35, 5, 25)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,30,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 5, 30)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,30,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 5, 35)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,30,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 5, 40)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,45,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 30)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,45,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 35)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,45,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 40)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,50,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 50, 5, 45)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,55,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 55, 5, 45)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,60,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 60, 5, 45)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,65,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 65, 5, 40)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,65,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 65, 5, 15)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,65,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 65, 5, 35)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,65,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 65, 5, 30)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,65,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 65, 5, 25)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,65,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 65, 5, 20)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,65,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 65, 5, 10)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,65,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 65, 5, 5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,65,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 65, 5, 0)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,60,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 60, 5, -5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,55,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 55, 5, -5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,50,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 50, 5, -5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 0)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 20)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 25)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 30)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 35)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 40)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,15,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 15, 5, 45)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,20,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 20, 5, 45)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,25,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 25, 5, 45)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 15)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("8_rafqt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 10)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("9_gfyvu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 45)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,30,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("9_gfyvu")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 30, 5, 45)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,45,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("9_gfyvu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 45)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,65,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("9_gfyvu")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 65, 5, 45)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,65,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("9_gfyvu")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 65, 5, -5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,45,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("9_gfyvu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45, 5, -5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,30,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("9_gfyvu")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 5, -5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,10,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("9_gfyvu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 5, -5)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+
+[node name="5,30,15(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("light", "light_collider") groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("10_55lxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 15)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+script = ExtResource("11_mh5pl")
+light = NodePath("Light")
+light_collider = NodePath("StaticBody3D/CollisionShape3D")
+
+[node name="5,45,15(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("light", "light_collider") groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("10_55lxj")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 45, 5, 15)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+script = ExtResource("11_mh5pl")
+light = NodePath("Light")
+light_collider = NodePath("StaticBody3D/CollisionShape3D")
+
+[node name="5,45,25(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("light", "light_collider") groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("10_55lxj")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 45, 5, 25)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+script = ExtResource("11_mh5pl")
+light = NodePath("Light")
+light_collider = NodePath("StaticBody3D/CollisionShape3D")
+
+[node name="5,30,25(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("light", "light_collider") groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("10_55lxj")]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, 30, 5, 25)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
+script = ExtResource("11_mh5pl")
+light = NodePath("Light")
+light_collider = NodePath("StaticBody3D/CollisionShape3D")
+
+[connection signal="body_entered" from="static/5,60,0(0)" to="static/5,60,0(0)" method="_on_body_entered"]
+[connection signal="body_entered" from="static/5,15,40(0)" to="static/5,15,40(0)" method="_on_body_entered"]
+[connection signal="body_exited" from="static/5,15,40(0)" to="static/5,15,40(0)" method="_on_body_exited"]
