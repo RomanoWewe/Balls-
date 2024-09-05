@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dhxl1gdjrbao5"
 path.s3tc="res://.godot/imported/конвеер новый1.png-8fe99cabf5772c8cdf38b7b5b4a3f5f4.s3tc.ctex"
+path.etc2="res://.godot/imported/конвеер новый1.png-8fe99cabf5772c8cdf38b7b5b4a3f5f4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/конвеер новый1.png"
-dest_files=["res://.godot/imported/конвеер новый1.png-8fe99cabf5772c8cdf38b7b5b4a3f5f4.s3tc.ctex"]
+dest_files=["res://.godot/imported/конвеер новый1.png-8fe99cabf5772c8cdf38b7b5b4a3f5f4.s3tc.ctex", "res://.godot/imported/конвеер новый1.png-8fe99cabf5772c8cdf38b7b5b4a3f5f4.etc2.ctex"]
 
 [params]
 

@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dgmhji0oeyxhu" path="res://Scenes/Objects/BuildingBlocks/Cave/AltarRedCave.tscn" id="18_sk6gf"]
 [ext_resource type="PackedScene" uid="uid://bxkfb7iwck0d4" path="res://Scenes/Objects/BuildingBlocks/Cave/DoorBlueCave.tscn" id="20_0q18q"]
 [ext_resource type="PackedScene" uid="uid://0jo6cb5jqv1c" path="res://Scenes/Objects/BuildingBlocks/Cave/DoorRedCave.tscn" id="21_1fpoj"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/BuildingBlocks/Cave/HoleCave.tscn" id="23_nia07"]
+[ext_resource type="PackedScene" uid="uid://jaianhn6pa4x" path="res://Scenes/Objects/BuildingBlocks/Cave/HoleCave.tscn" id="23_nia07"]
 [ext_resource type="PackedScene" uid="uid://r7ae6j7tf2d7" path="res://Scenes/Objects/BuildingBlocks/Cave/MossyWallStraightCave.tscn" id="27_ls14f"]
 
 [sub_resource type="Environment" id="Environment_duhm2"]
@@ -29,7 +29,7 @@ geometry_parsed_geometry_type = 1
 geometry_source_geometry_mode = 2
 geometry_source_group_name = &"golem_navigation_group"
 agent_height = 7.0
-agent_radius = 1.5
+agent_radius = 1.0
 agent_max_climb = 0.0
 agent_max_slope = 0.02
 
