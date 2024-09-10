@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bcppxuvja486o"]
+[gd_scene load_steps=24 format=3 uid="uid://bcppxuvja486o"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_6am2j"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="2_senb1"]
@@ -8,27 +8,15 @@
 [ext_resource type="PackedScene" uid="uid://m3tt1t33t28s" path="res://Scenes/Objects/BuildingBlocks/Cave/WallInnerCornerCave.tscn" id="6_1ogxa"]
 [ext_resource type="PackedScene" uid="uid://ca5xji6w0lkod" path="res://Scenes/Objects/BuildingBlocks/Cave/WallThinTCave.tscn" id="6_6c8wm"]
 [ext_resource type="PackedScene" uid="uid://c12ud0ss4hte7" path="res://Scenes/Objects/BuildingBlocks/Cave/WallThinCave.tscn" id="7_nx0ki"]
-[ext_resource type="Script" path="res://Code/scripts/AI/AIDoppelganger.gd" id="9_owb61"]
 [ext_resource type="PackedScene" uid="uid://dgmhji0oeyxhu" path="res://Scenes/Objects/BuildingBlocks/Cave/AltarRedCave.tscn" id="9_wf3qp"]
-[ext_resource type="Script" path="res://Code/scripts/Ball.gd" id="11_7kjhr"]
 [ext_resource type="PackedScene" uid="uid://dj4nsi13c5hpw" path="res://Scenes/Objects/BuildingBlocks/Cave/DoppelgangerCave.tscn" id="11_rvonh"]
 [ext_resource type="PackedScene" uid="uid://blu0sxy212tey" path="res://Scenes/Objects/BuildingBlocks/Cave/AltarBlueCave.tscn" id="12_vt1nk"]
-[ext_resource type="Script" path="res://Code/scripts/Altar.gd" id="13_87rcy"]
 [ext_resource type="PackedScene" uid="uid://0jo6cb5jqv1c" path="res://Scenes/Objects/BuildingBlocks/Cave/DoorRedCave.tscn" id="13_j0wu2"]
-[ext_resource type="Texture2D" uid="uid://kv4gy2gq82aa" path="res://Assets/RuneBlue.png" id="14_slug5"]
 [ext_resource type="PackedScene" uid="uid://bxkfb7iwck0d4" path="res://Scenes/Objects/BuildingBlocks/Cave/DoorBlueCave.tscn" id="14_vj72l"]
 [ext_resource type="PackedScene" path="res://Scenes/Objects/BuildingBlocks/Cave/HoleCave.tscn" id="15_br7m1"]
-[ext_resource type="Script" path="res://Code/scripts/LockedDoor.gd" id="16_rg0q1"]
-[ext_resource type="Texture2D" uid="uid://rsgbwyjuuovm" path="res://Assets/RuneRed.png" id="18_fcx3i"]
-[ext_resource type="Script" path="res://Code/scripts/HoleWildWest.gd" id="20_glqle"]
-[ext_resource type="ArrayMesh" uid="uid://cocgeyp406c4g" path="res://Assets/western2/exite2.obj" id="21_053l4"]
-[ext_resource type="PackedScene" uid="uid://bn8qbmg1uamko" path="res://Scenes/Objects/_Spawnable/WildWestHoleDebris.tscn" id="22_m2pm0"]
 [ext_resource type="PackedScene" uid="uid://cvb8fne1cesb3" path="res://Scenes/Objects/BuildingBlocks/Cave/GolemCave.tscn" id="23_cb8th"]
-[ext_resource type="Script" path="res://Code/scripts/AI/AIGolem.gd" id="24_0d4qe"]
 [ext_resource type="PackedScene" uid="uid://d4ewchetyfofr" path="res://Scenes/Objects/BuildingBlocks/Cave/LampCave.tscn" id="25_8wqsx"]
-[ext_resource type="Script" path="res://Code/scripts/ActivatableLight.gd" id="26_oj2tt"]
 [ext_resource type="PackedScene" uid="uid://blpe4uvjfaslc" path="res://Scenes/Objects/BuildingBlocks/Cave/Buttons/ButtonHoldNReturnCave.tscn" id="27_ipjf3"]
-[ext_resource type="Script" path="res://Code/scripts/buttons/button_hold_n_return.gd" id="28_pgjft"]
 
 [sub_resource type="Environment" id="Environment_duhm2"]
 background_mode = 1
@@ -444,717 +432,343 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 25)
 [node name="0,65,25(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 25)
 
-[node name="0,10,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,10,20(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,15,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,15,20(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,20,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,20,20(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,25,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,25,20(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,30,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,30,20(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,35,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,35,20(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,40,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,40,20(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,40,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,40,25(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 25)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,40,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,40,15(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 15)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,45,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,45,20(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,50,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,50,20(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,55,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,55,20(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,60,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,60,20(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,65,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,65,20(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,70,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,70,20(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 20)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,60,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,60,10(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 10)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,55,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,55,0(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 0, 0)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,50,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,50,5(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 5)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,40,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,40,5(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 5)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,30,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,30,0(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,25,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,25,10(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 10)
-collision_layer = 7
-collision_mask = 7
 
-[node name="5,35,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,35,-5(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 35, 5, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,45,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,45,-5(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45, 5, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,50,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,50,-5(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 50, 5, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,55,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,55,-5(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 55, 5, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,60,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,60,-5(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 60, 5, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,65,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,65,-5(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 65, 5, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,70,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,70,0(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 70, 5, 0)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,70,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,70,5(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 70, 5, 5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,70,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,70,10(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 70, 5, 10)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,70,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,70,15(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 70, 5, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,70,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,70,25(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 70, 5, 25)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,70,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,70,30(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 70, 5, 30)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,70,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,70,35(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 70, 5, 35)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,70,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,70,40(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 70, 5, 40)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,65,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,65,45(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 65, 5, 45)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,60,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,60,45(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 60, 5, 45)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,55,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,55,45(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 55, 5, 45)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,50,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,50,45(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 50, 5, 45)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,45,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,45,45(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 45, 5, 45)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,35,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,35,45(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 35, 5, 45)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,30,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,30,45(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 30, 5, 45)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,20,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,20,45(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 20, 5, 45)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,15,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,15,45(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 15, 5, 45)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,10,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,10,40(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 40)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,10,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,10,35(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 35)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,10,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,10,30(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 30)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,10,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,10,25(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 25)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,10,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,10,15(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,10,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,10,10(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 10)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,10,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,10,5(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,10,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,10,0(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 0)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,15,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,15,-5(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 5, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,20,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,20,-5(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 5, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,25,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,25,-5(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 5, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,30,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,30,-5(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 30, 5, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,10,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("6_1ogxa")]
+[node name="5,10,45(0)" parent="static" instance=ExtResource("6_1ogxa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 45)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,10,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("6_1ogxa")]
+[node name="5,10,-5(0)" parent="static" instance=ExtResource("6_1ogxa")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 5, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,70,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("6_1ogxa")]
+[node name="5,70,-5(0)" parent="static" instance=ExtResource("6_1ogxa")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 70, 5, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,70,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("6_1ogxa")]
+[node name="5,70,45(0)" parent="static" instance=ExtResource("6_1ogxa")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 70, 5, 45)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,40,-5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("6_6c8wm")]
+[node name="5,40,-5(0)" parent="static" instance=ExtResource("6_6c8wm")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, -5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,10,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("6_6c8wm")]
+[node name="5,10,20(0)" parent="static" instance=ExtResource("6_6c8wm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,40,45(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("6_6c8wm")]
+[node name="5,40,45(0)" parent="static" instance=ExtResource("6_6c8wm")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, 5, 45)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,70,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("6_6c8wm")]
+[node name="5,70,20(0)" parent="static" instance=ExtResource("6_6c8wm")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 70, 5, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,40,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,40,40(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, 40)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,40,35(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,40,35(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, 35)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,40,30(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,40,30(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, 30)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,40,25(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,40,25(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, 25)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,40,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,40,20(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,40,15(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,40,15(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, 15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,40,10(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,40,10(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, 10)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,40,5(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,40,5(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, 5)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,40,0(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,40,0(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, 0)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,65,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,65,20(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,60,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,60,20(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 5, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,55,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,55,20(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 5, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,50,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,50,20(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 5, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,45,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,45,20(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,35,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,35,20(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,30,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,30,20(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 5, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,25,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,25,20(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,20,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,20,20(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,15,20(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("7_nx0ki")]
+[node name="5,15,20(0)" parent="static" instance=ExtResource("7_nx0ki")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 20)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,15,0(0)" type="RigidBody3D" parent="static" node_paths=PackedStringArray("light") groups=["Ball"] instance=ExtResource("11_rvonh")]
+[node name="5,15,0(0)" parent="static" instance=ExtResource("11_rvonh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 0)
 physics_material_override = SubResource("PhysicsMaterial_vitqc")
-gravity_scale = 13.0
-continuous_cd = true
-contact_monitor = true
-max_contacts_reported = 5
-linear_damp_mode = 1
-linear_damp = 1.0
-angular_damp_mode = 1
-angular_damp = 1.0
-script = ExtResource("9_owb61")
-light = NodePath("Light")
-buoyancy = 0.0
-gravity_force = 4500.0
-is_affected_by_tilt = true
-inverse_z = true
-inverse_x = true
-max_tilt_x = 90.0
-max_tilt_z = 90.0
-max_speed = 22.5
 
-[node name="5,65,0(0)" type="RigidBody3D" parent="static" node_paths=PackedStringArray("light") groups=["Ball"] instance=ExtResource("11_rvonh")]
+[node name="5,65,0(0)" parent="static" instance=ExtResource("11_rvonh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 0)
 physics_material_override = SubResource("PhysicsMaterial_vitqc")
-gravity_scale = 13.0
-continuous_cd = true
-contact_monitor = true
-max_contacts_reported = 5
-linear_damp_mode = 1
-linear_damp = 1.0
-angular_damp_mode = 1
-angular_damp = 1.0
-script = ExtResource("9_owb61")
-light = NodePath("Light")
-buoyancy = 0.0
-gravity_force = 4500.0
-is_affected_by_tilt = true
-inverse_z = true
-inverse_x = true
-max_tilt_x = 90.0
-max_tilt_z = 90.0
-max_speed = 22.5
 
-[node name="5,65,25(0)" type="RigidBody3D" parent="static" node_paths=PackedStringArray("light") groups=["Ball"] instance=ExtResource("11_rvonh")]
+[node name="5,65,25(0)" parent="static" instance=ExtResource("11_rvonh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 25)
 physics_material_override = SubResource("PhysicsMaterial_vitqc")
-gravity_scale = 13.0
-continuous_cd = true
-contact_monitor = true
-max_contacts_reported = 5
-linear_damp_mode = 1
-linear_damp = 1.0
-angular_damp_mode = 1
-angular_damp = 1.0
-script = ExtResource("9_owb61")
-light = NodePath("Light")
-buoyancy = 0.0
-gravity_force = 4500.0
-is_affected_by_tilt = true
-inverse_z = true
-inverse_x = true
-max_tilt_x = 90.0
-max_tilt_z = 90.0
-max_speed = 22.5
 
-[node name="5,15,40(0)" type="RigidBody3D" parent="static" node_paths=PackedStringArray("light") groups=["Ball"] instance=ExtResource("4_5rpa0")]
+[node name="5,15,40(0)" parent="static" instance=ExtResource("4_5rpa0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 25)
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
-gravity_scale = 13.0
-continuous_cd = true
-contact_monitor = true
-max_contacts_reported = 5
-linear_damp_mode = 1
-linear_damp = 1.0
-angular_damp_mode = 1
-angular_damp = 1.0
-script = ExtResource("11_7kjhr")
-light = NodePath("Light")
-buoyancy = 0.0
-gravity_force = 4500.0
-max_tilt_x = 90.0
-max_tilt_z = 90.0
-max_speed = 22.5
 
-[node name="5,55,5(0)" type="StaticBody3D" parent="static" groups=["golem_navigation_group"] instance=ExtResource("12_vt1nk")]
+[node name="5,55,5(0)" parent="static" instance=ExtResource("12_vt1nk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 5, 5)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("13_87rcy")
-preview = ExtResource("14_slug5")
 
-[node name="5,25,45(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("14_vj72l")]
+[node name="5,25,45(0)" parent="static" instance=ExtResource("14_vj72l")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 5, 45)
-script = ExtResource("16_rg0q1")
-preview = ExtResource("14_slug5")
 
-[node name="5,25,55(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group"] instance=ExtResource("13_j0wu2")]
+[node name="5,25,55(0)" parent="static" instance=ExtResource("13_j0wu2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 5, 55)
-script = ExtResource("16_rg0q1")
-preview = ExtResource("18_fcx3i")
 
-[node name="5,25,60(0)" type="AnimatableBody3D" parent="static" groups=["cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("15_br7m1")]
+[node name="5,25,60(0)" parent="static" instance=ExtResource("15_br7m1")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 25, 5, 60)
-script = ExtResource("20_glqle")
-exploded_mesh = ExtResource("21_053l4")
-debris_scene = ExtResource("22_m2pm0")
 
-[node name="5,20,50(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,20,50(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 50)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,30,50(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("5_0pmlg")]
+[node name="5,30,50(0)" parent="static" instance=ExtResource("5_0pmlg")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 30, 5, 50)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,20,60(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("6_1ogxa")]
+[node name="5,20,60(0)" parent="static" instance=ExtResource("6_1ogxa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 60)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,30,60(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("6_1ogxa")]
+[node name="5,30,60(0)" parent="static" instance=ExtResource("6_1ogxa")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 30, 5, 60)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="0,25,50(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,25,50(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 50)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,25,55(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,25,55(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 55)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,25,60(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,25,60(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 60)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,20,60(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,20,60(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 60)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,20,50(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,20,50(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 50)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,30,50(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,30,50(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 50)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,30,55(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,30,55(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 55)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,30,60(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,30,60(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 60)
-collision_layer = 7
-collision_mask = 7
 
-[node name="0,20,55(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("3_cjbhk")]
+[node name="0,20,55(0)" parent="static" instance=ExtResource("3_cjbhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 55)
-collision_layer = 7
-collision_mask = 7
 
-[node name="5,30,55(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("6_1ogxa")]
+[node name="5,30,55(0)" parent="static" instance=ExtResource("6_1ogxa")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 30, 5, 55)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,20,55(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("6_1ogxa")]
+[node name="5,20,55(0)" parent="static" instance=ExtResource("6_1ogxa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 5, 55)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,25,50(0)" type="RigidBody3D" parent="static" instance=ExtResource("23_cb8th")]
+[node name="5,25,50(0)" parent="static" instance=ExtResource("23_cb8th")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 5, 50)
-collision_layer = 2049
-collision_mask = 2049
-axis_lock_angular_x = true
-axis_lock_angular_y = true
-axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_qxiq0")
-script = ExtResource("24_0d4qe")
-speed = 25
-accel = 0
 
-[node name="5,20,40(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("light", "light_collider") groups=["golem_navigation_group"] instance=ExtResource("25_8wqsx")]
+[node name="5,20,40(0)" parent="static" instance=ExtResource("25_8wqsx")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 20, 5, 40)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("26_oj2tt")
-light = NodePath("RigidBody3D/Light")
-light_collider = NodePath("CollisionShape3D")
 auto_cycling = true
 
-[node name="5,30,40(0)" type="AnimatableBody3D" parent="static" node_paths=PackedStringArray("light", "light_collider") groups=["golem_navigation_group"] instance=ExtResource("25_8wqsx")]
+[node name="5,30,40(0)" parent="static" instance=ExtResource("25_8wqsx")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 30, 5, 40)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("26_oj2tt")
-light = NodePath("RigidBody3D/Light")
-light_collider = NodePath("CollisionShape3D")
 auto_cycling = true
 
-[node name="5,35,0(0)" type="Area3D" parent="static" node_paths=PackedStringArray("connections", "text_timer") instance=ExtResource("27_ipjf3")]
+[node name="5,35,0(0)" parent="static" node_paths=PackedStringArray("connections") instance=ExtResource("27_ipjf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 5, 0)
-script = ExtResource("28_pgjft")
 connections = [NodePath("../5,20,40(0)"), NodePath("../5,30,40(0)")]
-text_timer = NodePath("Text")
 
-[node name="5,65,40(0)" type="StaticBody3D" parent="static" groups=["golem_navigation_group"] instance=ExtResource("9_wf3qp")]
+[node name="5,65,40(0)" parent="static" instance=ExtResource("9_wf3qp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 40)
-script = ExtResource("13_87rcy")
-preview = ExtResource("18_fcx3i")
-
-[connection signal="body_entered" from="static/5,15,0(0)" to="static/5,15,0(0)" method="_on_body_entered"]
-[connection signal="body_entered" from="static/5,65,0(0)" to="static/5,65,0(0)" method="_on_body_entered"]
-[connection signal="body_entered" from="static/5,65,25(0)" to="static/5,65,25(0)" method="_on_body_entered"]
-[connection signal="body_entered" from="static/5,15,40(0)" to="static/5,15,40(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="static/5,15,40(0)" to="static/5,15,40(0)" method="_on_body_exited"]
-[connection signal="body_entered" from="static/5,35,0(0)" to="static/5,35,0(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="static/5,35,0(0)" to="static/5,35,0(0)" method="_on_body_exited"]
