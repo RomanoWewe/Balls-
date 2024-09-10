@@ -69,11 +69,9 @@ fov = 60.0
 
 [node name="GolemNavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-visible = false
 navigation_mesh = SubResource("NavigationMesh_4c5yn")
 
 [node name="CultistNavigationRegion3D" type="NavigationRegion3D" parent="."]
-visible = false
 navigation_mesh = SubResource("NavigationMesh_kdw2k")
 navigation_layers = 2
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcog3ye5yjerb"
 path.s3tc="res://.godot/imported/axe кронка.png-03176e26d5dacab77be7b3c173be3b60.s3tc.ctex"
+path.etc2="res://.godot/imported/axe кронка.png-03176e26d5dacab77be7b3c173be3b60.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/axe кронка.png"
-dest_files=["res://.godot/imported/axe кронка.png-03176e26d5dacab77be7b3c173be3b60.s3tc.ctex"]
+dest_files=["res://.godot/imported/axe кронка.png-03176e26d5dacab77be7b3c173be3b60.s3tc.ctex", "res://.godot/imported/axe кронка.png-03176e26d5dacab77be7b3c173be3b60.etc2.ctex"]
 
 [params]
 

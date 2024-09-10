@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6b5t4dj0aw6h"
 path.s3tc="res://.godot/imported/фонарь.png-12a99c9a7584ab08ced7e92d7f98cc45.s3tc.ctex"
+path.etc2="res://.godot/imported/фонарь.png-12a99c9a7584ab08ced7e92d7f98cc45.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Caves1/фонарь.png"
-dest_files=["res://.godot/imported/фонарь.png-12a99c9a7584ab08ced7e92d7f98cc45.s3tc.ctex"]
+dest_files=["res://.godot/imported/фонарь.png-12a99c9a7584ab08ced7e92d7f98cc45.s3tc.ctex", "res://.godot/imported/фонарь.png-12a99c9a7584ab08ced7e92d7f98cc45.etc2.ctex"]
 
 [params]
 

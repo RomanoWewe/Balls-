@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh1pf0ippq4a0"
 path.s3tc="res://.godot/imported/крутящий елемент (валовые шестерни).png-7ed63a5f91ecff6d9d60ca22209ada68.s3tc.ctex"
+path.etc2="res://.godot/imported/крутящий елемент (валовые шестерни).png-7ed63a5f91ecff6d9d60ca22209ada68.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/крутящий елемент (валовые шестерни).png"
-dest_files=["res://.godot/imported/крутящий елемент (валовые шестерни).png-7ed63a5f91ecff6d9d60ca22209ada68.s3tc.ctex"]
+dest_files=["res://.godot/imported/крутящий елемент (валовые шестерни).png-7ed63a5f91ecff6d9d60ca22209ada68.s3tc.ctex", "res://.godot/imported/крутящий елемент (валовые шестерни).png-7ed63a5f91ecff6d9d60ca22209ada68.etc2.ctex"]
 
 [params]
 

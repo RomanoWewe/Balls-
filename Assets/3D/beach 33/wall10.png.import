@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cndel3gvwy4jw"
 path.s3tc="res://.godot/imported/wall10.png-ef4b7797b411053924b42864e5a4ccdb.s3tc.ctex"
+path.etc2="res://.godot/imported/wall10.png-ef4b7797b411053924b42864e5a4ccdb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/beach 33/wall10.png"
-dest_files=["res://.godot/imported/wall10.png-ef4b7797b411053924b42864e5a4ccdb.s3tc.ctex"]
+dest_files=["res://.godot/imported/wall10.png-ef4b7797b411053924b42864e5a4ccdb.s3tc.ctex", "res://.godot/imported/wall10.png-ef4b7797b411053924b42864e5a4ccdb.etc2.ctex"]
 
 [params]
 
