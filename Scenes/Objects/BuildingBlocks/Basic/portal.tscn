@@ -9,7 +9,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_5y42k"]
 size = Vector3(2, 6, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyvst"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_smlj8"]
 albedo_color = Color(0.2, 0.2, 0.2, 1)
 albedo_texture = ExtResource("2_cgyte")
 
@@ -30,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11731, 0, -2.50001)
 shape = SubResource("BoxShape3D_5y42k")
 
 [node name="mesh" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_jyvst")
+material_override = SubResource("StandardMaterial3D_smlj8")
 mesh = ExtResource("3_fsinn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

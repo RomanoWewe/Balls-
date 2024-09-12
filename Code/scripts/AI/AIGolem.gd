@@ -23,7 +23,8 @@ func _physics_process(delta):
 	if !NavigationServer3D.map_is_active(RID(agent.get_navigation_map())):
 		$AudioStreamPlayer.volume_db=lerp($AudioStreamPlayer.volume_db,-80.0,0.5)
 		return
-	
+	if !is_instance_valid(ball):
+		return
 	agent.target_position = ball.global_position # this one needs the @onready vars we defined earlier
 
 	

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://r75q26ie4y0t"
+path="res://.godot/imported/алтарь для босса(две синии руны  и 1 крассная ).obj-3c7dc662bca6184907ed441d171fd1ef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/алтарь для босса(две синии руны  и 1 крассная ).obj-3c7dc662bca6184907ed441d171fd1ef.mesh"]
+
+source_file="res://Assets/Caves1/алтарь для босса(две синии руны  и 1 крассная ).obj"
+dest_files=["res://.godot/imported/алтарь для босса(две синии руны  и 1 крассная ).obj-3c7dc662bca6184907ed441d171fd1ef.mesh", "res://.godot/imported/алтарь для босса(две синии руны  и 1 крассная ).obj-3c7dc662bca6184907ed441d171fd1ef.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
