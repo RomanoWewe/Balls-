@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5ss2y7382ujx"
+path="res://.godot/imported/каскад(класический).obj-12523107f85efd998c27ed10fabe6501.mesh"
+
+[deps]
+
+files=["res://.godot/imported/каскад(класический).obj-12523107f85efd998c27ed10fabe6501.mesh"]
+
+source_file="res://Assets/3D/Skins/каскад(класический).obj"
+dest_files=["res://.godot/imported/каскад(класический).obj-12523107f85efd998c27ed10fabe6501.mesh", "res://.godot/imported/каскад(класический).obj-12523107f85efd998c27ed10fabe6501.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

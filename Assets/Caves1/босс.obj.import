@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cpurvrffxjbwx"
+path="res://.godot/imported/босс.obj-f5720cb6f42b5c23c2deeb54f85cd775.mesh"
+
+[deps]
+
+files=["res://.godot/imported/босс.obj-f5720cb6f42b5c23c2deeb54f85cd775.mesh"]
+
+source_file="res://Assets/Caves1/босс.obj"
+dest_files=["res://.godot/imported/босс.obj-f5720cb6f42b5c23c2deeb54f85cd775.mesh", "res://.godot/imported/босс.obj-f5720cb6f42b5c23c2deeb54f85cd775.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

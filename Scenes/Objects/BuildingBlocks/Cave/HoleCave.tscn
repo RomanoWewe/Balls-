@@ -7,7 +7,7 @@
 [ext_resource type="ArrayMesh" uid="uid://doge5dvpoh2lw" path="res://Assets/Caves1/дыра в стене.obj" id="5_rc30u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kdgsg"]
-size = Vector3(3, 4, 4)
+size = Vector3(0.1, 4, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_re4a0"]
 size = Vector3(4.5, 5, 0.5)
@@ -21,7 +21,7 @@ debris_scene = ExtResource("3_4tu6v")
 script = ExtResource("4_riyqv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hole"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.726669, 2.33843, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27333, 2.33843, 0)
 shape = SubResource("BoxShape3D_kdgsg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
