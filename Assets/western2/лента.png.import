@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0lrevctl4uov"
 path.s3tc="res://.godot/imported/лента.png-c9a60b1010072c238480096dd79e28ee.s3tc.ctex"
-path.etc2="res://.godot/imported/лента.png-c9a60b1010072c238480096dd79e28ee.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/лента.png"
-dest_files=["res://.godot/imported/лента.png-c9a60b1010072c238480096dd79e28ee.s3tc.ctex", "res://.godot/imported/лента.png-c9a60b1010072c238480096dd79e28ee.etc2.ctex"]
+dest_files=["res://.godot/imported/лента.png-c9a60b1010072c238480096dd79e28ee.s3tc.ctex"]
 
 [params]
 

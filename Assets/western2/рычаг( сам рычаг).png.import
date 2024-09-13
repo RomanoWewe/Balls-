@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dq04tq1282d8r"
 path.s3tc="res://.godot/imported/рычаг( сам рычаг).png-795d1019da1d53f2eee95318bcf47ec0.s3tc.ctex"
-path.etc2="res://.godot/imported/рычаг( сам рычаг).png-795d1019da1d53f2eee95318bcf47ec0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/рычаг( сам рычаг).png"
-dest_files=["res://.godot/imported/рычаг( сам рычаг).png-795d1019da1d53f2eee95318bcf47ec0.s3tc.ctex", "res://.godot/imported/рычаг( сам рычаг).png-795d1019da1d53f2eee95318bcf47ec0.etc2.ctex"]
+dest_files=["res://.godot/imported/рычаг( сам рычаг).png-795d1019da1d53f2eee95318bcf47ec0.s3tc.ctex"]
 
 [params]
 

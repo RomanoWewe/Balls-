@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://uhrgu6a6uuce"
 path.s3tc="res://.godot/imported/cactus1new.png-159b05707d2782c2b1541f25f1fc649d.s3tc.ctex"
-path.etc2="res://.godot/imported/cactus1new.png-159b05707d2782c2b1541f25f1fc649d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/cactus1new.png"
-dest_files=["res://.godot/imported/cactus1new.png-159b05707d2782c2b1541f25f1fc649d.s3tc.ctex", "res://.godot/imported/cactus1new.png-159b05707d2782c2b1541f25f1fc649d.etc2.ctex"]
+dest_files=["res://.godot/imported/cactus1new.png-159b05707d2782c2b1541f25f1fc649d.s3tc.ctex"]
 
 [params]
 

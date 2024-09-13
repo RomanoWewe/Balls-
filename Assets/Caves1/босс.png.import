@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://qv2tda7oe2mj"
 path.s3tc="res://.godot/imported/босс.png-4db5861fd1f21faa3a8bc1e5c077e3c5.s3tc.ctex"
-path.etc2="res://.godot/imported/босс.png-4db5861fd1f21faa3a8bc1e5c077e3c5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Caves1/босс.png"
-dest_files=["res://.godot/imported/босс.png-4db5861fd1f21faa3a8bc1e5c077e3c5.s3tc.ctex", "res://.godot/imported/босс.png-4db5861fd1f21faa3a8bc1e5c077e3c5.etc2.ctex"]
+dest_files=["res://.godot/imported/босс.png-4db5861fd1f21faa3a8bc1e5c077e3c5.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://jjcimesbwjft"
+path="res://.godot/imported/темный шар для босса.obj-cbdf313357f6e11cb58ea4223c85b1ef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/темный шар для босса.obj-cbdf313357f6e11cb58ea4223c85b1ef.mesh"]
+
+source_file="res://Assets/Caves1/темный шар для босса.obj"
+dest_files=["res://.godot/imported/темный шар для босса.obj-cbdf313357f6e11cb58ea4223c85b1ef.mesh", "res://.godot/imported/темный шар для босса.obj-cbdf313357f6e11cb58ea4223c85b1ef.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
