@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnbd6j7lhbe8b"
+path="res://.godot/imported/метовый шар.obj-b2931d64473ebb855e1b30a294a9cb4f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/метовый шар.obj-b2931d64473ebb855e1b30a294a9cb4f.mesh"]
+
+source_file="res://Assets/3D/Skins/метовый шар.obj"
+dest_files=["res://.godot/imported/метовый шар.obj-b2931d64473ebb855e1b30a294a9cb4f.mesh", "res://.godot/imported/метовый шар.obj-b2931d64473ebb855e1b30a294a9cb4f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

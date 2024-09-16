@@ -52,7 +52,7 @@ rough = true
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qxiq0"]
 
-[node name="72" type="Node3D"]
+[node name="80" type="Node3D"]
 script = ExtResource("1_6glp1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
