@@ -153,6 +153,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 30)
 
 [node name="0,40,30(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 30)
+sync_to_physics = false
 
 [node name="0,45,30(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0, 30)
