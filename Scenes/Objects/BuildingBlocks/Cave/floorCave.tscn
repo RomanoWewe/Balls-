@@ -9,7 +9,6 @@ size = Vector3(5, 5, 5)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sw38d"]
 albedo_texture = ExtResource("1_7wotc")
 normal_enabled = true
-normal_scale = 1.5
 normal_texture = ExtResource("2_t8cdv")
 texture_filter = 0
 
