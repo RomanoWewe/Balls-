@@ -36,7 +36,7 @@ func _on_sure_yes_pressed():
 	LevelSelectionController.singleton.stats = Stats.new()
 	LevelSelectionController.singleton.open_page()
 	SkinsMenu.singleton.stats = LevelSelectionController.singleton.stats
-	SkinsMenu.singleton.settings.selected_skin = 0
+	SkinsMenu.singleton.settings_menu.settings.selected_skin = 0
 	SkinsMenu.singleton.current_skin = 0
 	SkinsMenu.singleton.refresh()
 	

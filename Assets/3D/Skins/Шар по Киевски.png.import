@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://8tbq1dhd0eam"
 path.s3tc="res://.godot/imported/Шар по Киевски.png-49d26db7e4414519c3d80e269694d12e.s3tc.ctex"
+path.etc2="res://.godot/imported/Шар по Киевски.png-49d26db7e4414519c3d80e269694d12e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/Skins/Шар по Киевски.png"
-dest_files=["res://.godot/imported/Шар по Киевски.png-49d26db7e4414519c3d80e269694d12e.s3tc.ctex"]
+dest_files=["res://.godot/imported/Шар по Киевски.png-49d26db7e4414519c3d80e269694d12e.s3tc.ctex", "res://.godot/imported/Шар по Киевски.png-49d26db7e4414519c3d80e269694d12e.etc2.ctex"]
 
 [params]
 

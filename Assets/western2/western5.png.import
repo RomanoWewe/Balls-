@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4v303yjejcgg"
 path.s3tc="res://.godot/imported/western5.png-931a5da44b7f0a97abcee58b180dc9aa.s3tc.ctex"
+path.etc2="res://.godot/imported/western5.png-931a5da44b7f0a97abcee58b180dc9aa.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/western5.png"
-dest_files=["res://.godot/imported/western5.png-931a5da44b7f0a97abcee58b180dc9aa.s3tc.ctex"]
+dest_files=["res://.godot/imported/western5.png-931a5da44b7f0a97abcee58b180dc9aa.s3tc.ctex", "res://.godot/imported/western5.png-931a5da44b7f0a97abcee58b180dc9aa.etc2.ctex"]
 
 [params]
 

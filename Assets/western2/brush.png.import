@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnuc2c6rf4tid"
 path.s3tc="res://.godot/imported/brush.png-ba9ef2776fa8b253b0430b330e3523b9.s3tc.ctex"
+path.etc2="res://.godot/imported/brush.png-ba9ef2776fa8b253b0430b330e3523b9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/brush.png"
-dest_files=["res://.godot/imported/brush.png-ba9ef2776fa8b253b0430b330e3523b9.s3tc.ctex"]
+dest_files=["res://.godot/imported/brush.png-ba9ef2776fa8b253b0430b330e3523b9.s3tc.ctex", "res://.godot/imported/brush.png-ba9ef2776fa8b253b0430b330e3523b9.etc2.ctex"]
 
 [params]
 

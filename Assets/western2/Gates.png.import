@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://rtyf1wsdvnyp"
 path.s3tc="res://.godot/imported/Gates.png-ae945bb5afa76a39e8b635dba45baa4d.s3tc.ctex"
+path.etc2="res://.godot/imported/Gates.png-ae945bb5afa76a39e8b635dba45baa4d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/Gates.png"
-dest_files=["res://.godot/imported/Gates.png-ae945bb5afa76a39e8b635dba45baa4d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Gates.png-ae945bb5afa76a39e8b635dba45baa4d.s3tc.ctex", "res://.godot/imported/Gates.png-ae945bb5afa76a39e8b635dba45baa4d.etc2.ctex"]
 
 [params]
 
