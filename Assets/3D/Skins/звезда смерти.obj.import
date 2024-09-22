@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c42v7d307674a"
+path="res://.godot/imported/звезда смерти.obj-3b38bda05babdea2bf3b7fd145240837.mesh"
+
+[deps]
+
+files=["res://.godot/imported/звезда смерти.obj-3b38bda05babdea2bf3b7fd145240837.mesh"]
+
+source_file="res://Assets/3D/Skins/звезда смерти.obj"
+dest_files=["res://.godot/imported/звезда смерти.obj-3b38bda05babdea2bf3b7fd145240837.mesh", "res://.godot/imported/звезда смерти.obj-3b38bda05babdea2bf3b7fd145240837.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

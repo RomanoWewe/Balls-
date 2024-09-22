@@ -16,8 +16,8 @@ texture_filter = 0
 size = Vector2(5, 5)
 
 [node name="floor" type="AnimatableBody3D" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"]]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 1073741831
+collision_mask = 1073741831
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["cultist_navigation_group", "golem_navigation_group"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)

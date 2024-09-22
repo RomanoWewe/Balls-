@@ -12,7 +12,7 @@ var lights_count:=0
 
 func _ready():
 	$AnimationPlayer.current_animation="RESET"
-	for child in get_parent().get_children():
+	for child in get_tree().root.get_child(0).get_node("static").get_children():
 		if child is Ball:
 			ball=child
 			return

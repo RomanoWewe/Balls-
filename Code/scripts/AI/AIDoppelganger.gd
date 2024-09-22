@@ -1,5 +1,5 @@
 extends GravitationalObject
-class_name Doppelganger
+class_name AIDoppelghanger
 
 @export var light : Node3D
 

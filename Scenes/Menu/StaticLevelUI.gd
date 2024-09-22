@@ -31,5 +31,13 @@ func remove_rune_icon(rune_icon:Texture2D):
 	for icon in rune_icons:
 		if icon.texture==rune_icon:
 			icon.texture=rune_empty
+			check_runes_empty()
 			return
 	push_error("no runes to remove")
+
+func check_runes_empty():
+	for icon in rune_icons:
+		if icon.texture != rune_empty:
+			return
+	await get_tree().create_timer(.7).timeout
+	$RuneAnimator.current_animation="Unactive"

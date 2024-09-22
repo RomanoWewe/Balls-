@@ -5,9 +5,9 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_t24w4"]
 size = Vector3(5, 10, 5)
 
-[node name="floor" type="AnimatableBody3D" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"]]
-collision_layer = 7
-collision_mask = 7
+[node name="floor" type="AnimatableBody3D" groups=["cultist_navigation_group", "golem_navigation_group"]]
+collision_layer = 1073741831
+collision_mask = 1073741831
 sync_to_physics = false
 
 [node name="collider" type="CollisionShape3D" parent="."]

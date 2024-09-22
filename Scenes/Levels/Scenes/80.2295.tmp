@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://j8vyw3cb0mr5"]
+[gd_scene load_steps=38 format=3 uid="uid://j8vyw3cb0mr5"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_6glp1"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="2_llknr"]
@@ -12,7 +12,6 @@
 [ext_resource type="ArrayMesh" uid="uid://cpurvrffxjbwx" path="res://Assets/Caves1/босс.obj" id="9_lvjba"]
 [ext_resource type="ArrayMesh" uid="uid://b3pfkxuw0brwi" path="res://Assets/3D/Skins/подставка для босса.obj" id="10_jbh4s"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossBouldersState.gd" id="10_ti0qp"]
-[ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossInvertionAttack.gd" id="11_jmcxr"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossSummonState.gd" id="12_bd8hr"]
 [ext_resource type="ArrayMesh" uid="uid://con8tdykw0lxp" path="res://Assets/Caves1/крассный шар для босса.obj" id="13_dm327"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/Boulder.gd" id="16_jbt64"]
@@ -1127,18 +1126,6 @@ script = ExtResource("8_rt4qi")
 script = ExtResource("9_e4fhw")
 duration = 2.0
 
-[node name="Inverse1" type="Node" parent="Boss/BossStateMachine"]
-script = ExtResource("11_jmcxr")
-
-[node name="Boulders1" type="Node" parent="Boss/BossStateMachine" node_paths=PackedStringArray("boulder_base_positions")]
-script = ExtResource("10_ti0qp")
-active_boulder_count = 2
-base_speed = 1.8
-boulder_enter_animation_duration = 2.0
-boulder_exit_animation_duration = 2.0
-boulder_base_positions = [null, null, null, null]
-duration = 20.0
-
 [node name="Summon1" type="Node" parent="Boss/BossStateMachine"]
 script = ExtResource("12_bd8hr")
 golem_spawn_min_count = 1
@@ -1151,6 +1138,15 @@ cultist_min_speed = 10.0
 cultist_max_speed = 15.0
 spawn_delay = 1.0
 duration = 15.0
+
+[node name="Boulders1" type="Node" parent="Boss/BossStateMachine" node_paths=PackedStringArray("boulder_base_positions")]
+script = ExtResource("10_ti0qp")
+active_boulder_count = 2
+base_speed = 1.8
+boulder_enter_animation_duration = 2.0
+boulder_exit_animation_duration = 2.0
+boulder_base_positions = [null, null, null, null]
+duration = 20.0
 
 [node name="Body" type="MeshInstance3D" parent="Boss"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
