@@ -10,7 +10,6 @@ enum Tool {
 var selected_object : PackedScene
 var selected_tool : Tool
 var prev_mouse_tile :Vector2i
-var static_node :Node
 var z_pressed_last_frame :=false
 var c_pressed_last_frame :=false
 var space_pressed_last_frame :=false
@@ -53,19 +52,18 @@ func _enter_tree():
 	refresh_object_list()
 
 func _process(delta):
-	if !get_tree().get_edited_scene_root() is Level:
+	var static_node=find_static_node()
+	if static_node==null:
 		return
 	if !active or !LevelEditor.is_mouse_over_main_screen():
 		return
-	if static_node!=get_tree().get_edited_scene_root().find_child("static"):
-		set_static_node()
 	
 	var origin = get_mouse_plane_pos().snapped(Vector3(5,5,5))
 	var result = static_node.find_child(str(y_layer)+","+str(origin.x)+","+str(origin.z)+"("+str(layer)+")")
 	
 	if selected_tool == Tool.Edit:
 		if !result and Input.is_action_pressed("LMB") and selected_object and !Input.is_action_pressed("SHIFT"):
-			call_deferred("spawn",origin)
+			call_deferred("spawn",static_node,origin)
 		if result and Input.is_action_pressed("LMB") and Input.is_action_pressed("SHIFT"):
 			result.queue_free()
 	
@@ -89,17 +87,9 @@ func get_scenes_in_folder(path:StringName):
 		filePaths.append_array(get_scenes_in_folder(path+"/"+directory))
 	return filePaths
 
-func set_static_node():
-	static_node = get_tree().get_edited_scene_root().find_child("static")
-	if !static_node:
-		static_node = Node3D.new()
-		get_tree().get_edited_scene_root().add_child(static_node)
-		static_node.set_owner(get_tree().get_edited_scene_root())
-		static_node.name = "static"
-
-func spawn(origin:Vector3):
+func spawn(parent:Node3D,origin:Vector3):
 	var instance = selected_object.instantiate()
-	static_node.add_child(instance)
+	parent.add_child(instance)
 	instance.set_owner(get_tree().get_edited_scene_root())
 	instance.name = str(y_layer)+","+str(origin.x)+","+str(origin.z)+"("+str(layer)+")"
 	instance.transform.origin = Vector3(origin.x,y_layer,origin.z)
@@ -150,3 +140,12 @@ func _on_spin_box_value_changed(value):
 
 func _on_layers_value_changed(value):
 	layer = value
+
+func find_static_node():
+	var static_node=get_tree().get_edited_scene_root()
+	if static_node==null or static_node.name =="static":
+		return static_node
+	for child in static_node.get_children():
+		if child.name=="static":
+			return child
+	return null

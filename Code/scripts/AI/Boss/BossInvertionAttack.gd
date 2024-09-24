@@ -6,7 +6,7 @@ class_name BossInvertionState
 
 func enter()->void:
 	await get_tree().create_timer(1).timeout
-	%Ball.inverse_z=inverse_z
-	%Ball.inverse_x=inverse_x
+	%CurrentLevel.get_node("static/Ball").inverse_z=inverse_z
+	%CurrentLevel.get_node("static/Ball").inverse_x=inverse_x
 	await get_tree().create_timer(1).timeout
 	exit()

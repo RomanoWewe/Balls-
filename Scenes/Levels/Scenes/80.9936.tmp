@@ -374,6 +374,7 @@ script = ExtResource("1_6glp1")
 transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.5, -0.784886, 0.365998, -70, 0, 0)
 light_indirect_energy = 0.1
 shadow_enabled = true
+editor_only = true
 sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -389,12 +390,10 @@ attributes = SubResource("CameraAttributesPractical_p442g")
 fov = 40.0
 
 [node name="GolemNavigationRegion3D" type="NavigationRegion3D" parent="."]
-unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 navigation_mesh = SubResource("NavigationMesh_4c5yn")
 
 [node name="CultistNavigationRegion3D" type="NavigationRegion3D" parent="."]
-unique_name_in_owner = true
 navigation_mesh = SubResource("NavigationMesh_kdw2k")
 navigation_layers = 2
 
@@ -627,9 +626,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5, 5, -7.5)
 
 [node name="CurrentLevel" type="Node3D" parent="Boss"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
 
 [node name="static" type="Node3D" parent="Boss/CurrentLevel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
 
 [node name="Ball" parent="Boss/CurrentLevel/static" instance=ExtResource("16_nbiou")]
 unique_name_in_owner = true

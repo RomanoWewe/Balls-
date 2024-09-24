@@ -23,7 +23,7 @@ func _ready():
 		add_child(wind_ambient.instantiate())
 	elif int(str(name)) >40 and int(str(name))<61:
 		add_child(desert_ambient.instantiate())
-	elif int(str(name)) >60 and int(str(name))<81:
+	elif int(str(name)) >60 and int(str(name))<80:
 		add_child(mine_ambient.instantiate())
 
 func complete_level():

@@ -12,7 +12,7 @@ func activate():
 	is_running=true
 	$CollisionShape3D.disabled=false
 	freeze=false
-	linear_velocity= (%Ball.global_position-global_position).normalized()*base_speed*50
+	linear_velocity= (%CurrentLevel.get_node("static/Ball").global_position-global_position).normalized()*base_speed*50
 
 func return_to_base():
 	is_running=false
@@ -27,7 +27,7 @@ func return_to_base():
 	get_node("AnimationPlayer").current_animation="exit"
 
 func _on_body_entered(body: Node) -> void:
-	if !is_instance_valid(%Ball):
+	if !is_instance_valid(%CurrentLevel.get_node("static/Ball")):
 		return
 	if !is_running:
 			return
@@ -39,5 +39,5 @@ func _on_body_entered(body: Node) -> void:
 		await get_tree().create_timer(1.0/base_speed/1.5).timeout
 		if !is_running:
 			return
-		linear_velocity= (%Ball.global_position-global_position).normalized()*base_speed*50
+		linear_velocity= (%CurrentLevel.get_node("static/Ball").global_position-global_position).normalized()*base_speed*50
 	

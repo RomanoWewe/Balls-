@@ -41,15 +41,25 @@ func enter()->void:
 		var selected_spawn = randomized_spawns[rnd.randi_range(0,randomized_spawns.size()-1)]
 		if selected_spawn=="golem":
 			golem_spawn_count-=1
-			fade_in(golem_prefab.instantiate())
+			var instance=golem_prefab.instantiate()
+			instance.ball=%CurrentLevel.get_node("static/Ball")
+			add_child(instance)
+			instance.position= get_random_spawn_position()
+			fade_in(instance)
 		if selected_spawn=="cultist":
 			cultist_spawn_count-=1
-			var cultist=cultist_prefab.instantiate() as AICultist
-			cultist.speed=rnd.randf_range(cultist_min_speed,cultist_max_speed)
-			fade_in(cultist)
+			var instance=cultist_prefab.instantiate() as AICultist
+			instance.ball=%CurrentLevel.get_node("static/Ball")
+			instance.speed=rnd.randf_range(cultist_min_speed,cultist_max_speed)
+			add_child(instance)
+			instance.position= get_random_spawn_position()
+			fade_in(instance)
 		if selected_spawn=="doppelghanger":
 			doppelghanger_spawn_count-=1
-			fade_in(doppelghanger_prefab.instantiate())
+			var instance=doppelghanger_prefab.instantiate()
+			add_child(instance)
+			instance.position= get_random_spawn_position()
+			fade_in(instance)
 
 func exit()->void:
 	is_ready=false
@@ -78,23 +88,3 @@ func get_random_point_in_area(area_node)->Vector3:
 	var y= rng.randf_range(area_node.get_node("LeftUp").global_position.y,
 		area_node.get_node("RightDown").global_position.y)
 	return Vector3(x,y,z)
-
-func fade_in(instance:Node3D):
-	add_child(instance)
-	instance.position= get_random_spawn_position()
-	instance.process_mode=Node.PROCESS_MODE_DISABLED
-	var t=0.0
-	while t<1:
-		instance.get_node("MeshInstance3D").transparency=1-t
-		await get_tree().create_timer(0.02).timeout
-		t+=.01
-	instance.process_mode=Node.PROCESS_MODE_INHERIT
-
-func fade_out(instance:Node3D):
-	instance.process_mode=Node.PROCESS_MODE_DISABLED
-	var t=0.0
-	while t<1:
-		instance.get_node("MeshInstance3D").transparency=t
-		await get_tree().create_timer(0.02).timeout
-		t+=.01
-	instance.queue_free()

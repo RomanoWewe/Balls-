@@ -41,3 +41,4 @@ func check_runes_empty():
 			return
 	await get_tree().create_timer(.7).timeout
 	$RuneAnimator.current_animation="Unactive"
+	runes_activated=false
