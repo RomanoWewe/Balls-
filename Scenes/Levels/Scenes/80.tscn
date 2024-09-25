@@ -635,8 +635,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
 [node name="Ball" parent="Boss/CurrentLevel/static" instance=ExtResource("16_nbiou")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 5, 0)
-collision_layer = 3221225473
-collision_mask = 3221225473
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
 
 [node name="5,-30,-25(0)" parent="Boss/CurrentLevel/static" instance=ExtResource("6_kxr3f")]
