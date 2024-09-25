@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvml1waqvmlt8"
 path.s3tc="res://.godot/imported/button ( caves).png-d7ad23595127630d66e79d4aab374183.s3tc.ctex"
-path.etc2="res://.godot/imported/button ( caves).png-d7ad23595127630d66e79d4aab374183.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Caves1/button ( caves).png"
-dest_files=["res://.godot/imported/button ( caves).png-d7ad23595127630d66e79d4aab374183.s3tc.ctex", "res://.godot/imported/button ( caves).png-d7ad23595127630d66e79d4aab374183.etc2.ctex"]
+dest_files=["res://.godot/imported/button ( caves).png-d7ad23595127630d66e79d4aab374183.s3tc.ctex"]
 
 [params]
 

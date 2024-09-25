@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca6pp7im6gypv"
 path.s3tc="res://.godot/imported/door 1 cкин право 1.png-cd5756650a970f9ec665a623968ad306.s3tc.ctex"
-path.etc2="res://.godot/imported/door 1 cкин право 1.png-cd5756650a970f9ec665a623968ad306.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/Beach/door 1 cкин право 1.png"
-dest_files=["res://.godot/imported/door 1 cкин право 1.png-cd5756650a970f9ec665a623968ad306.s3tc.ctex", "res://.godot/imported/door 1 cкин право 1.png-cd5756650a970f9ec665a623968ad306.etc2.ctex"]
+dest_files=["res://.godot/imported/door 1 cкин право 1.png-cd5756650a970f9ec665a623968ad306.s3tc.ctex"]
 
 [params]
 

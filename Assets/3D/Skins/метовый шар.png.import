@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://7813wo4ccdrr"
 path.s3tc="res://.godot/imported/метовый шар.png-8e68e8e3f6423019354e803c555a77ac.s3tc.ctex"
-path.etc2="res://.godot/imported/метовый шар.png-8e68e8e3f6423019354e803c555a77ac.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/Skins/метовый шар.png"
-dest_files=["res://.godot/imported/метовый шар.png-8e68e8e3f6423019354e803c555a77ac.s3tc.ctex", "res://.godot/imported/метовый шар.png-8e68e8e3f6423019354e803c555a77ac.etc2.ctex"]
+dest_files=["res://.godot/imported/метовый шар.png-8e68e8e3f6423019354e803c555a77ac.s3tc.ctex"]
 
 [params]
 

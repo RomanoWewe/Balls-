@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddbmb0j0fyj61"
 path.s3tc="res://.godot/imported/балка на которой крутиться лента.png-8c6ee943a200cab7fabe45ba7064fd0a.s3tc.ctex"
-path.etc2="res://.godot/imported/балка на которой крутиться лента.png-8c6ee943a200cab7fabe45ba7064fd0a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/балка на которой крутиться лента.png"
-dest_files=["res://.godot/imported/балка на которой крутиться лента.png-8c6ee943a200cab7fabe45ba7064fd0a.s3tc.ctex", "res://.godot/imported/балка на которой крутиться лента.png-8c6ee943a200cab7fabe45ba7064fd0a.etc2.ctex"]
+dest_files=["res://.godot/imported/балка на которой крутиться лента.png-8c6ee943a200cab7fabe45ba7064fd0a.s3tc.ctex"]
 
 [params]
 

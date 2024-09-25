@@ -520,6 +520,7 @@ script = ExtResource("16_jbt64")
 base_position = NodePath("../../BoulderMarkers/Marker2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boss/Boulders/Boulder2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.111439)
 shape = SubResource("SphereShape3D_opfr3")
 disabled = true
 

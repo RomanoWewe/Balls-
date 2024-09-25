@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b3h6y8h7ls5b1"
 path.s3tc="res://.godot/imported/темный шар для босса.png-e869e2ce33172df0efd9dc0f7cdaa954.s3tc.ctex"
-path.etc2="res://.godot/imported/темный шар для босса.png-e869e2ce33172df0efd9dc0f7cdaa954.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Caves1/темный шар для босса.png"
-dest_files=["res://.godot/imported/темный шар для босса.png-e869e2ce33172df0efd9dc0f7cdaa954.s3tc.ctex", "res://.godot/imported/темный шар для босса.png-e869e2ce33172df0efd9dc0f7cdaa954.etc2.ctex"]
+dest_files=["res://.godot/imported/темный шар для босса.png-e869e2ce33172df0efd9dc0f7cdaa954.s3tc.ctex"]
 
 [params]
 
