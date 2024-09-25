@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy0ppj8s6stm"
 path.s3tc="res://.godot/imported/колона ( короче блок окружонный всеми.png-4444e082e6a140e88c1b0343c93383e3.s3tc.ctex"
+path.etc2="res://.godot/imported/колона ( короче блок окружонный всеми.png-4444e082e6a140e88c1b0343c93383e3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Caves1/колона ( короче блок окружонный всеми.png"
-dest_files=["res://.godot/imported/колона ( короче блок окружонный всеми.png-4444e082e6a140e88c1b0343c93383e3.s3tc.ctex"]
+dest_files=["res://.godot/imported/колона ( короче блок окружонный всеми.png-4444e082e6a140e88c1b0343c93383e3.s3tc.ctex", "res://.godot/imported/колона ( короче блок окружонный всеми.png-4444e082e6a140e88c1b0343c93383e3.etc2.ctex"]
 
 [params]
 

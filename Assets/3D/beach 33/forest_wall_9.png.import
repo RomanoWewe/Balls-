@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkjkca6xj37lq"
 path.s3tc="res://.godot/imported/forest_wall_9.png-0b32b4b85e4b0dc3b04975da38108ad7.s3tc.ctex"
+path.etc2="res://.godot/imported/forest_wall_9.png-0b32b4b85e4b0dc3b04975da38108ad7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/beach 33/forest_wall_9.png"
-dest_files=["res://.godot/imported/forest_wall_9.png-0b32b4b85e4b0dc3b04975da38108ad7.s3tc.ctex"]
+dest_files=["res://.godot/imported/forest_wall_9.png-0b32b4b85e4b0dc3b04975da38108ad7.s3tc.ctex", "res://.godot/imported/forest_wall_9.png-0b32b4b85e4b0dc3b04975da38108ad7.etc2.ctex"]
 
 [params]
 

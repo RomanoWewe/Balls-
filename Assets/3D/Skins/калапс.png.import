@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgdsryyhmgk1k"
 path.s3tc="res://.godot/imported/калапс.png-c20f3598f1113b530e3e268116de6c4e.s3tc.ctex"
+path.etc2="res://.godot/imported/калапс.png-c20f3598f1113b530e3e268116de6c4e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/Skins/калапс.png"
-dest_files=["res://.godot/imported/калапс.png-c20f3598f1113b530e3e268116de6c4e.s3tc.ctex"]
+dest_files=["res://.godot/imported/калапс.png-c20f3598f1113b530e3e268116de6c4e.s3tc.ctex", "res://.godot/imported/калапс.png-c20f3598f1113b530e3e268116de6c4e.etc2.ctex"]
 
 [params]
 

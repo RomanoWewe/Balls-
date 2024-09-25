@@ -1,8 +1,6 @@
 extends BossState
 class_name BossInitialState
 
-@export var rune_use_animation_name : String
-@export var rune_use_animation_duration : float
 @export var altar:Node3D
 
 func enter()->void:
@@ -16,9 +14,6 @@ func exit():
 	super.exit()
 
 func on_rune_used()->void:
-	if rune_use_animation_name!="":
-		%RuneUseAnimator.current_animation=rune_use_animation_name
-		await get_tree().create_timer(rune_use_animation_duration).timeout
-	else:
-		push_warning("No animation set for rune use on state: "+name)
+	%BodyAnimator.current_animation="activation"
+	await get_tree().create_timer(2).timeout
 	exit()

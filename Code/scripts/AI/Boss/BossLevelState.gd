@@ -12,10 +12,15 @@ func enter()->void:
 	await get_tree().create_timer(2).timeout
 	%CurrentLevel.get_node("static").queue_free()
 	var new_scene=get_random_scene().instantiate()
+	for child in new_scene.get_children():
+		if child is AIGolem or child is AICultist:
+			child.ball=new_scene.get_node("Ball")
 	%CurrentLevel.add_child(new_scene)
-	await await get_tree().create_timer(0.1).timeout
-	%GolemNavigationRegion3D.bake_navigation_mesh()
-	%CultistNavigationRegion3D.bake_navigation_mesh()
+	await get_tree().create_timer(0.1).timeout
+	if !%GolemNavigationRegion3D.is_baking():
+		%GolemNavigationRegion3D.bake_navigation_mesh()
+	if !%CultistNavigationRegion3D.is_baking():
+		%CultistNavigationRegion3D.bake_navigation_mesh()
 	fade_in(%MainCamera)
 	await get_tree().create_timer(2).timeout
 	new_scene.name="static"

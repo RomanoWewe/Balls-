@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://be5k5mh7hnn2r"
 path.s3tc="res://.godot/imported/stone.png-6f294903c796f71cc542afb97620a175.s3tc.ctex"
+path.etc2="res://.godot/imported/stone.png-6f294903c796f71cc542afb97620a175.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/Skins/stone.png"
-dest_files=["res://.godot/imported/stone.png-6f294903c796f71cc542afb97620a175.s3tc.ctex"]
+dest_files=["res://.godot/imported/stone.png-6f294903c796f71cc542afb97620a175.s3tc.ctex", "res://.godot/imported/stone.png-6f294903c796f71cc542afb97620a175.etc2.ctex"]
 
 [params]
 

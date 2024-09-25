@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://oy7n5hcyyhvs"
 path.s3tc="res://.godot/imported/rails4.png-ac752bd230715d9440e13d1f63819122.s3tc.ctex"
+path.etc2="res://.godot/imported/rails4.png-ac752bd230715d9440e13d1f63819122.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/rails4.png"
-dest_files=["res://.godot/imported/rails4.png-ac752bd230715d9440e13d1f63819122.s3tc.ctex"]
+dest_files=["res://.godot/imported/rails4.png-ac752bd230715d9440e13d1f63819122.s3tc.ctex", "res://.godot/imported/rails4.png-ac752bd230715d9440e13d1f63819122.etc2.ctex"]
 
 [params]
 
