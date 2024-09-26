@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b81jteh1xrygo"
 path.s3tc="res://.godot/imported/Button_red.png-92ce1babefc064ecc52f0a2b929e7df4.s3tc.ctex"
+path.etc2="res://.godot/imported/Button_red.png-92ce1babefc064ecc52f0a2b929e7df4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/Button_red.png"
-dest_files=["res://.godot/imported/Button_red.png-92ce1babefc064ecc52f0a2b929e7df4.s3tc.ctex"]
+dest_files=["res://.godot/imported/Button_red.png-92ce1babefc064ecc52f0a2b929e7df4.s3tc.ctex", "res://.godot/imported/Button_red.png-92ce1babefc064ecc52f0a2b929e7df4.etc2.ctex"]
 
 [params]
 

@@ -10,13 +10,13 @@ class_name AICultist
 var ball: Ball
 
 func _ready():
+	agent.set_navigation_map(get_tree().root.get_child(0).get_node("CultistNavigationRegion3D").get_navigation_map())
 	if ball !=null:
 		return
 	for child in get_tree().root.get_child(0).get_node("static").get_children():
 		if child is Ball:
 			ball=child
 			return
-	agent.set_navigation_map(get_tree().root.get_child(0).get_node("CultistNavigationRegion3D").get_navigation_map())
 	push_error("Ball Not found on level!")
 
 # the stupid physics stuff

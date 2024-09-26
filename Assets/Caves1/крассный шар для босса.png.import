@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cg8tcop4bmliu"
 path.s3tc="res://.godot/imported/крассный шар для босса.png-bfb66a20ed3ac5ac274015700f4e0007.s3tc.ctex"
+path.etc2="res://.godot/imported/крассный шар для босса.png-bfb66a20ed3ac5ac274015700f4e0007.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Caves1/крассный шар для босса.png"
-dest_files=["res://.godot/imported/крассный шар для босса.png-bfb66a20ed3ac5ac274015700f4e0007.s3tc.ctex"]
+dest_files=["res://.godot/imported/крассный шар для босса.png-bfb66a20ed3ac5ac274015700f4e0007.s3tc.ctex", "res://.godot/imported/крассный шар для босса.png-bfb66a20ed3ac5ac274015700f4e0007.etc2.ctex"]
 
 [params]
 

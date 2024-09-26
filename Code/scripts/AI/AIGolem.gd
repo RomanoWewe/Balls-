@@ -11,6 +11,7 @@ var ball: Ball
 var lights_count:=0
 
 func _ready():
+	agent.set_navigation_map(get_tree().root.get_child(0).get_node("GolemNavigationRegion3D").get_navigation_map())
 	if ball !=null:
 		return
 	for child in get_tree().root.get_child(0).get_node("static").get_children():
@@ -27,7 +28,7 @@ func _physics_process(delta):
 	if !is_instance_valid(ball):
 		return
 	agent.target_position = ball.global_position # this one needs the @onready vars we defined earlier
-
+	
 	
 	if lights_count>0 or agent.is_navigation_finished():
 		$AudioStreamPlayer.volume_db=lerp($AudioStreamPlayer.volume_db,-80.0,0.5)

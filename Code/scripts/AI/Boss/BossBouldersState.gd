@@ -21,9 +21,9 @@ func enter()->void:
 func exit()->void:
 	is_ready=false
 	for boulder in %Boulders.get_children():
-		if boulder.is_running:
+		if !boulder.freeze:
 			boulder.return_to_base()
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(3).timeout
 	transfer_state.emit()
 
 func on_rune_used()->void:

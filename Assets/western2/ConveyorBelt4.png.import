@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://do52ab1x4bxdu"
 path.s3tc="res://.godot/imported/ConveyorBelt4.png-2fc89fd44f62303e446460737358c390.s3tc.ctex"
+path.etc2="res://.godot/imported/ConveyorBelt4.png-2fc89fd44f62303e446460737358c390.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/ConveyorBelt4.png"
-dest_files=["res://.godot/imported/ConveyorBelt4.png-2fc89fd44f62303e446460737358c390.s3tc.ctex"]
+dest_files=["res://.godot/imported/ConveyorBelt4.png-2fc89fd44f62303e446460737358c390.s3tc.ctex", "res://.godot/imported/ConveyorBelt4.png-2fc89fd44f62303e446460737358c390.etc2.ctex"]
 
 [params]
 

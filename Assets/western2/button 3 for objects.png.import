@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c3m0n5ocjr70h"
 path.s3tc="res://.godot/imported/button 3 for objects.png-177c20f165fd2fa03792ad0bb74f744e.s3tc.ctex"
+path.etc2="res://.godot/imported/button 3 for objects.png-177c20f165fd2fa03792ad0bb74f744e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/button 3 for objects.png"
-dest_files=["res://.godot/imported/button 3 for objects.png-177c20f165fd2fa03792ad0bb74f744e.s3tc.ctex"]
+dest_files=["res://.godot/imported/button 3 for objects.png-177c20f165fd2fa03792ad0bb74f744e.s3tc.ctex", "res://.godot/imported/button 3 for objects.png-177c20f165fd2fa03792ad0bb74f744e.etc2.ctex"]
 
 [params]
 

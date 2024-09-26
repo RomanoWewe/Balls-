@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bm81npa4t24qg"
 path.s3tc="res://.godot/imported/алтарь для босса(две синии руны  и 1 крассная ).png-6ddf8bd0a24b2ba84ba5986ce8ed498a.s3tc.ctex"
+path.etc2="res://.godot/imported/алтарь для босса(две синии руны  и 1 крассная ).png-6ddf8bd0a24b2ba84ba5986ce8ed498a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Caves1/алтарь для босса(две синии руны  и 1 крассная ).png"
-dest_files=["res://.godot/imported/алтарь для босса(две синии руны  и 1 крассная ).png-6ddf8bd0a24b2ba84ba5986ce8ed498a.s3tc.ctex"]
+dest_files=["res://.godot/imported/алтарь для босса(две синии руны  и 1 крассная ).png-6ddf8bd0a24b2ba84ba5986ce8ed498a.s3tc.ctex", "res://.godot/imported/алтарь для босса(две синии руны  и 1 крассная ).png-6ddf8bd0a24b2ba84ba5986ce8ed498a.etc2.ctex"]
 
 [params]
 
