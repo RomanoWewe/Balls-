@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://j8vyw3cb0mr5"]
+[gd_scene load_steps=48 format=3 uid="uid://j8vyw3cb0mr5"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_6glp1"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="2_llknr"]
@@ -12,14 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://cwsk5kfs478d3" path="res://Scenes/BossLevels/Empty.tscn" id="7_8idrp"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossStateMachine.gd" id="8_rt4qi"]
 [ext_resource type="PackedScene" uid="uid://blu0sxy212tey" path="res://Scenes/Objects/BuildingBlocks/Cave/AltarBlueCave.tscn" id="8_uuk3s"]
-[ext_resource type="Script" path="res://Code/scripts/Ball.gd" id="8_x4rse"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossInitialState.gd" id="9_e4fhw"]
 [ext_resource type="ArrayMesh" uid="uid://cpurvrffxjbwx" path="res://Assets/Caves1/босс.obj" id="9_lvjba"]
 [ext_resource type="ArrayMesh" uid="uid://b3pfkxuw0brwi" path="res://Assets/3D/Skins/подставка для босса.obj" id="10_jbh4s"]
-[ext_resource type="Script" path="res://Code/scripts/Altar.gd" id="10_owi1l"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossBouldersState.gd" id="10_ti0qp"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossInvertionAttack.gd" id="11_jmcxr"]
-[ext_resource type="Texture2D" uid="uid://kv4gy2gq82aa" path="res://Assets/RuneBlue.png" id="11_tctbw"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossSummonState.gd" id="12_bd8hr"]
 [ext_resource type="ArrayMesh" uid="uid://con8tdykw0lxp" path="res://Assets/Caves1/крассный шар для босса.obj" id="13_dm327"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/Boulder.gd" id="16_jbt64"]
@@ -59,17 +56,27 @@ agent_radius = 1.75
 agent_max_climb = 0.0
 agent_max_slope = 0.02
 
-[sub_resource type="Animation" id="Animation_fmsx2"]
-resource_name = "idle"
-length = 2.0
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_fedwp"]
+length = 0.001
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".")
-tracks/0/interp = 2
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 7, 0, 1, 1, 0, 5, 0, 1.96667, 1, 0, 7, 0)
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 4, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:is_watching")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_u1q2t"]
 resource_name = "activation"
@@ -95,27 +102,17 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_fedwp"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_fmsx2"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
 tracks/0/type = "position_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 4, 0)
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:is_watching")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 7, 0, 1, 1, 0, 5, 0, 1.96667, 1, 0, 7, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_refsc"]
 _data = {
@@ -1200,33 +1197,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -15)
 [node name="0,25,-10(0)" parent="CurrentLevel/static" instance=ExtResource("3_0nbcq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -10)
 
-[node name="Ball" type="RigidBody3D" parent="CurrentLevel/static" node_paths=PackedStringArray("light") groups=["Ball"] instance=ExtResource("16_nbiou")]
+[node name="Ball" parent="CurrentLevel/static" instance=ExtResource("16_nbiou")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-collision_layer = 3221225473
-collision_mask = 3221225473
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
-gravity_scale = 13.0
-continuous_cd = true
-contact_monitor = true
-max_contacts_reported = 5
-linear_damp_mode = 1
-linear_damp = 1.0
-angular_damp_mode = 1
-angular_damp = 1.0
-script = ExtResource("8_x4rse")
-light = NodePath("Light")
-buoyancy = 0.0
-gravity_force = 4500.0
-max_tilt_x = 90.0
-max_tilt_z = 90.0
-max_speed = 22.5
 
-[node name="5,-20,0(0)" type="StaticBody3D" parent="CurrentLevel/static" groups=["golem_navigation_group"] instance=ExtResource("8_uuk3s")]
+[node name="5,-20,0(0)" parent="CurrentLevel/static" instance=ExtResource("8_uuk3s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 5, 0)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("10_owi1l")
-preview = ExtResource("11_tctbw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, 0.453154, -0.211309, 0, 0.422618, 0.906308, 0.5, -0.784886, 0.365998, -70, 0, 0)
@@ -1267,6 +1243,11 @@ script = ExtResource("9_e4fhw")
 altar = NodePath("../../../CurrentLevel/static/5,-20,0(0)")
 duration = 2.0
 
+[node name="Level1" type="Node" parent="Boss/BossStateMachine"]
+script = ExtResource("5_tg2hu")
+scenes = Array[PackedScene]([ExtResource("6_0rghs")])
+empty_scene = ExtResource("7_8idrp")
+
 [node name="Boulders1" type="Node" parent="Boss/BossStateMachine" node_paths=PackedStringArray("boulder_base_positions")]
 script = ExtResource("10_ti0qp")
 active_boulder_count = 2
@@ -1285,11 +1266,6 @@ cultist_min_speed = 7.5
 cultist_max_speed = 12.5
 spawn_delay = 1.5
 duration = 17.5
-
-[node name="Level1" type="Node" parent="Boss/BossStateMachine"]
-script = ExtResource("5_tg2hu")
-scenes = Array[PackedScene]([ExtResource("6_x2le5")])
-empty_scene = ExtResource("7_8idrp")
 
 [node name="Boulders2" type="Node" parent="Boss/BossStateMachine" node_paths=PackedStringArray("boulder_base_positions")]
 script = ExtResource("10_ti0qp")
@@ -1543,8 +1519,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 5, 9.5)
 [node name="RightDown" type="Marker3D" parent="Boss/SummonMarkers/RightSmallArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.5, 5, 20.5)
 
-[connection signal="body_entered" from="CurrentLevel/static/Ball" to="CurrentLevel/static/Ball" method="_on_body_entered"]
-[connection signal="body_exited" from="CurrentLevel/static/Ball" to="CurrentLevel/static/Ball" method="_on_body_exited"]
 [connection signal="body_entered" from="Boss/Boulders/Boulder0" to="Boss/Boulders/Boulder0" method="_on_body_entered"]
 [connection signal="body_entered" from="Boss/Boulders/Boulder1" to="Boss/Boulders/Boulder1" method="_on_body_entered"]
 [connection signal="body_entered" from="Boss/Boulders/Boulder2" to="Boss/Boulders/Boulder2" method="_on_body_entered"]

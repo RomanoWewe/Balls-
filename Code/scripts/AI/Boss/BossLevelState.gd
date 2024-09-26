@@ -26,8 +26,7 @@ func enter()->void:
 	new_scene.name="static"
 
 func exit():
-	for child in %CurrentLevel.get_node("static").get_children():
-		child.process_mode=Node.PROCESS_MODE_DISABLED
+	%CurrentLevel.get_node("static").process_mode=Node.PROCESS_MODE_DISABLED
 	fade_out(%MainCamera)
 	await get_tree().create_timer(2).timeout
 	%CurrentLevel.get_node("static").queue_free()

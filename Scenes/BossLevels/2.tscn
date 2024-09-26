@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ddcg1b3wsspn5"]
+[gd_scene load_steps=16 format=3 uid="uid://ddcg1b3wsspn5"]
 
 [ext_resource type="PackedScene" uid="uid://b5lgd6jcsqxf3" path="res://Scenes/Objects/BuildingBlocks/Cave/floorCave.tscn" id="1_16bbv"]
 [ext_resource type="PackedScene" uid="uid://bji05vr0y4cdq" path="res://Scenes/Objects/BuildingBlocks/Cave/WallStraightCave.tscn" id="2_5bdfo"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dqxts68d6qc3p" path="res://Scenes/Objects/BuildingBlocks/Cave/WallOuterCornerCave.tscn" id="7_xhkry"]
 [ext_resource type="PackedScene" uid="uid://rphxqfqajesi" path="res://Scenes/Objects/BuildingBlocks/Cave/MossyWallThinDeadendCave.tscn" id="9_pfntx"]
 [ext_resource type="PackedScene" uid="uid://blu0sxy212tey" path="res://Scenes/Objects/BuildingBlocks/Cave/AltarBlueCave.tscn" id="10_nei6h"]
+[ext_resource type="Script" path="res://Code/scripts/buttons/button_hold_n_return.gd" id="13_hupqx"]
 [ext_resource type="PackedScene" uid="uid://cvb8fne1cesb3" path="res://Scenes/Objects/BuildingBlocks/Cave/GolemCave.tscn" id="13_nmj8x"]
 [ext_resource type="PackedScene" uid="uid://d4ewchetyfofr" path="res://Scenes/Objects/BuildingBlocks/Cave/LampCave.tscn" id="15_n0t5l"]
 [ext_resource type="PackedScene" uid="uid://43t80uw058do" path="res://Scenes/Objects/BuildingBlocks/Cave/Buttons/ButtonAddStepsCave.tscn" id="16_huqx5"]
@@ -717,9 +718,6 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -30, 5, 
 [node name="5,-20,15(0)" parent="." instance=ExtResource("6_k1ogb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 5, 15)
 
-[node name="5,-20,10(0)" parent="." instance=ExtResource("6_k1ogb")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 5, 10)
-
 [node name="5,-20,20(0)" parent="." instance=ExtResource("6_k1ogb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 5, 20)
 
@@ -731,9 +729,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -30, 5
 
 [node name="5,-30,15(0)" parent="." instance=ExtResource("9_pfntx")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -30, 5, 15)
-
-[node name="5,-20,5(0)" parent="." instance=ExtResource("9_pfntx")]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -20, 5, 5)
 
 [node name="5,-20,-5(0)" parent="." instance=ExtResource("6_k1ogb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 5, -5)
@@ -861,19 +856,29 @@ physics_material_override = SubResource("PhysicsMaterial_qxiq0")
 
 [node name="5,35,-20(0)" parent="." node_paths=PackedStringArray("connections") instance=ExtResource("16_huqx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, -20)
+script = ExtResource("13_hupqx")
 connections = [NodePath("../5,-10,-5(0)")]
 delay = 2.0
 
 [node name="5,-35,0(0)" parent="." node_paths=PackedStringArray("connections") instance=ExtResource("16_huqx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 5, 0)
+script = ExtResource("13_hupqx")
 connections = [NodePath("../5,0,5(0)")]
 delay = 2.0
 
 [node name="5,-35,10(0)" parent="." node_paths=PackedStringArray("connections") instance=ExtResource("16_huqx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 5, 10)
+script = ExtResource("13_hupqx")
 connections = [NodePath("../5,10,-20(0)")]
 delay = 2.0
 
 [node name="5,-35,-15(0)" parent="." node_paths=PackedStringArray("connections") instance=ExtResource("16_huqx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 5, -15)
+script = ExtResource("13_hupqx")
 connections = [NodePath("../5,15,10(0)")]
+
+[node name="5,-20,10(0)" type="AnimatableBody3D" parent="." groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("9_pfntx")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -20, 5, 10)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false
