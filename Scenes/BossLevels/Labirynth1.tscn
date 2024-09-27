@@ -390,7 +390,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -15)
 [node name="0,10,-20(0)" parent="." instance=ExtResource("1_782qh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -20)
 
-[node name="5,-35,20(0)" parent="." instance=ExtResource("2_rbfnl")]
+[node name="Ball" parent="." instance=ExtResource("2_rbfnl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 5, 20)
 physics_material_override = SubResource("PhysicsMaterial_nsy35")
 
