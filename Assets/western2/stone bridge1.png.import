@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvyphb7pxwi6r"
 path.s3tc="res://.godot/imported/stone bridge1.png-604a2e6a13b4fe0f2116f2182aa9fee7.s3tc.ctex"
-path.etc2="res://.godot/imported/stone bridge1.png-604a2e6a13b4fe0f2116f2182aa9fee7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/stone bridge1.png"
-dest_files=["res://.godot/imported/stone bridge1.png-604a2e6a13b4fe0f2116f2182aa9fee7.s3tc.ctex", "res://.godot/imported/stone bridge1.png-604a2e6a13b4fe0f2116f2182aa9fee7.etc2.ctex"]
+dest_files=["res://.godot/imported/stone bridge1.png-604a2e6a13b4fe0f2116f2182aa9fee7.s3tc.ctex"]
 
 [params]
 

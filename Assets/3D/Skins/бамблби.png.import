@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://hifyxeliiile"
 path.s3tc="res://.godot/imported/бамблби.png-c26998dbb0450b659b60cd0a4ebcaeca.s3tc.ctex"
-path.etc2="res://.godot/imported/бамблби.png-c26998dbb0450b659b60cd0a4ebcaeca.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/Skins/бамблби.png"
-dest_files=["res://.godot/imported/бамблби.png-c26998dbb0450b659b60cd0a4ebcaeca.s3tc.ctex", "res://.godot/imported/бамблби.png-c26998dbb0450b659b60cd0a4ebcaeca.etc2.ctex"]
+dest_files=["res://.godot/imported/бамблби.png-c26998dbb0450b659b60cd0a4ebcaeca.s3tc.ctex"]
 
 [params]
 

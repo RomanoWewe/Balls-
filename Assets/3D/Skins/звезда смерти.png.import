@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dw86xldepyvu8"
 path.s3tc="res://.godot/imported/звезда смерти.png-82d8c63036d2dc401af97ca8562a3c08.s3tc.ctex"
-path.etc2="res://.godot/imported/звезда смерти.png-82d8c63036d2dc401af97ca8562a3c08.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/Skins/звезда смерти.png"
-dest_files=["res://.godot/imported/звезда смерти.png-82d8c63036d2dc401af97ca8562a3c08.s3tc.ctex", "res://.godot/imported/звезда смерти.png-82d8c63036d2dc401af97ca8562a3c08.etc2.ctex"]
+dest_files=["res://.godot/imported/звезда смерти.png-82d8c63036d2dc401af97ca8562a3c08.s3tc.ctex"]
 
 [params]
 

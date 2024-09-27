@@ -4,16 +4,15 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c030mmpvlwxl0"
 path.s3tc="res://.godot/imported/водоросли.png-06eae1c58c6c1b35700950333a50758d.s3tc.ctex"
-path.etc2="res://.godot/imported/водоросли.png-06eae1c58c6c1b35700950333a50758d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/beach 33/водоросли.png"
-dest_files=["res://.godot/imported/водоросли.png-06eae1c58c6c1b35700950333a50758d.s3tc.ctex", "res://.godot/imported/водоросли.png-06eae1c58c6c1b35700950333a50758d.etc2.ctex"]
+dest_files=["res://.godot/imported/водоросли.png-06eae1c58c6c1b35700950333a50758d.s3tc.ctex"]
 
 [params]
 
