@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://j8vyw3cb0mr5"]
+[gd_scene load_steps=49 format=3 uid="uid://j8vyw3cb0mr5"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_6glp1"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="2_llknr"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossBouldersState.gd" id="10_ti0qp"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossInvertionAttack.gd" id="11_jmcxr"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossSummonState.gd" id="12_bd8hr"]
+[ext_resource type="PackedScene" uid="uid://d1sh3e2y6yrcc" path="res://Scenes/BossLevels/3.tscn" id="12_r4a67"]
 [ext_resource type="ArrayMesh" uid="uid://con8tdykw0lxp" path="res://Assets/Caves1/крассный шар для босса.obj" id="13_dm327"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/Boulder.gd" id="16_jbt64"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="16_nbiou"]
@@ -1243,6 +1244,11 @@ script = ExtResource("9_e4fhw")
 altar = NodePath("../../../CurrentLevel/static/5,-20,0(0)")
 duration = 2.0
 
+[node name="Level2" type="Node" parent="Boss/BossStateMachine"]
+script = ExtResource("5_tg2hu")
+scenes = Array[PackedScene]([ExtResource("12_r4a67")])
+empty_scene = ExtResource("7_8idrp")
+
 [node name="Level1" type="Node" parent="Boss/BossStateMachine"]
 script = ExtResource("5_tg2hu")
 scenes = Array[PackedScene]([ExtResource("6_x2le5"), ExtResource("6_0rghs")])
@@ -1288,11 +1294,6 @@ cultist_min_speed = 9.0
 cultist_max_speed = 14.0
 spawn_delay = 1.2
 duration = 20.0
-
-[node name="Level2" type="Node" parent="Boss/BossStateMachine"]
-script = ExtResource("5_tg2hu")
-scenes = Array[PackedScene]([ExtResource("6_x2le5")])
-empty_scene = ExtResource("7_8idrp")
 
 [node name="Inverse1" type="Node" parent="Boss/BossStateMachine"]
 script = ExtResource("11_jmcxr")
