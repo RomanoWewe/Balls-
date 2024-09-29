@@ -37,4 +37,5 @@ func _on_boss_rune_collect_area_body_entered(body: Node3D) -> void:
 		return
 	if level.runes_collected.size()>0:
 		level.rune_used(level.runes_collected[0])
+		%RuneUseAnimator/RuneUseSound.play()
 		current_state.on_rune_used()

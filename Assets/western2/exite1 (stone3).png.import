@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dom1oo7sn2w6a"
 path.s3tc="res://.godot/imported/exite1 (stone3).png-e0a260ef720a82b8647e1095a4decfda.s3tc.ctex"
+path.etc2="res://.godot/imported/exite1 (stone3).png-e0a260ef720a82b8647e1095a4decfda.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/exite1 (stone3).png"
-dest_files=["res://.godot/imported/exite1 (stone3).png-e0a260ef720a82b8647e1095a4decfda.s3tc.ctex"]
+dest_files=["res://.godot/imported/exite1 (stone3).png-e0a260ef720a82b8647e1095a4decfda.s3tc.ctex", "res://.godot/imported/exite1 (stone3).png-e0a260ef720a82b8647e1095a4decfda.etc2.ctex"]
 
 [params]
 

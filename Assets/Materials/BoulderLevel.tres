@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b3n4fayootti5"]
+
+[ext_resource type="Texture2D" uid="uid://c6srfp0rcqeif" path="res://Assets/Caves1/розовый шар для босса.png" id="1_q726q"]
+[ext_resource type="Texture2D" uid="uid://cg8tcop4bmliu" path="res://Assets/Caves1/крассный шар для босса.png" id="2_kf17o"]
+
+[resource]
+albedo_texture = ExtResource("1_q726q")
+emission_enabled = true
+emission = Color(0.227451, 1, 0, 1)
+emission_operator = 1
+emission_texture = ExtResource("2_kf17o")

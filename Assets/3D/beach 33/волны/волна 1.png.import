@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://d06wrpo3yajua"
 path.s3tc="res://.godot/imported/волна 1.png-8eca6ee3f1778edc1615855628f5dc01.s3tc.ctex"
+path.etc2="res://.godot/imported/волна 1.png-8eca6ee3f1778edc1615855628f5dc01.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/beach 33/волны/волна 1.png"
-dest_files=["res://.godot/imported/волна 1.png-8eca6ee3f1778edc1615855628f5dc01.s3tc.ctex"]
+dest_files=["res://.godot/imported/волна 1.png-8eca6ee3f1778edc1615855628f5dc01.s3tc.ctex", "res://.godot/imported/волна 1.png-8eca6ee3f1778edc1615855628f5dc01.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://pu3kfvtki6cq"
 path.s3tc="res://.godot/imported/балка на которой крутиться лента с низу к ней так же прикреплен генератор.png-c7b8a94c8dfa12ea798009538d04415c.s3tc.ctex"
+path.etc2="res://.godot/imported/балка на которой крутиться лента с низу к ней так же прикреплен генератор.png-c7b8a94c8dfa12ea798009538d04415c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/балка на которой крутиться лента с низу к ней так же прикреплен генератор.png"
-dest_files=["res://.godot/imported/балка на которой крутиться лента с низу к ней так же прикреплен генератор.png-c7b8a94c8dfa12ea798009538d04415c.s3tc.ctex"]
+dest_files=["res://.godot/imported/балка на которой крутиться лента с низу к ней так же прикреплен генератор.png-c7b8a94c8dfa12ea798009538d04415c.s3tc.ctex", "res://.godot/imported/балка на которой крутиться лента с низу к ней так же прикреплен генератор.png-c7b8a94c8dfa12ea798009538d04415c.etc2.ctex"]
 
 [params]
 

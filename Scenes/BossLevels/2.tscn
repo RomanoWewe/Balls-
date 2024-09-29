@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ddcg1b3wsspn5"]
+[gd_scene load_steps=16 format=3 uid="uid://ddcg1b3wsspn5"]
 
 [ext_resource type="PackedScene" uid="uid://b5lgd6jcsqxf3" path="res://Scenes/Objects/BuildingBlocks/Cave/floorCave.tscn" id="1_16bbv"]
 [ext_resource type="PackedScene" uid="uid://bji05vr0y4cdq" path="res://Scenes/Objects/BuildingBlocks/Cave/WallStraightCave.tscn" id="2_5bdfo"]
@@ -9,14 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://dqxts68d6qc3p" path="res://Scenes/Objects/BuildingBlocks/Cave/WallOuterCornerCave.tscn" id="7_xhkry"]
 [ext_resource type="PackedScene" uid="uid://rphxqfqajesi" path="res://Scenes/Objects/BuildingBlocks/Cave/MossyWallThinDeadendCave.tscn" id="9_pfntx"]
 [ext_resource type="PackedScene" uid="uid://blu0sxy212tey" path="res://Scenes/Objects/BuildingBlocks/Cave/AltarBlueCave.tscn" id="10_nei6h"]
-[ext_resource type="Script" path="res://Code/scripts/buttons/button_hold_n_return.gd" id="12_b57lo"]
 [ext_resource type="PackedScene" uid="uid://cvb8fne1cesb3" path="res://Scenes/Objects/BuildingBlocks/Cave/GolemCave.tscn" id="13_nmj8x"]
-[ext_resource type="Script" path="res://Code/scripts/Altar.gd" id="14_awntu"]
 [ext_resource type="PackedScene" uid="uid://blpe4uvjfaslc" path="res://Scenes/Objects/BuildingBlocks/Cave/Buttons/ButtonHoldNReturnCave.tscn" id="15_loorb"]
 [ext_resource type="PackedScene" uid="uid://d4ewchetyfofr" path="res://Scenes/Objects/BuildingBlocks/Cave/LampCave.tscn" id="15_n0t5l"]
-[ext_resource type="Texture2D" uid="uid://kv4gy2gq82aa" path="res://Assets/RuneBlue.png" id="15_rndxt"]
 [ext_resource type="PackedScene" uid="uid://c5xt0mjg1pf48" path="res://Scenes/Objects/BuildingBlocks/Cave/ColumnCave.tscn" id="16_rffao"]
-[ext_resource type="Script" path="res://Code/scripts/ActivatableLight.gd" id="17_exnwc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nsy35"]
 friction = 0.5
@@ -858,96 +854,48 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -20, 5
 [node name="5,-25,-5(0)" parent="." instance=ExtResource("13_nmj8x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 5, -5)
 
-[node name="5,-35,10(0)" type="Area3D" parent="." node_paths=PackedStringArray("connections", "text_timer") instance=ExtResource("15_loorb")]
+[node name="5,-35,10(0)" parent="." node_paths=PackedStringArray("connections") instance=ExtResource("15_loorb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 5, 10)
-script = ExtResource("12_b57lo")
 connections = [NodePath("../5,10,-20(0)")]
 delay = 2.0
-text_timer = NodePath("Text")
 
-[node name="5,35,-20(0)" type="Area3D" parent="." node_paths=PackedStringArray("connections", "text_timer") instance=ExtResource("15_loorb")]
+[node name="5,35,-20(0)" parent="." node_paths=PackedStringArray("connections") instance=ExtResource("15_loorb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, -20)
-script = ExtResource("12_b57lo")
 connections = [NodePath("../5,-10,-5(0)")]
-text_timer = NodePath("Text")
 
-[node name="5,-35,-15(0)" type="Area3D" parent="." node_paths=PackedStringArray("connections", "text_timer") instance=ExtResource("15_loorb")]
+[node name="5,-35,-15(0)" parent="." node_paths=PackedStringArray("connections") instance=ExtResource("15_loorb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 5, -15)
-script = ExtResource("12_b57lo")
 connections = [NodePath("../5,-25,-10(0)"), NodePath("../5,-30,-15(0)"), NodePath("../5,-20,-15(0)"), NodePath("../5,-30,-20(0)")]
 delay = 2.0
-text_timer = NodePath("Text")
 
-[node name="5,-25,-20(0)" type="Area3D" parent="." node_paths=PackedStringArray("connections", "text_timer") instance=ExtResource("15_loorb")]
+[node name="5,-25,-20(0)" parent="." node_paths=PackedStringArray("connections") instance=ExtResource("15_loorb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 5, -20)
-script = ExtResource("12_b57lo")
 connections = [NodePath("../5,15,10(0)")]
 delay = 2.0
-text_timer = NodePath("Text")
 
-[node name="5,35,20(0)" type="StaticBody3D" parent="." groups=["golem_navigation_group"] instance=ExtResource("10_nei6h")]
+[node name="5,35,20(0)" parent="." instance=ExtResource("10_nei6h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 20)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("14_awntu")
-preview = ExtResource("15_rndxt")
 
-[node name="5,-25,-15(0)" type="AnimatableBody3D" parent="." groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("16_rffao")]
+[node name="5,-25,-15(0)" parent="." instance=ExtResource("16_rffao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 5, -15)
-collision_layer = 7
-collision_mask = 7
-sync_to_physics = false
 
-[node name="5,-25,-10(0)" type="AnimatableBody3D" parent="." node_paths=PackedStringArray("light", "light_collider") groups=["golem_navigation_group"] instance=ExtResource("15_n0t5l")]
+[node name="5,-25,-10(0)" parent="." instance=ExtResource("15_n0t5l")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -25, 5, -10)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("17_exnwc")
-light = NodePath("RigidBody3D/Light")
-light_collider = NodePath("CollisionShape3D")
 auto_cycling = true
 
-[node name="5,-30,-15(0)" type="AnimatableBody3D" parent="." node_paths=PackedStringArray("light", "light_collider") groups=["golem_navigation_group"] instance=ExtResource("15_n0t5l")]
+[node name="5,-30,-15(0)" parent="." instance=ExtResource("15_n0t5l")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -30, 5, -15)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("17_exnwc")
-light = NodePath("RigidBody3D/Light")
-light_collider = NodePath("CollisionShape3D")
 auto_cycling = true
 
-[node name="5,-20,-15(0)" type="AnimatableBody3D" parent="." node_paths=PackedStringArray("light", "light_collider") groups=["golem_navigation_group"] instance=ExtResource("15_n0t5l")]
+[node name="5,-20,-15(0)" parent="." instance=ExtResource("15_n0t5l")]
 transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -20, 5, -15)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("17_exnwc")
-light = NodePath("RigidBody3D/Light")
-light_collider = NodePath("CollisionShape3D")
 auto_cycling = true
 
-[node name="5,-30,-20(0)" type="AnimatableBody3D" parent="." node_paths=PackedStringArray("light", "light_collider") groups=["golem_navigation_group"] instance=ExtResource("15_n0t5l")]
+[node name="5,-30,-20(0)" parent="." instance=ExtResource("15_n0t5l")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -25, 5, -20)
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("17_exnwc")
-light = NodePath("RigidBody3D/Light")
-light_collider = NodePath("CollisionShape3D")
 auto_cycling = true
 
-[node name="5,-35,0(0)" type="Area3D" parent="." node_paths=PackedStringArray("connections", "text_timer") instance=ExtResource("15_loorb")]
+[node name="5,-35,0(0)" parent="." node_paths=PackedStringArray("connections") instance=ExtResource("15_loorb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 5, 0)
-script = ExtResource("12_b57lo")
 connections = [NodePath("../5,0,5(0)")]
 delay = 2.0
-text_timer = NodePath("Text")
-
-[connection signal="body_entered" from="5,-35,10(0)" to="5,-35,10(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="5,-35,10(0)" to="5,-35,10(0)" method="_on_body_exited"]
-[connection signal="body_entered" from="5,35,-20(0)" to="5,35,-20(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="5,35,-20(0)" to="5,35,-20(0)" method="_on_body_exited"]
-[connection signal="body_entered" from="5,-35,-15(0)" to="5,-35,-15(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="5,-35,-15(0)" to="5,-35,-15(0)" method="_on_body_exited"]
-[connection signal="body_entered" from="5,-25,-20(0)" to="5,-25,-20(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="5,-25,-20(0)" to="5,-25,-20(0)" method="_on_body_exited"]
-[connection signal="body_entered" from="5,-35,0(0)" to="5,-35,0(0)" method="_on_body_entered"]
-[connection signal="body_exited" from="5,-35,0(0)" to="5,-35,0(0)" method="_on_body_exited"]

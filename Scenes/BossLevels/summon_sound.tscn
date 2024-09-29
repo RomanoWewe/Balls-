@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://l2v2y48x77fe"]
+
+[ext_resource type="AudioStream" uid="uid://cyjfdc8o1878l" path="res://Assets/Sounds/Boss/Summon.mp3" id="1_q05op"]
+[ext_resource type="Script" path="res://Code/scripts/SoundRandomizer.gd" id="2_0u2ub"]
+
+[node name="Summon" type="AudioStreamPlayer"]
+stream = ExtResource("1_q05op")
+volume_db = -20.0
+script = ExtResource("2_0u2ub")
+randomizing_enabled = true
+pitch_range = Vector2(0.9, 1.1)

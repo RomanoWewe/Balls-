@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://p5aoqfao2468"]
+
+[ext_resource type="Texture2D" uid="uid://8tbq1dhd0eam" path="res://Assets/3D/Skins/Шар по Киевски.png" id="1_i4exa"]
+[ext_resource type="ArrayMesh" uid="uid://dwymskl161jqd" path="res://Assets/3D/Skins/Шар по Киевски.obj" id="2_bjont"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7g12f"]
+albedo_texture = ExtResource("1_i4exa")
+
+[node name="Skin" type="Node3D"]
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+layers = 4
+material_override = SubResource("StandardMaterial3D_7g12f")
+mesh = ExtResource("2_bjont")
+skeleton = NodePath("../..")

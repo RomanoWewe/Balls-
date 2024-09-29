@@ -15,5 +15,10 @@ func exit():
 
 func on_rune_used()->void:
 	%BodyAnimator.current_animation="activation"
-	await get_tree().create_timer(2).timeout
+	%RuneUseAnimator.current_animation="rune1"
+	await get_tree().create_timer(1).timeout
+	%BossIntro.play()
+	await get_tree().create_timer(4).timeout
 	exit()
+	await get_tree().create_timer(2).timeout
+	%Music.play()

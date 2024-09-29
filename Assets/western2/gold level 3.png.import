@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ywuqat2iwc2r"
 path.s3tc="res://.godot/imported/gold level 3.png-a2591be31686c327d5197b0f2650d3ac.s3tc.ctex"
+path.etc2="res://.godot/imported/gold level 3.png-a2591be31686c327d5197b0f2650d3ac.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/gold level 3.png"
-dest_files=["res://.godot/imported/gold level 3.png-a2591be31686c327d5197b0f2650d3ac.s3tc.ctex"]
+dest_files=["res://.godot/imported/gold level 3.png-a2591be31686c327d5197b0f2650d3ac.s3tc.ctex", "res://.godot/imported/gold level 3.png-a2591be31686c327d5197b0f2650d3ac.etc2.ctex"]
 
 [params]
 

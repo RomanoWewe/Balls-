@@ -22,8 +22,11 @@ func _ready():
 	if stats == null:
 		if   FileAccess.file_exists("user://stats.tres"):
 			stats = load("user://stats.tres")
-		if stats ==null or stats.unlocked_skins.size()!=skin_data.scenes.size():
+		if stats ==null:
 			stats = Stats.new()
+		if stats.unlocked_skins.size()!=skin_data.scenes.size():
+			for i in range(skin_data.scenes.size()-stats.unlocked_skins.size()):
+				stats.unlocked_skins.append(false)
 	refresh()
 	singleton = self
 	if !is_menu:

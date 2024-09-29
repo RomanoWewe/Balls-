@@ -14,6 +14,8 @@ func activate():
 	$CollisionShape3D.disabled=false
 	freeze=false
 	linear_velocity= (%CurrentLevel.get_node("static/Ball").global_position-global_position).normalized()*base_speed*50.0
+	$AnimationPlayer.current_animation="rotating"
+	$ThrowSound.play()
 
 func deactivate():
 	print(name+ " deactivated")
@@ -51,4 +53,4 @@ func _on_body_entered(body: Node) -> void:
 			return
 		is_running=true
 		linear_velocity= (%CurrentLevel.get_node("static/Ball").global_position-global_position).normalized()*base_speed*50
-	
+		$ThrowSound.play()

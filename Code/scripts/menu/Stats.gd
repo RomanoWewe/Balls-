@@ -5,8 +5,9 @@ class_name Stats
 
 @export var deaths_total := 0
 @export var deaths_by_cannon := 0
-@export var deaths_by_spikes := 0
 @export var deaths_by_fall:= 0
+@export var deaths_by_cultist:= 0
+@export var deaths_by_doppelghanger:= 0
 
 @export var levels_completed:= 0
 @export var unlocked_skins_count:= 0

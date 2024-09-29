@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://pgret6uhdupo"
 path.s3tc="res://.godot/imported/wall7 скин 1.png-e17d664f9785146349bc80532fb59f57.s3tc.ctex"
+path.etc2="res://.godot/imported/wall7 скин 1.png-e17d664f9785146349bc80532fb59f57.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/Beach/wall7 скин 1.png"
-dest_files=["res://.godot/imported/wall7 скин 1.png-e17d664f9785146349bc80532fb59f57.s3tc.ctex"]
+dest_files=["res://.godot/imported/wall7 скин 1.png-e17d664f9785146349bc80532fb59f57.s3tc.ctex", "res://.godot/imported/wall7 скин 1.png-e17d664f9785146349bc80532fb59f57.etc2.ctex"]
 
 [params]
 

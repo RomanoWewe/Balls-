@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdqsmngdu887m"
 path.s3tc="res://.godot/imported/рычаг(основа).png-b974fb4bd9cb199f56c752757b23f3cc.s3tc.ctex"
+path.etc2="res://.godot/imported/рычаг(основа).png-b974fb4bd9cb199f56c752757b23f3cc.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/western2/рычаг(основа).png"
-dest_files=["res://.godot/imported/рычаг(основа).png-b974fb4bd9cb199f56c752757b23f3cc.s3tc.ctex"]
+dest_files=["res://.godot/imported/рычаг(основа).png-b974fb4bd9cb199f56c752757b23f3cc.s3tc.ctex", "res://.godot/imported/рычаг(основа).png-b974fb4bd9cb199f56c752757b23f3cc.etc2.ctex"]
 
 [params]
 

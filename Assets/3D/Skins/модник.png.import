@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfhajakhdf12b"
 path.s3tc="res://.godot/imported/модник.png-e7f961029b00e8ffbfe6ff4f45c26fd5.s3tc.ctex"
+path.etc2="res://.godot/imported/модник.png-e7f961029b00e8ffbfe6ff4f45c26fd5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/3D/Skins/модник.png"
-dest_files=["res://.godot/imported/модник.png-e7f961029b00e8ffbfe6ff4f45c26fd5.s3tc.ctex"]
+dest_files=["res://.godot/imported/модник.png-e7f961029b00e8ffbfe6ff4f45c26fd5.s3tc.ctex", "res://.godot/imported/модник.png-e7f961029b00e8ffbfe6ff4f45c26fd5.etc2.ctex"]
 
 [params]
 

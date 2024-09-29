@@ -52,6 +52,22 @@ func fade_out(instance:Node3D):
 			instance.attributes.exposure_multiplier=1-t
 			await get_tree().create_timer(0.02).timeout
 			t+=.01
+	elif instance is Light3D:
+		var t=0.0
+		while t<1:
+			instance.light_energy=1-t
+			await get_tree().create_timer(0.02).timeout
+			t+=.01
+		instance.queue_free()
+	elif instance is Light:
+		var t=0.0
+		while t<1:
+			for child in instance.get_children():
+				if child is Light3D:
+					child.light_energy=1-t
+			await get_tree().create_timer(0.02).timeout
+			t+=.01
+		instance.queue_free()
 	else:
 		instance.process_mode=Node.PROCESS_MODE_DISABLED
 		var t=0.0
@@ -60,7 +76,6 @@ func fade_out(instance:Node3D):
 				if child is MeshInstance3D:
 					child.transparency=t
 				elif child is Light3D:
-					print(child.name)
 					child.light_energy=1-t
 			await get_tree().create_timer(0.02).timeout
 			t+=.01

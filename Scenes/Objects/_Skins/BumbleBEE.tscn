@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6tcn0pec5cjl"]
+
+[ext_resource type="ArrayMesh" uid="uid://cnlpgbf5brw5k" path="res://Assets/3D/Skins/бамблби.obj" id="1_oxqjb"]
+
+[node name="Skin" type="Node3D"]
+
+[node name="mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+layers = 4
+mesh = ExtResource("1_oxqjb")
+skeleton = NodePath("../..")
