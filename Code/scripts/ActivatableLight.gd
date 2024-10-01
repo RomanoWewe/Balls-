@@ -36,7 +36,7 @@ func _physics_process(_delta: float) -> void:
 			$AudioStreamPlayer2.volume_db = map_speed_to_volume(abs($RigidBody3D.angular_velocity.x))
 			$AudioStreamPlayer2.play()
 		squeak_alternator=!squeak_alternator
-	if abs(prev_frame_rotation_speed)<7 and abs($RigidBody3D.angular_velocity.x)>7:
+	if abs(prev_frame_rotation_speed)<7 and abs($RigidBody3D.angular_velocity.x)>7 and !$AudioStreamPlayer3.playing:
 		$AudioStreamPlayer3.play()
 	prev_frame_rotation_speed_change=angular_velocity_change
 	prev_frame_rotation_speed=$RigidBody3D.angular_velocity.x

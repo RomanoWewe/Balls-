@@ -43,7 +43,11 @@ func exit():
 	%CurrentLevel.add_child(new_scene)
 	await await get_tree().create_timer(0.1).timeout
 	new_scene.name="static"
+	if %GolemNavigationRegion3D.is_baking():
+		await %GolemNavigationRegion3D.bake_finished
 	%GolemNavigationRegion3D.bake_navigation_mesh()
+	if %CultistNavigationRegion3D.is_baking():
+		await %CultistNavigationRegion3D.bake_finished
 	%CultistNavigationRegion3D.bake_navigation_mesh()
 	fade_in(%MainCamera)
 	await get_tree().create_timer(2).timeout

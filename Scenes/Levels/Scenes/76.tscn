@@ -699,15 +699,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 60)
 [node name="0,20,50(0)" parent="static" instance=ExtResource("3_5t3ks")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 50)
 
-[node name="0,30,50(0)" parent="static" instance=ExtResource("3_5t3ks")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 50)
-
-[node name="0,30,55(0)" parent="static" instance=ExtResource("3_5t3ks")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 55)
-
-[node name="0,30,60(0)" parent="static" instance=ExtResource("3_5t3ks")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 60)
-
 [node name="0,20,55(0)" parent="static" instance=ExtResource("3_5t3ks")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 55)
 

@@ -504,9 +504,6 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 40, 5,
 [node name="5,40,35(0)" parent="static" instance=ExtResource("6_yuxnn")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, 35)
 
-[node name="5,40,40(0)" parent="static" instance=ExtResource("7_xlybo")]
-transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 40, 5, 40)
-
 [node name="5,45,20(0)" parent="static" instance=ExtResource("20_g6m4k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 5, 20)
 
@@ -646,3 +643,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, 45)
 
 [node name="0,65,45(0)" parent="static" instance=ExtResource("3_qtju4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 0, 45)
+
+[node name="5,40,40(0)" type="AnimatableBody3D" parent="static" groups=["IsFloor", "cultist_navigation_group", "golem_navigation_group"] instance=ExtResource("6_yuxnn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 40, 5, 40)
+collision_layer = 7
+collision_mask = 7
+sync_to_physics = false

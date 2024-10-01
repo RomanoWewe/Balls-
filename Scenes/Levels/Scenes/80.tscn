@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://j8vyw3cb0mr5"]
+[gd_scene load_steps=101 format=3 uid="uid://j8vyw3cb0mr5"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_6glp1"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="2_llknr"]
@@ -17,7 +17,6 @@
 [ext_resource type="ArrayMesh" uid="uid://b3pfkxuw0brwi" path="res://Assets/3D/Skins/подставка для босса.obj" id="10_jbh4s"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossBouldersState.gd" id="10_ti0qp"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossDefeatState.gd" id="11_5etmw"]
-[ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossInvertionAttack.gd" id="11_jmcxr"]
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/BossSummonState.gd" id="12_bd8hr"]
 [ext_resource type="Material" uid="uid://n5at0oolcl6x" path="res://Assets/Materials/BoulderSummon.tres" id="13_2yqef"]
 [ext_resource type="ArrayMesh" uid="uid://con8tdykw0lxp" path="res://Assets/Caves1/крассный шар для босса.obj" id="13_dm327"]
@@ -25,7 +24,6 @@
 [ext_resource type="Script" path="res://Code/scripts/AI/Boss/Boulder.gd" id="16_jbt64"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="16_nbiou"]
 [ext_resource type="PackedScene" uid="uid://bcj6ipm5bwhmn" path="res://Scenes/BossLevels/Empty1.tscn" id="17_rejkx"]
-[ext_resource type="Material" uid="uid://bcpwnybrbu6le" path="res://Assets/Materials/BoulderInverse.tres" id="20_42rxx"]
 [ext_resource type="PackedScene" path="res://Scenes/BossLevels/3.tscn" id="20_i5ebq"]
 [ext_resource type="PackedScene" path="res://Scenes/BossLevels/4.tscn" id="21_tdb8t"]
 [ext_resource type="Material" uid="uid://d0phco0lb1lr5" path="res://Assets/Materials/BoulderDark.tres" id="22_qp0ed"]
@@ -2084,12 +2082,10 @@ fov = 32.0
 [node name="GolemNavigationRegion3D" type="NavigationRegion3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
-visible = false
 navigation_mesh = SubResource("NavigationMesh_4c5yn")
 
 [node name="CultistNavigationRegion3D" type="NavigationRegion3D" parent="."]
 unique_name_in_owner = true
-visible = false
 navigation_mesh = SubResource("NavigationMesh_kdw2k")
 navigation_layers = 2
 
@@ -2127,8 +2123,8 @@ cultist_spawn_min_count = 2
 cultist_spawn_max_count = 3
 doppelghanger_spawn_min_count = 1
 doppelghanger_spawn_max_count = 1
-cultist_min_speed = 7.5
-cultist_max_speed = 12.5
+cultist_min_speed = 9.0
+cultist_max_speed = 13.0
 spawn_delay = 1.5
 boulder_surface_material = ExtResource("13_2yqef")
 boulder_default_material = ExtResource("22_qp0ed")
@@ -2158,7 +2154,7 @@ cultist_spawn_min_count = 3
 cultist_spawn_max_count = 4
 doppelghanger_spawn_min_count = 1
 doppelghanger_spawn_max_count = 2
-cultist_min_speed = 9.0
+cultist_min_speed = 10.0
 cultist_max_speed = 14.0
 spawn_delay = 1.2
 boulder_surface_material = ExtResource("13_2yqef")
@@ -2168,35 +2164,30 @@ duration = 20.0
 [node name="Level2" type="Node" parent="Boss/BossStateMachine"]
 script = ExtResource("5_tg2hu")
 scenes = Array[PackedScene]([ExtResource("20_i5ebq"), ExtResource("21_tdb8t")])
-empty_scene = ExtResource("7_8idrp")
+empty_scene = ExtResource("17_rejkx")
 rune_use_animation_name = "rune3"
 boulder_surface_material = ExtResource("14_s2twv")
-boulder_default_material = ExtResource("22_qp0ed")
-
-[node name="Inverse1" type="Node" parent="Boss/BossStateMachine"]
-script = ExtResource("11_jmcxr")
-boulder_surface_material = ExtResource("20_42rxx")
 boulder_default_material = ExtResource("22_qp0ed")
 
 [node name="Boulders3" type="Node" parent="Boss/BossStateMachine"]
 script = ExtResource("10_ti0qp")
 active_boulder_count = 4
 boulder_activation_offset = 1.5
-base_speed = 1.4
+base_speed = 1.37
 boulder_enter_animation_duration = 2.0
 boulder_exit_animation_duration = 2.0
 duration = 23.0
 
 [node name="Summon3" type="Node" parent="Boss/BossStateMachine"]
 script = ExtResource("12_bd8hr")
-golem_spawn_min_count = 3
-golem_spawn_max_count = 3
-cultist_spawn_min_count = 5
-cultist_spawn_max_count = 5
-doppelghanger_spawn_min_count = 3
-doppelghanger_spawn_max_count = 3
-cultist_min_speed = 10.0
-cultist_max_speed = 18.0
+golem_spawn_min_count = 2
+golem_spawn_max_count = 2
+cultist_spawn_min_count = 3
+cultist_spawn_max_count = 4
+doppelghanger_spawn_min_count = 2
+doppelghanger_spawn_max_count = 2
+cultist_min_speed = 9.0
+cultist_max_speed = 15.0
 spawn_delay = 0.8
 boulder_surface_material = ExtResource("13_2yqef")
 boulder_default_material = ExtResource("22_qp0ed")

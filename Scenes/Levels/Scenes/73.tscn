@@ -128,12 +128,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
 [node name="0,-5,-10(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -10)
 
-[node name="0,-10,-10(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
-
-[node name="0,-15,-10(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -10)
-
 [node name="0,-15,-5(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -5)
 
@@ -158,12 +152,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 [node name="0,5,10(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 10)
 
-[node name="0,10,10(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
-
-[node name="0,15,10(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 10)
-
 [node name="0,15,5(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 5)
 
@@ -175,9 +163,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -5)
 
 [node name="0,15,-10(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -10)
-
-[node name="0,-20,-10(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -10)
 
 [node name="0,-20,-5(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -5)
@@ -191,9 +176,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 5)
 [node name="0,-20,10(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 10)
 
-[node name="0,20,10(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 10)
-
 [node name="0,20,5(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 5)
 
@@ -205,15 +187,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -5)
 
 [node name="0,20,-10(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -10)
-
-[node name="0,20,15(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 15)
-
-[node name="0,15,15(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15)
-
-[node name="0,10,15(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 15)
 
 [node name="0,5,15(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 15)
@@ -232,15 +205,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 15)
 
 [node name="0,-20,15(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 15)
-
-[node name="0,-20,-15(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -15)
-
-[node name="0,-15,-15(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -15)
-
-[node name="0,-10,-15(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -15)
 
 [node name="0,-5,-15(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -15)
@@ -275,12 +239,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 0)
 [node name="0,25,5(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 5)
 
-[node name="0,25,10(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 10)
-
-[node name="0,25,15(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 15)
-
 [node name="0,-25,15(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 15)
 
@@ -295,12 +253,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0)
 
 [node name="0,-25,-5(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -5)
-
-[node name="0,-25,-10(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -10)
-
-[node name="0,-25,-15(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -15)
 
 [node name="5,-15,-5(0)" parent="static" instance=ExtResource("4_1fm1t")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15, 5, -5)
@@ -365,15 +317,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 20)
 [node name="0,0,20(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
 
-[node name="0,-20,-20(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20)
-
-[node name="0,-15,-20(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -20)
-
-[node name="0,-10,-20(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -20)
-
 [node name="0,-5,-20(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -20)
 
@@ -391,15 +334,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -20)
 
 [node name="0,20,-20(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20)
-
-[node name="0,20,20(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20)
-
-[node name="0,15,20(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 20)
-
-[node name="0,10,20(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
 
 [node name="0,5,20(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 20)
@@ -442,18 +376,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 5, 
 [node name="5,25,0(0)" parent="static" instance=ExtResource("4_1fm1t")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 25, 5, 0)
 
-[node name="0,-25,-25(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -25)
-
-[node name="0,-20,-25(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -25)
-
-[node name="0,-15,-25(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -25)
-
-[node name="0,-10,-25(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -25)
-
 [node name="0,-5,-25(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -25)
 
@@ -478,21 +400,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -25)
 [node name="0,25,-20(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -20)
 
-[node name="0,25,20(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 20)
-
-[node name="0,25,25(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, 25)
-
-[node name="0,20,25(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 25)
-
-[node name="0,15,25(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 25)
-
-[node name="0,10,25(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 25)
-
 [node name="0,5,25(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 25)
 
@@ -516,9 +423,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 25)
 
 [node name="0,-25,20(0)" parent="static" instance=ExtResource("3_4c2gb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 20)
-
-[node name="0,-25,-20(0)" parent="static" instance=ExtResource("3_4c2gb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -20)
 
 [node name="5,-5,5(0)" parent="static" instance=ExtResource("13_6xydq")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5, 5, 5)

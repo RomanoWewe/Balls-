@@ -14,6 +14,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
+	if get_parent().get_parent().level_finished:
+		return
 	if current_state!=null:
 		current_state.update(delta)
 
