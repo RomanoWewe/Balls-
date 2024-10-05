@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bfpv7w2xo0i4y" path="res://Scenes/Objects/BuildingBlocks/Basic/wall.tscn" id="6_akihp"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="7_wrhh4"]
 [ext_resource type="PackedScene" uid="uid://cousk4nrygbk4" path="res://Scenes/Objects/BuildingBlocks/Basic/cannon.tscn" id="7_y2wk5"]
-[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="8_pj01e"]
+[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/BoxRounded.tscn" id="8_pj01e"]
 [ext_resource type="PackedScene" uid="uid://5xu66h20s20g" path="res://Scenes/Objects/BuildingBlocks/Basic/hole.tscn" id="9_3tqye"]
 
 [sub_resource type="Environment" id="Environment_0kx3d"]

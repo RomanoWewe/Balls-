@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3m0n5ocjr70h"
-path="res://.godot/imported/button 3 for objects.png-177c20f165fd2fa03792ad0bb74f744e.ctex"
+uid="uid://bhqe2g7nedtvh"
+path="res://.godot/imported/button weigher(0).png-6ddf520c74f932ccdb70e0b4ad3e288a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/western2/button 3 for objects.png"
-dest_files=["res://.godot/imported/button 3 for objects.png-177c20f165fd2fa03792ad0bb74f744e.ctex"]
+source_file="res://Assets/western2/button weigher(0).png"
+dest_files=["res://.godot/imported/button weigher(0).png-6ddf520c74f932ccdb70e0b4ad3e288a.ctex"]
 
 [params]
 

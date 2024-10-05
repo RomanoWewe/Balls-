@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="5_v5eya"]
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="6_62hvs"]
 [ext_resource type="PackedScene" uid="uid://by4cybkow6x3e" path="res://Scenes/Objects/BuildingBlocks/Basic/wall_tall.tscn" id="6_m7n5g"]
-[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="8_bnyjp"]
+[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/BoxRounded.tscn" id="8_bnyjp"]
 
 [sub_resource type="Environment" id="Environment_ko7qs"]
 ambient_light_source = 2

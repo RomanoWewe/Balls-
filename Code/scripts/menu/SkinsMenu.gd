@@ -27,11 +27,11 @@ func _ready():
 		if stats.unlocked_skins.size()!=skin_data.scenes.size():
 			for i in range(skin_data.scenes.size()-stats.unlocked_skins.size()):
 				stats.unlocked_skins.append(false)
-	refresh()
 	singleton = self
 	if !is_menu:
 		return
 	current_skin = settings_menu.settings.selected_skin
+	refresh()
 
 
 func refresh():

@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cv0ujlsyax1ov" path="res://Scenes/Objects/BuildingBlocks/Beach/island.tscn" id="12_p8md2"]
 [ext_resource type="PackedScene" uid="uid://bwrb0c7nknohr" path="res://Scenes/Objects/BuildingBlocks/Beach/Algae.tscn" id="15_03hdo"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="16_tvhgf"]
-[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="17_btmu3"]
+[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/BoxRounded.tscn" id="17_btmu3"]
 [ext_resource type="PackedScene" uid="uid://b04sv73h2yqs8" path="res://Scenes/Objects/BuildingBlocks/Beach/plane.tscn" id="17_os2v4"]
 [ext_resource type="PackedScene" uid="uid://co0b13qewn02j" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterCurrent.tscn" id="18_wppe7"]
 [ext_resource type="PackedScene" uid="uid://c5x3uhyfhx45s" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterStill.tscn" id="19_6xx5o"]

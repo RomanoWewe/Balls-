@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://gmlhleesu2db" path="res://Scenes/Objects/_Abstract/empty.tscn" id="4_83yw4"]
 [ext_resource type="PackedScene" uid="uid://dev2aik5yoynb" path="res://Scenes/Objects/BuildingBlocks/Basic/floor.tscn" id="5_8f3x4"]
 [ext_resource type="PackedScene" uid="uid://by4cybkow6x3e" path="res://Scenes/Objects/BuildingBlocks/Basic/wall_tall.tscn" id="6_7g1ny"]
-[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="7_mqkmm"]
+[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/BoxRounded.tscn" id="7_mqkmm"]
 [ext_resource type="PackedScene" uid="uid://bfpv7w2xo0i4y" path="res://Scenes/Objects/BuildingBlocks/Basic/wall.tscn" id="7_o40uf"]
 [ext_resource type="PackedScene" uid="uid://5eeqsefp42na" path="res://Scenes/Objects/BuildingBlocks/Basic/barrier.tscn" id="8_ny5bi"]
 

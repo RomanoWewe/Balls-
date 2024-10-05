@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Code/scripts/RailButtonToggle.gd" id="1_x7r82"]
 [ext_resource type="Script" path="res://Code/scripts/MovingPlatform.gd" id="2_15te3"]
-[ext_resource type="ArrayMesh" uid="uid://qrt3db80cnq2" path="res://Assets/western2/button 1 for objects.obj" id="3_67tsg"]
+[ext_resource type="ArrayMesh" uid="uid://1k5iaxtwwuc8" path="res://Assets/western2/button weigher(0).obj" id="3_2y6um"]
 [ext_resource type="AudioStream" uid="uid://b4810rkqf81kw" path="res://Assets/Sounds/ButtonOff.mp3" id="4_slwe0"]
 [ext_resource type="AudioStream" uid="uid://bctijlrxgm6gm" path="res://Assets/Sounds/ButtonOn.mp3" id="5_8sfjv"]
 [ext_resource type="PackedScene" uid="uid://cwxr5dui74n3t" path="res://Scenes/Objects/BuildingBlocks/WildWest/RailStraight.tscn" id="6_wp36g"]
@@ -28,7 +28,7 @@ movement_times = Array[float]([0.02, 0.02])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MovingPlatform"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.185032, 0)
-mesh = ExtResource("3_67tsg")
+mesh = ExtResource("3_2y6um")
 
 [node name="ButtonOffSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_slwe0")

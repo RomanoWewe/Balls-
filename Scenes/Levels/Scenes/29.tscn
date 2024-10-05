@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ra7gweqty3vi"]
+[gd_scene load_steps=14 format=3 uid="uid://ra7gweqty3vi"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_rcjow"]
 [ext_resource type="PackedScene" uid="uid://c7i03vwwk8xxc" path="res://Scenes/Objects/BuildingBlocks/General/ball.tscn" id="2_x6quf"]
@@ -6,11 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://blpll3jiurqsk" path="res://Scenes/Objects/BuildingBlocks/Beach/floorBeachSand.tscn" id="4_hudgr"]
 [ext_resource type="PackedScene" uid="uid://k3s6f10dpb4m" path="res://Scenes/Objects/BuildingBlocks/Beach/1sideV2.tscn" id="8_v68qq"]
 [ext_resource type="PackedScene" uid="uid://5jphlelqyql8" path="res://Scenes/Objects/BuildingBlocks/Beach/1corner.tscn" id="9_gspjy"]
-[ext_resource type="PackedScene" uid="uid://bk5h1yt68k5f0" path="res://Scenes/Objects/BuildingBlocks/Beach/boxBeach.tscn" id="10_6vxvx"]
 [ext_resource type="PackedScene" uid="uid://b04sv73h2yqs8" path="res://Scenes/Objects/BuildingBlocks/Beach/plane.tscn" id="11_366qu"]
+[ext_resource type="PackedScene" uid="uid://3jlolg8oscpa" path="res://Scenes/Objects/BuildingBlocks/Basic/Box.tscn" id="11_i4ov6"]
 [ext_resource type="PackedScene" uid="uid://cv7h2aq0jcp6u" path="res://Scenes/Objects/BuildingBlocks/Basic/holeBeach.tscn" id="11_nyseu"]
+[ext_resource type="Script" path="res://Code/scripts/GravitationalObject.gd" id="12_su8gx"]
 [ext_resource type="PackedScene" uid="uid://c5x3uhyfhx45s" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterStill.tscn" id="13_ohv8i"]
 [ext_resource type="PackedScene" uid="uid://bhuxrpafb33bf" path="res://Scenes/Objects/BuildingBlocks/Beach/Whirlpool.tscn" id="21_pp23h"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_p8a43"]
+friction = 0.26
+rough = true
 
 [node name="29" type="Node3D"]
 script = ExtResource("1_rcjow")
@@ -28,7 +33,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 5, 
 [node name="empty" parent="." instance=ExtResource("3_7n7rn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.95086, -5.6292, 29.0448)
 
-[node name="static" type="Node" parent="."]
+[node name="static" type="Node3D" parent="."]
 
 [node name="0,60,-5(1)" parent="static" instance=ExtResource("4_hudgr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -5, -5)
@@ -370,7 +375,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 15)
 
 [node name="0,10,20(0)" parent="static" instance=ExtResource("13_ohv8i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
+transform = Transform3D(0.999981, 0, 0.00614352, 0, 1, 0, -0.00614352, 0, 0.999981, 10, 0, 20)
 
 [node name="0,5,15(0)" parent="static" instance=ExtResource("13_ohv8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 15)
@@ -711,22 +716,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 
 [node name="-5,60,-10(0)" parent="static" instance=ExtResource("11_nyseu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, -5, -10)
 
-[node name="5,10,25(0)" parent="static" instance=ExtResource("10_6vxvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 25)
-
-[node name="5,10,15(0)" parent="static" instance=ExtResource("10_6vxvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 15)
-
-[node name="5,10,5(0)" parent="static" instance=ExtResource("10_6vxvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 5)
-
-[node name="5,40,10(0)" parent="static" instance=ExtResource("10_6vxvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 0, 10)
-
-[node name="5,35,25(0)" parent="static" instance=ExtResource("10_6vxvx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 0, 25)
-buoyancy = 1.1
-
 [node name="0,60,-25(0)" parent="static" instance=ExtResource("13_ohv8i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 0, -10)
 
@@ -861,6 +850,66 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -15)
 
 [node name="0,-10,-20(0)" parent="static" instance=ExtResource("11_366qu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -20)
+
+[node name="5,10,25(0)" type="RigidBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_i4ov6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 25)
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_p8a43")
+gravity_scale = 10.0
+can_sleep = false
+lock_rotation = true
+continuous_cd = true
+script = ExtResource("12_su8gx")
+buoyancy = 1.2
+gravity_force = 4500.0
+
+[node name="5,10,15(0)" type="RigidBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_i4ov6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 15)
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_p8a43")
+gravity_scale = 10.0
+can_sleep = false
+lock_rotation = true
+continuous_cd = true
+script = ExtResource("12_su8gx")
+buoyancy = 1.2
+gravity_force = 4500.0
+
+[node name="5,10,5(0)" type="RigidBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_i4ov6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 5)
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_p8a43")
+gravity_scale = 10.0
+can_sleep = false
+lock_rotation = true
+continuous_cd = true
+script = ExtResource("12_su8gx")
+buoyancy = 1.2
+gravity_force = 4500.0
+
+[node name="5,40,10(0)" type="RigidBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_i4ov6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 5, 10)
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_p8a43")
+gravity_scale = 10.0
+can_sleep = false
+lock_rotation = true
+continuous_cd = true
+script = ExtResource("12_su8gx")
+buoyancy = 1.2
+gravity_force = 4500.0
+
+[node name="5,35,25(0)" type="RigidBody3D" parent="static" groups=["IsFloor"] instance=ExtResource("11_i4ov6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 5, 25)
+mass = 0.5
+physics_material_override = SubResource("PhysicsMaterial_p8a43")
+gravity_scale = 10.0
+can_sleep = false
+lock_rotation = true
+continuous_cd = true
+script = ExtResource("12_su8gx")
+buoyancy = 1.2
+gravity_force = 4500.0
 
 [node name="MainCamera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 35, 33, 5)

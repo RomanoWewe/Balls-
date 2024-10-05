@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bcra1elc6uywq" path="res://Scenes/Objects/BuildingBlocks/Beach/2sidesOP.tscn" id="13_qvifn"]
 [ext_resource type="PackedScene" uid="uid://c44nt21dv3k5w" path="res://Scenes/Objects/BuildingBlocks/Beach/Buttons/ButtonHoldNReturnBeach.tscn" id="14_whpfr"]
 [ext_resource type="PackedScene" uid="uid://cjvp3dq3rh27u" path="res://Scenes/Objects/BuildingBlocks/Beach/doubleDoorBeach.tscn" id="16_h7e1i"]
-[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="18_xbubi"]
+[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/BoxRounded.tscn" id="18_xbubi"]
 [ext_resource type="PackedScene" uid="uid://b04sv73h2yqs8" path="res://Scenes/Objects/BuildingBlocks/Beach/plane.tscn" id="19_5vb36"]
 [ext_resource type="PackedScene" uid="uid://co0b13qewn02j" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterCurrent.tscn" id="20_ab1qu"]
 [ext_resource type="PackedScene" uid="uid://c5x3uhyfhx45s" path="res://Scenes/Objects/BuildingBlocks/Beach/WaterStill.tscn" id="28_3p7ty"]

@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://lrpw52fbpv42" path="res://Scenes/Objects/BuildingBlocks/Unused/flying_platform.tscn" id="13_21gb2"]
 [ext_resource type="PackedScene" uid="uid://ctgxybnps5hnt" path="res://Scenes/Objects/BuildingBlocks/Unused/short_spikes.tscn" id="14_1ptc0"]
 [ext_resource type="PackedScene" uid="uid://bfwyiiatklh5d" path="res://Scenes/Objects/BuildingBlocks/Unused/long_spikes.tscn" id="15_j1dto"]
-[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="16_g4v2e"]
+[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/BoxRounded.tscn" id="16_g4v2e"]
 [ext_resource type="PackedScene" uid="uid://bgtwahat2m8nw" path="res://Scenes/Objects/BuildingBlocks/Basic/portal.tscn" id="17_i8nfe"]
 [ext_resource type="Texture2D" uid="uid://dinhdgc2v0sct" path="res://Assets/3D/coin1.png" id="18_xrm3x"]
 [ext_resource type="ArrayMesh" uid="uid://co0nid3hub65t" path="res://Assets/3D/coin1.obj" id="19_3udu5"]

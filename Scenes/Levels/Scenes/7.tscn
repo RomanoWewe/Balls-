@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmyldkjjognwc"]
+[gd_scene load_steps=10 format=3 uid="uid://cmyldkjjognwc"]
 
 [ext_resource type="Script" path="res://Code/scripts/menu/Level.gd" id="1_jclhy"]
 [ext_resource type="PackedScene" uid="uid://5xu66h20s20g" path="res://Scenes/Objects/BuildingBlocks/Basic/hole.tscn" id="2_2n133"]
@@ -7,8 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dev2aik5yoynb" path="res://Scenes/Objects/BuildingBlocks/Basic/floor.tscn" id="5_xaqym"]
 [ext_resource type="PackedScene" uid="uid://by4cybkow6x3e" path="res://Scenes/Objects/BuildingBlocks/Basic/wall_tall.tscn" id="6_3qah4"]
 [ext_resource type="PackedScene" uid="uid://bfpv7w2xo0i4y" path="res://Scenes/Objects/BuildingBlocks/Basic/wall.tscn" id="7_h7hvp"]
-[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/box.tscn" id="8_wqplk"]
-[ext_resource type="PackedScene" uid="uid://cfwfamgoyay15" path="res://Scenes/Objects/_Abstract/block.tscn" id="9_o4ym6"]
+[ext_resource type="PackedScene" uid="uid://bi5ucjletak3a" path="res://Scenes/Objects/BuildingBlocks/Basic/BoxRounded.tscn" id="8_wqplk"]
 
 [sub_resource type="Environment" id="Environment_nox70"]
 ambient_light_source = 2
@@ -468,9 +467,3 @@ environment = SubResource("Environment_nox70")
 transform = Transform3D(0.902559, 0.166503, 0.39707, -0.30683, -0.398253, 0.864436, 0.302066, -0.902038, -0.308358, 0, 3, 0)
 light_color = Color(0.858824, 0.913725, 1, 1)
 shadow_enabled = true
-
-[node name="block" parent="." instance=ExtResource("9_o4ym6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12.5, -5, 0)
-
-[node name="block3" parent="." instance=ExtResource("9_o4ym6")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.5, -5, 0)
